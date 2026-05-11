@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.PrimaryController">
+   <Label text="Film Test Database" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+   <TableView fx:id="filmTable" prefHeight="420.0" prefWidth="860.0">
+      <columns>
+         <TableColumn fx:id="romanizedColumn" text="Romanized" prefWidth="130.0" />
+         <TableColumn fx:id="titleColumn" text="Title" prefWidth="150.0" />
+         <TableColumn fx:id="yearColumn" text="Year" prefWidth="70.0" />
+         <TableColumn fx:id="translatedColumn" text="Translated" prefWidth="150.0" />
+         <TableColumn fx:id="productionColumn" text="Production" prefWidth="140.0" />
+         <TableColumn fx:id="colourColumn" text="Colour" prefWidth="90.0" />
+         <TableColumn fx:id="specialAspectsColumn" text="Special Aspects" prefWidth="150.0" />
+      </columns>
+   </TableView>
+   <HBox alignment="CENTER" spacing="12.0">
+      <Button fx:id="refreshButton" text="Reload Data" onAction="#loadData" />
+      <Label fx:id="statusLabel" text="" />
+      <Label fx:id="pythonWorkerStatusLabel" text="Python worker: Disabled" />
+   </HBox>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

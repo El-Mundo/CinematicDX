@@ -14,6 +14,7 @@ The central idea is that the space between distant reading and close reading sho
 Corpus as Database, Not Just Metadata
 
 A simplified conceptual structure is:
+```
 Corpus
   └── Film
         ├── Metadata
@@ -31,6 +32,7 @@ Corpus
         │     ├── vector
         │     └── other extensible data types
         └── Provenance / analysis history
+```
 
 The database is intended to support not only filmographic metadata, but also computationally generated features, manually curated annotations, imported tabular data, and future machine-learning outputs.
 

@@ -1,56 +1,90 @@
 package com.elmundo;
 
 public class FilmEntry {
-    private final String romanized;
-    private final String title;
-    private final Integer year;
-    private final String translated;
+    private final Long id;
+    private final String filmKey;
+    private final String titleOriginal;
+    private final String titleTranslated;
+    private final Integer productionYear;
     private final String production;
-    private final String colour;
+    private final String colorFormat;
+    private final String romanized;
     private final String specialAspects;
 
     public FilmEntry(
-            String romanized,
-            String title,
-            Integer year,
-            String translated,
+            Long id,
+            String filmKey,
+            String titleOriginal,
+            String titleTranslated,
+            Integer productionYear,
             String production,
-            String colour,
+            String colorFormat,
+            String romanized,
             String specialAspects) {
-        this.romanized = romanized;
-        this.title = title;
-        this.year = year;
-        this.translated = translated;
+        this.id = id;
+        this.filmKey = filmKey;
+        this.titleOriginal = titleOriginal;
+        this.titleTranslated = titleTranslated;
+        this.productionYear = productionYear;
         this.production = production;
-        this.colour = colour;
+        this.colorFormat = colorFormat;
+        this.romanized = romanized;
         this.specialAspects = specialAspects;
     }
 
-    public String getRomanized() {
-        return romanized;
+    public Long getId() {
+        return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getFilmKey() {
+        return filmKey;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getTitleOriginal() {
+        return titleOriginal;
     }
 
-    public String getTranslated() {
-        return translated;
+    public String getTitleTranslated() {
+        return titleTranslated;
+    }
+
+    public Integer getProductionYear() {
+        return productionYear;
+    }
+
+    public String getProductionYearDisplay() {
+        return FilmKeyGenerator.yearPart(productionYear);
     }
 
     public String getProduction() {
         return production;
     }
 
-    public String getColour() {
-        return colour;
+    public String getColorFormat() {
+        return colorFormat;
+    }
+
+    public String getRomanized() {
+        return romanized;
     }
 
     public String getSpecialAspects() {
         return specialAspects;
+    }
+
+    public String getTitle() {
+        return titleOriginal;
+    }
+
+    public Integer getYear() {
+        return productionYear;
+    }
+
+    public String getTranslated() {
+        return titleTranslated;
+    }
+
+    public String getColour() {
+        return colorFormat;
     }
 }

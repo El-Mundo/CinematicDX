@@ -19,6 +19,7 @@ public class App extends Application {
     private static Connection connection;
     private static final AppConfig appConfig = AppConfig.load();
     private static final PythonWorkerManager pythonWorkerManager = new PythonWorkerManager();
+    private static final FilmRepository filmRepository = new FilmRepository();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -49,6 +50,10 @@ public class App extends Application {
 
     static PythonWorkerManager getPythonWorkerManager() {
         return pythonWorkerManager;
+    }
+
+    static FilmRepository getFilmRepository() {
+        return filmRepository;
     }
 
     static AppConfig getConfig() {

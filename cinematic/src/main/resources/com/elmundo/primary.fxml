@@ -10,19 +10,38 @@
 
 <VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.PrimaryController">
    <Label text="Film Test Database" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-   <TableView fx:id="filmTable" prefHeight="420.0" prefWidth="860.0">
+   <TableView fx:id="filmTable" prefHeight="320.0" prefWidth="760.0">
       <columns>
-         <TableColumn fx:id="romanizedColumn" text="Romanized" prefWidth="130.0" />
-         <TableColumn fx:id="titleColumn" text="Title" prefWidth="150.0" />
-         <TableColumn fx:id="yearColumn" text="Year" prefWidth="70.0" />
-         <TableColumn fx:id="translatedColumn" text="Translated" prefWidth="150.0" />
-         <TableColumn fx:id="productionColumn" text="Production" prefWidth="140.0" />
-         <TableColumn fx:id="colourColumn" text="Colour" prefWidth="90.0" />
-         <TableColumn fx:id="specialAspectsColumn" text="Special Aspects" prefWidth="150.0" />
+         <TableColumn fx:id="filmKeyColumn" text="Key" prefWidth="140.0" />
+         <TableColumn fx:id="titleOriginalColumn" text="Original Title" prefWidth="140.0" />
+         <TableColumn fx:id="productionYearColumn" text="Year" prefWidth="70.0" />
+         <TableColumn fx:id="titleTranslatedColumn" text="Translated" prefWidth="130.0" />
+         <TableColumn fx:id="romanizedColumn" text="Romanized" prefWidth="120.0" />
+         <TableColumn fx:id="productionColumn" text="Production" prefWidth="120.0" />
+         <TableColumn fx:id="colorFormatColumn" text="Color" prefWidth="90.0" />
+         <TableColumn fx:id="specialAspectsColumn" text="Special Aspects" prefWidth="120.0" />
+      </columns>
+   </TableView>
+   <Label text="Media Mappings" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
+   <TableView fx:id="mediaTable" prefHeight="150.0" prefWidth="760.0">
+      <columns>
+         <TableColumn fx:id="mediaStorageFormatColumn" text="Storage" prefWidth="100.0" />
+         <TableColumn fx:id="mediaTypeColumn" text="Media Type" prefWidth="130.0" />
+         <TableColumn fx:id="mediaPathColumn" text="Path" prefWidth="340.0" />
+         <TableColumn fx:id="mediaExtensionColumn" text="Ext" prefWidth="60.0" />
+         <TableColumn fx:id="mediaStatusColumn" text="Status" prefWidth="140.0" />
       </columns>
    </TableView>
    <HBox alignment="CENTER" spacing="12.0">
       <Button fx:id="refreshButton" text="Reload Data" onAction="#loadData" />
+      <Button text="Add Film" onAction="#addFilm" />
+      <Button text="Import Films from CSV" onAction="#importFilmsCsv" />
+      <Button text="Import Attributes from CSV" onAction="#importAttributesCsv" />
+      <Button text="Import Media from CSV" onAction="#importMediaCsv" />
+   </HBox>
+   <HBox alignment="CENTER" spacing="12.0">
+      <Button text="Refresh Media" onAction="#refreshMedia" />
+      <Button text="Show in System File Browser" onAction="#showSelectedMediaInSystemFileBrowser" />
       <Label fx:id="statusLabel" text="" />
       <Label fx:id="pythonWorkerStatusLabel" text="Python worker: Disabled" />
    </HBox>

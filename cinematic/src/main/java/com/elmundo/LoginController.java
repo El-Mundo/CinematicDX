@@ -79,6 +79,7 @@ public class LoginController {
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             App.setConnection(connection);
+            App.getFilmRepository().initializeDatabase(connection);
             saveConfig(url, username, password, pythonRuntimePath);
 
             if (enablePythonWorkerCheckBox.isSelected()) {

@@ -66,6 +66,26 @@ class FilmRepositoryTest {
     }
 
     @Test
+    void renamesTitleWithoutChangingFilmKeyAndUpdatesTitleMatchKey() throws SQLException {
+        try (Connection connection = openConnection()) {
+            FilmRepository repository = new FilmRepository();
+            repository.initializeDatabase(connection);
+            FilmEntry film = repository.insertAsUnique(connection, draft("桥", 1949, "The Bridge"));
+
+            repository.renameFilmTitle(connection, film.getId(), "新桥");
+            FilmEntry updated = repository.findById(connection, film.getId()).orElseThrow();
+
+            assertEquals("桥-1949", updated.getFilmKey());
+            assertEquals("新桥", updated.getTitleOriginal());
+            assertEquals(FilmKeyGenerator.normalizeTitleForMatch("新桥"),
+                    readTitleMatchKey(connection, film.getId()));
+            assertTrue(repository.findByTitle(connection, "新桥").stream()
+                    .anyMatch(entry -> entry.getId().equals(film.getId())));
+            assertTrue(repository.findByTitle(connection, "桥").isEmpty());
+        }
+    }
+
+    @Test
     void importsCustomAttributeValuesAsJson() throws SQLException {
         try (Connection connection = openConnection()) {
             FilmRepository repository = new FilmRepository();
@@ -231,6 +251,17 @@ class FilmRepositoryTest {
                 + "WHERE cfd.normalized_name = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, normalizedName);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                resultSet.next();
+                return resultSet.getString(1);
+            }
+        }
+    }
+
+    private String readTitleMatchKey(Connection connection, long filmId) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(
+                "SELECT title_match_key FROM films WHERE id = ?")) {
+            statement.setLong(1, filmId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 resultSet.next();
                 return resultSet.getString(1);

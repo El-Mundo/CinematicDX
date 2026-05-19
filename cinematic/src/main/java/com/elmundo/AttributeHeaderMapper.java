@@ -89,6 +89,10 @@ public final class AttributeHeaderMapper {
     }
 
     public static boolean isProtectedKeyingColumn(String normalizedHeader) {
+        return isTitleColumn(normalizedHeader) || isYearColumn(normalizedHeader);
+    }
+
+    public static boolean isTitleColumn(String normalizedHeader) {
         switch (normalizedHeader) {
             case "title":
             case "originaltitle":
@@ -96,6 +100,14 @@ public final class AttributeHeaderMapper {
             case "originalfilmtitle":
             case "titleinoriginallanguage":
             case "titleoriginallanguage":
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static boolean isYearColumn(String normalizedHeader) {
+        switch (normalizedHeader) {
             case "year":
             case "productionyear":
             case "yearofproduction":

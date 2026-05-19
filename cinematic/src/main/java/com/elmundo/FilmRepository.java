@@ -151,6 +151,39 @@ public class FilmRepository {
         return filmIdsByKey;
     }
 
+    public List<AttributeFilmTarget> findAttributeFilmTargets(Connection connection) throws SQLException {
+        List<AttributeFilmTarget> targets = new ArrayList<>();
+        String sql = "SELECT id, film_key, title_original, production_year "
+                + "FROM films ORDER BY production_year IS NULL, production_year, title_original, id";
+
+        try (Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql)) {
+            while (resultSet.next()) {
+                targets.add(new AttributeFilmTarget(
+                        resultSet.getLong("id"),
+                        resultSet.getString("film_key"),
+                        resultSet.getString("title_original"),
+                        getInteger(resultSet, "production_year")));
+            }
+        }
+
+        return targets;
+    }
+
+    public void renameFilmTitle(Connection connection, long filmId, String titleOriginal) throws SQLException {
+        if (!FilmDraft.hasText(titleOriginal)) {
+            throw new IllegalArgumentException("Original-language title is required.");
+        }
+
+        String sql = "UPDATE films SET title_original = ?, title_match_key = ? WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, titleOriginal.trim());
+            statement.setString(2, FilmKeyGenerator.normalizeTitleForMatch(titleOriginal));
+            statement.setLong(3, filmId);
+            statement.executeUpdate();
+        }
+    }
+
     public Map<String, AttributeFieldType> findCustomFieldTypes(Connection connection) throws SQLException {
         Map<String, AttributeFieldType> fieldTypes = new HashMap<>();
         String sql = "SELECT normalized_name, field_type FROM custom_field_definitions";

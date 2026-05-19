@@ -17,6 +17,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -26,6 +27,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -50,6 +52,9 @@ public class PrimaryController {
 
     @FXML
     private TableColumn<FilmEntry, String> filmKeyColumn;
+
+    @FXML
+    private CheckBox showKeysCheckBox;
 
     @FXML
     private TableColumn<FilmEntry, String> titleOriginalColumn;
@@ -119,6 +124,11 @@ public class PrimaryController {
         mediaPathColumn.setCellValueFactory(new PropertyValueFactory<>("path"));
         mediaExtensionColumn.setCellValueFactory(new PropertyValueFactory<>("fileExtension"));
         mediaStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        filmKeyColumn.visibleProperty().bind(showKeysCheckBox.selectedProperty());
+        filmTable.setEditable(true);
+        titleOriginalColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        titleOriginalColumn.setOnEditCommit(this::renameFilmTitle);
 
         filmTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldFilm, newFilm) -> loadMediaForSelectedFilm());
@@ -239,8 +249,9 @@ public class PrimaryController {
         try {
             AttributeImportData importData = attributeCsvImporter.parse(
                     selectedFile.toPath(),
-                    filmRepository.findFilmIdsByKey(connection),
-                    filmRepository.findCustomFieldTypes(connection));
+                    filmRepository.findAttributeFilmTargets(connection),
+                    filmRepository.findCustomFieldTypes(connection),
+                    this::resolveAttributeAmbiguity);
             filmRepository.populateAttributeExistingValueCounts(connection, importData);
 
             if (importData.getEmptyValueCount() > 0 && !confirmContinueWithEmptyAttributeValues(importData)) {
@@ -268,6 +279,8 @@ public class PrimaryController {
             statusLabel.setText("Attribute import complete: " + result.getUpdatedValues()
                     + " values imported, " + result.getSkippedValues()
                     + " skipped, " + result.getInvalidValues() + " invalid.");
+        } catch (AttributeImportCancelledException e) {
+            statusLabel.setText("Attribute import cancelled.");
         } catch (IllegalArgumentException e) {
             showError("Could not import attributes", e.getMessage());
         } catch (IOException e) {
@@ -344,6 +357,52 @@ public class PrimaryController {
             mediaTable.setItems(FXCollections.observableArrayList(entries));
         } catch (SQLException e) {
             showError("Could not load media mappings", e.getMessage());
+        }
+    }
+
+    private void renameFilmTitle(TableColumn.CellEditEvent<FilmEntry, String> event) {
+        FilmEntry film = event.getRowValue();
+        String newTitle = event.getNewValue() == null ? "" : event.getNewValue().trim();
+        if (!FilmDraft.hasText(newTitle)) {
+            showWarning("Cannot rename film", "Original-language title is required.");
+            filmTable.refresh();
+            return;
+        }
+        if (newTitle.equals(film.getTitleOriginal())) {
+            filmTable.refresh();
+            return;
+        }
+
+        Connection connection = App.getConnection();
+        if (connection == null) {
+            showWarning("No database connection", "Connect to a database before renaming films.");
+            filmTable.refresh();
+            return;
+        }
+
+        try {
+            filmRepository.renameFilmTitle(connection, film.getId(), newTitle);
+            loadData();
+            selectFilmById(film.getId());
+            statusLabel.setText("Renamed film title. Key unchanged: " + film.getFilmKey());
+        } catch (SQLException e) {
+            showError("Could not rename film", e.getMessage());
+            filmTable.refresh();
+        }
+    }
+
+    private void selectFilmById(Long filmId) {
+        if (filmId == null) {
+            return;
+        }
+
+        for (FilmEntry entry : filmTable.getItems()) {
+            if (filmId.equals(entry.getId())) {
+                int index = filmTable.getItems().indexOf(entry);
+                filmTable.getSelectionModel().select(index);
+                filmTable.scrollTo(index);
+                return;
+            }
         }
     }
 
@@ -430,6 +489,46 @@ public class PrimaryController {
         return result.isPresent() && result.get() == continueButton;
     }
 
+    private AttributeAmbiguityChoice resolveAttributeAmbiguity(AttributeAmbiguousRow row) {
+        ButtonType importAllButton = new ButtonType(
+                "Import To All Matching Films",
+                ButtonBar.ButtonData.OK_DONE);
+        ButtonType skipButton = new ButtonType("Skip This Row", ButtonBar.ButtonData.NO);
+        ButtonType cancelButton = new ButtonType("Cancel Import", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Ambiguous Attribute Match");
+        alert.setHeaderText("CSV row " + row.getRowNumber() + " matches multiple films.");
+        alert.setContentText("Identifier: " + row.getIdentifierDisplay()
+                + "\n\nMatching films:\n" + describeAttributeTargets(row));
+        alert.getButtonTypes().setAll(importAllButton, skipButton, cancelButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == importAllButton) {
+            return AttributeAmbiguityChoice.IMPORT_TO_ALL;
+        }
+        if (result.isPresent() && result.get() == skipButton) {
+            return AttributeAmbiguityChoice.SKIP;
+        }
+        return AttributeAmbiguityChoice.CANCEL;
+    }
+
+    private String describeAttributeTargets(AttributeAmbiguousRow row) {
+        StringBuilder description = new StringBuilder();
+        int count = 0;
+        for (AttributeFilmTarget target : row.getTargets()) {
+            if (count >= 20) {
+                description.append("...and ")
+                        .append(row.getTargets().size() - count)
+                        .append(" more.");
+                break;
+            }
+            description.append("- ").append(target.getDisplayText()).append('\n');
+            count++;
+        }
+        return description.toString();
+    }
+
     private boolean showAttributeReviewDialog(AttributeImportData importData) {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setTitle("Review Attribute Import");
@@ -506,11 +605,22 @@ public class PrimaryController {
 
     private String attributeImportSummary(AttributeImportData importData) {
         StringBuilder summary = new StringBuilder();
+        summary.append("Match mode: ").append(importData.getMatchMode().getDisplayName()).append('\n');
         summary.append("Importable columns: ").append(importData.getImportableColumns().size()).append('\n');
         summary.append("Empty values: ").append(importData.getEmptyValueCount()).append('\n');
-        if (!importData.getUnknownKeys().isEmpty()) {
-            summary.append("Ignored unknown keys: ")
-                    .append(String.join(", ", importData.getUnknownKeys()))
+        if (importData.getAmbiguousRowsImportedToAll() > 0) {
+            summary.append("Ambiguous rows imported to all matches: ")
+                    .append(importData.getAmbiguousRowsImportedToAll())
+                    .append('\n');
+        }
+        if (importData.getAmbiguousRowsSkipped() > 0) {
+            summary.append("Ambiguous rows skipped: ")
+                    .append(importData.getAmbiguousRowsSkipped())
+                    .append('\n');
+        }
+        if (!importData.getUnmatchedIdentifiers().isEmpty()) {
+            summary.append("Ignored unmatched identifiers: ")
+                    .append(String.join(", ", importData.getUnmatchedIdentifiers()))
                     .append('\n');
         }
         if (!importData.getIgnoredHeaders().isEmpty()) {

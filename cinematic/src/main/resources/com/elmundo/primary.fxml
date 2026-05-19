@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.geometry.Insets?>
@@ -12,7 +13,7 @@
    <Label text="Film Test Database" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
    <TableView fx:id="filmTable" prefHeight="320.0" prefWidth="760.0">
       <columns>
-         <TableColumn fx:id="filmKeyColumn" text="Key" prefWidth="140.0" />
+         <TableColumn fx:id="filmKeyColumn" text="Key" prefWidth="140.0" visible="false" />
          <TableColumn fx:id="titleOriginalColumn" text="Original Title" prefWidth="140.0" />
          <TableColumn fx:id="productionYearColumn" text="Year" prefWidth="70.0" />
          <TableColumn fx:id="titleTranslatedColumn" text="Translated" prefWidth="130.0" />
@@ -33,6 +34,7 @@
       </columns>
    </TableView>
    <HBox alignment="CENTER" spacing="12.0">
+      <CheckBox fx:id="showKeysCheckBox" text="Show Keys" />
       <Button fx:id="refreshButton" text="Reload Data" onAction="#loadData" />
       <Button text="Add Film" onAction="#addFilm" />
       <Button text="Import Films from CSV" onAction="#importFilmsCsv" />

@@ -188,7 +188,11 @@ public final class AttributeValueConverter {
 
     private static float parseFloat(String value) {
         try {
-            return Float.parseFloat(value.trim());
+            float parsed = Float.parseFloat(value.trim());
+            if (!Float.isFinite(parsed)) {
+                throw new IllegalArgumentException("Expected a finite float: " + value);
+            }
+            return parsed;
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Expected a float: " + value);
         }
@@ -196,7 +200,11 @@ public final class AttributeValueConverter {
 
     private static double parseDouble(String value) {
         try {
-            return Double.parseDouble(value.trim());
+            double parsed = Double.parseDouble(value.trim());
+            if (!Double.isFinite(parsed)) {
+                throw new IllegalArgumentException("Expected a finite double: " + value);
+            }
+            return parsed;
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Expected a double: " + value);
         }

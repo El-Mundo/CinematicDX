@@ -1,0 +1,6 @@
+# Optional M3/M4 runtime; the M2 commands remain standard-library-only.
+# Tested with Python 3.11. Keep video timing on PyAV, not nominal frame counts.
+scenedetect[pyav]==0.7.1
+av==18.0.0
+opencv-python==4.13.0.92
+matplotlib==3.10.8

@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import javafx.application.Platform;
@@ -17,21 +18,32 @@ import javafx.beans.property.SimpleObjectProperty;
 public class PythonWorkerManager {
     private static final String DEFAULT_WORKER_SCRIPT = "analysis-python/worker.py";
 
+    @FunctionalInterface
+    interface ProcessStarter {
+        Process start(ProcessBuilder builder) throws IOException;
+    }
+
     private final String workerScript;
+    private final ProcessStarter processStarter;
     private final SimpleObjectProperty<PythonWorkerStatus> status =
             new SimpleObjectProperty<>(PythonWorkerStatus.DISABLED);
 
     private volatile PythonWorkerStatus currentStatus = PythonWorkerStatus.DISABLED;
     private volatile Process process;
-    private volatile boolean stopRequested;
     private volatile String lastMessage = "";
+    private long generation;
 
     public PythonWorkerManager() {
         this(DEFAULT_WORKER_SCRIPT);
     }
 
     public PythonWorkerManager(String workerScript) {
+        this(workerScript, ProcessBuilder::start);
+    }
+
+    PythonWorkerManager(String workerScript, ProcessStarter processStarter) {
         this.workerScript = workerScript;
+        this.processStarter = Objects.requireNonNull(processStarter, "processStarter");
     }
 
     public synchronized void startWorker(String pythonRuntimePath) {
@@ -39,32 +51,50 @@ public class PythonWorkerManager {
             return;
         }
 
-        Path pythonRuntime = validatePythonRuntimePath(pythonRuntimePath);
+        long workerGeneration = ++generation;
+        process = null;
+        Path pythonRuntime = validatePythonRuntimePath(pythonRuntimePath, workerGeneration);
         if (pythonRuntime == null) {
             return;
         }
 
-        stopRequested = false;
         lastMessage = "";
-        setStatus(PythonWorkerStatus.STARTING);
+        setStatus(workerGeneration, PythonWorkerStatus.STARTING);
 
-        Thread starter = new Thread(() -> startWorkerInBackground(pythonRuntime),
+        Thread starter = new Thread(() -> startWorkerInBackground(pythonRuntime, workerGeneration),
                 "python-worker-starter");
         starter.setDaemon(true);
         starter.start();
     }
 
     public void stopWorker() {
-        Process runningProcess = process;
-        stopRequested = true;
+        Process runningProcess;
+        synchronized (this) {
+            long stopGeneration = ++generation;
+            runningProcess = process;
+            process = null;
+            setStatus(stopGeneration, currentStatus == PythonWorkerStatus.DISABLED
+                    ? PythonWorkerStatus.DISABLED : PythonWorkerStatus.STOPPED);
+        }
+        stopProcess(runningProcess);
+    }
 
+    public void disable() {
+        Process runningProcess;
+        synchronized (this) {
+            long disabledGeneration = ++generation;
+            runningProcess = process;
+            process = null;
+            lastMessage = "";
+            setStatus(disabledGeneration, PythonWorkerStatus.DISABLED);
+        }
+        stopProcess(runningProcess);
+    }
+
+    private static void stopProcess(Process runningProcess) {
         if (runningProcess == null) {
-            if (currentStatus != PythonWorkerStatus.DISABLED) {
-                setStatus(PythonWorkerStatus.STOPPED);
-            }
             return;
         }
-
         runningProcess.destroy();
         try {
             if (!runningProcess.waitFor(2, TimeUnit.SECONDS)) {
@@ -74,15 +104,6 @@ public class PythonWorkerManager {
             Thread.currentThread().interrupt();
             runningProcess.destroyForcibly();
         }
-    }
-
-    public synchronized void disable() {
-        if (isRunning()) {
-            stopWorker();
-        }
-        stopRequested = false;
-        lastMessage = "";
-        setStatus(PythonWorkerStatus.DISABLED);
     }
 
     public boolean isRunning() {
@@ -102,22 +123,29 @@ public class PythonWorkerManager {
         return status;
     }
 
-    private void startWorkerInBackground(Path pythonRuntime) {
+    private synchronized boolean isCurrent(long workerGeneration) {
+        return generation == workerGeneration;
+    }
+
+    private void startWorkerInBackground(Path pythonRuntime, long workerGeneration) {
+        if (!isCurrent(workerGeneration)) {
+            return;
+        }
         Path scriptPath = resolveWorkerScriptPath();
         if (!Files.exists(scriptPath)) {
-            fail("Python worker script not found: " + scriptPath);
+            fail(workerGeneration, "Python worker script not found: " + scriptPath);
             return;
         }
 
         try {
-            startProcess(pythonRuntime, scriptPath);
-        } catch (IOException e) {
-            fail("Python worker failed to start with runtime '" + pythonRuntime
+            startProcess(pythonRuntime, scriptPath, workerGeneration);
+        } catch (IOException | RuntimeException e) {
+            fail(workerGeneration, "Python worker failed to start with runtime '" + pythonRuntime
                     + "'. Set a valid absolute Python path on the login screen.", e);
         }
     }
 
-    private void startProcess(Path pythonRuntime, Path scriptPath) throws IOException {
+    private void startProcess(Path pythonRuntime, Path scriptPath, long workerGeneration) throws IOException {
         ProcessBuilder processBuilder = new ProcessBuilder(
                 pythonRuntime.toString(),
                 scriptPath.toString());
@@ -125,20 +153,23 @@ public class PythonWorkerManager {
         if (scriptDirectory != null) {
             processBuilder.directory(scriptDirectory.toFile());
         }
-
-        Process startedProcess = processBuilder.start();
-        process = startedProcess;
-        startStreamLogger(startedProcess.getInputStream(), "stdout");
-        startStreamLogger(startedProcess.getErrorStream(), "stderr");
-
-        if (stopRequested) {
-            startedProcess.destroy();
-            setStatus(PythonWorkerStatus.STOPPED);
+        if (!isCurrent(workerGeneration)) {
             return;
         }
 
-        setStatus(PythonWorkerStatus.RUNNING);
-        startExitWatcher(startedProcess);
+        Process startedProcess = processStarter.start(processBuilder);
+        synchronized (this) {
+            if (generation == workerGeneration) {
+                process = startedProcess;
+                startStreamLogger(startedProcess.getInputStream(), "stdout", workerGeneration);
+                startStreamLogger(startedProcess.getErrorStream(), "stderr", workerGeneration);
+                setStatus(workerGeneration, PythonWorkerStatus.RUNNING);
+                startExitWatcher(startedProcess, workerGeneration);
+                return;
+            }
+        }
+        // Cancellation can happen while the operating system is starting the process.
+        stopProcess(startedProcess);
     }
 
     private Path resolveWorkerScriptPath() {
@@ -156,15 +187,15 @@ public class PythonWorkerManager {
         return candidates.stream().filter(Files::exists).findFirst().orElse(candidates.get(0));
     }
 
-    private Path validatePythonRuntimePath(String pythonRuntimePath) {
+    private Path validatePythonRuntimePath(String pythonRuntimePath, long workerGeneration) {
         if (pythonRuntimePath == null || pythonRuntimePath.isBlank()) {
-            fail("Python worker failed: set a Python absolute path on the login screen before enabling Python ML worker.");
+            fail(workerGeneration, "Python worker failed: set a Python absolute path on the login screen before enabling Python ML worker.");
             return null;
         }
 
         Path runtime = Path.of(pythonRuntimePath.trim()).normalize();
         if (!runtime.isAbsolute() || !Files.exists(runtime) || Files.isDirectory(runtime)) {
-            fail("Python worker failed: '" + pythonRuntimePath
+            fail(workerGeneration, "Python worker failed: '" + pythonRuntimePath
                     + "' is not a valid Python executable. Set a Python absolute path on the login screen.");
             return null;
         }
@@ -172,12 +203,15 @@ public class PythonWorkerManager {
         return runtime;
     }
 
-    private void startStreamLogger(InputStream stream, String streamName) {
+    private void startStreamLogger(InputStream stream, String streamName, long workerGeneration) {
         Thread logger = new Thread(() -> {
             try (BufferedReader reader = new BufferedReader(
                     new InputStreamReader(stream, StandardCharsets.UTF_8))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    if (!isCurrent(workerGeneration)) {
+                        return;
+                    }
                     if ("stderr".equals(streamName)) {
                         System.err.println("[python-worker " + streamName + "] " + line);
                     } else {
@@ -185,7 +219,7 @@ public class PythonWorkerManager {
                     }
                 }
             } catch (IOException e) {
-                if (!stopRequested) {
+                if (isCurrent(workerGeneration)) {
                     System.err.println("[python-worker " + streamName + "] log reader failed: "
                             + e.getMessage());
                 }
@@ -195,56 +229,68 @@ public class PythonWorkerManager {
         logger.start();
     }
 
-    private void startExitWatcher(Process watchedProcess) {
+    private void startExitWatcher(Process watchedProcess, long workerGeneration) {
         Thread watcher = new Thread(() -> {
             try {
                 int exitCode = watchedProcess.waitFor();
-                if (process == watchedProcess) {
+                synchronized (this) {
+                    if (generation != workerGeneration || process != watchedProcess) {
+                        return;
+                    }
                     process = null;
-                }
-
-                if (stopRequested || exitCode == 0) {
-                    setStatus(PythonWorkerStatus.STOPPED);
-                } else {
-                    fail("Python worker exited with code " + exitCode + ".");
+                    if (exitCode == 0) {
+                        setStatus(workerGeneration, PythonWorkerStatus.STOPPED);
+                    } else {
+                        fail(workerGeneration, "Python worker exited with code " + exitCode + ".");
+                    }
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                fail("Python worker exit watcher was interrupted.", e);
+                fail(workerGeneration, "Python worker exit watcher was interrupted.", e);
             }
         }, "python-worker-exit-watcher");
         watcher.setDaemon(true);
         watcher.start();
     }
 
-    private void fail(String message) {
-        lastMessage = message;
-        System.err.println("[python-worker] " + message);
-        process = null;
-        setStatus(PythonWorkerStatus.FAILED);
+    private void fail(long workerGeneration, String message) {
+        Process failedProcess;
+        synchronized (this) {
+            if (generation != workerGeneration) {
+                return;
+            }
+            failedProcess = process;
+            process = null;
+            lastMessage = message;
+            System.err.println("[python-worker] " + message);
+            setStatus(workerGeneration, PythonWorkerStatus.FAILED);
+        }
+        stopProcess(failedProcess);
     }
 
-    private void fail(String message, Exception exception) {
-        lastMessage = message + " " + exception.getMessage();
-        System.err.println("[python-worker] " + lastMessage);
-        process = null;
-        setStatus(PythonWorkerStatus.FAILED);
+    private void fail(long workerGeneration, String message, Exception exception) {
+        fail(workerGeneration, message + " " + exception.getMessage());
     }
 
-    private void setStatus(PythonWorkerStatus nextStatus) {
-        currentStatus = nextStatus;
-
-        Runnable update = () -> status.set(nextStatus);
-        if (Platform.isFxApplicationThread()) {
-            update.run();
+    private synchronized void setStatus(long workerGeneration, PythonWorkerStatus nextStatus) {
+        if (generation != workerGeneration) {
             return;
         }
+        currentStatus = nextStatus;
 
+        Runnable update = () -> {
+            synchronized (PythonWorkerManager.this) {
+                if (generation == workerGeneration && currentStatus == nextStatus) {
+                    status.set(nextStatus);
+                }
+            }
+        };
         try {
+            // Do not query the toolkit before it exists: some JavaFX versions
+            // initialise native graphics just to answer isFxApplicationThread().
             Platform.runLater(update);
         } catch (IllegalStateException e) {
-            // JavaFX is already shutting down; keep the volatile status updated.
+            // No toolkit yet, or it is shutting down; volatile status is current.
         }
     }
-
 }

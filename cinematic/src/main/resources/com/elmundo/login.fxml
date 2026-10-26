@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="18.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.LoginController">
-   <Label text="Database Login" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
-   <GridPane hgap="12.0" vgap="12.0">
-      <Label text="Database URL" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-      <TextField fx:id="urlField" promptText="jdbc:mariadb://localhost:3306/database_name" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-
-      <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-      <TextField fx:id="usernameField" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-      <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-      <PasswordField fx:id="passwordField" prefWidth="360.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-      <Label text="Save" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-      <HBox spacing="12.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <CheckBox fx:id="saveUrlCheckBox" text="URL" />
-         <CheckBox fx:id="saveUsernameCheckBox" text="Username" />
-         <CheckBox fx:id="savePasswordCheckBox" text="Password (plain text)" />
+<ScrollPane fitToWidth="true" styleClass="setup-scroll" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.LoginController">
+  <content>
+    <VBox spacing="24" maxWidth="960" styleClass="setup-content">
+      <padding><Insets top="36" right="44" bottom="32" left="44"/></padding>
+      <HBox alignment="CENTER_LEFT" spacing="14">
+        <Label text="CDX" styleClass="brand-mark"/>
+        <VBox spacing="3"><Label text="CinematicDX" styleClass="brand-title"/><Label text="FILM FORM · COMPUTATIONAL RESEARCH" styleClass="eyebrow"/></VBox>
+        <Region HBox.hgrow="ALWAYS"/><Label text="WORKSPACE SETUP" styleClass="quiet-badge"/>
       </HBox>
-
-      <Label text="Python runtime" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-      <HBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-         <TextField fx:id="pythonRuntimeField" promptText="/absolute/path/to/python" prefWidth="250.0" />
-         <Button text="Find Python Runtime" onAction="#choosePythonRuntime" />
+      <VBox spacing="8">
+        <Label text="Choose your metadata workspace" styleClass="setup-title"/>
+        <Label text="Choose where CinematicDX stores film metadata. Both options support the same editing and import tools." wrapText="true" styleClass="subtitle"/>
+      </VBox>
+      <HBox spacing="16">
+        <VBox fx:id="localSourceCard" styleClass="source-card" spacing="10" prefWidth="400" HBox.hgrow="ALWAYS" onMouseClicked="#selectLocalSource">
+          <RadioButton fx:id="localDirectorySourceRadio" text="Local directory" styleClass="source-choice"/>
+          <Label text="A portable catalog in a folder you choose." wrapText="true" styleClass="body-copy"/>
+          <Label text="No database server required" styleClass="source-note"/>
+        </VBox>
+        <VBox fx:id="databaseSourceCard" styleClass="source-card" spacing="10" prefWidth="400" HBox.hgrow="ALWAYS" onMouseClicked="#selectDatabaseSource">
+          <RadioButton fx:id="databaseSourceRadio" text="Database" styleClass="source-choice"/>
+          <Label text="Connect to an existing MariaDB workspace." wrapText="true" styleClass="body-copy"/>
+          <Label text="Use your configured database connection" styleClass="source-note"/>
+        </VBox>
       </HBox>
-
-      <Label text="Python" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-      <CheckBox fx:id="enablePythonWorkerCheckBox" text="Enable Python ML worker" selected="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-   </GridPane>
-   <HBox alignment="CENTER" spacing="12.0">
-      <Button text="Login" onAction="#login" />
-      <Button text="Exit" onAction="#exit" />
-      <Button text="Run without DB" onAction="#runWithoutDb" />
-   </HBox>
-   <Label fx:id="statusLabel" text="" wrapText="true" maxWidth="520.0" />
-   <padding>
-      <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
-   </padding>
-</VBox>
+      <VBox fx:id="sourceSelectionHint" styleClass="empty-hint" spacing="5">
+        <Label text="Select a metadata source to continue." styleClass="section-title"/>
+        <Label text="Your selection will be remembered for the next launch." styleClass="muted"/>
+      </VBox>
+      <VBox fx:id="localDirectorySettings" spacing="12" styleClass="settings-card" disable="true" visible="false" managed="false">
+        <Label text="Local catalog" styleClass="section-title"/>
+        <Label text="Open a folder containing catalog.json, or explicitly create a new catalog in an existing folder." wrapText="true" styleClass="muted"/>
+        <HBox spacing="10"><TextField fx:id="localDirectoryField" promptText="Choose a metadata folder…" HBox.hgrow="ALWAYS"/><Button text="Browse…" onAction="#chooseLocalDirectory"/></HBox>
+        <HBox alignment="CENTER_LEFT" spacing="12"><Button text="Create local catalog…" onAction="#createLocalDirectory" styleClass="secondary-button"/><Label text="Choosing a folder does not create or replace a catalog." wrapText="true" styleClass="helper-text"/></HBox>
+      </VBox>
+      <VBox fx:id="databaseSettings" spacing="12" styleClass="settings-card" disable="true" visible="false" managed="false">
+        <Label text="Database connection" styleClass="section-title"/>
+        <GridPane hgap="16" vgap="12">
+          <columnConstraints><ColumnConstraints minWidth="105"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+          <Label text="Connection URL" GridPane.rowIndex="0"/><TextField fx:id="urlField" promptText="jdbc:mariadb://localhost:3306/films" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+          <Label text="Username" GridPane.rowIndex="1"/><TextField fx:id="usernameField" promptText="Database username" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+          <Label text="Password" GridPane.rowIndex="2"/><PasswordField fx:id="passwordField" promptText="Database password" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+          <Label text="Remember" GridPane.rowIndex="3"/><HBox spacing="16" GridPane.columnIndex="1" GridPane.rowIndex="3"><CheckBox fx:id="saveUrlCheckBox" text="URL"/><CheckBox fx:id="saveUsernameCheckBox" text="Username"/><CheckBox fx:id="savePasswordCheckBox" text="Password (plain text)"/></HBox>
+        </GridPane>
+      </VBox>
+      <TitledPane text="Optional Python worker" expanded="false" animated="false" styleClass="runtime-pane">
+        <VBox spacing="12"><padding><Insets top="14" right="14" bottom="14" left="14"/></padding>
+          <CheckBox fx:id="enablePythonWorkerCheckBox" text="Enable the background worker for this session"/>
+          <HBox spacing="10"><TextField fx:id="pythonRuntimeField" promptText="Path to Python executable" HBox.hgrow="ALWAYS"/><Button text="Browse…" onAction="#choosePythonRuntime"/></HBox>
+          <Label text="Film-analysis commands remain available independently of the optional worker." wrapText="true" styleClass="helper-text"/>
+        </VBox>
+      </TitledPane>
+      <Label fx:id="statusLabel" text="" wrapText="true" styleClass="inline-status"/>
+      <HBox alignment="CENTER_LEFT" spacing="12"><Button fx:id="openWorkspaceButton" text="Open CinematicDX" onAction="#openCinematicDx" defaultButton="true" styleClass="primary-button"/><Button text="Exit" onAction="#exit" styleClass="text-button"/><Region HBox.hgrow="ALWAYS"/><Label text="Original media stays in its source location." styleClass="helper-text"/></HBox>
+    </VBox>
+  </content>
+</ScrollPane>

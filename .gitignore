@@ -1,3 +1,13 @@
 ChineseSocialistFilms49-66.json
 database/
 cinematic/target/
+research-local/
+__pycache__/
+*.pyc
+.venv-m3/
+outputs/
+.DS_Store
+Icon?
+cinematicdx.properties
+.env
+.env.*

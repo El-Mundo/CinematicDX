@@ -2,6 +2,12 @@
 
 Computational research infrastructure for *Negotiating Film Form: Computational Approaches to Twentieth-Century Political Cinema*.
 
+## Latest update — 28 October 2026
+
+**GUI and interaction experience improvements using Codex.** The desktop refresh and its supporting metadata/research code are now published on the main development line, `master`. The `codex/quantitative-evidence-20261026` branch records the development work; its name identifies the workflow rather than a separate source of research authority.
+
+For collaborators, the [update summary](CHANGELOG.md) describes the publication scope and the [AI-assistance disclosure](docs/AI_ASSISTANCE.md) distinguishes Codex-assisted code and reporting from researcher-supplied questions and independent manual annotations. The [24-slide preliminary-results presentation](docs/presentations/20261028/README.md) includes measurement procedures, validation and limitations. Independent coauthor review or approval is not implied by publication.
+
 ## Desktop workspace
 
 The JavaFX desktop workspace now provides parallel local-directory/database setup, live catalog search, exact production-label and year filters, optional stable keys, linked-media availability, and direct access to local research records and the Upgrade audit. The interface does not turn candidate predictions into validated film measurements.

@@ -1,53 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.PrimaryController">
-   <Label text="Film Test Database" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-   <TableView fx:id="filmTable" prefHeight="320.0" prefWidth="760.0">
-      <columns>
-         <TableColumn fx:id="filmKeyColumn" text="Key" prefWidth="140.0" visible="false" />
-         <TableColumn fx:id="titleOriginalColumn" text="Original Title" prefWidth="140.0" />
-         <TableColumn fx:id="productionYearColumn" text="Year" prefWidth="70.0" />
-         <TableColumn fx:id="titleTranslatedColumn" text="Translated" prefWidth="130.0" />
-         <TableColumn fx:id="romanizedColumn" text="Romanized" prefWidth="120.0" />
-         <TableColumn fx:id="productionColumn" text="Production" prefWidth="120.0" />
-         <TableColumn fx:id="colorFormatColumn" text="Color" prefWidth="90.0" />
-         <TableColumn fx:id="specialAspectsColumn" text="Special Aspects" prefWidth="120.0" />
-      </columns>
-   </TableView>
-   <Label text="Media Mappings" style="-fx-font-size: 15px; -fx-font-weight: bold;" />
-   <TableView fx:id="mediaTable" prefHeight="150.0" prefWidth="760.0">
-      <columns>
-         <TableColumn fx:id="mediaStorageFormatColumn" text="Storage" prefWidth="100.0" />
-         <TableColumn fx:id="mediaTypeColumn" text="Media Type" prefWidth="130.0" />
-         <TableColumn fx:id="mediaPathColumn" text="Path" prefWidth="340.0" />
-         <TableColumn fx:id="mediaExtensionColumn" text="Ext" prefWidth="60.0" />
-         <TableColumn fx:id="mediaStatusColumn" text="Status" prefWidth="140.0" />
-      </columns>
-   </TableView>
-   <HBox alignment="CENTER" spacing="12.0">
-      <CheckBox fx:id="showKeysCheckBox" text="Show Keys" />
-      <Button fx:id="refreshButton" text="Reload Data" onAction="#loadData" />
-      <Button text="Add Film" onAction="#addFilm" />
-      <Button text="Import Films from CSV" onAction="#importFilmsCsv" />
-      <Button text="Import Attributes from CSV" onAction="#importAttributesCsv" />
-      <Button text="Import Media from CSV" onAction="#importMediaCsv" />
-   </HBox>
-   <HBox alignment="CENTER" spacing="12.0">
-      <Button text="Refresh Media" onAction="#refreshMedia" />
-      <Button text="Show in System File Browser" onAction="#showSelectedMediaInSystemFileBrowser" />
-      <Label fx:id="statusLabel" text="" />
-      <Label fx:id="pythonWorkerStatusLabel" text="Python worker: Disabled" />
-   </HBox>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<BorderPane styleClass="workspace" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elmundo.PrimaryController">
+  <left>
+    <VBox prefWidth="204" minWidth="204" maxWidth="204" spacing="14" styleClass="sidebar">
+      <padding><Insets top="28" right="18" bottom="22" left="18"/></padding>
+      <Label text="CDX" styleClass="sidebar-mark"/><Label text="CinematicDX" styleClass="sidebar-brand"/><Label text="RESEARCH WORKSPACE" styleClass="sidebar-eyebrow"/>
+      <Region prefHeight="18"/>
+      <Button fx:id="catalogNavigation" text="Film catalog" onAction="#showCatalog" maxWidth="Infinity" styleClass="navigation-button,active"/>
+      <Button fx:id="researchNavigation" text="Research records" onAction="#showResearchRecords" maxWidth="Infinity" styleClass="navigation-button"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Label text="METADATA SOURCE" styleClass="sidebar-eyebrow"/>
+      <Label fx:id="metadataSourceLabel" text="" wrapText="true" maxWidth="168" styleClass="sidebar-source"/>
+      <Label text="Change the source through setup on the next launch." wrapText="true" styleClass="sidebar-hint"/>
+      <Separator/>
+      <Label fx:id="pythonWorkerStatusLabel" text="Python worker: Disabled" wrapText="true" styleClass="sidebar-hint"/>
+    </VBox>
+  </left>
+  <center>
+    <VBox spacing="18">
+      <padding><Insets top="28" right="28" bottom="16" left="28"/></padding>
+      <HBox alignment="CENTER_LEFT" spacing="14"><VBox spacing="4"><Label text="CINEMATIC FORM / RESEARCH METADATA" styleClass="eyebrow"/><Label fx:id="workspaceTitle" text="Film catalog" styleClass="page-title"/></VBox><Region HBox.hgrow="ALWAYS"/><Label fx:id="filmCountLabel" text="0 films" styleClass="count-badge"/></HBox>
+      <StackPane VBox.vgrow="ALWAYS">
+        <VBox fx:id="catalogPane" spacing="16">
+          <HBox alignment="CENTER_LEFT" spacing="10">
+            <TextField fx:id="filmSearchField" promptText="Search title, studio, year or key…" HBox.hgrow="ALWAYS"/>
+            <ComboBox fx:id="studioFilter" prefWidth="190" promptText="All studios"/>
+            <ComboBox fx:id="yearFilter" prefWidth="116" promptText="All years"/>
+            <Button text="Clear" onAction="#clearFilters" styleClass="text-button"/>
+          </HBox>
+          <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button text="Add film" onAction="#addFilm" styleClass="primary-button"/>
+            <MenuButton text="Import CSV"><items><MenuItem text="Films…" onAction="#importFilmsCsv"/><MenuItem text="Attributes…" onAction="#importAttributesCsv"/><MenuItem text="Media mappings…" onAction="#importMediaCsv"/></items></MenuButton>
+            <Button fx:id="refreshButton" text="Reload" onAction="#loadData"/>
+            <Region HBox.hgrow="ALWAYS"/><CheckBox fx:id="showKeysCheckBox" text="Show stable keys"/>
+          </HBox>
+          <TableView fx:id="filmTable" VBox.vgrow="ALWAYS" prefHeight="340" minHeight="160" styleClass="catalog-table">
+            <columns>
+              <TableColumn fx:id="filmKeyColumn" text="Stable key" prefWidth="170" visible="false"/>
+              <TableColumn fx:id="titleOriginalColumn" text="Original title" prefWidth="180"/>
+              <TableColumn fx:id="productionYearColumn" text="Year" prefWidth="65"/>
+              <TableColumn fx:id="titleTranslatedColumn" text="Translated title" prefWidth="220"/>
+              <TableColumn fx:id="productionColumn" text="Studio / production" prefWidth="190"/>
+              <TableColumn fx:id="colorFormatColumn" text="Format" prefWidth="80"/>
+              <TableColumn fx:id="romanizedColumn" text="Romanized" prefWidth="140" visible="false"/>
+              <TableColumn fx:id="specialAspectsColumn" text="Special aspects" prefWidth="150" visible="false"/>
+            </columns>
+          </TableView>
+          <VBox spacing="10" styleClass="media-section">
+            <HBox alignment="CENTER_LEFT" spacing="12"><VBox spacing="3"><Label fx:id="selectedFilmTitleLabel" text="Select a film" styleClass="section-title"/><Label fx:id="selectedFilmDetailsLabel" text="Its linked media will appear here." styleClass="muted" wrapText="true"/></VBox><Region HBox.hgrow="ALWAYS"/><Label fx:id="mediaCountLabel" text="0 mappings" styleClass="quiet-badge"/><Button text="Refresh" onAction="#refreshMedia" styleClass="text-button"/><Button fx:id="revealMediaButton" text="Show file" onAction="#showSelectedMediaInSystemFileBrowser"/></HBox>
+            <TableView fx:id="mediaTable" prefHeight="134" minHeight="96" styleClass="media-table">
+              <columns><TableColumn fx:id="mediaStorageFormatColumn" text="Storage" prefWidth="90"/><TableColumn fx:id="mediaTypeColumn" text="Type" prefWidth="90"/><TableColumn fx:id="mediaPathColumn" text="Media location" prefWidth="440"/><TableColumn fx:id="mediaExtensionColumn" text="Ext" prefWidth="55"/><TableColumn fx:id="mediaStatusColumn" text="Availability" prefWidth="125"/></columns>
+            </TableView>
+          </VBox>
+        </VBox>
+        <ScrollPane fx:id="researchPane" fitToWidth="true" visible="false" managed="false" styleClass="research-scroll">
+          <content><VBox spacing="18">
+            <Label text="Open the local protocols, measurements and audit behind your research. These records are separate from the metadata catalog." wrapText="true" styleClass="subtitle"/>
+            <HBox spacing="16">
+              <VBox spacing="12" styleClass="evidence-card" HBox.hgrow="ALWAYS" prefWidth="360"><Label text="01 / UPGRADE" styleClass="eyebrow"/><Label text="Pilot readiness audit" styleClass="card-title"/><Label text="Capabilities, evidence inventory, gaps and the minimum defensible pilot." wrapText="true" styleClass="body-copy"/><Label fx:id="upgradeAvailabilityLabel" styleClass="helper-text"/><Button fx:id="openUpgradeButton" text="Open audit folder" onAction="#openUpgradeAudit" styleClass="secondary-button"/></VBox>
+              <VBox spacing="12" styleClass="evidence-card" HBox.hgrow="ALWAYS" prefWidth="360"><Label text="02 / METHODS" styleClass="eyebrow"/><Label text="Quantitative exploration" styleClass="card-title"/><Label text="Research questions, frozen protocols, experimental decisions and limitations." wrapText="true" styleClass="body-copy"/><Label fx:id="researchAvailabilityLabel" styleClass="helper-text"/><Button fx:id="openResearchButton" text="Open research records" onAction="#openResearchFolder" styleClass="secondary-button"/></VBox>
+            </HBox>
+            <VBox spacing="12" styleClass="evidence-card"><Label text="03 / DERIVED DATA" styleClass="eyebrow"/><Label text="Local experiment outputs" styleClass="card-title"/><Label text="Inspect timestamped tables, validation results and saved figures. Candidate predictions and validated measurements remain distinct." wrapText="true" styleClass="body-copy"/><Label fx:id="outputAvailabilityLabel" styleClass="helper-text"/><Button fx:id="openOutputsButton" text="Open local outputs" onAction="#openResearchOutputs" styleClass="secondary-button"/></VBox>
+            <Label text="Measurements provide evidence. Analysing film form requires examining their organisation, relationships and functions." wrapText="true" styleClass="research-note"/>
+          </VBox></content>
+        </ScrollPane>
+      </StackPane>
+      <Label fx:id="statusLabel" text="" wrapText="true" styleClass="footer-status"/>
+    </VBox>
+  </center>
+</BorderPane>

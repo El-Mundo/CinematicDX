@@ -1,4 +1,52 @@
+# CinematicDX
+
+Computational research infrastructure for *Negotiating Film Form: Computational Approaches to Twentieth-Century Political Cinema*.
+
+## Latest update — 28 October 2026
+
+**GUI and interaction experience improvements using Codex.** The desktop refresh and its supporting metadata/research code are now published on the main development line, `master`. The `codex/quantitative-evidence-20261026` branch records the development work; its name identifies the workflow rather than a separate source of research authority.
+
+For collaborators, the [update summary](CHANGELOG.md) describes the publication scope and the [AI-assistance disclosure](docs/AI_ASSISTANCE.md) distinguishes Codex-assisted code and reporting from researcher-supplied questions and independent manual annotations. The [24-slide preliminary-results presentation](docs/presentations/20261028/README.md) includes measurement procedures, validation and limitations. Independent coauthor review or approval is not implied by publication.
+
+## Desktop workspace
+
+The JavaFX desktop workspace now provides parallel local-directory/database setup, live catalog search, exact production-label and year filters, optional stable keys, linked-media availability, and direct access to local research records and the Upgrade audit. The interface does not turn candidate predictions into validated film measurements.
+
+![Catalog filtered by production and year](docs/gui/screenshots/catalog-filters.jpg)
+
+These are screenshots of the running macOS application. The isolated preview catalog contains 732 rows from the local research inventory and 453 existing media references, populated through the existing CSV workflow. That private catalog, the original inventory, videos, annotations and experimental caches are not shipped with the repository. New users create/open their own catalog.
+
+```sh
+./scripts/run-desktop.sh
+```
+
+Maven is required; the script also detects an existing Maven wrapper cache. Java source/module compilation targets Java 11. The tested Apple Silicon desktop preview uses an installed JDK 17 and OpenJFX 17.0.18. On macOS, an installed JDK 17 is selected when `JAVA_HOME` is unset. Dependencies are resolved through Maven Central on the first build.
+
+```sh
+./scripts/package-desktop-macos.sh
+```
+
+The packaging command creates `cinematic/target/desktop/CinematicDX.app` with a local runtime. It requires an installed JDK with `jpackage` and refuses to overwrite an existing app. Move the previous generated app before rebuilding. For isolated settings use `./scripts/run-desktop.sh -Dcinematicdx.config=/path/to/preview.properties`; packaging accepts the equivalent `CINEMATICDX_CONFIG` environment variable. Normal launches keep the app-wide settings described below.
+
+See [usage and screenshots](docs/gui/README.md), [GUI verification](docs/gui/VERIFICATION.md), and the [Upgrade pilot readiness audit](docs/upgrade_pilot_audit/CURRENT_STATE.md). The historical research outputs referenced by the audit remain local; their code and protocols are included.
+
+## Metadata sources and setup
+
+CinematicDX supports two parallel metadata sources: **Local directory** and **Database**. Choose a source in **CinematicDX Setup**, then select **Open CinematicDX**. Both sources support film editing, film CSV imports, typed attribute CSV imports, and media mappings. The main screen identifies the active source.
+
+For local storage, choose an existing folder. Use **Create local catalog…** once to create a new catalog there, or open a folder containing an existing `catalog.json`. Choosing a folder or opening a missing catalog never creates metadata implicitly. A local setup requires no database server or database credentials. The original research inventory JSON is not imported automatically; populate a new catalog using the existing CSV workflows.
+
+The source choice and remembered settings are stored app-wide in `~/.cinematicdx/cinematicdx.properties` and restored on the next launch. Setup still appears before a source opens. Existing configuration beside the application is read when the global configuration does not exist; the legacy file is left untouched. Choosing local storage preserves remembered database settings, and choosing the database preserves the remembered local directory. Change sources through setup on the next launch.
+
+Local catalogs use a versioned JSON snapshot containing stable film IDs and keys, complete film fields, typed custom attributes, and media references. Writes replace the snapshot atomically, with `catalog.json.bak` retaining the immediately previous version. One application session can open a catalog at a time. Do not delete `.cinematicdx.lock` while a session is open; the lock file may remain after normal shutdown. External edits are detected and require reopening. Malformed catalogs and unsupported versions are rejected rather than replaced with empty metadata. If recovery is necessary, close all sessions and preserve copies of both catalog files before deliberately restoring a checked backup; recovery is never automatic.
+
+Database mode retains the existing SQL repository and initialization behaviour; selecting it explicitly opens the configured database and may perform its existing table initialization or legacy compatibility operations. No new database schema is introduced by the source abstraction. The Python worker option is shared by both modes; the current worker remains a process placeholder, not an implemented film-analysis pipeline.
+
+Build with Java 11 and Maven using `mvn test` from the `cinematic` directory, and launch with `mvn compile javafx:run`. Metadata tests use temporary local catalogs and in-memory H2 databases; a MariaDB server is not needed. JSON serialization uses the Jackson 2.21.8 BOM.
+
 ## Methodological Vision: LoD-Aware Corpus Design for Computational Film Analysis
+
+The database-independent M2–M4 commands are documented in [analysis-python/README.md](analysis-python/README.md): source auditing and ingestion, PTS-preserving shot candidates and descriptive timelines, independent boundary validation, and narrative annotation/alignment tools. Automatic segmentations remain predictions until reviewed; real narrative comparisons require independently supplied annotations.
 
 This project explores a **Level-of-Detail (LoD) aware corpus architecture** for moving-image research. The initial motivation comes from a methodological problem in digital film studies: how can a researcher move between distant reading and close reading without treating them as two separate or opposed modes of analysis?
 

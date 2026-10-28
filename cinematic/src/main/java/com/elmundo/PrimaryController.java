@@ -2,15 +2,20 @@ package com.elmundo;
 
 import java.util.List;
 import java.util.Optional;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.awt.Desktop;
+import java.nio.file.Path;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -26,6 +31,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
@@ -101,13 +108,40 @@ public class PrimaryController {
     @FXML
     private Label pythonWorkerStatusLabel;
 
+    @FXML
+    private Label metadataSourceLabel;
+
+    @FXML private TextField filmSearchField;
+    @FXML private ComboBox<String> yearFilter;
+    @FXML private ComboBox<String> studioFilter;
+    @FXML private Label filmCountLabel;
+    @FXML private Label selectedFilmTitleLabel;
+    @FXML private Label selectedFilmDetailsLabel;
+    @FXML private Label mediaCountLabel;
+    @FXML private Button revealMediaButton;
+    @FXML private Button catalogNavigation;
+    @FXML private Button researchNavigation;
+    @FXML private Label workspaceTitle;
+    @FXML private VBox catalogPane;
+    @FXML private ScrollPane researchPane;
+    @FXML private Label upgradeAvailabilityLabel;
+    @FXML private Label researchAvailabilityLabel;
+    @FXML private Label outputAvailabilityLabel;
+    @FXML private Button openUpgradeButton;
+    @FXML private Button openResearchButton;
+    @FXML private Button openOutputsButton;
+
+    private final ObservableList<FilmEntry> allFilms = FXCollections.observableArrayList();
+    private final FilteredList<FilmEntry> filteredFilms = new FilteredList<>(allFilms);
+    private boolean updatingFilters;
+
     private final CsvFilmImporter csvFilmImporter = new CsvFilmImporter();
     private final AttributeCsvImporter attributeCsvImporter = new AttributeCsvImporter();
     private final MediaCsvImporter mediaCsvImporter = new MediaCsvImporter();
 
     private boolean pythonFailureWarningShown;
 
-    private final FilmRepository filmRepository = App.getFilmRepository();
+    private final MetadataStore metadataStore = App.getMetadataStore();
 
     @FXML
     private void initialize() {
@@ -125,41 +159,158 @@ public class PrimaryController {
         mediaExtensionColumn.setCellValueFactory(new PropertyValueFactory<>("fileExtension"));
         mediaStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        filmKeyColumn.visibleProperty().bind(showKeysCheckBox.selectedProperty());
+        filmKeyColumn.visibleProperty().bindBidirectional(showKeysCheckBox.selectedProperty());
         filmTable.setEditable(true);
+        filmTable.setTableMenuButtonVisible(true);
         titleOriginalColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         titleOriginalColumn.setOnEditCommit(this::renameFilmTitle);
+
+        SortedList<FilmEntry> sortedFilms = new SortedList<>(filteredFilms);
+        sortedFilms.comparatorProperty().bind(filmTable.comparatorProperty());
+        filmTable.setItems(sortedFilms);
+        filmTable.setPlaceholder(new Label("No films here yet. Add a film or import a CSV catalog."));
+        mediaTable.setPlaceholder(new Label("No media mappings for the selected film."));
+        revealMediaButton.disableProperty().bind(mediaTable.getSelectionModel().selectedItemProperty().isNull());
+        filmSearchField.textProperty().addListener((observable, previous, query) -> applyCatalogFilters());
+        yearFilter.valueProperty().addListener((observable, previous, year) -> applyCatalogFilters());
+        studioFilter.valueProperty().addListener((observable, previous, studio) -> applyCatalogFilters());
 
         filmTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldFilm, newFilm) -> loadMediaForSelectedFilm());
 
+        String description = metadataStore == null ? "None selected" : metadataStore.getDescription();
+        metadataSourceLabel.setText(description.startsWith("Local directory:")
+                ? "Local directory\ncatalog.json" : description);
+        metadataSourceLabel.setTooltip(new Tooltip(description));
+        updateResearchAvailability();
         initializePythonWorkerStatus();
         loadData();
     }
 
     @FXML
     private void loadData() {
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            statusLabel.setText("No database connection is available.");
-            filmTable.setItems(FXCollections.observableArrayList());
+        if (metadataStore == null) {
+            statusLabel.setText("No metadata source is open.");
+            allFilms.clear();
+            updateFilmCount();
             return;
         }
 
         try {
-            List<FilmEntry> films = filmRepository.findAll(connection);
-            filmTable.setItems(FXCollections.observableArrayList(films));
-            if (films.isEmpty()) {
-                mediaTable.setItems(FXCollections.observableArrayList());
-            } else if (filmTable.getSelectionModel().getSelectedItem() == null) {
-                filmTable.getSelectionModel().selectFirst();
-            } else {
-                loadMediaForSelectedFilm();
+            List<FilmEntry> films = metadataStore.findAll();
+            FilmEntry selected = filmTable.getSelectionModel().getSelectedItem();
+            allFilms.setAll(films);
+            rebuildFilterOptions();
+            applyCatalogFilters();
+            if (selected != null) {
+                filmTable.getItems().stream().filter(f -> f.getId().equals(selected.getId()))
+                        .findFirst().ifPresent(f -> filmTable.getSelectionModel().select(f));
             }
-            statusLabel.setText("Loaded " + films.size() + " film rows.");
-        } catch (SQLException e) {
+            statusLabel.setText("Catalog loaded · " + films.size() + " films. Double-click an original title to edit it.");
+        } catch (MetadataStoreException e) {
             statusLabel.setText("Could not load film rows: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    private void rebuildFilterOptions() {
+        String year = yearFilter.getValue();
+        String studio = studioFilter.getValue();
+        updatingFilters = true;
+        try {
+            List<String> years = allFilms.stream().map(FilmCatalogFilter::yearLabel).distinct()
+                    .sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(ArrayList::new));
+            years.add(0, FilmCatalogFilter.ALL_YEARS);
+            yearFilter.getItems().setAll(years);
+            yearFilter.setValue(years.contains(year) ? year : FilmCatalogFilter.ALL_YEARS);
+            List<String> studios = allFilms.stream().map(FilmEntry::getProduction)
+                    .filter(value -> value != null && !value.isBlank()).distinct()
+                    .sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toCollection(ArrayList::new));
+            studios.add(0, FilmCatalogFilter.ALL_STUDIOS);
+            studioFilter.getItems().setAll(studios);
+            studioFilter.setValue(studios.contains(studio) ? studio : FilmCatalogFilter.ALL_STUDIOS);
+        } finally {
+            updatingFilters = false;
+        }
+    }
+
+    private void applyCatalogFilters() {
+        if (updatingFilters) {
+            return;
+        }
+        filteredFilms.setPredicate(film -> FilmCatalogFilter.matches(film,
+                filmSearchField.getText(), yearFilter.getValue(), studioFilter.getValue()));
+        updateFilmCount();
+        filmTable.setPlaceholder(new Label(allFilms.isEmpty()
+                ? "No films here yet. Add a film or import a CSV catalog."
+                : "No films match these filters. Try another title, year or studio."));
+        if (filmTable.getSelectionModel().getSelectedItem() == null && !filmTable.getItems().isEmpty()) {
+            filmTable.getSelectionModel().selectFirst();
+        }
+        loadMediaForSelectedFilm();
+    }
+
+    private void updateFilmCount() {
+        filmCountLabel.setText(filteredFilms.size() == allFilms.size()
+                ? allFilms.size() + " films" : filteredFilms.size() + " / " + allFilms.size() + " films");
+    }
+
+    @FXML
+    private void clearFilters() {
+        updatingFilters = true;
+        try {
+            filmSearchField.clear();
+            yearFilter.setValue(FilmCatalogFilter.ALL_YEARS);
+            studioFilter.setValue(FilmCatalogFilter.ALL_STUDIOS);
+        } finally {
+            updatingFilters = false;
+        }
+        applyCatalogFilters();
+    }
+
+    @FXML private void showCatalog() { showResearch(false); }
+    @FXML private void showResearchRecords() { updateResearchAvailability(); showResearch(true); }
+
+    private void showResearch(boolean research) {
+        catalogPane.setVisible(!research);
+        catalogPane.setManaged(!research);
+        researchPane.setVisible(research);
+        researchPane.setManaged(research);
+        workspaceTitle.setText(research ? "Research records" : "Film catalog");
+        catalogNavigation.getStyleClass().remove("active");
+        researchNavigation.getStyleClass().remove("active");
+        (research ? researchNavigation : catalogNavigation).getStyleClass().add("active");
+    }
+
+    private void updateResearchAvailability() {
+        setResearchAvailability("docs/upgrade_pilot_audit", upgradeAvailabilityLabel, openUpgradeButton);
+        setResearchAvailability("research/quantitative_exploration", researchAvailabilityLabel, openResearchButton);
+        setResearchAvailability("research-local", outputAvailabilityLabel, openOutputsButton);
+    }
+
+    private void setResearchAvailability(String relative, Label label, Button button) {
+        boolean exists = ResearchWorkspace.existingPath(relative).isPresent();
+        label.setText(exists ? "Available locally · " + relative : "Not found in this workspace");
+        button.setDisable(!exists);
+    }
+
+    @FXML private void openUpgradeAudit() { openResearchPath("docs/upgrade_pilot_audit"); }
+    @FXML private void openResearchFolder() { openResearchPath("research/quantitative_exploration"); }
+    @FXML private void openResearchOutputs() { openResearchPath("research-local"); }
+
+    private void openResearchPath(String relative) {
+        Optional<Path> target = ResearchWorkspace.existingPath(relative);
+        if (target.isEmpty()) {
+            showWarning("Research records", "This folder is not available in the current workspace.");
+            return;
+        }
+        try {
+            if (!Desktop.isDesktopSupported() || !Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+                throw new IOException("A system file browser is not available.");
+            }
+            Desktop.getDesktop().open(target.get().toFile());
+        } catch (IOException | RuntimeException e) {
+            showError("Could not open research folder", e.getMessage());
         }
     }
 
@@ -170,8 +321,8 @@ public class PrimaryController {
 
     @FXML
     private void addFilm() {
-        if (App.getConnection() == null) {
-            showWarning("No database connection", "Connect to a database before adding films.");
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before adding films.");
             return;
         }
 
@@ -184,7 +335,7 @@ public class PrimaryController {
             SaveOutcome outcome = saveFilmDraft(result.get());
             loadData();
             statusLabel.setText(statusTextForOutcome(outcome, "film"));
-        } catch (SQLException e) {
+        } catch (MetadataStoreException e) {
             showError("Could not save film", e.getMessage());
             statusLabel.setText("Could not save film: " + e.getMessage());
         }
@@ -192,9 +343,8 @@ public class PrimaryController {
 
     @FXML
     private void importFilmsCsv() {
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            showWarning("No database connection", "Connect to a database before importing CSV files.");
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before importing CSV files.");
             return;
         }
 
@@ -220,20 +370,19 @@ public class PrimaryController {
                 return;
             }
 
-            List<FilmEntry> databaseFilms = filmRepository.findAll(connection);
-            showCsvReviewDialog(importData, databaseFilms);
+            List<FilmEntry> catalogFilms = metadataStore.findAll();
+            showCsvReviewDialog(importData, catalogFilms);
         } catch (IOException e) {
             showError("Could not read CSV", e.getMessage());
-        } catch (SQLException e) {
+        } catch (MetadataStoreException e) {
             showError("Could not prepare CSV import", e.getMessage());
         }
     }
 
     @FXML
     private void importAttributesCsv() {
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            showWarning("No database connection", "Connect to a database before importing attribute CSV files.");
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before importing attribute CSV files.");
             return;
         }
 
@@ -249,10 +398,10 @@ public class PrimaryController {
         try {
             AttributeImportData importData = attributeCsvImporter.parse(
                     selectedFile.toPath(),
-                    filmRepository.findAttributeFilmTargets(connection),
-                    filmRepository.findCustomFieldTypes(connection),
+                    metadataStore.findAttributeFilmTargets(),
+                    metadataStore.findCustomFieldTypes(),
                     this::resolveAttributeAmbiguity);
-            filmRepository.populateAttributeExistingValueCounts(connection, importData);
+            metadataStore.populateAttributeExistingValueCounts(importData);
 
             if (importData.getEmptyValueCount() > 0 && !confirmContinueWithEmptyAttributeValues(importData)) {
                 return;
@@ -271,8 +420,7 @@ public class PrimaryController {
                 return;
             }
 
-            AttributeImportResult result = filmRepository.importAttributes(
-                    connection,
+            AttributeImportResult result = metadataStore.importAttributes(
                     importData,
                     overwriteChoices.get());
             loadData();
@@ -285,16 +433,15 @@ public class PrimaryController {
             showError("Could not import attributes", e.getMessage());
         } catch (IOException e) {
             showError("Could not read attribute CSV", e.getMessage());
-        } catch (SQLException e) {
+        } catch (MetadataStoreException e) {
             showError("Could not import attributes", e.getMessage());
         }
     }
 
     @FXML
     private void importMediaCsv() {
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            showWarning("No database connection", "Connect to a database before importing media CSV files.");
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before importing media CSV files.");
             return;
         }
 
@@ -310,14 +457,14 @@ public class PrimaryController {
         try {
             MediaImportData importData = mediaCsvImporter.parse(
                     selectedFile.toPath(),
-                    filmRepository.findFilmIdsByKey(connection));
-            filmRepository.populateExistingMediaDuplicates(connection, importData);
+                    metadataStore.findFilmIdsByKey());
+            metadataStore.populateExistingMediaDuplicates(importData);
 
             if (!showMediaReviewDialog(importData)) {
                 return;
             }
 
-            MediaImportResult result = filmRepository.importMediaStorage(connection, importData);
+            MediaImportResult result = metadataStore.importMediaStorage(importData);
             loadMediaForSelectedFilm();
             statusLabel.setText("Media import complete: " + result.getImportedRows()
                     + " imported, " + result.getSkippedRows() + " skipped.");
@@ -325,7 +472,7 @@ public class PrimaryController {
             showError("Could not import media", e.getMessage());
         } catch (IOException e) {
             showError("Could not read media CSV", e.getMessage());
-        } catch (SQLException e) {
+        } catch (MetadataStoreException e) {
             showError("Could not import media", e.getMessage());
         }
     }
@@ -343,19 +490,26 @@ public class PrimaryController {
     }
 
     private void loadMediaForSelectedFilm() {
-        Connection connection = App.getConnection();
         FilmEntry selectedFilm = filmTable.getSelectionModel().getSelectedItem();
-        if (connection == null || selectedFilm == null) {
+        selectedFilmTitleLabel.setText(selectedFilm == null ? "Select a film" : selectedFilm.getTitleOriginal());
+        selectedFilmDetailsLabel.setText(selectedFilm == null ? "Its linked media will appear here."
+                : FilmCatalogFilter.yearLabel(selectedFilm) + " · "
+                    + (selectedFilm.getProduction() == null ? "Studio not recorded" : selectedFilm.getProduction())
+                    + (selectedFilm.getColorFormat() == null ? "" : " · " + selectedFilm.getColorFormat()));
+        if (metadataStore == null || selectedFilm == null) {
             mediaTable.setItems(FXCollections.observableArrayList());
+            mediaCountLabel.setText("0 mappings");
             return;
         }
 
         try {
-            List<MediaStorageEntry> entries = filmRepository.findMediaStorageByFilmKey(
-                    connection,
+            List<MediaStorageEntry> entries = metadataStore.findMediaStorageByFilmKey(
                     selectedFilm.getFilmKey());
             mediaTable.setItems(FXCollections.observableArrayList(entries));
-        } catch (SQLException e) {
+            mediaCountLabel.setText(entries.size() + (entries.size() == 1 ? " mapping" : " mappings"));
+        } catch (MetadataStoreException e) {
+            mediaTable.setItems(FXCollections.observableArrayList());
+            mediaCountLabel.setText("Unavailable");
             showError("Could not load media mappings", e.getMessage());
         }
     }
@@ -373,19 +527,18 @@ public class PrimaryController {
             return;
         }
 
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            showWarning("No database connection", "Connect to a database before renaming films.");
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before renaming films.");
             filmTable.refresh();
             return;
         }
 
         try {
-            filmRepository.renameFilmTitle(connection, film.getId(), newTitle);
+            metadataStore.renameFilmTitle(film.getId(), newTitle);
             loadData();
             selectFilmById(film.getId());
             statusLabel.setText("Renamed film title. Key unchanged: " + film.getFilmKey());
-        } catch (SQLException e) {
+        } catch (MetadataStoreException e) {
             showError("Could not rename film", e.getMessage());
             filmTable.refresh();
         }
@@ -815,7 +968,7 @@ public class PrimaryController {
         }
     }
 
-    private void showCsvReviewDialog(CsvImportData importData, List<FilmEntry> databaseFilms) {
+    private void showCsvReviewDialog(CsvImportData importData, List<FilmEntry> catalogFilms) {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setTitle("Review CSV Import");
         dialog.setHeaderText("Review rows before importing");
@@ -853,7 +1006,7 @@ public class PrimaryController {
         table.getColumns().add(statusColumn);
         table.getColumns().add(warningColumn);
 
-        TextArea duplicateSummary = new TextArea(describeDuplicateGroups(importData, databaseFilms));
+        TextArea duplicateSummary = new TextArea(describeDuplicateGroups(importData, catalogFilms));
         duplicateSummary.setEditable(false);
         duplicateSummary.setPrefRowCount(4);
         duplicateSummary.setWrapText(true);
@@ -882,7 +1035,7 @@ public class PrimaryController {
             CsvFilmRow target = selectedRows.get(0);
             selectedRows.stream().skip(1).forEach(source -> csvFilmImporter.mergeRows(target, source));
             table.refresh();
-            duplicateSummary.setText(describeDuplicateGroups(importData, databaseFilms));
+            duplicateSummary.setText(describeDuplicateGroups(importData, catalogFilms));
         });
 
         VBox content = new VBox(10, table, duplicateSummary, new HBox(8, mergeButton));
@@ -896,10 +1049,10 @@ public class PrimaryController {
         }
     }
 
-    private String describeDuplicateGroups(CsvImportData importData, List<FilmEntry> databaseFilms) {
+    private String describeDuplicateGroups(CsvImportData importData, List<FilmEntry> catalogFilms) {
         List<CsvDuplicateGroup> groups = csvFilmImporter.buildDuplicateGroups(
                 importData.getRows(),
-                databaseFilms);
+                catalogFilms);
         if (groups.isEmpty()) {
             return "No duplicate-title groups found.";
         }
@@ -908,7 +1061,7 @@ public class PrimaryController {
         for (CsvDuplicateGroup group : groups) {
             description.append("- ").append(group.describe());
             if (!group.getDatabaseFilms().isEmpty()) {
-                description.append(" [database keys: ");
+                description.append(" [existing catalog keys: ");
                 description.append(group.getDatabaseFilms().stream()
                         .map(FilmEntry::getFilmKey)
                         .collect(java.util.stream.Collectors.joining(", ")));
@@ -923,6 +1076,7 @@ public class PrimaryController {
         int inserted = 0;
         int overwritten = 0;
         int skipped = 0;
+        boolean stopped = false;
 
         for (CsvFilmRow row : importData.getImportableRows()) {
             try {
@@ -937,21 +1091,21 @@ public class PrimaryController {
                     skipped++;
                     row.setStatus(CsvFilmRowStatus.SKIPPED);
                 }
-            } catch (SQLException e) {
+            } catch (MetadataStoreException e) {
                 showError("CSV import stopped", "Row " + row.getRowId() + ": " + e.getMessage());
+                stopped = true;
                 break;
             }
         }
 
         loadData();
-        statusLabel.setText("CSV import complete: " + inserted + " inserted, "
+        statusLabel.setText((stopped ? "CSV import stopped: " : "CSV import complete: ") + inserted + " inserted, "
                 + overwritten + " overwritten, " + skipped + " skipped.");
     }
 
-    private SaveOutcome saveFilmDraft(FilmDraft draft) throws SQLException {
-        Connection connection = App.getConnection();
-        if (connection == null) {
-            showWarning("No database connection", "Connect to a database before saving films.");
+    private SaveOutcome saveFilmDraft(FilmDraft draft) throws MetadataStoreException {
+        if (metadataStore == null) {
+            showWarning("No metadata source", "Open a metadata source before saving films.");
             return SaveOutcome.SKIPPED;
         }
         if (!draft.hasTitle()) {
@@ -959,11 +1113,11 @@ public class PrimaryController {
             return SaveOutcome.SKIPPED;
         }
 
-        Optional<FilmEntry> existing = filmRepository.findMatchingTitleAndYear(connection, draft);
+        Optional<FilmEntry> existing = metadataStore.findMatchingTitleAndYear(draft);
         if (existing.isPresent()) {
             ConflictChoice choice = showConflictDialog(existing.get(), draft);
             if (choice == ConflictChoice.OVERWRITE) {
-                filmRepository.overwriteWithNonBlankValues(connection, existing.get().getId(), draft);
+                metadataStore.overwriteWithNonBlankValues(existing.get().getId(), draft);
                 return SaveOutcome.OVERWRITTEN;
             }
             if (choice == ConflictChoice.KEEP_EXISTING) {
@@ -971,7 +1125,7 @@ public class PrimaryController {
             }
         }
 
-        filmRepository.insertAsUnique(connection, draft);
+        metadataStore.insertAsUnique(draft);
         return SaveOutcome.INSERTED;
     }
 

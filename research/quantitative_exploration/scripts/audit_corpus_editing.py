@@ -17,11 +17,48 @@ from cinematicdx.ingest import source_state
 def read(p):return json.loads(Path(p).read_text())
 
 
+def verify_configuration_binding(run, job, receipt, config, config_sha, reuse):
+    """Accept inherited measurements only with their original receipt and method."""
+    if receipt['config_sha256'] == config_sha:
+        return False
+    if reuse is None or reuse.get('schema_version') != 1:
+        raise ValueError('A different measurement config requires a versioned reuse manifest.')
+    matches = [entry for entry in reuse['inherited_jobs'] if entry['job_id'] == job['job_id']]
+    if len(matches) != 1 or job['job_id'] in reuse['new_job_ids']:
+        raise ValueError('Inherited job must have exactly one unambiguous reuse record.')
+    inherited = matches[0]
+    parent = Path(inherited['parent_run'])
+    if not parent.is_absolute():
+        parent = ROOT / parent
+    parent_config_path = parent / 'config.json'
+    parent_receipt_path = parent / 'films' / job['job_id'] / 'run.json'
+    current_receipt_path = run / 'films' / job['job_id'] / 'run.json'
+    if parent.resolve() == run.resolve():
+        raise ValueError('A reused receipt must identify an earlier run.')
+    if inherited['config_sha256'] != receipt['config_sha256'] or sha(parent_config_path) != inherited['config_sha256']:
+        raise ValueError('Inherited config digest does not match the original run.')
+    if sha(parent_receipt_path) != inherited['receipt_sha256'] or sha(current_receipt_path) != inherited['receipt_sha256']:
+        raise ValueError('Inherited receipt differs from its preserved parent receipt.')
+    if inherited['video_version_id'] != job['video_version_id'] or job['video_version_id'] != 'sha256:' + receipt['source_sha256']:
+        raise ValueError('Inherited measurements refer to a different video version.')
+    descriptive_fields = {'scope', 'job_count', 'grouping', 'refresh_parent_run'}
+    parent_config = read(parent_config_path)
+    current_method = {key: value for key, value in config.items() if key not in descriptive_fields}
+    inherited_method = {key: value for key, value in parent_config.items() if key not in descriptive_fields}
+    if current_method != inherited_method:
+        raise ValueError('Inherited measurements use a different extraction method or parameter.')
+    return True
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--run',required=True,type=Path);args=p.parse_args();run=args.run.absolute()
     output=run/'numerical_audit.json'
     if output.exists():raise ValueError('Audit exists; preserve it.')
     plan=read(run/'plan.json');config=read(run/'config.json');summary=read(run/'analysis/summary.json');done=read(run/'effective_extraction_complete.json')
+    config_sha=sha(run/'config.json')
+    reuse_path=run/'measurement_reuse.json'
+    reuse=read(reuse_path) if reuse_path.exists() else None
+    inherited_jobs=[]
     for name,digest in config['source_hashes'].items():assert sha(ROOT/name)==digest
     assert sha(plan['metadata_path'])==plan['metadata_sha256']
     assert sha(ROOT/'outputs/01a17483-82c6-7510-8251-931dcb5d21d8/上甘岭_10分钟人工标注模板.xlsx')==config['original_excel_sha256']
@@ -31,7 +68,8 @@ def main():
         directory=run/'films'/job['job_id']
         if not (directory/'run.json').exists():continue
         receipt=read(directory/'run.json');doc=read(directory/'summary.json');cut=read(directory/'cut_candidates.json')
-        assert receipt['config_sha256']==sha(run/'config.json')
+        if verify_configuration_binding(run,job,receipt,config,config_sha,reuse):
+            inherited_jobs.append(job['job_id'])
         assert doc['film_key']==job['film_key'] and doc['video_version_id']==job['video_version_id']=='sha256:'+receipt['source_sha256']
         assert doc['technical']['reached_eof'] and receipt['full_source_sha256_reverified']
         for name,digest in receipt['outputs'].items():assert sha(directory/name)==digest
@@ -74,6 +112,7 @@ def main():
     write_json(output,dict(status='VERIFIED numerical/provenance assertions only',completed_at_utc=datetime.now(timezone.utc).isoformat(),
         decoded_frames=frames,cut_candidates=counts,gradual_candidates=gradual_counts,source_states_changed=modified,
         originals_sha256_unchanged=True,film_checks=checks,studio_checks=group_checks,metadata_rows_verified=732,
+        inherited_receipts_verified=inherited_jobs,measurement_reuse_manifest_sha256=sha(reuse_path) if reuse_path.exists() else None,
         interpretation='This does not establish fullcorpus cut/transition precision, true photographic transitions or studio style.',script_sha256=sha(__file__)))
     print(json.dumps(dict(audit='passed',films=len(checks),frames=frames,cuts=counts,gradual_candidates=gradual_counts)))
 

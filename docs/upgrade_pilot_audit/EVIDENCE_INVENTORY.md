@@ -1,5 +1,11 @@
 # Traceable evidence inventory
 
+## Data update, 10 November 2026
+
+The [current corpus release](../../research/quantitative_exploration/corpus_refresh/20261110/README.md) covers 454 videos. Three replacement sources have new measurements, with 451 unchanged-source measurements inherited through their original receipts. Digital-gray extraction succeeded for all 454 videos and retains 2,390,266 timestamped observations. Of the 732 metadata records, 278 lack a local video.
+
+The audit below is the 26 October snapshot. Its corpus totals and studio statistics retain that date, while current tables and figures are available in the release above. The *Shang Gan Ling* manual reference and narrative pilot use the same source version as the original study.
+
 Inspected on 26 October 2026. VERIFIED means that the specified claim is supported, not that every downstream use is valid. PARTIAL denotes incomplete readiness; UNVERIFIED denotes an unconfirmed claim; ABSENT is limited to the stated searched scope; BLOCKED identifies an evaluation prevented by available resources. Research statuses such as PROVISIONAL/REJECTED in the original experiments describe method validity and are retained separately.
 
 The inventory captures the pre-GUI-audit state. Subsequent Java build/test and native-window verification are recorded in [GUI verification](../gui/VERIFICATION.md); historical commit IDs below are not a claim that the later GUI/publication commit already existed during this inspection.

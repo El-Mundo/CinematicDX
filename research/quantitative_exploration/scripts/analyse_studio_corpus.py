@@ -229,13 +229,30 @@ def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None
     sensitivity='| 制片机构 | 全部 | 故事片黑白 | 故事片彩色 | 单厂片 |\n|---|---:|---:|---:|---:|\n'+'\n'.join(compare)
     common_low=max(g['mean_abs_change_30s_z__q25'] for g in rows);common_high=min(g['mean_abs_change_30s_z__q75'] for g in rows)
     mean_low=min(g['mean_abs_change_30s_z__mean'] for g in rows);mean_high=max(g['mean_abs_change_30s_z__mean'] for g in rows)
+    reuse_path=run/'measurement_reuse.json'
+    refresh_text=''
+    if reuse_path.exists():
+        reuse=read(reuse_path)
+        refresh_text=f"本次版本更新重新提取{len(reuse['new_job_ids'])}个源文件，继承{len(reuse['inherited_jobs'])}个源文件的既有测量。继承清单保留原运行目录、原收据SHA和视频版本；新旧提取使用相同测量参数。来源清单与更新记录见本次运行的`plan.json`及上级目录`refresh.json`。"
+    duplicate_count=len(s.get('original_filename_duplicate_conflicts',{}))
+    unresolved_count=len(s['duplicate_bytes_cross_key_conflicts'])
+    identity_text=f"本次源版本检查记录{duplicate_count}组跨影片key的重复字节版本，分析映射中未解决冲突{unresolved_count}组。逐文件版本和选择结果见`source_versions.csv`。身份修正仅应用于匹配其预期视频SHA的版本。"
+    scale_text=[]
+    for scale in [10,30,60]:
+        metric=f'mean_abs_change_{scale}s_z__mean'
+        ordered=sorted([g for g in rows if g[metric] is not None],key=lambda g:g[metric],reverse=True)
+        scale_text.append(f"{scale}秒最高三组为"+'、'.join(g['studio'] for g in ordered[:3]))
+    residual_text='；'.join(f"{g['studio']}{fmt(g['year_colour_type_residual__mean'])}（n={g['year_colour_type_residual__film_n']}）" for g in rows if g['studio'] in ['上海电影制片厂','珠江电影制片厂'])
+    history_text=''
+    if (run/'analysis_revision2').is_dir():
+        history_text='此前的`analysis/`和`analysis_revision2/`保存本运行的早期分析，当前表的路径以上述目录为准。'
     diagnostic_text='未运行额外色彩标签诊断。'
     if diagnostic:
         drows=[x for x in diagnostic['studio_sensitivity'] if x['scope']=='all' and int(x['original_member_n'])>=10 and x['mean_change_after_exclusion']]
         change=max(abs(float(x['mean_change_after_exclusion'])) for x in drows)
         diagnostic_text=f'''抽样发现《刘三姐》的元数据为B&W，但实际帧有明显多色内容；随后片头读取到《刘三姐》、长春电影制片厂、导演苏里，与现有条目相符，未读到年份。此观察不独立证明原始色彩工艺，也不自动改标签。
 
-随后固定全{diagnostic['successful']}片20%/50%/80%位置、共{diagnostic['sampled_frame_count']}帧作**事后来源诊断**：{diagnostic['flagged_bw_count']}个B&W标签视频出现较强色度旗标。助手接触表可见其中既有明显多色画面，也有紫/绿色偏的近单色画面，所以**14个旗标不能解释成14个色彩元数据错误或14部彩色原作**。色度规则未取得独立人工准确率；无旗标也不证明全片黑白。标为PROVISIONAL，原始元数据、主分析与所有影片均保留。
+随后固定全{diagnostic['successful']}片20%/50%/80%位置、共{diagnostic['sampled_frame_count']}帧作**事后来源诊断**：{diagnostic['flagged_bw_count']}个B&W标签视频出现较强色度旗标。此前接触表可见明显多色画面及紫/绿色偏的近单色画面；当前旗标逐片列在诊断结果中，表示需检查的数字色度。色度规则未取得独立人工准确率；无旗标也不证明全片黑白。标为PROVISIONAL，原始元数据、主分析与所有影片均保留。
 
 将这些旗标仅作为排除敏感性，在至少10片的厂组中，30秒主均值最大绝对改变量{change:.6f}；详细B&W、故事片B&W和全类型结果见`colour_label_qa/studio_chroma_flag_sensitivity.csv`。这说明本次主均值对该排除操作的数值敏感性较小，不能证明跨来源色彩/年份分层已无偏。'''
     report=f'''# CinematicDX：全语料按制片机构分组的数字明暗变化
@@ -246,12 +263,14 @@ def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None
 
 - 元数据{s['metadata_films']}部；可用视频文件{s['available_video_files']}；成功提取{s['videos_successfully_measured']}；失败{s['videos_failed']}。
 - 缺少本地视频的元数据{s['missing_video_films']}部没有被虚构测量；质量/身份排除{s['measured_excluded_films']}部，最终影片级比较{s['eligible_films']}部。
-- 实际文件处理约{s['total_measured_video_hours']:.2f}小时；去重主影片原PTS观察{s['total_timestamped_samples']:,}个（按454个文件提取共{s['total_timestamped_file_samples']:,}个）。元数据{s['studios_in_metadata']}个具体制片机构，{s['studios_with_eligible_films']}个有纳入影片。
+- 实际文件处理约{s['total_measured_video_hours']:.2f}小时；主影片原PTS观察{s['total_timestamped_samples']:,}个（按{s['available_video_files']}个文件提取共{s['total_timestamped_file_samples']:,}个）。元数据{s['studios_in_metadata']}个具体制片机构，{s['studios_with_eligible_films']}个有纳入影片。
 - 处理时长按{s['available_video_files']}个文件计算；去重后{s.get('unique_video_versions',s['measured_films'])}个数字字节版本约{s.get('unique_video_version_hours',s['total_measured_video_hours']):.2f}小时。身份修正来自保留证据的分析映射，不改原始文件名或元数据。
 - 按现有唯一文件名关联的身份仍暂定，四处同名片使用此前助手片头核对及文件SHA。不是所有影片都取得独立人类片头身份验证。
-- 原始视频、元数据、原始Excel均未改；没有数据库操作、模型下载、云上传、付费API或远程推送。
+- 视频、元数据和原始Excel仅作输入；提取与分析在本地执行。
 
-本次字节校验发现：`永恒的友谊.mp4`与`延安游击队.mp4`完全相同。助手读取片头确认片名《延安游击队》、西安电影制片厂及导演姜应宗；两文件归入现有key `yan an you ji dui`，只计一条影片记录。《永恒的友谊》的元数据保留，但当前同名文件不构成该片的有效视频。此为助手片头核对，不冒充独立人类标注；1961年份沿用原元数据，片头未独立读到年份。初次保守排除两条的分析及图表另存，当前表使用可追踪修正。
+{refresh_text}
+
+{identity_text}
 
 {type_table}
 
@@ -288,8 +307,8 @@ def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None
 ## 本次结果支持什么
 
 1. 至少10片的{len(rows)}家机构主均值为{mean_low:.3f}–{mean_high:.3f}，跨度{mean_high-mean_low:.3f}。各自影片间四分位区间在{common_low:.3f}–{common_high:.3f}有共同重叠；同厂差异不能被厂均值替代。重叠不是“无差异”的显著性检验。
-2. **排序随尺度改变**：30秒东北最高、海燕最低；10秒八一最高，天马第二；60秒上海升至第三、海燕不再最低。比较测量的是特定时间尺度的变化，不能给机构贴固定“节奏/明暗风格”标签。
-3. **构成改变解释**：珠江原始全类型30秒均值较低，但同年×色彩×类型中心化残差为正；上海原始均值居中，残差为负。两者不矛盾：这是不同的条件比较，覆盖也不同。它没有排除题材、摄影师和拷贝来源。
+2. **时间尺度比较**：{'；'.join(scale_text)}。各尺度的完整均值保留在`studio_temporal_scale_sensitivity.csv`，比较单位为具体时间尺度上的数字灰度变化。
+3. **构成条件比较**：同年×色彩×类型中心化残差中，{residual_text}。这些条件比较使用各自可匹配的影片子集，仍需结合题材、摄影师和拷贝来源解释。
 4. 片内时间曲线保存了平均值丢失的位置差异；多组曲线首尾偏亮只宜作为待查模式。当前未作独立片头/片尾或事件标注，不能据相对位置命名叙事阶段，也不将共现当制片厂功能原则。
 
 ## 来源质量反例与补充检查
@@ -310,7 +329,7 @@ def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None
 
 实验目录 `{run}`；所有{s['available_video_files']}视频均有尝试记录，成功文件各自的summary/samples/profiles/run绑定原文件SHA、软件、参数与PTS。主表、{s['metadata_films']}部覆盖表、分年份/色彩/类型、来源尺寸、单厂、全厂相对时间曲线及负验证均保留。
 
-当前分析目录 `{out}`。完整分厂表、逐片覆盖表和时间曲线分别为`studio_summary_all.csv`、`film_measurements_and_coverage.csv`、`studio_relative_timeline.csv`；PNG/PDF图在同目录。`analysis/`保存最初保守排除重复片的结果，`analysis_revision2/`保存去重映射后的中间版，均不覆盖。
+当前分析目录 `{out}`。完整分厂表、逐片覆盖表和时间曲线分别为`studio_summary_all.csv`、`film_measurements_and_coverage.csv`、`studio_relative_timeline.csv`；PNG/PDF图在同目录。{history_text}
 
 `run_corpus_luminance.py`可从已完成的逐片收据恢复；不同输入或参数拒绝复用。`analyse_studio_corpus.py`只接受完整尝试结束后的输入，不发布部分结果冒充全库。核心代码和报告生成源码随输出快照保存。
 

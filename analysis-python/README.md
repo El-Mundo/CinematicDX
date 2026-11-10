@@ -1,6 +1,6 @@
 # M2：视频清点、来源登记与时间轴探测
 
-2026-10-26全可用语料按制片机构的明暗变化结果：[研究报告](../research/quantitative_exploration/corpus_studio/REPORT.md)，[复算与完整产物说明](../research/quantitative_exploration/corpus_studio/REPRODUCE.md)。454文件已处理，字节/片头核对去重后453影片；这不表示全部732条元数据都有影像，也不改变下方M2/M3的独立验证范围。
+2026-11-10当前语料结果见[版本更新与结果](../research/quantitative_exploration/corpus_refresh/20261110/README.md)。454个视频中三部变化源重新提取，451部附原收据继承，全部片厂明暗、硬切与渐变候选汇总重新计算。明暗提取全部成功，保留2,390,266个时间戳观察；732条元数据中278条缺本地视频。复现入口见[明暗](../research/quantitative_exploration/corpus_studio/REPRODUCE.md)与[编辑测量](../research/quantitative_exploration/corpus_editing/REPRODUCE.md)。下方M2/M3和人工标注实验按各自日期记录。
 
 这组命令独立于 JavaFX 和数据库运行。需要 Python 3.9 或更新版本，以及 PATH 中可用的 `ffprobe`；不需要安装 Python 第三方包。`worker.py` 仍保留原有用途，这些命令不通过它启动。
 

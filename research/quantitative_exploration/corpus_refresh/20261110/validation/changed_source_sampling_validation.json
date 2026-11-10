@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "status": "sampling_agreement_verified",
+  "completed_at_utc": "2026-11-10T22:24:39.673799+00:00",
+  "sources": [
+    {
+      "job_id": "e2ccb74ebd80568f",
+      "film_key": "mai niu 、ba gua yuan",
+      "source_path": "/Volumes/Extreme SSD/Video/Chinese1949-66/买牛扒瓜园.mp4",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "full_source_sha256_reverified": true,
+      "source_bytes": 571201242,
+      "source_state": [
+        16777241,
+        323102,
+        571201242,
+        1794181807000000000,
+        1794181807000000000
+      ],
+      "manifest_sha256": "e65da5948beb58aecd7818ad5106028bf771139d5ecf95f7211f551ca299541a"
+    },
+    {
+      "job_id": "2fe0d0d0158e0407",
+      "film_key": "yong heng de you yi",
+      "source_path": "/Volumes/Extreme SSD/Video/Chinese1949-66/永恒的友谊.mp4",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "full_source_sha256_reverified": true,
+      "source_bytes": 533774735,
+      "source_state": [
+        16777241,
+        308528,
+        533774735,
+        1794176079470000000,
+        1794176079470000000
+      ],
+      "manifest_sha256": "adfa187e90ecdc8676c616f3e83f671a5ec88020e2704da33746ea60881bf751"
+    },
+    {
+      "job_id": "0b6972aca11384a5",
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "source_path": "/Volumes/Extreme SSD/Video/Chinese1949-66/老保管新媳妇来了.mp4",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "full_source_sha256_reverified": true,
+      "source_bytes": 398126834,
+      "source_state": [
+        16777241,
+        323918,
+        398126834,
+        1794181812540000000,
+        1794181812540000000
+      ],
+      "manifest_sha256": "2a0929b280aaeec0b015760da1407ee3df4cb869eda1caf6752813023fd51cbb"
+    }
+  ],
+  "cases": [
+    {
+      "job_id": "e2ccb74ebd80568f",
+      "film_key": "mai niu 、ba gua yuan",
+      "title": "买牛、扒瓜园",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "position_fraction": 0.25,
+      "start_seconds": 1181.7895,
+      "end_seconds": 1241.7895,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.6071323572790902,
+      "dense_roi_time_mean": 0.6071046268424904,
+      "clip_mean_absolute_error": 2.7730436599759933e-05,
+      "mean_30s_bin_absolute_error": 0.0001287309982828666,
+      "rmse_5s_bins": 0.000686171480060705,
+      "reference_30s_bin_means": [
+        0.6019423524778357,
+        0.6123223620803451
+      ],
+      "dense_30s_bin_means": [
+        0.6017858910429529,
+        0.612423362642028
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 768,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 1.5984448329982115,
+      "dense_elapsed_seconds": 2.029738333003479,
+      "cache_filename": "e2ccb74ebd80568f-25.npz",
+      "cache_sha256": "e65b53a5887a7e820c3c3c9620b554f65895fe3935fb9b96d544c8339ec4d782"
+    },
+    {
+      "job_id": "e2ccb74ebd80568f",
+      "film_key": "mai niu 、ba gua yuan",
+      "title": "买牛、扒瓜园",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "position_fraction": 0.5,
+      "start_seconds": 2393.579,
+      "end_seconds": 2453.579,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.6178598856067316,
+      "dense_roi_time_mean": 0.6182272816102719,
+      "clip_mean_absolute_error": 0.000367396003540299,
+      "mean_30s_bin_absolute_error": 0.0003673960035403545,
+      "rmse_5s_bins": 0.0007437753242012085,
+      "reference_30s_bin_means": [
+        0.5757611168697816,
+        0.6599586543436815
+      ],
+      "dense_30s_bin_means": [
+        0.5763210503377675,
+        0.6601335128827763
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 772,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 1.242253124990384,
+      "dense_elapsed_seconds": 1.723713333994965,
+      "cache_filename": "e2ccb74ebd80568f-50.npz",
+      "cache_sha256": "f86616f475fa21909e781f22753e2af354c7c5d669e34fffdd8d129c196bbdb8"
+    },
+    {
+      "job_id": "e2ccb74ebd80568f",
+      "film_key": "mai niu 、ba gua yuan",
+      "title": "买牛、扒瓜园",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "position_fraction": 0.75,
+      "start_seconds": 3605.3685000000005,
+      "end_seconds": 3665.3685000000005,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.7483101308678848,
+      "dense_roi_time_mean": 0.7484116024962738,
+      "clip_mean_absolute_error": 0.00010147162838902712,
+      "mean_30s_bin_absolute_error": 0.00010147162838902712,
+      "rmse_5s_bins": 0.0003205942186025665,
+      "reference_30s_bin_means": [
+        0.7372553145282995,
+        0.7593649472074702
+      ],
+      "dense_30s_bin_means": [
+        0.7374275872452567,
+        0.759395617747291
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 832,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 0.8581199170002947,
+      "dense_elapsed_seconds": 1.24899829099013,
+      "cache_filename": "e2ccb74ebd80568f-75.npz",
+      "cache_sha256": "d00be1cfc080b03008ec400ba083d608184a1923dd1cdbedfa8ba23f6cfb98ba"
+    },
+    {
+      "job_id": "2fe0d0d0158e0407",
+      "film_key": "yong heng de you yi",
+      "title": "永恒的友谊",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "position_fraction": 0.25,
+      "start_seconds": 1329.88,
+      "end_seconds": 1389.88,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "0",
+      "reference_roi_time_mean": 0.37438834484955935,
+      "dense_roi_time_mean": 0.37477139979993457,
+      "clip_mean_absolute_error": 0.00038305495037521675,
+      "mean_30s_bin_absolute_error": 0.00038305495037516124,
+      "rmse_5s_bins": 0.0005439196117042281,
+      "reference_30s_bin_means": [
+        0.3752011311532603,
+        0.3735755585458584
+      ],
+      "dense_30s_bin_means": [
+        0.37577516927250204,
+        0.373767630327367
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 823,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 0.8166765420028241,
+      "dense_elapsed_seconds": 1.106903957988834,
+      "cache_filename": "2fe0d0d0158e0407-25.npz",
+      "cache_sha256": "8dada0097171bc5d5839d7385dd3f3d8698ed2b770e7ee46904082e92a36245d"
+    },
+    {
+      "job_id": "2fe0d0d0158e0407",
+      "film_key": "yong heng de you yi",
+      "title": "永恒的友谊",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "position_fraction": 0.5,
+      "start_seconds": 2689.76,
+      "end_seconds": 2749.76,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "0",
+      "reference_roi_time_mean": 0.3699342494695771,
+      "dense_roi_time_mean": 0.37039166292878806,
+      "clip_mean_absolute_error": 0.00045741345921096466,
+      "mean_30s_bin_absolute_error": 0.00047235393794398117,
+      "rmse_5s_bins": 0.0012004933413761853,
+      "reference_30s_bin_means": [
+        0.3683382046791121,
+        0.3715302942600423
+      ],
+      "dense_30s_bin_means": [
+        0.369267972076267,
+        0.37151535378130923
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 772,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 1.2986247499939054,
+      "dense_elapsed_seconds": 1.90093670799979,
+      "cache_filename": "2fe0d0d0158e0407-50.npz",
+      "cache_sha256": "ff10633e1fc65b1c8015cf83342c77d9c0821f517d1b595e5d4f4e514bf3b5c6"
+    },
+    {
+      "job_id": "2fe0d0d0158e0407",
+      "film_key": "yong heng de you yi",
+      "title": "永恒的友谊",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "position_fraction": 0.75,
+      "start_seconds": 4049.6400000000003,
+      "end_seconds": 4109.64,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "0",
+      "reference_roi_time_mean": 0.11588301116379715,
+      "dense_roi_time_mean": 0.11595205992709327,
+      "clip_mean_absolute_error": 6.904876329612286e-05,
+      "mean_30s_bin_absolute_error": 0.00019770280661279838,
+      "rmse_5s_bins": 0.0003636629067556669,
+      "reference_30s_bin_means": [
+        0.14334592589032727,
+        0.08842009643726703
+      ],
+      "dense_30s_bin_means": [
+        0.14361267746023618,
+        0.08829144239395034
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 875,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 0.6131060829939088,
+      "dense_elapsed_seconds": 0.8015823329915293,
+      "cache_filename": "2fe0d0d0158e0407-75.npz",
+      "cache_sha256": "38284cb41752f5faf4455c344bcf611e7d4eb421754d13017bcf823a8093c558"
+    },
+    {
+      "job_id": "0b6972aca11384a5",
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "title": "老保管、新媳妇来了",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "position_fraction": 0.25,
+      "start_seconds": 947.91375,
+      "end_seconds": 1007.91375,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.40350788236012003,
+      "dense_roi_time_mean": 0.40357810218995005,
+      "clip_mean_absolute_error": 7.021982983002051e-05,
+      "mean_30s_bin_absolute_error": 7.021982983004826e-05,
+      "rmse_5s_bins": 0.0003652730334975635,
+      "reference_30s_bin_means": [
+        0.39335405405217644,
+        0.4136617106680635
+      ],
+      "dense_30s_bin_means": [
+        0.3934103148782662,
+        0.4137458895016338
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 781,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 1.1911838329979219,
+      "dense_elapsed_seconds": 1.717416499988758,
+      "cache_filename": "0b6972aca11384a5-25.npz",
+      "cache_sha256": "5cedbc374ae0625bd803d42f5d42932881e340d8847c7006ddc5a6f5db9af6db"
+    },
+    {
+      "job_id": "0b6972aca11384a5",
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "title": "老保管、新媳妇来了",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "position_fraction": 0.5,
+      "start_seconds": 1925.8275,
+      "end_seconds": 1985.8275,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.3652145537844768,
+      "dense_roi_time_mean": 0.36558580978687766,
+      "clip_mean_absolute_error": 0.0003712560024008438,
+      "mean_30s_bin_absolute_error": 0.0003712560024008438,
+      "rmse_5s_bins": 0.0005587340807184212,
+      "reference_30s_bin_means": [
+        0.3350115727077869,
+        0.39541753486116654
+      ],
+      "dense_30s_bin_means": [
+        0.3352815274257851,
+        0.39589009214797005
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 777,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 1.1711229170032311,
+      "dense_elapsed_seconds": 1.662125125003513,
+      "cache_filename": "0b6972aca11384a5-50.npz",
+      "cache_sha256": "1e0cbb2a53efb82ea9946e8f54343b6e9c9d7fcec2d3dbb7d8e0e10de06878d5"
+    },
+    {
+      "job_id": "0b6972aca11384a5",
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "title": "老保管、新媳妇来了",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "position_fraction": 0.75,
+      "start_seconds": 2903.74125,
+      "end_seconds": 2963.74125,
+      "clip_seconds": 60,
+      "status": "complete",
+      "primary_case_passed": true,
+      "reference_sample_count": 60,
+      "dense_sample_count": 60,
+      "reference_time_base": "1/16000",
+      "dense_time_base": "1/16000",
+      "reference_playback_origin_rational": "21/1000",
+      "reference_roi_time_mean": 0.3752836598956712,
+      "dense_roi_time_mean": 0.3753371453639326,
+      "clip_mean_absolute_error": 5.348546826139389e-05,
+      "mean_30s_bin_absolute_error": 5.348546826139389e-05,
+      "rmse_5s_bins": 0.0003923273910946881,
+      "reference_30s_bin_means": [
+        0.38439735143362896,
+        0.3661699683577135
+      ],
+      "dense_30s_bin_means": [
+        0.3844579284422102,
+        0.366216362285655
+      ],
+      "reference_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "dense_30s_bin_coverage": [
+        1.0,
+        1.0
+      ],
+      "reference_decoded_frames": 805,
+      "dense_decoded_frames": 1500,
+      "reference_elapsed_seconds": 0.8715210829977877,
+      "dense_elapsed_seconds": 1.2983102910075104,
+      "cache_filename": "0b6972aca11384a5-75.npz",
+      "cache_sha256": "4ad5c3b75d18dd5f8de74dd22819ebc313e4aa11557f5d505a520f7140f33aa2"
+    }
+  ],
+  "clip_count": 9,
+  "total_unique_clip_seconds": 540,
+  "extraction_passes_per_clip": 2,
+  "successful_cases": 9,
+  "failures": [],
+  "passing_clip_fraction": 1.0,
+  "primary_acceptance_passed": true,
+  "criterion": "At least90% of9 fixed clips: mean error<=0.02, 30s-bin MAE<=0.02, both modes bin coverage>=0.98.",
+  "parameter_tuning": false,
+  "positions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "clip_definition": "60 seconds centered on each specified whole-file relative position.",
+  "extraction": "Existing extract_samples(reference_1hz) vs extract_samples(dense_1hz), same ROI and gray conversion.",
+  "comparison_reference_script": "research/quantitative_exploration/scripts/validate_corpus_reference.py",
+  "comparison_reference_script_sha256": "8c7cd2fdab1382f516b1679979556c6dc326ff680c4fa7a4c85dc56f02e3df86",
+  "extractor_sha256": "57f1a0c9aaabce43479bd8708e9c2d200a55ccbe4c362d60287bfe82fb30cb8b",
+  "script_sha256": "29c823e89d46b612beca56010289feac42d2ed01cee690aed944e0be5bf0b361",
+  "elapsed_seconds": 25.0188494999893,
+  "original_24_clip_validation_modified": false,
+  "existing_analysis_modified": false,
+  "source_state_unchanged": true,
+  "max_clip_mean_absolute_error": 0.00045741345921096466,
+  "max_30s_bin_absolute_error": 0.00047235393794398117
+}

@@ -1,5 +1,9 @@
 # Preliminary results and measurement procedures
 
+## Current data release, 10 November 2026
+
+The presentation in this directory is the 28 October research snapshot. Current measurements for the 454-video corpus, including three replacement sources and refreshed studio summaries, are available in the [10 November results release](../../../research/quantitative_exploration/corpus_refresh/20261110/README.md). Use that release for current corpus tables and figures. The dated presentation documents the measurements available when it was prepared.
+
 Prepared 28 October 2026 with assistance from OpenAI Codex.
 
 [Download the 24-slide Chinese PowerPoint](CinematicDX_研究结果汇报_20261028.pptx)

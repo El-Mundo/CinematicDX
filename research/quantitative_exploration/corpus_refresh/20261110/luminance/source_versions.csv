@@ -1,0 +1,455 @@
+﻿film_key,job_id,relative_path,original_filename_film_key,filename_identity_corrected,status,video_version_id,selected_as_primary
+guang mang wan zhang,55eb675fdfb58c50,光芒万丈.mp4,guang mang wan zhang,False,complete,sha256:8f93a7bdc4b3aceb4d431a31989464a30e688a96729e38b96da7ea8cd2b2025c,True
+zhong hua nv er,bdb36244635aa401,中华女儿.mp4,zhong hua nv er,False,complete,sha256:11e926208307ee4beb2a62740bd9dae3fe8ae80436f496f536fce7b117f0024c,True
+bai yi zhan shi,f1c8704bd7196c4e,白衣战士.mp4,bai yi zhan shi,False,complete,sha256:51e255126f7f6b916863eff9d9e8ff6cab66a478ed171cc2be34e8c2c7ade9b2,True
+wu xing de zhan xian,dee6765eed18428f,无形的战线.mp4,wu xing de zhan xian,False,complete,sha256:e7ab7c21ce81aef5b9b6b59d34de868d725bfd40bead6205400cce506345c116,True
+biao,55af46b7a9c590d6,表.mp4,biao,False,complete,sha256:b831274163015eac6015e2a17dc723e9ec3fc836d5cf33bae2133ea4f75a5fdb,True
+er bai wu xiao zhuan,36747b54acaf358e,二百五小传.mp4,er bai wu xiao zhuan,False,complete,sha256:acb07bf8cc7c348e576150693232a82e33642912d767a480274220ab99e7dea8,True
+wu ya yu ma que,a2d3940fc115ca1b,乌鸦与麻雀.mp4,wu ya yu ma que,False,complete,sha256:1ba659f022498ac739bcd4a8fc1d7cd7a7f6f7b0f22fb333888f03b305cf2ec4,True
+san mao liu lang ji,428909c1cd014439,三毛流浪记.mp4,san mao liu lang ji,False,complete,sha256:d78b28ac1fcbdde2b717a45d21ea3b8e40a3e65093e20235aba29c7e8dc12cde,True
+zhao yi man,8beee6a92dd6efff,赵一曼.mp4,zhao yi man,False,complete,sha256:cf34c9d8ec449864e1d13cc6327081d8da5ed2351b308b3b22b430389692b371,True
+guang rong ren jia,42018cd743a9f39c,光荣人家.mp4,guang rong ren jia,False,complete,sha256:91aa649e788edcbe0d2617bc3a039e779c19b83bf2d8cbb96fb87e3c4c6d5081,True
+wei guo bao jia,be43f468f4a67580,卫国保家.mp4,wei guo bao jia,False,complete,sha256:5ffe67b14c12297ca5159a81395f64c45e9469ecfbaf02b98081a9d150b4d26c,True
+hong qi ge,16ca665373ae83f2,红旗歌.mp4,hong qi ge,False,complete,sha256:3d307fd2442a0d083c78e4f47c7d40d739dc500b30e7ea2cb2f44beab95ca50a,True
+gang tie zhan shi,5fdccfcd7dc397db,钢铁战士.mp4,gang tie zhan shi,False,complete,sha256:b540d249e7478f57468b243eff0ddda7032bdd51cb0ca71b3fe9706069654c0f,True
+gao ge meng jin,a7e81fa0d7bd0b0e,高歌猛进.mp4,gao ge meng jin,False,complete,sha256:8ff5939db2e037c1100a56071303969afcf76037543f9ee62e2ffa6898e069fc,True
+liu hu lan,4fba5ec8b6065689,刘胡兰.mp4,liu hu lan,False,complete,sha256:716ccf49c2674fc03c503b52adb32cef82c977ab931dbc226cb7c68d73d9409b,True
+liao yuan de xiang cun,cbbbc1a54996b9a3,辽远的乡村.mp4,liao yuan de xiang cun,False,complete,sha256:da006497c4e1ea9ca59b68eaa8de2bbd64303564271319321ef37a7293911988,True
+bai mao nv,3d33911de1381f0b,白毛女.mp4,bai mao nv,False,complete,sha256:aada3275fec27755a02eeecc3228090e55f0fe530693c488d5a189d9fdd5d053,True
+lv liang ying xiong,33e3bce845e298f6,吕梁英雄.mp4,lv liang ying xiong,False,complete,sha256:ada096dff4ccd06cfd06f9ca885c7365287daf0051e2c6c61d38c32dbe879082,True
+gui shen bu ling,8d1ff42ed495f317,鬼神不灵.mp4,gui shen bu ling,False,complete,sha256:41ed8bfe07d6b6e9b9b90f9660bb183603aee399882f8a1b749619677c070a84,True
+min zhu qing nian jin xing qu,ef98ec1af12c5b07,民主青年进行曲.mp4,min zhu qing nian jin xing qu,False,complete,sha256:0d95087e9c7527465e0cc579cfa0f2f45928bdb3cd9ec36094de6b784e90d0e2,True
+er nv qin shi,300f25a77dd71aad,儿女亲事.mp4,er nv qin shi,False,complete,sha256:bdca62fe484c54cfcd1cef73b9c25e0dbdf305fd306cfc1a62309d7fd9986138,True
+he ping bao wei zhe,81850f527ddacb1c,和平保卫者.mp4,he ping bao wei zhe,False,complete,sha256:6aadd7e4e9970508e56c89ee796f5cddc654a63771952652b467df354de6b9d1,True
+nong jia le,6ae6a3a6fe3d5dee,农家乐.mp4,nong jia le,False,complete,sha256:30edc3afbe86c518e50b8f9bb7709cb2cc88d3bea0b8f8ae30b600b701b04614,True
+da di chong guang,5aa82c88c469d875,大地重光.mp4,da di chong guang,False,complete,sha256:d3d9772f014b9c71bb8bac219dc6b5aa20ebb7fc1ff2255d71a1eea3529c4878,True
+wo zhe yi bei zi,44edb211b8346dce,我这一辈子.mp4,wo zhe yi bei zi,False,complete,sha256:fa15153c80c373e123e95dcbdda0efc416c80fd954073f5eae7b0a588aaa3beb,True
+gui hua,f02c65c421f79f88,鬼话.mp4,gui hua,False,complete,sha256:bd0c749f739d3a05127d5f0c121a86d140e5ee3b4fab7e90374932eba4cd2f11,True
+xin er nv ying xiong zhuan,a54c32bfdb401146,新儿女英雄传.mp4,xin er nv ying xiong zhuan,False,complete,sha256:9e4e48938a8428506bc92b1c00dd8192ba5e1bfc4eaeb924a57ac3bd92bae325,True
+shan bei mu ge,bc0b20a565983605,陕北牧歌.mp4,shan bei mu ge,False,complete,sha256:b09a4d6995e1d1a028be0672f347020696917d17c8282d5541b5e90f656ffcf2,True
+zou xiang xin zhong guo,d411dc362dd04c4d,走向新中国.mp4,zou xiang xin zhong guo,False,complete,sha256:b80cd936b3757cc147ab94376f97cfe3e9bb01357bbfd9e1ababdd2bf9fa76b8,True
+nv si ji,69ee64b46c8c2e7f,女司机.mp4,nv si ji,False,complete,sha256:f7839ea71f189c1935d2ad019155b3dcb95814f8cfeeeace9639d2158db29fd3,True
+tuan jie qi lai dao ming tian,680fabef85106f58,团结起来到明天.mp4,tuan jie qi lai dao ming tian,False,complete,sha256:18960fc7e24cb23ecb11fa10d3b4ca46f2c86d1771406872d50f2414910e1b63,True
+sheng li chong feng,33aac927215ac23c,胜利重逢.mp4,sheng li chong feng,False,complete,sha256:8064cbc5649df61b900463daed22928b2cd0a4d219fa42d9de758d1ccb6ece4a,True
+shang rao ji zhong ying,de67857eeefbd050,上饶集中营.mp4,shang rao ji zhong ying,False,complete,sha256:4d52be949edf7d9a2c3d44cb8f6999d1cbdf8241f3976b4490ce08f9a9fd1df5,True
+hai shang feng bao,ad176e2ced6d5cc2,海上风暴.mp4,hai shang feng bao,False,complete,sha256:42fa28e14568dad9558fdec54f701de02aef8190d9f51af66d3ee7f78439466f,True
+cui gang hong qi,295e08f41c73645d,翠岗红旗.mp4,cui gang hong qi,False,complete,sha256:9e9982847571d10b007e464e9b392ab25e3cb7244accb467384ff562e6e0cea6,True
+pu tao shu le de shi hou,fe17b3278a6a821e,葡萄熟了的时候.mp4,pu tao shu le de shi hou,False,complete,sha256:60d8b852cf6b7ac196366ccf457cef01f1898ebe8b8eaf491eecb87e2887f9d5,True
+liu hao men,84f860f8f853e91a,六号门.mp4,liu hao men,False,complete,sha256:31aa933d1753d7e38320f5f504566c6586f83ba7f568a57ddfbd978160ad7a60,True
+yi guan hai ren dao,a04f2f2a67802a30,一贯害人道.mp4,yi guan hai ren dao,False,complete,sha256:a35a0422482da994a854ebf4f8c54ba65f2086f455e955297a48ea9706b5c1e2,True
+long xu gou,348979e378adc287,龙须沟.mp4,long xu gou,False,complete,sha256:81c31671052c9aab31b336ae9cb42d101517c8cc4aeec845deaa747c990df0a5,True
+nan zheng bei zhan,1f506b9fcb006f59,南征北战.mp4,nan zheng bei zhan,False,complete,sha256:05c7c3fe95219d928dea8465f9c15f627adef83576e0079641bcefd000413f6f,True
+feng shou,c5c7321e31cf51c9,丰收.mp4,feng shou,False,complete,sha256:8570efe362741ffecd48cd14d9e9542fb848f8a2cc28b2ba027d894d203d8d4c,True
+cao yuan shang de ren men,f3d8073f3c89ff71,草原上的人们.mp4,cao yuan shang de ren men,False,complete,sha256:abf68d2d1acbd278cf3c0270c96d2e12a2177cf8e8b58a7390e21764f7848c97,True
+xiao gu xian,6b7e2f66bb1241f7,小姑贤.mp4,xiao gu xian,False,complete,sha256:df029c5be24b8c0e36c5915c5b6d835870f785dfdc6bdef96dc00dc7b09cc58f,True
+zhi qu hua shan,c6dd72fec07b86de,智取华山.mp4,zhi qu hua shan,False,complete,sha256:6823fc59d11f83f42281cc9031d6535c7c2cc0b7518685f922fdc19ce0e6b744,True
+zhao xiao lan,ecff32359e29da81,赵小兰.mp4,zhao xiao lan,False,complete,sha256:1da162778387e94316f1e72b3c6290223ed7d90dfde1af1289bbdff75550e53b,True
+jin yin tan,7f5adc8a76721dd9,金银滩.mp4,jin yin tan,False,complete,sha256:c7110a2305b90f1094ef7a234d539fc00c2b54dd5f07f887afc6471e7e3c2994,True
+ying xiong si ji,d0711bac23eb6229,英雄司机.mp4,ying xiong si ji,False,complete,sha256:f9f5571d1755a0f5bde50240f81fc1da1bf1bf8b1bb7526906ede33746235fcc,True
+chun feng chui dao nuo min he,d935b17bb84a4282,春风吹到诺敏河.mp4,chun feng chui dao nuo min he,False,complete,sha256:53607bda9c5be3e7e2ed05b2241df6509344823e04893150d46bd10728f9f31a,True
+sha jia dian liang zhan,5e7d40bcfa8a0171,沙家店粮站.mp4,sha jia dian liang zhan,False,complete,sha256:c5f861ffc34b0092e1a0d039f916cffd6f40e1fc01d8ac07f676d9c979f56a28,True
+tu di,656f6b637cb6f57c,土地.mp4,tu di,False,complete,sha256:2dbee90d7d6e7155bcdeb5a8759a871197047d6451e1059a117d6d27a66ed6a9,True
+wu qiong de qian li,6203102af230219b,无穷的潜力.mp4,wu qiong de qian li,False,complete,sha256:68c4e56c290668237b3a4b0d6ffe546ae8c75227128d681c5dfbdf8da7825088,True
+yu zhou feng,5b112ed6ed4b1740,宇宙锋.mp4,yu zhou feng,False,complete,sha256:0a16a69bb5cafad4b5683f3a93e80ea8e31523890544a82fbfa8b5dc96b4adc7,True
+shi yu zhuo,88d2d541ef2d8618,拾玉镯.mp4,shi yu zhuo,False,complete,sha256:46887ba048eb039ecbc9941da68a0d114f9b6170ddeb87b9c4ffcc5cae43c5ec,True
+xiao bai tu,0d24933e07af8ed7,小白兔.mp4,xiao bai tu,False,complete,sha256:a0633ab87608516717ea02ace785185fdd4df4c09b0a778a6659198ec40fac0b,True
+yi jian ti an,6586278e66b3526b,一件提案.mp4,yi jian ti an,False,complete,sha256:3c8e397bbf54537b9b9637505ddb7668b6670c10b0a4b852ef4519fcb2d358bf,True
+ji mao xin,a0dc47dda955dc9b,鸡毛信.mp4,ji mao xin,False,complete,sha256:0742b62063c963fb77fb4e124e0497734ecb91a7cdea4da7d13b4da1b072e1a9,True
+zhan duan mo zhua,84343186ba8f08f9,斩断魔爪.mp4,zhan duan mo zhua,False,complete,sha256:d1ca86ae3551a2aaf5ad5e286ce730775647cda39821e8d3f6fc02d43d6fe665,True
+wei da de qi dian,6663afefe19a1822,伟大的起点.mp4,wei da de qi dian,False,complete,sha256:8daf10f7ef022afbe745c5eb43f96dd13637708e7c4e1844ae11cd2b44c95741,True
+du jiang zhen cha ji,05eb1083a0b2839a,渡江侦察记.mp4,du jiang zhen cha ji,False,complete,sha256:0eacc421b2cbdd6c091420a897285412daa0e17ca93a1084cbd4f517b2d5405a,True
+huai shang ren jia,033eb28cbc1483a9,淮上人家.mp4,huai shang ren jia,False,complete,sha256:7c8b8d52a786785cda4fd73af7a0148c6cdf8f7f884aedf6c6d3750c30cbdffe,True
+shan jian ling xiang ma bang lai,27393c44b4fe59e5,山间铃响马帮来.mp4,shan jian ling xiang ma bang lai,False,complete,sha256:ab1a9f39aae3a365c254041e80802f3757ca0209dbf76d9733f63325cd2aad78,True
+yi chang feng bo,eb122e278482b23c,一场风波.mp4,yi chang feng bo,False,complete,sha256:a4a85c93da8b5acd7ecacd7691fe1dc29d6848de0deeec82d3f7359c7aa7360b,True
+bu neng zou na tiao lu,029798a04f5d9644,不能走那条路.mp4,bu neng zou na tiao lu,False,complete,sha256:dbe71c9a1e7165e6d87588f5f92b8301335d527aff0ff5ab1a67cd8bcf743812,True
+fu nv dai biao,d28610d986464994,妇女代表.mp4,fu nv dai biao,False,complete,sha256:15211d45015a03d98bb213580c429604814a39819ccea3c81f0411aceaf3703b,True
+liang shan bo yu zhu ying tai,53ec31242075f9be,梁山伯与祝英台.mp4,liang shan bo yu zhu ying tai,False,complete,sha256:2f772a03de8b3352f8019910e230434d85d5a9edcfd2d59f3ee2a2253d2c01d0,True
+shuang tui mo,0ea1639ed787186e,双推磨.mp4,shuang tui mo,False,complete,sha256:6b1fd5fb75fd7762b6fe3d5779cd1ebc3ec1d2bcd0aea28ba2a87d8128c30eaa,True
+lan qiao hui,e2be061f9c5a0269,蓝桥会.mp4,lan qiao hui,False,complete,sha256:b402d7c307598cc17fe1ec6242b02ba08d786f106c22db04991983d664fd8c44,True
+zu guo de hua duo,80a881cdedf7b0b7,祖国的花朵.mp4,zu guo de hua duo,False,complete,sha256:ed7503bcb6e8c216280fd7f1472be301dce008c63c8a8dec517805500a254a71,True
+meng he de li ming,4ffdf1acb955a118,猛河的黎明.mp4,meng he de li ming,False,complete,sha256:3dcb41e51af066d80a3e5ad7e862adc9875b4625f316a91d9cbe2e1b670f5187,True
+xia tian de gu shi,75bec83147a80610,夏天的故事.mp4,xia tian de gu shi,False,complete,sha256:895a78fd51e4949ea8d90d84c14d4cc5a106ef5feecc62be0e299826cb23ac5d,True
+shen mi de lv ban,6d6c53c27f839141,神秘的旅伴.mp4,shen mi de lv ban,False,complete,sha256:dbab476bc9c932ac29c43d86cc5046287d205f3568b0bd9ad0f7ac4a5a64daa6,True
+ping yuan you ji dui,be33a869a93323f5,平原游击队.mp4,ping yuan you ji dui,False,complete,sha256:d1a5c7982bd7a09e211fbd0aeb99239c9ce01d72502e27e48c990a4a75593b1d,True
+luo xiao lin de jue xin,747a054cba055009,罗小林的决心.mp4,luo xiao lin de jue xin,False,complete,sha256:0a069fa1b4fdf501299a033ed8431d04460834a0a6922546a8c702b3257cfae7,True
+dong cun rui,0d6b51c982c1f7a5,董存瑞.mp4,dong cun rui,False,complete,sha256:62225cb17d11e3ec803c7c72973fd36be2abcaf766285ebeac7696a41befeb3b,True
+da jin zhi,97930187a9e64cb5,打金枝.mp4,da jin zhi,False,complete,sha256:3cbf959639ebd3a267b7b516985b5ece005af239ca3a4753ead6929b60c2b1b7,True
+mei lan fang de wu tai yi shu (shang ji),9e936ba15198fd1a,梅兰芳的舞台艺术（上集）.mp4,mei lan fang de wu tai yi shu (shang ji),False,complete,sha256:e0b3fa3b5a3b5ccc73003534470fb602012fc34b89268dd858e596d5c9b9ac4e,True
+ha sen yu jia mi la,1b4c2f423641782e,哈森与加米拉.mp4,ha sen yu jia mi la,False,complete,sha256:b03ce4a2e809f1de16b58dc1d958da8cc305a343b8639299bdc4864b8deae688,True
+tian luo di wang,ba58994c220c479d,天罗地网.mp4,tian luo di wang,False,complete,sha256:ecaacae7f8c7cc35b3d9203defa211c40defc6d7a9e1872efc359131c2d97f4f,True
+shui xiang de chun tian,ff8982d16a778f11,水乡的春天.mp4,shui xiang de chun tian,False,complete,sha256:e89d91a11d8f1bac6b0f4957f8695feee1cbd83a371ec8a64d448d85ba1c197f,True
+qing chun de yuan di,e22bd244a888a352,青春的园地.mp4,qing chun de yuan di,False,complete,sha256:ea3d944132a4e2ea2ba41bec6b40f6256ad0bdb9f1f1683ee801ae45b758cb9c,True
+hu shang de dou zheng,46cad2cc5b75e69a,湖上的斗争.mp4,hu shang de dou zheng,False,complete,sha256:2afde8dc5713ee7420460c6822e90ee6224c6df1507f6686ca68abe120e31279,True
+min jiang ju zi hong,12d4bdee3eb1b7c7,闽江橘子红.mp4,min jiang ju zi hong,False,complete,sha256:d7494907557e8670275728ec516dde5bf620718636694a303743bb54765aded8,True
+nan dao feng yun,d3f742afffdbcaf0,南岛风云.mp4,nan dao feng yun,False,complete,sha256:f1d857f32a51b1b65cda0e82a2cfd5516aaa2de7ca3ddeb7f85093e184a0b0d1,True
+song jing shi,ba53d0934dc5ad9b,宋景诗.mp4,song jing shi,False,complete,sha256:e854b18d89a9d8ca9c3a4c2687836d2392eb2c07c0fef18e8b5b1a0e81cf57e0,True
+shang jin shan,284e92c2d8d34f58,上金山.mp4,shang jin shan,False,complete,sha256:e696eec5e584af21c30bf229f065dbfec80526cd13708578f12a5d2014a35ad5,True
+guang chang za ji biao yan,7933bb0fa28cc668,广场杂技表演.mp4,guang chang za ji biao yan,False,complete,sha256:6bd5533b6952974cc9169500bdc174cad08d581562dbdff266c694479e75cff6,True
+lian yin,ab2cd8c0c2ec71fd,炼印.mp4,lian yin,False,complete,sha256:f7a007d78fb83e07ce4f2c2e3620cd6ac52c104ca32673b792fe7913eeb93137,True
+tian xian pei,293a4b9e070be027,天仙配.mp4,tian xian pei,False,complete,sha256:be2a7d32d56e3282ba5078110b4dab1cecde342e2df60546643fb27d504fe1d9,True
+jiao yin,addf5b0e3ab485dd,脚印.mp4,jiao yin,False,complete,sha256:7feb479a29164b733f2afa6fd53dee77d2848a95822d5465df9eedebcf58f5bd,True
+hu xue zhui zong,1622c7640150f7b9,虎穴追踪.mp4,hu xue zhui zong,False,complete,sha256:8c75decdef0d1dddcbd568039a0ab9e454f5eabf009293bef477d41f238e5ecb,True
+pu bu mie de huo yan,fc122ad0e90ef658,扑不灭的火焰.mp4,pu bu mie de huo yan,False,complete,sha256:c3f80ab1298f528018e2f8f7d969debb88427465030b99e62703f37257b3d052,True
+xin ju zhang dao lai zhi qian,15843669670af9ec,新局长到来之前.mp4,xin ju zhang dao lai zhi qian,False,complete,sha256:99484b8cc1f03f69009ff8269135229d182d7f60ff9c67a1b1f0ba7fd0b3546c,True
+ma lan hua kai,594714c3c391fc71,马兰花开.mp4,ma lan hua kai,False,complete,sha256:a129b644453ca7f1481965641628d0af4156dcd38c0bf3d6fee24c9791ea3284,True
+ge ge he mei mei,6793f2163390ae06,哥哥和妹妹.mp4,ge ge he mei mei,False,complete,sha256:e97747d635bea5596840e376ba19a5da30f3f5a2ff9739b414dd3362bea9f313,True
+ma,06b6c8ad4da2b0f4,马.mp4,ma,False,complete,sha256:fcfdc1835a8f63eba6da6cbbe8f60bfad1f844f20d9d2e6ea912ce189610670d,True
+ma ma yao wo chu jia,ed51dc6d5bcf4503,妈妈要我出嫁.mp4,ma ma yao wo chu jia,False,complete,sha256:4a0a81ea3a91920cf4dc2b6febfd5fd76c47894329592affe4326940d161a21e,True
+pi bao,80e29e36a3e8cb5a,皮包.mp4,pi bao,False,complete,sha256:7e7417ec53a9b74b36cbfcf180b6d3bcb32e95bafcf5cd5054e836faf196e477,True
+bu ju xiao jie de ren,0ed4aeab4e1b10c9,不拘小节的人.mp4,bu ju xiao jie de ren,False,complete,sha256:636780f451dc1774c9e246d5c2e80eb375f5cdcd931e38aeab1cc34b0838d109,True
+ru ci duo qing,1032919074f9a341,如此多情.mp4,ru ci duo qing,False,complete,sha256:9a7a9fcd0c614d693a5477ae63f9b58813823f8c92f1391539f23ce0456bcbf2,True
+guo qing shi dian zhong,66f04aa4964758e7,国庆十点钟.mp4,guo qing shi dian zhong,False,complete,sha256:939b4320454481f4aef010e5b7ef8a106c69073c3e77abd71c3e3978de81fffd,True
+shang gan ling,d7373c22b69e921e,上甘岭.mp4,shang gan ling,False,complete,sha256:a044ce2cd1b561bf2599f21b5415163e01f7abdd6313919ac1f8ed5e9657d9f0,True
+liu qiao er,91aa33c380898a67,刘巧儿.mp4,liu qiao er,False,complete,sha256:19ba5246e8580d248ea315a3d72dfb1ed22e18b83a209a3165be019d7899fdfe,True
+hua mu lan,9d9e50b0de9d4036,花木兰.mp4,hua mu lan,False,complete,sha256:ec5ab459e4f575db2c20ee30fafad7b8bb567d3ff0ea01dfcec99d896d6ab1fa,True
+mei lan fang de wu tai yi shu (xia ji),13f0b9c2c8c01c46,梅兰芳的舞台艺术（下集）.mp4,mei lan fang de wu tai yi shu (xia ji),False,complete,sha256:0016009e11c215c2dada2a67105c34062baf51e89a9f06bade67820ea53ea30f,True
+luo shen,98df1c40cc613fbe,洛神.mp4,luo shen,False,complete,sha256:bf371e66acb64830a8528dbc4ed4275e77068d4596edaa2c50e7fd104ee1c827,True
+huang shan lei,57edbb0f0c2ba531,荒山泪.mp4,huang shan lei,False,complete,sha256:8c60535866d23a0c7f4dd86dc0e5d25ff40d8fd37e7b8f2027f9165c758ffa7d,True
+zhu fu,92978481433bb21a,祝福.mp4,zhu fu,False,complete,sha256:1f38e0d4ad7d2fd85d3c8082c82d091344ad42f914c3c9cd1e7d1748f603778e,True
+wei le he ping,54c195d6277a0848,为了和平.mp4,wei le he ping,False,complete,sha256:38012644adaf8e900372fb4a66aeb36f134c698d4d7fcac50e53bdcf9460b670,True
+chun tian lai le,477ff3cf42925551,春天来了.mp4,chun tian lai le,False,complete,sha256:d506b31a422e7b5f5359c0f91d104707d0a5f1b8ec30088dd00dad607a6d6823,True
+qiu weng yu xian ji,cf23d4ee8ac15400,秋翁遇仙记.mp4,qiu weng yu xian ji,False,complete,sha256:c13ee483cd07327ce907c1424d832f67814beab22c134ab6f58f0fe3fb8d1590,True
+xiao bai qi de feng bo,ba510e0a67f691d1,小白旗的风波.mp4,xiao bai qi de feng bo,False,complete,sha256:282593c4256978aecf8fd40be1ccf838e01445f769bcfacfa9e398cdd0f12442,True
+shei shi xiong shou,7082004793b2200c,谁是凶手.mp4,shei shi xiong shou,False,complete,sha256:7e73669b616e20ea10fb784b0af37a37c9d704cf10e2fd018c739bdd0777f398,True
+mu qin,c1c7b67e95bf8083,母亲.mp4,mu qin,False,complete,sha256:ae640c186a31079a6df35d44e4f9af231b0ce906b3f12ec8d9772397ccc7ee66,True
+luo shui ji,1edb9b3e7486953b,落水记.mp4,luo shui ji,False,complete,sha256:3a7aba16375833dff122d18331d87ad6212fd876381983968fff74e5e0ccb992,True
+xiao huo ban,3cf446a873438042,小伙伴.mp4,xiao huo ban,False,complete,sha256:9d9dca7d4929d7bb3a930f4d5946105fdb2a5f38407b519bd3b9e3db651080ec,True
+li shi zhen,ee7f8e8ff69ad949,李时珍.mp4,li shi zhen,False,complete,sha256:e02b8a779fbd505e32d4406920ffafd0e9efc0bf50f1232d618dea88e124b282,True
+liang ge xiao zu qiu dui,f3e4b9de9493ccfb,两个小足球队.mp4,liang ge xiao zu qiu dui,False,complete,sha256:46ee99edd07a5fad1dbee23c7aa5457e8c405510503d1eef8ba8e093a93236ac,True
+tie dao you ji dui,48fd3301a258cc5e,铁道游击队.mp4,tie dao you ji dui,False,complete,sha256:61e8b6391dc1cc5ee41e3b4e0ace074a1c270cb6ad306bae0af076d87b4f9d99,True
+jia,30a094c3d55bf77f,家.mp4,jia,False,complete,sha256:63330814500a45a4d886263782ba414efe9956f0297f3ca5408778d7b6574bbf,True
+sha mo li de zhan dou,4367e3fe1f0a5004,沙漠里的战斗.mp4,sha mo li de zhan dou,False,complete,sha256:70ebf75cad5937f55f99e1aa5be455b488ac8f8709767e0b0f0f3cf3113c7088,True
+sou shu yuan,7d080186543cce3e,搜书院.mp4,sou shu yuan,False,complete,sha256:d7320d5c93215fa47daed342e62205ceca66a79b468b2703210a19a3d29785c8,True
+shi wu guan,37b455aaa5ff9e0d,十五贯.mp4,shi wu guan,False,complete,sha256:6d4063ec703d8039acd49409fb810ba0b0aa5caa89a4666ff0d036db33515c33,True
+song shi jie,1ac6bf558264009c,宋士杰.mp4,song shi jie,False,complete,sha256:b24281acb2503d2917500bd1e27a0f230175c2598a588e1cd609487bbe08a34f,True
+an tang xiang hui,e08a00e09cc9cd26,庵堂相会.mp4,an tang xiang hui,False,complete,sha256:fac591eac69424c1e5ab83bab57a409d6cdfd309a809056d127e26e92daaeb1c,True
+an tang ren mu,4910d087be63bf04,庵堂认母.mp4,an tang ren mu,False,complete,sha256:8aa31f34e981c8a805ff8400e1f3e711c61f6f9cf869ae8022655d7af376665f,True
+chong po li ming qian de hei an,a6db987a85a6650b,冲破黎明前的黑暗.mp4,chong po li ming qian de hei an,False,complete,sha256:5080ac8f0472f61f5f23da3d33c8a064c4e2513bbf8ab0aa8ac428115300171f,True
+zhei jue bu shi xiao shi qing,b15becf39b565826,这决不是小事情.mp4,zhei jue bu shi xiao shi qing,False,complete,sha256:443c73d673ec64c4332aab32a83d82673d99fa428b28d74834111cea4422cb78,True
+you yuan jing meng (1956),a033793b706fc170,游园惊梦.mp4,you yuan jing meng (1956),False,complete,sha256:fd54feb660eea46e361684f4827be44488381dc9c8db059b8705b6e06239897a,True
+bao feng zhong de xiong ying,252832b25e0f8ff4,暴风中的雄鹰.mp4,bao feng zhong de xiong ying,False,complete,sha256:87dd5caf05282c4926cd5b879d7c464056b80cc6fbed92e6b329497eba13eed7,True
+ji jing de shan lin,0641d1cf4a1c79bc,寂静的山林.mp4,ji jing de shan lin,False,complete,sha256:f5dd1fc0fd23bcdebefc58aafad558f632878c4f5d877b61cf1fee2828127d06,True
+wei wan cheng de xi ju,682870ccf60e4353,未完成的喜剧.mp4,wei wan cheng de xi ju,False,complete,sha256:ef21076714094650d9da528d0c28f41349275a251278bd1e8614900af3b34ac0,True
+fu shi (1957),898d8a1924e19857,复试.mp4,fu shi (1957),False,complete,sha256:dbcea692be7ef1ebf99b85007c196c6b29cc8ef6ed8617dc033f8150790912d1,True
+qing chun de jiao bu,3d79ea242909b385,青春的脚步.mp4,qing chun de jiao bu,False,complete,sha256:2d392cb8045ad2f1f4333b428d4dda9133be30fc4bac61447ba9b02774352454,True
+xun ai ji,7e3c31d020f8ad75,寻爱记.mp4,xun ai ji,False,complete,sha256:a655d521269c960e054d3367d17e8698f81ddbccdfbc9a3620370e16c0657973,True
+di xia jian bing,77d881bf121ba7e7,地下尖兵.mp4,di xia jian bing,False,complete,sha256:6932c38d26304754969b81abaed7baa5783e85583c24d735924072c0f95a8f5e,True
+lu sheng lian ge,725645fb43fc93fd,芦笙恋歌.mp4,lu sheng lian ge,False,complete,sha256:475458ef5b33261edaec093257161caf3a34fd33a777ceab2fdade4e8bd708c7,True
+bian zhai feng huo,abc4101124d0a4ef,边寨烽火.mp4,bian zhai feng huo,False,complete,sha256:c5d136012cb6ff20fb0aa9f8c48a48296798020f4d379593818278957a94fb4a,True
+mu nv jiao shi,d2d776fd67e87920,母女教师.mp4,mu nv jiao shi,False,complete,sha256:a312220ba212d11230a30889ded165bd6b38944c3bb0f2ea732c9e4fe2d1f589,True
+mu ren zhi zi,da960c6681b1fc3b,牧人之子.mp4,mu ren zhi zi,False,complete,sha256:2fa736722f9f34a8e2a276e6d26ef3dc9ab99b73ca75f8f8f3af3945f150a414,True
+hu die bei,7b0066a48bc897a8,蝴蝶杯.mp4,hu die bei,False,complete,sha256:34fdcc5bae1a56023950d3c491841ee5c43e5d62153bd748db275cfd01b7cfe8,True
+qun ying hui,d54153fd01a08e81,群英会.mp4,qun ying hui,False,complete,sha256:3234411e290ce898899e02451ffdd34622c44214fb30ee9b62e7406f31cfa3d7,True
+jie dong feng,54ad7ec7cae6b3c5,借东风.mp4,jie dong feng,False,complete,sha256:834f0fb278904955583bfd305ed5c93160a5466731919f6ca278b321c8cd0db7,True
+du shi niang,23438df58652a97b,杜十娘.mp4,du shi niang,False,complete,sha256:7efe11d656ec4880618c3b80483e08aef230a5b97301a4cac7af302067ef4d60,True
+yang cheng an shao,a2f64c23300dbc42,羊城暗哨.mp4,yang cheng an shao,False,complete,sha256:8cd5ee45265f8d47cf1072e924c5a8e54caf54761f09ca5f5170b788f0c6d71f,True
+dong xiao heng chui,0f06e7d5004bbec9,洞箫横吹.mp4,dong xiao heng chui,False,complete,sha256:6b2ca523e2d4f59ae2af3700829cfe39e68ed2282c372a6767ad499d40a3f8ff,True
+qiu chang feng bo,f000653be3dc1247,球场风波.mp4,qiu chang feng bo,False,complete,sha256:df7ccaf00618ffb5bf0b7ae85deacbb18ab88289c2fd41c2007f31a0a8f786fc,True
+hai hun,ce264a127f25103c,海魂.mp4,hai hun,False,complete,sha256:20bdf14c2b5d67240b4df6dbe137c09d2010d21c714082186eb14fdb5ba9eecd,True
+mu tong tou jun,bb1769ffbd09d068,牧童投军.mp4,mu tong tou jun,False,complete,sha256:9d8a587998b284a72d77bc31b8310eca4cb0687e37a17c1b6d8c1c3223c0a88c,True
+ye lin qu,05cf2216f19aaeef,椰林曲.mp4,ye lin qu,False,complete,sha256:8cf7d6c40ddb3ca8ba6e2aa4852938b39e80cbff34ea27d34a25f761299fe50d,True
+qing chang yi shen,088f212c4fa6a731,情长谊深.mp4,qing chang yi shen,False,complete,sha256:4453df450344c51e0923791b808a7c2cdcc324bbd52baa56312fe304b22642db,True
+nv lan 5 hao,ae883ab0e031cccd,女篮5号.mp4,nv lan 5 hao,False,complete,sha256:78b8b979c8887c8fd9128e5ca841730267a1d8f3f8b5dc791d43918ba1626744,True
+wu hai ye hang,3df0b8d9101fee40,雾海夜航.mp4,wu hai ye hang,False,complete,sha256:6af2b0556b63eee6705ea959830883bee2657fd75883f5a1eeff0f11063cc19d,True
+chen san wu niang,af6e06458252d79f,陈三五娘.mp4,chen san wu niang,False,complete,sha256:e5e0291319be400c03ec14cae43de0d1ff9f66a5d3af2f10b1fe99f720b43642,True
+luo han qian,23bf31f311ff2e07,罗汉钱.mp4,luo han qian,False,complete,sha256:25fee2223fc732e41ff71522ed5435efd6bdc3880bdaf3bec92c046d6b85e0c1,True
+a fu xun bao ji,028ab3f39253de26,阿福寻宝记.mp4,a fu xun bao ji,False,complete,sha256:ba5a4a9dbe6815a5affe02f52731dccb3d6624f6aa0a4b1b023db4b8d7cf89e2,True
+feng huang zhi ge,c8a13244580b1a10,凤凰之歌.mp4,feng huang zhi ge,False,complete,sha256:a85f95295749a7a550beac9f0a87197a3ae24db1bb4fd5a1e23bf1245df3f79f,True
+hu shi ri ji,89448ad940a494f5,护士日记.mp4,hu shi ri ji,False,complete,sha256:c5788c4e2b565c56541a10434c7d708c8e6c1cd7ae934af39ab5bf721d9221ec,True
+cheng feng po lang,eea023b206be8dcb,乘风破浪.mp4,cheng feng po lang,False,complete,sha256:a72e4af07b67cffbd3815912e4fc8d0f6688c83bae76856e6aebb241c96456e1,True
+bu ye cheng,a181d95539a86613,不夜城.mp4,bu ye cheng,False,complete,sha256:5e44972b86e7db3eacb7fc2f15ef5606bf8e9427dcd13af19e66a7093183a66e,True
+zhan dou li cheng zhang,fd9999760fc25d94,战斗里成长.mp4,zhan dou li cheng zhang,False,complete,sha256:b426da1d5bc8388a6154554f952f4c85fcd406de0622f04b54a9fda92363eb5d,True
+shui,4739b170b5c2b84e,水.mp4,shui,False,complete,sha256:5f611f978744636304235e801ee06ab2995507637fe17b058f6381bce83aa0c7,True
+liu bao de gu shi,7b687d83ee87a540,柳堡的故事.mp4,liu bao de gu shi,False,complete,sha256:bbb8d25cd73ca79bc7e7a97d22abaf131a6aadda341e69ff6496055436f995a3,True
+wu geng han,f3e195fc4de20a62,五更寒.mp4,wu geng han,False,complete,sha256:5c7f9367d24faee4a0902974f40b78a615a42564243ada875058893f0675f373,True
+ji zhan qian ye,adb59ef750f95699,激战前夜.mp4,ji zhan qian ye,False,complete,sha256:1666e5989545d5af1ebefe64e3ced91025500c669375889fb84f565aa943da65,True
+hua hao yue yuan,ee31e17c19ce942a,花好月圆.mp4,hua hao yue yuan,False,complete,sha256:9fecef39336d75111dfaba42fdd347cbdfc63879950784c2e41e3ae1b811324c,True
+hong hai zi,7ed07f375f6fbef1,红孩子.mp4,hong hai zi,False,complete,sha256:edaf3dcfc48f448075483d3c073ceeb5cc841d4729f2cab33868fab8013a8fe5,True
+dang de nv er,70177bfad666ba50,党的女儿.mp4,dang de nv er,False,complete,sha256:2cd72bec6f3f40a2b026cafcfafc796bb76a378c3374d262d952703f227ffecb,True
+xu qiu ying an jian,a264549970b3c1ae,徐秋影案件.mp4,xu qiu ying an jian,False,complete,sha256:42d18c17b1f4bfaf194806a09a25c32840e26963e6b3c9202cef7def2f341abf,True
+xuan ya,f8d383560079345e,悬崖.mp4,xuan ya,False,complete,sha256:ff9202544666b01ffde7ff6e2a78e390fd31a644ccab3a3a8d8452fe0f4e53cd,True
+gu cha zhong sheng,1aa13d7476d3e4fc,古刹钟声.mp4,gu cha zhong sheng,False,complete,sha256:03ac51797ef13d3155508d4597daa9b2cc9c91a688bdd87347d5e9ff6e15f6c1,True
+gong di qing nian,8293a9e04093eb52,工地青年.mp4,gong di qing nian,False,complete,sha256:5a65850138a200e1c8901976c628490c44f412d39b648c9c75a08e13d8928a4c,True
+nv she zhang,848e14d153e58348,女社长.mp4,nv she zhang,False,complete,sha256:c922614da658ceaf85ae2f55990276568ecbf555177e40339ffeaea734bf7014,True
+li ming de he bian,ac6c03c2c468e52c,黎明的河边.mp4,li ming de he bian,False,complete,sha256:fec6a341c51dd30b1563e5e4ccd38173c100677aa20d17e66eb665e27112c7fb,True
+xin lian xin,dce1022a8c923839,心连心.mp4,xin lian xin,False,complete,sha256:7969b40f3547b6d0d7419e9322519a801c4d09986953112b21004fdf2ae905af,True
+huan nan zhi jiao,26ced89e79a42228,患难之交.mp4,huan nan zhi jiao,False,complete,sha256:f0e5bcb560e6759333b92a320ddfa5adc2e9f3068b752128e752ba456309a43a,True
+san nian zao zhi dao,247a5d87dd011bc7,三年早知道.mp4,san nian zao zhi dao,False,complete,sha256:44394eb68f06a72f5d557a372bcfa71682e1d7dd169bee59b0d0b19fb717c905,True
+bing jian qian jin,4f6733b0f2cd0642,并肩前进.mp4,bing jian qian jin,False,complete,sha256:7d49cd08686b2ecf818356332647bf8001ba4c06cb0bda3b4e5cc0ffe9128fd2,True
+bai shou qi jia,31736a2a7ffddf3a,白手起家.mp4,bai shou qi jia,False,complete,sha256:e9217a30496334000965de7bc7d94208dc383d55e5528c71e082e20752857c28,True
+hua zhong ren,15dca5e9beab5904,画中人.mp4,hua zhong ren,False,complete,sha256:1070d5bb70d5da64988fb79da3a0a70069bac33dfa5c2910c1cdf2bb52aa55ad,True
+fu wu yuan,255624440e7c4c58,服务员.mp4,fu wu yuan,False,complete,sha256:ce6fcaadb0c7809d85722556c1c338a2abb1c8abf7ee41197593f0adb38ff9a7,True
+chun shui chang liu,ed826dbe7b4c5e58,春水长流.mp4,chun shui chang liu,False,complete,sha256:a8e0642e48a2fd379dcff084b1f373ad8772f4ddb03869526fa405e9da599dc8,True
+hong ling jin de gu shi,5bb40b5cdddacb10,红领巾的故事.mp4,hong ling jin de gu shi,False,complete,sha256:f7522852f60778a803e070afb8cf0d8e83071726a19679faf63ef22feceebd48,True
+chun lei (1958),7a4063237a2153c5,春雷.mp4,chun lei (1958),False,complete,sha256:05f82fc334840de5a7ce44fa1bc20523262e09365293e9475aa6b91b55cd08a2,True
+bao shan zhi ge,1894397f1dd70aa5,宝山之歌.mp4,bao shan zhi ge,False,complete,sha256:a1abd203c91e8dc2876289eeaca31e49aea81d3e8c9f406825da8ef03fc041b1,True
+huo yan ju,6fed1fe365af456d,火焰驹.mp4,huo yan ju,False,complete,sha256:97c63a79a2f448ade948056641a485931d797db9b1999d592b30f0bb42f2439e,True
+shang hai gu niang,5f15c0b3e35c33c8,上海姑娘.mp4,shang hai gu niang,False,complete,sha256:6faacded86dea323f51925eb4d52e5869e7ecc252c9c851b2750d7ac5158d626,True
+sheng huo de lang hua,8decb3f80688642b,生活的浪花.mp4,sheng huo de lang hua,False,complete,sha256:ad580fd0d25e2a07fe3b32750a0d6458eb4846e9f5834698e39ae3a87e3c4fe4,True
+tan qin ji,7fdb2925717a7284,探亲记.mp4,tan qin ji,False,complete,sha256:3ba6842359b8579ffb8fcb28baea4cfd97740a300b1c0c75ab1d720b452a7146,True
+shi san ling shui ku chang xiang qu,689b71baf0596bef,十三陵水库畅想曲.mp4,shi san ling shui ku chang xiang qu,False,complete,sha256:c897029daf722c7ce10eaef8564f24cb99144ff011d693b5f50b98703552327e,True
+shan li de ren,5907057eb89fa7de,山里的人.mp4,shan li de ren,False,complete,sha256:9dfa37404532e025300645b11c72b4f9b8e5f76e5564e0ec842ea54b38f2d1d2,True
+yi tian yi ye,ea57e90beba319ce,一天一夜.mp4,yi tian yi ye,False,complete,sha256:0a5e80dedd22aa2e91f10c0ececf7c0217aebc8f6ccb318734d191e0c5c66102,True
+shei shi bei pao qi de ren,7dbcbeb33562cd66,谁是被抛弃的人.mp4,shei shi bei pao qi de ren,False,complete,sha256:d94e29dc0a166f18649cc6497a4642e69d25cabe1745d5e8385a48dc3650c5b6,True
+di san ci shi yan,7d5ceb1132177201,第三次试验.mp4,di san ci shi yan,False,complete,sha256:f068139fb6a501ee755be0268c3b3ea14a0683ab56de8f80269c8335967249a5,True
+wang jiang ting,e147ca82611f1d1a,望江亭.mp4,wang jiang ting,False,complete,sha256:fb5f7488f5684950bef0ed194da8edfbb060ff046a72d76224fbf05c58e37551,True
+lan lan he dong dong,0c6ba65a95ad6485,兰兰和冬冬.mp4,lan lan he dong dong,False,complete,sha256:ae693464c7f0ba4fb1270c6f2d20e935055582a2a70c56711a27a1e3317c83c1,True
+san mao xue sheng yi,30bec37bd66dd3a7,三毛学生意.mp4,san mao xue sheng yi,False,complete,sha256:5895a8684b2b41e2f50aa4eaba5e26472c9ea190aab93b6ba026045d85c495ae,True
+da feng lang li de xiao gu shi,c1b27abf524ca131,大风浪里的小故事.mp4,da feng lang li de xiao gu shi,False,complete,sha256:d886d37679824b0fc84d98e7a7c9a139db6a9a67ed996d8e082de87f9f488d77,True
+lin chong,e2035d673a49c2c7,林冲.mp4,lin chong,False,complete,sha256:5357734876019bf1aaf378595cc4d0114ce4e37b9fd45a11020c51d38668c46d,True
+liang ge xun luo bing,47cdae6f159b2e0f,两个巡逻兵.mp4,liang ge xun luo bing,False,complete,sha256:35c4376b151aaa451a28ea7a6186b08750fe2f41f0d744100bfdf57d74b0146d,True
+miao jia er nv,1d98eca844ce3083,苗家儿女.mp4,miao jia er nv,False,complete,sha256:bb96dac2922e9ce8ceedc3ccc8c1558fe0c9f7e7e24978ee2dfe48407ee95766,True
+lu ban de chuan shuo,4182f98895de558e,鲁班的传说.mp4,lu ban de chuan shuo,False,complete,sha256:d2a1fcf1d7b690538a5fca86a2b010974abdb9a8e41eebfb764483b7ec3d41d9,True
+ai chang ru jia,e4ebdfe2264c85be,爱厂如家.mp4,ai chang ru jia,False,complete,sha256:78b2318b8fdaa8e1a5a405c810c992ae593e702e49c8ebe05322b0c1feec8192,True
+di yi lie kuai che,56aa1711494baa9b,第一列快车.mp4,di yi lie kuai che,False,complete,sha256:94f72d0d642c38db6c11d6f82e6dde14f3398c944a1e923acb76005772128093,True
+mu gui ying gua shuai (1958),7521cb361844959f,穆桂英挂帅.mp4,mu gui ying gua shuai (1958),False,complete,sha256:7182cd5643bc02a9f9cb9022e2e32b8e9bb10edb894ad43d5f8baa168c4740e6,True
+qing tan,e077ae07c034de62,情探.mp4,qing tan,False,complete,sha256:42fa76a2f6fe59b2ab9ea80b7139b4763a6a96729941ccffcddf6e60dab28f62,True
+san ge zhan you,566a47a3671aaf2f,三个战友.mp4,san ge zhan you,False,complete,sha256:305fb7e8ae2c9d2b2de6b1d8e5c17cf1dc1fab7d837b8e89b84184e15394f1cb,True
+hei shan zu ji zhan,002a86d9d7423d1e,黑山阻击战.mp4,hei shan zu ji zhan,False,complete,sha256:224e240c7254baf860d816d27fdd950cfa49b87ba40c13330bf1681c5d4a9e43,True
+chang kong bi yi,07925adcb4cdd8d1,长空比翼.mp4,chang kong bi yi,False,complete,sha256:052fa658b4a9606b9ea1f476cbb8883959571cff736a4c0acaa8ac545c6e16e0,True
+hong xia,6d4ee4b051dfbf28,红霞.mp4,hong xia,False,complete,sha256:d88d783e13f1d0519bc2511b011b8955bb3259b643ced19feb6f78a19eed496f,True
+ying xiong hu dan,38ea47558dce6dbe,英雄虎胆.mp4,ying xiong hu dan,False,complete,sha256:03c91d0f996de93f946ed2feafc9e48db51c8c9d80f43d3cd89d38c863796fc4,True
+du jiang tan xian,443f587c8e6a8721,渡江探险.mp4,du jiang tan xian,False,complete,sha256:690dafbf5f7aa933ce3ce6ee239974c4760dfbb0eed42c217f6cc0c628de0b01,True
+yi ri qian li,4a8905388e1e9cdb,一日千里.mp4,yi ri qian li,False,complete,sha256:f364449f5f5e57e9af997dc5c4170e012d941979bbf304ac603d8a93d9c124f0,True
+yong bu xiao shi de dian bo,63f8f0b79d0b6037,永不消逝的电波.mp4,yong bu xiao shi de dian bo,False,complete,sha256:bc6fc02548ebb9a1b5865938def1c8e08d77884ded868fd83487355093d750f0,True
+fan lao huan tong,11b1047c1f646d4f,返老还童.mp4,fan lao huan tong,False,complete,sha256:108581c713ad584a0e732169d0dab2015cbb01528ac6eb40c7c6431cf2d1385e,True
+jin ling zhuan,d3381164ef7d3cf8,金铃传.mp4,jin ling zhuan,False,complete,sha256:cf5dd056854c466281861b0d69516613b306e8a9b6f6930452960c4a9548d9dd,True
+hai kuo tian kong,36cda111b6f05520,海阔天空.mp4,hai kuo tian kong,False,complete,sha256:d23d2a6f44adc01e937fd87d1e59ebec8688512e8f7dd2bd1053814be3ac88cd,True
+lang ya shan wu zhuang shi,b16b4e6118772cf5,狼牙山五壮士.mp4,lang ya shan wu zhuang shi,False,complete,sha256:432995bda5a212f4f3a31a19aed4015f2df74a0b4b1c71244a1b031f9190496a,True
+gang zhu fei che,a599cc710559d0bf,钢珠飞车.mp4,gang zhu fei che,False,complete,sha256:a661992f8540a599662d4101ff3108f471e84fb422fec5ed26870819f794bf4d,True
+kang zhuang da dao,7979882423b7f615,康庄大道.mp4,kang zhuang da dao,False,complete,sha256:ac29d5fc9de89ae46173e9326382b9acdd840796b883455667de13f37ca1f15c,True
+wo men cun li de nian qing ren (shang ji),f768a68e136f061c,我们村里的年轻人（上集）.mp4,wo men cun li de nian qing ren (shang ji),False,complete,sha256:4b8fb975d45d806ea2314a56378a550df14c02783729347e48d8011f5004da4c,True
+xi cheng de gu shi,ba727d52b9ee98f6,锡城的故事.mp4,xi cheng de gu shi,False,complete,sha256:cbc8056b62eec7394eb6b467c7f990fd8cecbba99bf4ddeae313e75d59b1ab81,True
+xiao zhu yan kai,81e2fd10c8715384,笑逐颜开.mp4,xiao zhu yan kai,False,complete,sha256:84529d6562429a1a2d257dd3a6620be8704ceea96f4eedbaef8035d0147a0c97,True
+bing shang jie mei,b8cfb776c0b5006c,冰上姐妹.mp4,bing shang jie mei,False,complete,sha256:d854a24975c9156cf55e9d392345835b720e005dfe834b6c5b68de1572f08c7f,True
+wu duo jin hua,4d50cee618bece12,五朵金花.mp4,wu duo jin hua,False,complete,sha256:7e4c6a86c804b76974bda48aca4bd1524cab0e3147498857330d430e4e2ad348,True
+yun wu shan zhong,0e96c718ce63a97b,云雾山中.mp4,yun wu shan zhong,False,complete,sha256:2baa90f4a1a2afdaffdddc3db0bf9d4041b577c6ea90024c77e873c99adaedf9,True
+hai shang shen ying,5e09a85d737d3fb3,海上神鹰.mp4,hai shang shen ying,False,complete,sha256:fb270e2a7c004c668d4b3fd900574a91844bcaa7d72eb8e1d771551f2b95929d,True
+huan le ren jian,0fe5ca8e3b72a31b,换了人间.mp4,huan le ren jian,False,complete,sha256:544c5ab266db59358e69106010390ff897c6ec6952b2165f798cef6fbbae93bb,True
+zhan huo zhong de qing chun,9b4d5fb14ca6b905,战火中的青春.mp4,zhan huo zhong de qing chun,False,complete,sha256:e410f6fdbdcb15210e6e46477033938880dc2b193772e076e6612a5d0cd79a98,True
+qian shao,ba108ca7431a7a10,前哨.mp4,qian shao,False,complete,sha256:5875e5697aefb09bbb5a999dc82632c5ca5cbf3d13d66e6c4c78fc8cd08cfac7,True
+lin jia pu zi,b3f1ab88816fdfad,林家铺子.mp4,lin jia pu zi,False,complete,sha256:9ee6978c99034ee5c641d5fab6cce162d46b5eb5c586a67c452cd77324c5c0cd,True
+wu ming dao,a9d15f5ba4ac80dc,无名岛.mp4,wu ming dao,False,complete,sha256:1751f68c28a603a6b3cfa118507544d9f9918fe1183ed42f652358bf38feb5c5,True
+kuang deng,15fd7559cb9c171e,矿灯.mp4,kuang deng,False,complete,sha256:4276bb328a6227027c340ecc8ee4cbc21dc93b263f425ac3f4aa1fee96f5a540,True
+fei yue tian xian,a51284babb1d2772,飞越天险.mp4,fei yue tian xian,False,complete,sha256:596356d39c8d0aae583a8751c45d1dd8a77170d59c0da30761e80b92350327f0,True
+feng bao,03eb3cbfb4d4d959,风暴.mp4,feng bao,False,complete,sha256:2e07140270242e7e89cba388aa1980f963eff545e9d978e46467c8eb2b5843ce,True
+qing chun zhi ge,043030eb9a828c98,青春之歌.mp4,qing chun zhi ge,False,complete,sha256:2ac97a256176ca1ba6d8561d7d5b7e76dcebde13eb9196ece9e87293542e79b1,True
+huan tian xi di (1959),3405c7eb1627d7d8,欢天喜地.mp4,huan tian xi di (1959),False,complete,sha256:f780fbf614d6108290d4035c5ee208e18ccf2a38f08019834b8a4f1e8cd5dc29,True
+shui shang chun qiu,96a655fc11153324,水上春秋.mp4,shui shang chun qiu,False,complete,sha256:ac357102d64fe7f208b37a4fd3399ae0eaf3cb04c437fd4573096e16d18f7ed2,True
+liang shi,626839cbea6b5d43,粮食.mp4,liang shi,False,complete,sha256:359e6cae3d372a735f8410f8016a64615216fb2d3ab7e33868586d5274e43674,True
+bai feng chao yang,bf2b318e0ca98ff3,百凤朝阳.mp4,bai feng chao yang,False,complete,sha256:332b4e91e535568f216bb16cf3a799ebd4f6b3b79a8a61752daf3e4f3043d653,True
+san ge mu qin,b7f800b9c8b36e6f,三个母亲.mp4,san ge mu qin,False,complete,sha256:6d870e300f36d90ee643eb5b2dfc74e9c41a24b49ba29fcea19eff11aa2ed39f,True
+nie er,e3a23c17d60a79d5,聂耳.mp4,nie er,False,complete,sha256:f091e91b7a7b33c5e0dafcf87d0fae443d10eeeea2cff1efe8ec614b564505a9,True
+huang pu jiang de gu shi,6b5499554f919e55,黄浦江的故事.mp4,huang pu jiang de gu shi,False,complete,sha256:dff74cd32355e8a857837a50ff515bc3a193e1bf822d95cb6102faf0690a211e,True
+jin tian wo xiu xi,a794d993b5b51467,今天我休息.mp4,jin tian wo xiu xi,False,complete,sha256:8d9e7003be9aafa139c365ab04c674681ee7b75cabca8ce8783351b0de4ac614,True
+qiao lao ye shang jiao,481eac5107f85d6b,乔老爷上轿.mp4,qiao lao ye shang jiao,False,complete,sha256:ec302dba2dd61aeb2ea7c14ba7df63e881c3e49cdc46d9b7f471f2b18d9ea5a6,True
+lin ze xu,bba92ca4b029fc10,林则徐.mp4,lin ze xu,False,complete,sha256:09b481be47492cb4ebbc2182badf72f5f47ac29f583c97884116e93f838af84f,True
+lao bing xin zhuan,8c552fc58c46013c,老兵新传.mp4,lao bing xin zhuan,False,complete,sha256:e52f40098b19b9f996ccd1e28c33a0872c0138dbf332b5d902dd3d88887668a4,True
+bai sui gua shuai,45f8b9084ecf04dd,百岁挂帅.mp4,bai sui gua shuai,False,complete,sha256:993fed5a4e25eb2487f6120d3591eb9a2939d96a2919aa096f36ec802fd64a8a,True
+chun man ren jian,b280875229bc6003,春满人间.mp4,chun man ren jian,False,complete,sha256:262521754a2d8c0babebd1f5917bf48b1eece39e76b226e6818fccb972a04bbe,True
+sha mo zhui fei ji,725e6a7416beb979,沙漠追匪记.mp4,sha mo zhui fei ji,False,complete,sha256:5c1651f82831b87a9bab1220b5ae485616aab68750b855b83150db2810bfd706,True
+di xia hang xian,60bb0ae59d73c328,地下航线.mp4,di xia hang xian,False,complete,sha256:130080463c9e4ad345ee71ceb5e37f0548e307b8ee0a9fd1ec797c317cfa3271,True
+bao lian deng,d650ef70a984017c,宝莲灯.mp4,bao lian deng,False,complete,sha256:30cb7db64a23d7c4f84ce00d9683f196d11aacf7d9d513bd1dd9894297a81586,True
+zhui yu,af963cdd92a5cc7e,追鱼.mp4,zhui yu,False,complete,sha256:69c8f2281e9f6b8070badf4a3daa783f79a1979b5c59981cddeb4d4f5fd61928,True
+hui min zhi dui,b7bcfbfadf3e1478,回民支队.mp4,hui min zhi dui,False,complete,sha256:c7657c4a4247b7fc23e550310594402a790db5b02e0a8630bbb0c28c91ea1f70,True
+jiang shan duo jiao,e1bcbd62ec56c665,江山多娇.mp4,jiang shan duo jiao,False,complete,sha256:76f4b43955eff185685bc397a7a46a1da313a96c1d8b033b352eae4b50fb8e3c,True
+hai ying,a78398db4a13d45a,海鹰.mp4,hai ying,False,complete,sha256:53bfef9480a449a681ac9d15ab86b20fea82d7ef8941d30c7c899d6f0fd5e7d2,True
+wan shui qian shan,c514c3d9bc9ac5d0,万水千山.mp4,wan shui qian shan,False,complete,sha256:c24b475140bfc5ce62e25852ed40c120935e149952d2765470baace650b3d0b6,True
+wu duo hong yun,259457ed6f3c0b6f,五朵红云.mp4,wu duo hong yun,False,complete,sha256:d9a2317e70c29309191931b3a94eb50577cacbb497ac8b59abc7a5e2048cdbcf,True
+ying xiong dao,8ecc4b7b6c1d2749,英雄岛.mp4,ying xiong dao,False,complete,sha256:f5aeb4632ac65cbd00c4a44b34e4ef24ba720ae732f25f4807aa9d31cc8a76d9,True
+chi feng hao,5e234141641b1c74,赤峰号.mp4,chi feng hao,False,complete,sha256:06f6bb0977d30745eb8f2ac79f4e7a4a1356ac42d1bd8d594c3050bd2397c9de,True
+you yi,4163a55870372e1e,友谊.mp4,you yi,False,complete,sha256:222856d71f2717a1784f4a18ff6c9eaa2041777d0be7967111924add78887921,True
+zhan shang hai,f6e594a5d52f8266,战上海.mp4,zhan shang hai,False,complete,sha256:d45a70df6f15d0f23461047c83573ca4911f44220748f73d9a6d1beea9f2c138,True
+yu dao zhi zi,0d5bc46bcd7e23ae,渔岛之子.mp4,yu dao zhi zi,False,complete,sha256:f7e764c66326f4dcf4655d72519c3f2d5cb36e455f79846b9b4567c539a99d1d,True
+xue hai yin shan,b7a7814aace41796,雪海银山.mp4,xue hai yin shan,False,complete,sha256:bfdc963d82d2e4120938d2082f91309e02ecfa715b5824fd652520ed4734b68a,True
+tian shan ge sheng,0ada0b01ee99b4d1,天山歌声.mp4,tian shan ge sheng,False,complete,sha256:800c9bf25f067987612b9495569106a9ffbe2099424640a1147feebec2c2b8ae,True
+huan hun ji,74dda0ed33a1bb87,还魂记.mp4,huan hun ji,False,complete,sha256:3b479ce0859c0ac94fcd871bb3bc4b7cbb05f55a45a5a01af2a9250511273ddc,True
+tai yang gang gang chu shan,7d3cb66f06b2d618,太阳刚刚出山.mp4,tai yang gang gang chu shan,False,complete,sha256:0a8bccb72401d75a350d5d65a0cfc73b5ed4a18516b76daacc9161dbdf50d252,True
+zai sheng ji,a00a0dae7948f31d,再生记.mp4,zai sheng ji,False,complete,sha256:9b11701f0f7bbfcdc3a5e61656a880578e4069bd2ec8aa9f5ce074af2775c559,True
+tie dao wei shi,28bf2a03f6871c3c,铁道卫士.mp4,tie dao wei shi,False,complete,sha256:ff866a33c8310d7064fc49c6f9c9bddf980a0c2a6ca2b4248e58702492eaae76,True
+feng huo lie che,6c066a3274c01437,烽火列车.mp4,feng huo lie che,False,complete,sha256:3631710b8e63f73b8ab26c659358631c953654ba2de9fa9691e87081e3681af8,True
+shen yang shou,f8a95b03266897a2,神秧手.mp4,shen yang shou,False,complete,sha256:8af4c7d0c43841a57534011663abb689cdc6bdb0094bddf16fb06063e339ff2a,True
+liu san jie,e2826ea10ec9ba4b,刘三姐.mp4,liu san jie,False,complete,sha256:771ed76487473b5f1322c2d37b24dd9babce2f5743832b0857759d234c2f15db,True
+qiang di song,4e854e59f086c3fc,羌笛颂.mp4,qiang di song,False,complete,sha256:4ba3d0db84e4ceee3b3ba46fbc346448aa317b0d20f3f2686fd1ea65e0743580,True
+wo men shi yi dai ren,e35a45a73cfc69fa,我们是一代人.mp4,wo men shi yi dai ren,False,complete,sha256:9978c4387a6114dd5c4d30702f3edbe41c4380692609365ba47e5bdb0e779d32,True
+you yuan jing meng (1960),ad089dc84a8182b1,游园惊梦(1960).mp4,you yuan jing meng (1960),False,complete,sha256:e29e93a9487de71705ed717a7c1c2c54eb1293294e28bf79386da73ce5ea9a0f,True
+wei le liu shi yi ge jie ji di xiong,6d34944f4c386f66,为了六十一个阶级弟兄.mp4,wei le liu shi yi ge jie ji di xiong,False,complete,sha256:6f9734b1e508568f2b2f2bd22d9172eb339422112058d66af8bf672153d22021,True
+yang men nv jiang,9514260e54a671c0,杨门女将.mp4,yang men nv jiang,False,complete,sha256:a5b2dc539fbd3ecfd7605eeadae3b3735d77b3fac3da6d5cc912be02199923dc,True
+wu cai lu,320c7926fdd43c81,五彩路.mp4,wu cai lu,False,complete,sha256:c8e91fae9fb6796263d1fe7af229504b3cc1f073bda4a337d0c87a57a3069541,True
+yi ge ming de ming yi,0c2cbf923c61d5dc,以革命的名义.mp4,yi ge ming de ming yi,False,complete,sha256:454b1121bf6336c63ada37ad376425e1d2654d6586370751f1668b9327a382f6,True
+hong hua bian di kai,9bc562c0d7f48d11,红花遍地开.mp4,hong hua bian di kai,False,complete,sha256:8af3859cfb2ddc939e80534c0d3144cfe812f283085969c685e4bba5cbafba16,True
+chun nuan hua kai,a1ff9b5533cf15c2,春暖花开.mp4,chun nuan hua kai,False,complete,sha256:638e1ed0dfeecf46912868f214990d198b5fbdabef5143bdc1e28f106377d38f,True
+geng yun bo yu,21a23da5cc591199,耕云播雨.mp4,geng yun bo yu,False,complete,sha256:a83e280edde45874fb83a40a0b22f00c5d629a668f83456e5f159a1bd12d27e1,True
+ge ming jia ting,058582a159d8e06f,革命家庭.mp4,ge ming jia ting,False,complete,sha256:09dd2685e35eb20ca84cbe0289ebcc7fede43453888c1c1b9af180d5bdf472cb,True
+ji liu,826e038c7f7413b1,激流.mp4,ji liu,False,complete,sha256:3c066f71abb259f373850a2de0017598a0d2bb9744ccb0ecdb2fe12065d8f799,True
+mian dian wen hua dai biao tuan fang hua yan chu,a1eb94af9300f01d,缅甸文化代表团访华演出.mp4,mian dian wen hua dai biao tuan fang hua yan chu,False,complete,sha256:faed46d1817fd79a80d8fe9bf4f0dc7d35e6bb3ba3d94d427d06d24c033a723f,True
+mo ya dai,d61e0c358da809f3,摩雅傣.mp4,mo ya dai,False,complete,sha256:1a41a213b91aaf091e5212312354518bf6b2f08c0013d49b22b709b0d460e13a,True
+ma lan hua,782e3654348d016d,马兰花.mp4,ma lan hua,False,complete,sha256:923d2cb9f20aaa0f2d80dd367caf89a6d48e271b594ec819f9adf65f3e09e578,True
+qin niang mei,3cd58429abe308f2,秦娘美.mp4,qin niang mei,False,complete,sha256:1e22a11c1bf558bd2330974d1eefc1c19bacf0fe903b00eb949d5913f155b28d,True
+nv shen,f316b8ef1f43e210,女审.mp4,nv shen,False,complete,sha256:a0cefc3d6fee30f2d4dbbbb6da5565a091537564a1d8cc48cdddbc241074262b,True
+xiang yang hua kai,78fc5ef09f607a61,向阳花开.mp4,xiang yang hua kai,False,complete,sha256:3f0e00b791191aea32cc4e08293d448dd4118d85ab50d8b59cde4f272c993eb5,True
+dou shi ting,0c1e94dde129f4cb,斗诗亭.mp4,dou shi ting,False,complete,sha256:61760b106420758c86228590db4ad1932fdfe47038fc57763694d55f1e0df10e,True
+sun wu kong san da bai gu jing,0dba73a7a5079bbd,孙悟空三打白骨精.mp4,sun wu kong san da bai gu jing,False,complete,sha256:7a2e86a9f8b7d4e37cef0efec59598ad814de85a70f7d837cceb17976370e033,True
+hong ying zhan chi,ca502e9fc105ce3d,红鹰展翅.mp4,hong ying zhan chi,False,complete,sha256:b5376979ee69e74c2592db3493ab1d8e82d4be8027da98f2eec77aa979dfb4d3,True
+shi er ci lie che,4a568a048b9c8ae8,十二次列车.mp4,shi er ci lie che,False,complete,sha256:f7596156b4e83c3a862c9e840b5eda7ff36a72cc2d598e8695944e8514ac7339,True
+san ba xian shang,8c20893495cadbc3,三八线上.mp4,san ba xian shang,False,complete,sha256:05d621bc1705b6e280e67310a6c3e90877f2eb912002f20c625db8071264b7f2,True
+ke shan hong ri,5eea0c24d19a7850,柯山红日.mp4,ke shan hong ri,False,complete,sha256:ea0ddcba9d1117e968dd91c01f874ccfb048ec9c6940a72028abe8480eed8380,True
+lin hai xue yuan,ab5f10b24d864ac0,林海雪原.mp4,lin hai xue yuan,False,complete,sha256:a0101d30b1c654b3a45f6ab7917107f1e848b26424d1d834017d01d41a4c4a58,True
+hong ying,398383b770d9e1db,红鹰.mp4,hong ying,False,complete,sha256:87ea2724eae1d3280c2b5be91d8b2cecf34a1fc0b7cefa292512978af640906c,True
+meng long sha,9e6746cf701c669c,勐垅沙.mp4,meng long sha,False,complete,sha256:d8b4fe22f73880f1994d6b81dfdb38e1d2964d68e5e3b75fc89f49f612122eb2,True
+qi xi,30916f57e8a6855e,奇袭.mp4,qi xi,False,complete,sha256:8bc40cbe57ed4efbb3de415993d25fd3ca85839de6bd129ed9074f9f1075005a,True
+ying xiong shi pian,199eeb5c123a8fe6,英雄诗篇.mp4,ying xiong shi pian,False,complete,sha256:14e1d7eddb5bb5d7c84f1305b00d6c3c27696ee41d06ff1c6c6b8c87d7dc24bc,True
+xin dui yuan,34ca5840beb1aaec,新队员.mp4,xin dui yuan,False,complete,sha256:c89cba95f79eaceda10a8d5987dc789924722e0ae050f93d9626aa89cc727ff3,True
+bi kong yin hua,1f480f87dec3869e,碧空银花.mp4,bi kong yin hua,False,complete,sha256:f859d326249c3b272f3cb032329db048cdac75dc43694259b4a8540411f6f958,True
+yong heng de you yi,2fe0d0d0158e0407,永恒的友谊.mp4,yong heng de you yi,False,complete,sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab,True
+kang han qu,71b81a9b18421d49,抗旱曲.mp4,kang han qu,False,complete,sha256:077af403a83962bdb3c637f1bd8fde5ffb8d1445330f0c3e0050df2d6666f071,True
+san di xue,d154bd86d693b3ba,三滴血.mp4,san di xue,False,complete,sha256:96af96954b45b090e0fa76562eaf516c1c77fd707875f5d247979cc80a41f75d,True
+yi wen qian,5c354a206ff25b71,一文钱.mp4,yi wen qian,False,complete,sha256:328ee45c4ee7ae422af4cff0cac515c5434aaebfa6bcfd64f04e2c0eec70abf6,True
+ma xi tuan de xin jie mu,48591d36ec64a59b,马戏团的新节目.mp4,ma xi tuan de xin jie mu,False,complete,sha256:1cc07ffe14c903e3a08ea240e9e99b906190734fea2f647ccda2559fb8d0629e,True
+wan mu chun,629c17f3e244d00c,万木春.mp4,wan mu chun,False,complete,sha256:f66354f23aeac40f4ec531997e87e2d686d7a5a02a38a0e5c0376e3d7174578a,True
+dong mei,e0ed52c21adeefd9,冬梅.mp4,dong mei,False,complete,sha256:173f7cf49f54e97fba8d4b0ddb27fe7c05cddf0228c7cb15f80ec392dfc2758a,True
+shu jia de li wu,c562f6aa986f683d,暑假的礼物.mp4,shu jia de li wu,False,complete,sha256:195a4eb06b16f91ece38e73c9b5a720e56368a9c5a76c15e20da0f06bf68d487,True
+bao feng zhou yu,a82e383de0bfdcb4,暴风骤雨.mp4,bao feng zhou yu,False,complete,sha256:b0eea0498464cc6a3195c8e53e4f586c6772ce29d01e36f5373aa43e6ecf36b4,True
+bei da huang ren,99ef0daf74c9b9c1,北大荒人.mp4,bei da huang ren,False,complete,sha256:b4104a7a40088336adc8f21c22dc2ace37002ed410c5edb71a7b56d02625f6dd,True
+51 hao bing zhan,1cc6e7fe9555969e,51号兵站.mp4,51 hao bing zhan,False,complete,sha256:26a5abd18102ed59d274949fb738e577e83554474dfbb3cb6411a3efad205746,True
+ku mu feng chun,52b6d4c476281d4b,枯木逢春.mp4,ku mu feng chun,False,complete,sha256:48740392258fd070ee03a614670704b8420b3faa2421b470d01d300331f0f8b1,True
+man luo hua,07d92b7b6899de43,蔓萝花.mp4,man luo hua,False,complete,sha256:d211ba0a9711cf1b37ea9842b00469d678dce682dd2fc1652610af3c278de1e6,True
+chun cui tao li,090df7bee1648858,春催桃李.mp4,chun cui tao li,False,complete,sha256:f3a61be24b04be14754a47fb4ac92f3987ff5df0904531e8107075627a889126,True
+hong se niang zi jun,5dc75ea0de4cf47b,红色娘子军.mp4,hong se niang zi jun,False,complete,sha256:cdd14b8492768a76c628c3124b5538c1b3baca91e74fbd68bbd18960a2edeaf9,True
+ying xiong xiao ba lu,24a75e83b4e9c570,英雄小八路.mp4,ying xiong xiao ba lu,False,complete,sha256:2c842df9ba55e134195436cb19c55b9566a4cd67f61ffb59e4beae8f68c5c5d8,True
+xiao dao hui,3d1f75e05ac77eec,小刀会.mp4,xiao dao hui,False,complete,sha256:8ad26edbae698cc7882e03f6201fd4be17460900060b833fbc563276421e092f,True
+tu po wu jiang,3b7e7df7de89321c,突破乌江.mp4,tu po wu jiang,False,complete,sha256:a07f3fa32772cf261ab54acc73176f9d260f5059a0125024f3392d0a430bd1b6,True
+hong shan hu,96f602210e433a0e,红珊瑚.mp4,hong shan hu,False,complete,sha256:4b036d2a2df492561dff052a51061c99aa9bbe24b71fbba2644a4e6fe242ac7d,True
+ba shan hong lang,633337195dd5421e,巴山红浪.mp4,ba shan hong lang,False,complete,sha256:872bcd25c9ced205faa0a6d1b58a4816b279ec3de147bb58c1894556ba098fa6,True
+yan an you ji dui,06f0b4ff7f3b1d99,延安游击队.mp4,yan an you ji dui,False,complete,sha256:80b11b6f0bf42ecd89d1b1b9ba8a286e56b556b56b50d2fb5adf28c91a43026a,True
+san guan pai yan,e38464ed980241cf,三关排宴.mp4,san guan pai yan,False,complete,sha256:7947a28f19c101bb1e91ffcaa2e38c910df204a710eb4a65c65b0b28c86e5228,True
+liu yi chuan shu,b96acc097b1eb05d,柳毅传书.mp4,liu yi chuan shu,False,complete,sha256:cf737a1e9c688203a2ddd39410170aadc6cabac24e51e9918b29e8028e92f018,True
+jia wu feng yun,b167d330f0232cc7,甲午风云.mp4,jia wu feng yun,False,complete,sha256:10aee298ef709f6acca3a739d8613a2bd74206f42c5f58801a65cc0b469c2969,True
+lu huo zheng hong,3cf6e6dc230397f3,炉火正红.mp4,lu huo zheng hong,False,complete,sha256:25c3b49ff7dfaeb45f4e656272fc18af898f47ce39da1918259bf75722e05228,True
+hua er duo duo,1c590be503b705df,花儿朵朵.mp4,hua er duo duo,False,complete,sha256:b837f617ed581b971f58a4495f982399bc71d86181ce30cb8d3d6fbb29f0ec85,True
+kun lun shan shang yi ke cao,d99118bfce0b45c2,昆仑山上一棵草.mp4,kun lun shan shang yi ke cao,False,complete,sha256:e1c0ac699ec1a213f09ccfd41795c56d84307935ca555e5480e7ada575934567,True
+ting zhan yi hou,83e3b4154f29ca59,停战以后.mp4,ting zhan yi hou,False,complete,sha256:5ca58f915e98f923d15e4b5018645293000052a675b8c6bb733990415e31593a,True
+jin shang tian hua,8b7a2c8467b85692,锦上添花.mp4,jin shang tian hua,False,complete,sha256:36a93c2255928998b4c42eaeab3ddcb3eae59803f5ab3a8e75cccde34f9aa737,True
+sun an dong ben,d084ca1fd2a6dce3,孙安动本.mp4,sun an dong ben,False,complete,sha256:13bd637a98ab213b60d5fc9d06d3fba013a2fba22c4682239ff559c61c3e2b72,True
+li shuang shuang,41f00254ca62a03c,李双双.mp4,li shuang shuang,False,complete,sha256:f13f0beecf919bc885cc8c913a8f9bca15ad38490b3ec890d4e61385871368d1,True
+mo shu shi de qi yu,56a00ef087573dc5,魔术师的奇遇.mp4,mo shu shi de qi yu,False,complete,sha256:67303570fccd4fb932eaa395ea9e380b22ceecdb780ae153da441c2b9e1114ab,True
+nv li fa shi,8ba2910afb01ecde,女理发师.mp4,nv li fa shi,False,complete,sha256:8cb5fc261fc44e660a174974f7ba16ab056f8af6961e23cbac5ae718c92ba8e4,True
+liao yuan,ac0292532b62b15a,燎原.mp4,liao yuan,False,complete,sha256:bc2abdfce4f50b119c530f8ef72aa7ac9732a864ef63a52ca45cdfb1326181b5,True
+da li 、 xiao li he lao li,67ea9970ea9a6dba,大李小李和老李.mp4,da li 、 xiao li he lao li,False,complete,sha256:a716605d9ed5e6ca62b85e1d0f2b984f9e6b7e52304f0d141c4d1c94e53ac0c6,True
+dong jin xu qu,577105d5872da3f8,东进序曲.mp4,dong jin xu qu,False,complete,sha256:5b37574095aab1e38320a4f058c15695c2e0b852b7681f84e3853816e7be48e4,True
+ge lia hao,2587c18a10b05693,哥俩好.mp4,ge lia hao,False,complete,sha256:a9707b8a60f833f684a91a35037e5899963e00c06a4d56db77c8db0d8977e181,True
+huai shu zhuang,e35d933b40a0621b,槐树庄.mp4,huai shu zhuang,False,complete,sha256:03be3e5ff1fc4616546d613f6a0e804e47bb2d3b1bf21731accc4217439e3daf,True
+di lei zhan,5e1bf16c5bafdb6d,地雷战.mp4,di lei zhan,False,complete,sha256:b915a4806e7f3eaba2d2d8c714c97efdb2a7aaaea9a9ff991e2e0a13b3b7dc65,True
+e er duo si feng bao,465f16bbf205dc29,鄂尔多斯风暴.mp4,e er duo si feng bao,False,complete,sha256:6e5b211286cd9b6506b7dff0beaeb82655847b73a8d7689c20d937ef173bd611,True
+bi hai dan xin,71947a9cb298272f,碧海丹心.mp4,bi hai dan xin,False,complete,sha256:ec54d905dd54a3c4868edd119525aea74a550a8341455e21f9ae6a87d19e69a1,True
+ying xiong tan ke shou,d85622bd16e5c8c7,英雄坦克手.mp4,ying xiong tan ke shou,False,complete,sha256:08b825ad57bcfcb832cc734fdb16aef1ec325f0211889195774034b0b0f47ca6,True
+han jiang hua si jin,a6b2feff1fa7d3d3,韩江花似锦.mp4,han jiang hua si jin,False,complete,sha256:1eae5e23e83667832add739e72309ae9616f9ec415e9a305a5f12f24afa50280,True
+nan hai chao,ba9a76a91a8ea72d,南海潮.mp4,nan hai chao,False,complete,sha256:79c52ebb4f816c4861aadaeb13cd9800ef557cef0700da490958a424decc770f,True
+qi wang qiu jiang,461f2e45851c93c2,齐王求将.mp4,qi wang qiu jiang,False,complete,sha256:397b3440434849e960be7284660ad873464e96b2602ee470c9faae5b6444e4a2,True
+sheng ming de huo hua,a22775e6186cde64,生命的火花.mp4,sheng ming de huo hua,False,complete,sha256:075b47d2a8afa2c0ba347996774f0bcca29d8139b780b78dea7b2660d01c1bc9,True
+shang xiao yun wu tai yi shu,2f56058e6bcf997a,尚小云舞台艺术.mp4,shang xiao yun wu tai yi shu,False,complete,sha256:00cbef3c80dde910720051c6e5891bbf5b2b527d4d4dc66a86473a0f99d9f7b9,True
+bing shan shang de lai ke,13185bc3c75e0115,冰山上的来客.mp4,bing shan shang de lai ke,False,complete,sha256:1c1cf4397e792f11b2a4eb2d41c572c387e63d0c8e6f0190e41edfbd76760074,True
+hua wei mei,d4039e160145cd66,花为媒.mp4,hua wei mei,False,complete,sha256:364e02553145e31a830c48b4f624e21802e9523f576975b116d74d84efe17033,True
+zi you hou lai ren,527be68f6ec4cf9b,自有后来人.mp4,zi you hou lai ren,False,complete,sha256:4b84b7b49ce71d16ed534154bcc21bd954e3b5668577cf9e6c6e8fa85a891911,True
+chao yang gou,5969acb02ed870a3,朝阳沟.mp4,chao yang gou,False,complete,sha256:52c687d5bdd6a6f7e069da96cc7ab1de26412c81d9662dfb97727cd89c2f2cff,True
+wo men cun li de nian qing ren (xu ji),a950c4ecf19fb6d8,我们村里的年轻人（续集）.mp4,wo men cun li de nian qing ren (xu ji),False,complete,sha256:57963b96781d554abbb916b931f1e3548c923114e77203e25bfedc768729877f,True
+man yi bu man yi,380c00f023719627,满意不满意.mp4,man yi bu man yi,False,complete,sha256:82eb05a0edacdda384824d34f2737a36fa1947dc5aabf0fb5c959afe498ebfa3,True
+liang jia ren,dd9dda30d3bd001d,两家人.mp4,liang jia ren,False,complete,sha256:f7c7c57beaa3c45b85369d0f59da694bb15c0f5beeef5ba8f9c14ccac09663b5,True
+qiang tou ma shang,974ec0d0edba0b59,墙头马上.mp4,qiang tou ma shang,False,complete,sha256:31f3838ed4d2c430ee390ed2582611996c1b7ca11097e210aac9a0bbdd970d4a,True
+bing xue jin da lai,89f4e3f13f0a0ab7,冰雪金达莱.mp4,bing xue jin da lai,False,complete,sha256:682aeec3eb69878e898d0952fbb30416c422970615f344900d5318a79affb44a,True
+fen shui chang liu,455d00b2bea87931,汾水长流.mp4,fen shui chang liu,False,complete,sha256:047d2fb2e7a53b081bd6657f70bf160ba3dbaad68e3d0956eedfa16a2ef4ad7a,True
+hong he ji lang,48baf2239ec1a997,红河激浪.mp4,hong he ji lang,False,complete,sha256:1d2dd6b45c2a4a9d6176c02522dbb1e2a39a2f7833bfbf556464c9d6551a0519,True
+zao chun er yue,1ee82930124af9cb,早春二月.mp4,zao chun er yue,False,complete,sha256:878786076c3c7b2ae968f670d6a6804d0d9219c2c3b63a614bc07b59257f4699,True
+xiao bing zhang ga,55b60a4fdc2db631,小兵张嘎.mp4,xiao bing zhang ga,False,complete,sha256:8b7f5473e9f54e2099910a29a10ab9ed9317ba81ce824b9e65600d2087d65567,True
+chun yan zhan chi,a724537b54c03c81,春燕展翅.mp4,chun yan zhan chi,False,complete,sha256:27796bcfe095afebd265a911668007b21f78e6071fd5273f2d90b7ca54986473,True
+xiong mei tan bao,501b45ef078ade4e,兄妹探宝.mp4,xiong mei tan bao,False,complete,sha256:d3468bd505a2b245ba82167d2a65fa57191ba558d6eb3a8c8c01fef24268510c,True
+fei dao hua,024abc28f3c0f277,飞刀华.mp4,fei dao hua,False,complete,sha256:c6e40ad4e81e702afac031d0837b84885a5adcd82b7135479c7a1caddddcf8f3,True
+ru ci die niang,af3dce66af1f0dbf,如此爹娘.mp4,ru ci die niang,False,complete,sha256:441f817bec4427b85d36bf2d3abb850cb04ec2454a52e99f58b7c55f70ce9224,True
+bei guo jiang nan,0c3db8a390016160,北国江南.mp4,bei guo jiang nan,False,complete,sha256:3abe32485305281e2cfe0f5780253e4f38d8e1877ed82166f8b4c31bb0ca3437,True
+shui shou zhang de gu shi,df46f751fe915f2a,水手长的故事.mp4,shui shou zhang de gu shi,False,complete,sha256:1e4977cb19ad9d3cf072a9f47fcd2b1f7c8ebd6a064ed17095dd111c01dac953,True
+hong ri,8c8f1933271acc8f,红日.mp4,hong ri,False,complete,sha256:5a2af7f1f6d1a5b9c787e326337826a45240a827c51e6e95a524a450434c5afa,True
+jin sha jiang pan,daeb9343eb53f32c,金沙江畔.mp4,jin sha jiang pan,False,complete,sha256:c2a13ed7d9e4ddc2e47e7601a208655946848598b2a6fe009eb88b2c9b2ce0f3,True
+bao hu lu de mi mi,ed7a5f7a4569d9e6,宝葫芦的秘密.mp4,bao hu lu de mi mi,False,complete,sha256:9fb0bbd75d6ca62f2dd9547ca25152b3c803b33b1c01c5065204aea4ba046302,True
+can hua gu niang,ac31c6b3e96eca6a,蚕花姑娘.mp4,can hua gu niang,False,complete,sha256:8d969b75a6d0ef2a9b8b45223db301628d9e70ca5b6be1d5e288284d736f12e8,True
+wu song,b930e08800c674d6,武松.mp4,wu song,False,complete,sha256:924dbbff4e21fd622af48f396a48b79fa4c7d899e72cd4d6c4a65659167cf3e4,True
+qiu mi,c30a1cb588585baf,球迷.mp4,qiu mi,False,complete,sha256:4dcf1ef81b77043522af00cebbaa332beb50944acc6f63823880b041ff65446c,True
+ye huo chun feng dou gu cheng,b4e700d5e21c88c0,野火春风斗古城.mp4,ye huo chun feng dou gu cheng,False,complete,sha256:aeff92b25f11abf763782cbefed1baf02a4c4d748504713499dedd0acbeaa519,True
+nong nu,72e06d8b3be501d5,农奴.mp4,nong nu,False,complete,sha256:66b990e50aecc7cd321be12144ea44dabe7418eef1bfbdcfde4b5b230c095cf5,True
+nu chao,b9dbc745c446c130,怒潮.mp4,nu chao,False,complete,sha256:899efae25ff67f9380563ba7283dc26b65bbdbcf44e80dfbd73a66debb3d6b57,True
+zhua zhuang ding,e0ab5c5e874f6dc9,抓壮丁.mp4,zhua zhuang ding,False,complete,sha256:887d7419b6020968ad6ab1ec5119e8a5428145fc17f02d40b3bc8735d8f7caad,True
+ge ming li shi ge qu biao yan chang,8b6609d81f17ac1a,革命历史歌曲表演唱.mp4,ge ming li shi ge qu biao yan chang,False,complete,sha256:4a82356f6d3bb0b55066294a3e4121d5a221a35aa0589b2db4357142dfb14577,True
+gen zong zhui ji,fab30796102fdc50,跟踪追击.mp4,gen zong zhui ji,False,complete,sha256:95eb6990417cfc5ac5518b9550dd05264d777e967dd34fbc5b187d435f9321d5,True
+qi shi er jia fang ke,224594015920be9c,七十二家房客.mp4,qi shi er jia fang ke,False,complete,sha256:566cc9c5c092f18967065819511517dfb3ff78aa7873e10b964acbb65d1d6a21,True
+mao zi pei chuang gong,edeca68954d0badc,毛子佩闯宫.mp4,mao zi pei chuang gong,False,complete,sha256:f0fdc5eada782e81201923922d3d13e4cea0f6ebe4e84d1a4860a111291a1a15,True
+tao hua shan,c2cc85f4a4ddc4cc,桃花扇.mp4,tao hua shan,False,complete,sha256:9e8365975ad32b5bb7c298396af18d0b63d8464ce38bf2695c01df1d367c682c,True
+du li da dui,0e9f02b21d105eb6,独立大队.mp4,du li da dui,False,complete,sha256:ea095835f093f7fb6db50d4446cd82bc5b19194612bf5d62bfc950fb85d2fa68,True
+bing lin cheng xia,687ce62a0799772f,兵临城下.mp4,bing lin cheng xia,False,complete,sha256:b4d4fc55d635e2c0c2aa63f94e3a447667d52dc974c06d7a13cc65324624b9d6,True
+ying xiong er nv,9777a92d1aac1d19,英雄儿女.mp4,ying xiong er nv,False,complete,sha256:285cfde82e8454773a853f3146e92ba3c68e662bb073d4e8d2d7326ebaa7f62d,True
+hao xi fu,319cc2eaf757e05a,好媳妇.mp4,hao xi fu,False,complete,sha256:80211552740fa3a7f6b1e8da0995cd0c04a360adcbe1c44cab8697c836eafd25,True
+nan hai de zao chen,a496d970bc498e46,南海的早晨.mp4,nan hai de zao chen,False,complete,sha256:6f40e5342086b6ed6d70d75d61d6232de9da96567a8af15be1477f15f87bdc0f,True
+nv tiao shui dui yuan,72c4a9c208ba12a1,女跳水队员.mp4,nv tiao shui dui yuan,False,complete,sha256:aafafe555d41c9d355d8fff3958b6906a8ccda769ba588e36cea7017baccaea7,True
+cai die fen fei,efc7b9412f8b5067,彩蝶纷飞.mp4,cai die fen fei,False,complete,sha256:7eee4af0489a8e869dd936dfec1b947f6743f301dd85a3376ba2616c672e8431,True
+xiao ling dang,c65cba7d2c8a1e38,小铃铛.mp4,xiao ling dang,False,complete,sha256:c974d162f2e1842381f37e12d503d16713459c73f04f613eb63c7647de211cfc,True
+qing nian lu ban,1769dda0451290e5,青年鲁班.mp4,qing nian lu ban,False,complete,sha256:39ef00668dedbb405cf1e8bb128634f0d8c73109d9a7441bcf2f65fb7e7cf091,True
+xiao er hei jie hun,ccf25742b87279bc,小二黑结婚.mp4,xiao er hei jie hun,False,complete,sha256:cb2285936857b7cf448702595db5fa1fb2aa162df67054569c0e49a65569648b,True
+qian wan bu yao wang ji,47918a71c48334ff,千万不要忘记.mp4,qian wan bu yao wang ji,False,complete,sha256:68a49379ad208a8415e1ca7302b9ca95dc8dbb4d0bf08b0b1b6ff5847b09753c,True
+cao yuan xiong ying,554add8d6d0a1759,草原雄鹰.mp4,cao yuan xiong ying,False,complete,sha256:6e7d9b433ecd767aa189e05e2a5369ff6d24aae3c6dee43a03539ee3fd3c4b54,True
+jian gan he bian,5d45a34e9e9c7e71,箭杆河边.mp4,jian gan he bian,False,complete,sha256:38f5e3c4d1e4546bcb909afbcdd50f9f8de9e998debe98f288b332edbc03a09c,True
+qing shan lian,e65e31aed92d504e,青山恋.mp4,qing shan lian,False,complete,sha256:86fdb4d62c6fce942f2603f38aa3f2f800a64b867b058f48612c03e7050ee706,True
+a shi ma,a9be7f3bf11e9505,阿诗玛.mp4,a shi ma,False,complete,sha256:e6463ae1e8f7c04ba1d1ccaad2211c3ccd7295f9f06c000f2fc2e020aaad5a6b,True
+feng shou zhi hou,4135c8eec4f42b18,丰收之后.mp4,feng shou zhi hou,False,complete,sha256:44297fff11f7668dd78a659ae59fab8a861ccbd0aa9e7a693b8b408b5b0c3c19,True
+jia ting wen ti,ebfdb4a2e2cc9e6b,家庭问题.mp4,jia ting wen ti,False,complete,sha256:70b02e9e892ace5de47bc9ecb0ea09836e0f89ba5dbd2898b4714eace564d69c,True
+ni hong deng xia de shao bing,9b243f51dd645064,霓虹灯下的哨兵.mp4,ni hong deng xia de shao bing,False,complete,sha256:abaa71990efb4ac3150773e91065f7adb46ec92659c354e708fe3f85dd522162,True
+an bian ji lang,80a94915050c8b69,岸边激浪.mp4,an bian ji lang,False,complete,sha256:2e7cfd3d89e43ba7547ca3e38845f5370324128f8de116fba84c55714a6d0ca7,True
+dai bing de ren,714bd6e20960cacd,带兵的人.mp4,dai bing de ren,False,complete,sha256:19905378b1f46733d99b9648c4658cc2f057368d97e676c663d99f682efd92c2,True
+lei feng,7bf03ece01916b7a,雷锋.mp4,lei feng,False,complete,sha256:98c6dd0f1513b6a1e73ff957f231c319a40e6d742df7774878ae6cdd87d8108e,True
+fen shui ling,1c362d6987874957,分水岭.mp4,fen shui ling,False,complete,sha256:395a296ced8c72337c8cca5f1ecf8da7463cdb8ba6eb21826204ab94840da206,True
+ni feng qian li,b925eda9991452a5,逆风千里.mp4,ni feng qian li,False,complete,sha256:ebfd445be77ba9fdcc5b009aad36b4e4845290f0fb09966eda49e1766514d63b,True
+liu ming zhu,9b1141620beb8b2b,刘明珠.mp4,liu ming zhu,False,complete,sha256:b5970947bf19cf0335c0daf0b8f9dfd3f3ccc07cf9172271c36354bc5ef75ad5,True
+shan cun kuai ji,b0babd3a733da4a2,山村会计.mp4,shan cun kuai ji,False,complete,sha256:b9d6be12c0bb6153d5f3b27f73db5c45cb697261a7062200a3da623dec07073e,True
+san jin shan cheng,aea65a31c766066b,三进山城.mp4,san jin shan cheng,False,complete,sha256:3f229b7f47e00a45800a89a6d76c8fa08de86d23a7330a9c7a038df620a9d833,True
+jing po gu niang,30f2bd43d5d5868d,景颇姑娘.mp4,jing po gu niang,False,complete,sha256:993cf7d1f90d1d213c0eacda02d7d886fc84705d61d3e6c64c59124f5b9862d2,True
+“te kuai” lie che,3f54a815407ad7a8,特快列车.mp4,“te kuai” lie che,False,complete,sha256:7e21a592601cbef4dfd677c6cf2b0b8eb39001573b0edafd92241dcd6b0c1ad6,True
+qing song ling,d2153d2355c1a9d1,青松岭.mp4,qing song ling,False,complete,sha256:68c140e4db49f207a0c209538d0c71200668b2ca083af48f08e80e748fe31ed1,True
+lu kao,a196ecba460a6757,路考.mp4,lu kao,False,complete,sha256:26806453ee3b9472a876a6a0ff210ff3b0ab518962c1741e4f671a73e80b58a3,True
+chuan qiang ji,50fa4fbd7b5a5bd7,传枪记.mp4,chuan qiang ji,False,complete,sha256:d494872d94b8b2c700e0e1a1c49c4ebeef864f8fccc4d57228ca4318ebd0aaa7,True
+bai shan xin ge,f3d891dfe254b1ee,白山新歌.mp4,bai shan xin ge,False,complete,sha256:0cfe4a3253724e47aa64fa89a57622000c70ac7801bbaae2902bd037e665fda8,True
+yi ke hong xin,c9f4111da254b405,一颗红心.mp4,yi ke hong xin,False,complete,sha256:1a4f56657d295f45732e142f04948328d6fe0f1053fb2cd833dd9f2e47e73c53,True
+jin yao chi,e69619d8948c48f1,金钥匙.mp4,jin yao chi,False,complete,sha256:159c7c052ff9c17535bf7596d442a81d1be8fb1867ed048ea0dab36c13c7d983,True
+lie huo zhong yong sheng,048a7a01ab285a9d,烈火中永生.mp4,lie huo zhong yong sheng,False,complete,sha256:1579dbc5adeaad440be78bc84d49e849803e4e85024015a0ee8895edbed9eb71,True
+shan cun jie mei,842ee31d7fd90d52,山村姐妹.mp4,shan cun jie mei,False,complete,sha256:d7524b06eb701c46287832f1480e887c75b72c021b2d3d901e49e81beaca35ca,True
+hong se bei lou,9cf333b9086d5250,红色背篓.mp4,hong se bei lou,False,complete,sha256:30ffef55c3e9a4cc41b389bd9fed781b1c4e08cc1667e96799b378ccdbf4ee06,True
+long ma jing shen,0703753a06acc8fc,龙马精神.mp4,long ma jing shen,False,complete,sha256:1598473e3b47d5c2838537097f6fae103d652ad305bea4c97af4ea6124c30979,True
+mai niu 、ba gua yuan,e2ccb74ebd80568f,买牛扒瓜园.mp4,mai niu 、ba gua yuan,False,complete,sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8,True
+san duo xiao hong hua,f8aee25842d343bc,三朵小红花.mp4,san duo xiao hong hua,False,complete,sha256:1dcfc9987fd4ce2b9d916dab8553c33f94b5331d72fd56b5f57fced0495740ec,True
+lang tao gun gun,64f90a76fb7b3999,浪涛滚滚.mp4,lang tao gun gun,False,complete,sha256:dc902343c28297a0dd05e387380ff570daf2c3243c15d47cb3bd0596027408aa,True
+xiao zu qiu dui,39bd7f5940a76f61,小足球队.mp4,xiao zu qiu dui,False,complete,sha256:3db595e286dda07de0b012e5079fac14def4254df5d41d997c31e5a579e15f14,True
+huang sha lv lang,89c08246781dcf31,黄沙绿浪.mp4,huang sha lv lang,False,complete,sha256:48659cadc6fb8855d065b4f17a24d6bfd509398c8e90696b3a978411f6c675d4,True
+nian qing de yi dai,2a8a06374c4f776b,年青的一代.mp4,nian qing de yi dai,False,complete,sha256:3eac6dd33657892ccd361d2dc0128d6552d7a8f0b476e7fb35a94f6097745587,True
+gui tai,179924b0f44ec4e8,柜台.mp4,gui tai,False,complete,sha256:1d6a83621655b0341db4ef746c2ec3e2aafeacf0ce4bc8a01c66a778f85125e6,True
+wu tai jie mei,bc4f72a1f096bcd9,舞台姐妹.mp4,wu tai jie mei,False,complete,sha256:8971cf9f6ddc2bd2aead66f355fbc75a9290205dc3aa7b8279198ea13e0a1a84,True
+shang hai zhi chun,402a3de71a3c76cd,上海之春.mp4,shang hai zhi chun,False,complete,sha256:d67ebf3d6265dd122841f40360196d50fb1a4aaa839199c094147ed45a1fb9c6,True
+da ji qin lve zhe,5becefc05d022672,打击侵略者.mp4,da ji qin lve zhe,False,complete,sha256:9dbddb07c0f919c3cbf7ca16dc60dca418d9c4f0acb1528aabd3bcae6cb5fd7a,True
+ku cai hua,76adde46bfd0944b,苦菜花.mp4,ku cai hua,False,complete,sha256:54c3d4b2a4a23702b0582aa6751a0bd86301851b115162ef6261efa01f595184,True
+mi mi tu zhi,16a31de1def71d00,秘密图纸.mp4,mi mi tu zhi,False,complete,sha256:b465b4ef220f0074b80ea0f2804b6bdae391b83e705e08b1e7c1621e244da2f8,True
+di dao zhan,03856eb19135d7aa,地道战.mp4,di dao zhan,False,complete,sha256:65570483f5f056b860074046a23cab2772df1c840f3c12cfdb1210084c38cbbd,True
+sheng li zai wang,72d8fabbdaea849d,胜利在望.mp4,sheng li zai wang,False,complete,sha256:60de70a751a187a1c1c2b6353c471d85605b24f8a11eb129c14f4a3d2807756d,True
+dong fang hong,0784a502d2895832,东方红.mp4,dong fang hong,False,complete,sha256:d61258f495bfd8f1400939387ea5d076d46acd92cbc7217b0e5aba33bacbddeb,True
+shuang jiao zi,1f178a2b3a823306,双教子.mp4,shuang jiao zi,False,complete,sha256:ef8b5ffc2a1f800b7ae3ae6488fa74a2b3ee94edbdf52ec66bf2e463254538b4,True
+shan cun xin qu,e6c5e153296573bb,山村新曲.mp4,shan cun xin qu,False,complete,sha256:221afc396985be5bf2fabde203d1476e206d8e8fea4fcc60aac0d30774045a5f,True
+da tong luo 、bu guo,33970697eba68ede,打铜锣补锅.mp4,da tong luo 、bu guo,False,complete,sha256:54b9c015f896a3ef7918fff90d4c0071cd5a773399b25f7b51a51364082aecd5,True
+hong mei ling,be5c9891ee71b0b2,红梅岭.mp4,hong mei ling,False,complete,sha256:5dac66655bccea25ee561119d0ae84ea9d40bd290833f7f93580d72171f0b6a3,True
+ren huan ma jiao,4242c460e41cdcb2,人欢马叫.mp4,ren huan ma jiao,False,complete,sha256:b9fabb0c830a72f6a3ca84730dfbcf5157f959d379e19936a7973250e0ab985c,True
+jun ge liao liang,bc8db580beccf652,军歌嘹亮.mp4,jun ge liao liang,False,complete,sha256:51cd8e9c6faa04b3fc7eeee11a50670a54afa5f1abe2e8a1213425b86f7c04d6,True
+hong se you lu,c1b9691f33198275,红色邮路.mp4,hong se you lu,False,complete,sha256:6df692ecb9ed8149af24bac400c0063405766c2e69b632dfe87d80763424d7ae,True
+nv fei xing yuan,4081cb35a8d67b7f,女飞行员.mp4,nv fei xing yuan,False,complete,sha256:e2c7022dcabcd016dd223e7713ec7198ff678f5e4a7fdfd6872fa21c4c952276,True
+hong shi zhong sheng,4536b4e171fca3d8,红石钟声.mp4,hong shi zhong sheng,False,complete,sha256:4d59dc4e0c942852ed405c0693497bacdd538db07be2781da0787c297bceba7e,True
+yi bai ge fang xin,87dd858021b50a97,一百个放心.mp4,yi bai ge fang xin,False,complete,sha256:efaac443df97819c369b573f957cf0d1cd1b5a4caa60bd2473375c366f1d2952,True
+qing chun hong si huo,b8c2d66d79bab8f0,青春红似火.mp4,qing chun hong si huo,False,complete,sha256:0843a2a04b94a5f7eec555a2fde011b98a5d902868647b69b5c7faf1d6cae7b2,True
+da lang tao sha,67250920f51fbb68,大浪淘沙.mp4,da lang tao sha,False,complete,sha256:f227d6a7452d9e77676076de80592e6ce2ebf4f307f0e58911c0c4782b34c583,True
+lao bao guan 、xin xi fu lai le,0b6972aca11384a5,老保管新媳妇来了.mp4,lao bao guan 、xin xi fu lai le,False,complete,sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a,True
+yi chuan xiang lian,23ea39041f6f88ea,一串项链.mp4,yi chuan xiang lian,False,complete,sha256:7e8a777db589c865a772e3d45f44c4dcebb4e8d6365884bd7102dde85e912bc3,True
+fu fu jin xing qu,e957bc306e1d74a8,夫妇进行曲.mp4,fu fu jin xing qu,False,complete,sha256:88c17af9bad7a8c05067e24f531d64cfb37a3c698491cb7521df711ac932318b,True
+zhou xin fang de wu tai yi shu,c180d961075e2143,周信芳的舞台艺术.mp4,zhou xin fang de wu tai yi shu,False,complete,sha256:d0774ce38b457c32ec29c96fc21b157348fd0672c809639a40722c623a6e3b98,True
+ai le zhong nian,93415c929db8b3a0,哀乐中年.mp4,ai le zhong nian,False,complete,sha256:57472ccfb9c88a233c8c94ffe946c77fcfe82a94e043b13193dfa1c45f63f7fb,True
+li ren xing,1211210fdea37752,丽人行.mp4,li ren xing,False,complete,sha256:7f87e12c8cb4f70dd5a324bd507ca3dbc1901bfb0ebfbd5ffc16265bb75f2d84,True

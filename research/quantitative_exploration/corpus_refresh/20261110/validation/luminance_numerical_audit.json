@@ -1,0 +1,3282 @@
+{
+  "status": "numerically_verified",
+  "completed_at_utc": "2026-11-10T22:23:36.869738+00:00",
+  "metadata_film_ids_verified": 732,
+  "video_jobs_attempted": 454,
+  "video_jobs_successful": 454,
+  "timestamped_samples_verified": 2390266,
+  "timestamped_file_samples_verified": 2390266,
+  "analysis_directory": "research-local/corpus-refresh/20261110/luminance/analysis",
+  "original_metadata_and_excel_sha256_unchanged": true,
+  "source_files_changed_after_extraction": [],
+  "film_arithmetic_checks": [
+    {
+      "film_key": "guang mang wan zhang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4859
+    },
+    {
+      "film_key": "zhong hua nv er",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5135
+    },
+    {
+      "film_key": "bai yi zhan shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4618
+    },
+    {
+      "film_key": "wu xing de zhan xian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5870
+    },
+    {
+      "film_key": "biao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6333
+    },
+    {
+      "film_key": "er bai wu xiao zhuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5549
+    },
+    {
+      "film_key": "wu ya yu ma que",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6436
+    },
+    {
+      "film_key": "san mao liu lang ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4164
+    },
+    {
+      "film_key": "zhao yi man",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5529
+    },
+    {
+      "film_key": "guang rong ren jia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4824
+    },
+    {
+      "film_key": "wei guo bao jia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5267
+    },
+    {
+      "film_key": "hong qi ge",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5687
+    },
+    {
+      "film_key": "gang tie zhan shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5684
+    },
+    {
+      "film_key": "gao ge meng jin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4921
+    },
+    {
+      "film_key": "liu hu lan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5150
+    },
+    {
+      "film_key": "liao yuan de xiang cun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5321
+    },
+    {
+      "film_key": "bai mao nv",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 6380
+    },
+    {
+      "film_key": "lv liang ying xiong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5284
+    },
+    {
+      "film_key": "gui shen bu ling",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 2378
+    },
+    {
+      "film_key": "min zhu qing nian jin xing qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5994
+    },
+    {
+      "film_key": "er nv qin shi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3952
+    },
+    {
+      "film_key": "he ping bao wei zhe",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 3232
+    },
+    {
+      "film_key": "nong jia le",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4920
+    },
+    {
+      "film_key": "da di chong guang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 5457
+    },
+    {
+      "film_key": "wo zhe yi bei zi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6261
+    },
+    {
+      "film_key": "gui hua",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 1609
+    },
+    {
+      "film_key": "xin er nv ying xiong zhuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 8186
+    },
+    {
+      "film_key": "shan bei mu ge",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4758
+    },
+    {
+      "film_key": "zou xiang xin zhong guo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5610
+    },
+    {
+      "film_key": "nv si ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4931
+    },
+    {
+      "film_key": "tuan jie qi lai dao ming tian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 0.0,
+      "samples": 5724
+    },
+    {
+      "film_key": "sheng li chong feng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5466
+    },
+    {
+      "film_key": "shang rao ji zhong ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5676
+    },
+    {
+      "film_key": "hai shang feng bao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 4785
+    },
+    {
+      "film_key": "cui gang hong qi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5767
+    },
+    {
+      "film_key": "pu tao shu le de shi hou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5056
+    },
+    {
+      "film_key": "liu hao men",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5821
+    },
+    {
+      "film_key": "yi guan hai ren dao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 6405
+    },
+    {
+      "film_key": "long xu gou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6461
+    },
+    {
+      "film_key": "nan zheng bei zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 7370
+    },
+    {
+      "film_key": "feng shou",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5146
+    },
+    {
+      "film_key": "cao yuan shang de ren men",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5518
+    },
+    {
+      "film_key": "xiao gu xian",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 3181
+    },
+    {
+      "film_key": "zhi qu hua shan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 6949
+    },
+    {
+      "film_key": "zhao xiao lan",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3068
+    },
+    {
+      "film_key": "jin yin tan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6205
+    },
+    {
+      "film_key": "ying xiong si ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6118
+    },
+    {
+      "film_key": "chun feng chui dao nuo min he",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6360
+    },
+    {
+      "film_key": "sha jia dian liang zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 5224
+    },
+    {
+      "film_key": "tu di",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 6379
+    },
+    {
+      "film_key": "wu qiong de qian li",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5042
+    },
+    {
+      "film_key": "yu zhou feng",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3953
+    },
+    {
+      "film_key": "shi yu zhuo",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3351
+    },
+    {
+      "film_key": "xiao bai tu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4067
+    },
+    {
+      "film_key": "yi jian ti an",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4684
+    },
+    {
+      "film_key": "ji mao xin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4457
+    },
+    {
+      "film_key": "zhan duan mo zhua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5252
+    },
+    {
+      "film_key": "wei da de qi dian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 6305
+    },
+    {
+      "film_key": "du jiang zhen cha ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6387
+    },
+    {
+      "film_key": "huai shang ren jia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6711
+    },
+    {
+      "film_key": "shan jian ling xiang ma bang lai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5133
+    },
+    {
+      "film_key": "yi chang feng bo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5016
+    },
+    {
+      "film_key": "bu neng zou na tiao lu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3469
+    },
+    {
+      "film_key": "fu nv dai biao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4682
+    },
+    {
+      "film_key": "liang shan bo yu zhu ying tai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 6389
+    },
+    {
+      "film_key": "shuang tui mo",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 2564
+    },
+    {
+      "film_key": "lan qiao hui",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2926
+    },
+    {
+      "film_key": "zu guo de hua duo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4553
+    },
+    {
+      "film_key": "meng he de li ming",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6000
+    },
+    {
+      "film_key": "xia tian de gu shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5034
+    },
+    {
+      "film_key": "shen mi de lv ban",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5191
+    },
+    {
+      "film_key": "ping yuan you ji dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5364
+    },
+    {
+      "film_key": "luo xiao lin de jue xin",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 2569
+    },
+    {
+      "film_key": "dong cun rui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6033
+    },
+    {
+      "film_key": "da jin zhi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5135
+    },
+    {
+      "film_key": "mei lan fang de wu tai yi shu (shang ji)",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6562
+    },
+    {
+      "film_key": "ha sen yu jia mi la",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5904
+    },
+    {
+      "film_key": "tian luo di wang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5756
+    },
+    {
+      "film_key": "shui xiang de chun tian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6350
+    },
+    {
+      "film_key": "qing chun de yuan di",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4794
+    },
+    {
+      "film_key": "hu shang de dou zheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5763
+    },
+    {
+      "film_key": "min jiang ju zi hong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4923
+    },
+    {
+      "film_key": "nan dao feng yun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5801
+    },
+    {
+      "film_key": "song jing shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 7790
+    },
+    {
+      "film_key": "shang jin shan",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 1570
+    },
+    {
+      "film_key": "guang chang za ji biao yan",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 2200
+    },
+    {
+      "film_key": "lian yin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 6.938893903907228e-18,
+      "samples": 4699
+    },
+    {
+      "film_key": "tian xian pei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5762
+    },
+    {
+      "film_key": "jiao yin",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 1962
+    },
+    {
+      "film_key": "hu xue zhui zong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5176
+    },
+    {
+      "film_key": "pu bu mie de huo yan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5954
+    },
+    {
+      "film_key": "xin ju zhang dao lai zhi qian",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 2791
+    },
+    {
+      "film_key": "ma lan hua kai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5417
+    },
+    {
+      "film_key": "ge ge he mei mei",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 3897
+    },
+    {
+      "film_key": "ma",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 2726
+    },
+    {
+      "film_key": "ma ma yao wo chu jia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4486
+    },
+    {
+      "film_key": "pi bao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2298
+    },
+    {
+      "film_key": "bu ju xiao jie de ren",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3135
+    },
+    {
+      "film_key": "ru ci duo qing",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 3206
+    },
+    {
+      "film_key": "guo qing shi dian zhong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5567
+    },
+    {
+      "film_key": "shang gan ling",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 7434
+    },
+    {
+      "film_key": "liu qiao er",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6246
+    },
+    {
+      "film_key": "hua mu lan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6131
+    },
+    {
+      "film_key": "mei lan fang de wu tai yi shu (xia ji)",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5626
+    },
+    {
+      "film_key": "luo shen",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 3752
+    },
+    {
+      "film_key": "huang shan lei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6338
+    },
+    {
+      "film_key": "zhu fu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5571
+    },
+    {
+      "film_key": "wei le he ping",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6387
+    },
+    {
+      "film_key": "chun tian lai le",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5673
+    },
+    {
+      "film_key": "qiu weng yu xian ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4965
+    },
+    {
+      "film_key": "xiao bai qi de feng bo",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 3394
+    },
+    {
+      "film_key": "shei shi xiong shou",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3660
+    },
+    {
+      "film_key": "mu qin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6249
+    },
+    {
+      "film_key": "luo shui ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4235
+    },
+    {
+      "film_key": "xiao huo ban",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 4063
+    },
+    {
+      "film_key": "li shi zhen",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6213
+    },
+    {
+      "film_key": "liang ge xiao zu qiu dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4637
+    },
+    {
+      "film_key": "tie dao you ji dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5008
+    },
+    {
+      "film_key": "jia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 7255
+    },
+    {
+      "film_key": "sha mo li de zhan dou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6491
+    },
+    {
+      "film_key": "sou shu yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 7152
+    },
+    {
+      "film_key": "shi wu guan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6846
+    },
+    {
+      "film_key": "song shi jie",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5821
+    },
+    {
+      "film_key": "an tang xiang hui",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 2757
+    },
+    {
+      "film_key": "an tang ren mu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 3486
+    },
+    {
+      "film_key": "chong po li ming qian de hei an",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5605
+    },
+    {
+      "film_key": "zhei jue bu shi xiao shi qing",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3783
+    },
+    {
+      "film_key": "you yuan jing meng (1956)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 2134
+    },
+    {
+      "film_key": "bao feng zhong de xiong ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6015
+    },
+    {
+      "film_key": "ji jing de shan lin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5675
+    },
+    {
+      "film_key": "wei wan cheng de xi ju",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4768
+    },
+    {
+      "film_key": "fu shi (1957)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 2784
+    },
+    {
+      "film_key": "qing chun de jiao bu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4809
+    },
+    {
+      "film_key": "xun ai ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 3858
+    },
+    {
+      "film_key": "di xia jian bing",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5600
+    },
+    {
+      "film_key": "lu sheng lian ge",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5446
+    },
+    {
+      "film_key": "bian zhai feng huo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4991
+    },
+    {
+      "film_key": "mu nv jiao shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5014
+    },
+    {
+      "film_key": "mu ren zhi zi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6156
+    },
+    {
+      "film_key": "hu die bei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6830
+    },
+    {
+      "film_key": "qun ying hui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5937
+    },
+    {
+      "film_key": "jie dong feng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5494
+    },
+    {
+      "film_key": "du shi niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5278
+    },
+    {
+      "film_key": "yang cheng an shao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5776
+    },
+    {
+      "film_key": "dong xiao heng chui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5430
+    },
+    {
+      "film_key": "qiu chang feng bo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4547
+    },
+    {
+      "film_key": "hai hun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5315
+    },
+    {
+      "film_key": "mu tong tou jun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4970
+    },
+    {
+      "film_key": "ye lin qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5850
+    },
+    {
+      "film_key": "qing chang yi shen",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5974
+    },
+    {
+      "film_key": "nv lan 5 hao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5164
+    },
+    {
+      "film_key": "wu hai ye hang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4794
+    },
+    {
+      "film_key": "chen san wu niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 6433
+    },
+    {
+      "film_key": "luo han qian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6089
+    },
+    {
+      "film_key": "a fu xun bao ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4181
+    },
+    {
+      "film_key": "feng huang zhi ge",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5474
+    },
+    {
+      "film_key": "hu shi ri ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 5744
+    },
+    {
+      "film_key": "cheng feng po lang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5696
+    },
+    {
+      "film_key": "bu ye cheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6775
+    },
+    {
+      "film_key": "zhan dou li cheng zhang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5552
+    },
+    {
+      "film_key": "shui",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 2920
+    },
+    {
+      "film_key": "liu bao de gu shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4735
+    },
+    {
+      "film_key": "wu geng han",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6525
+    },
+    {
+      "film_key": "ji zhan qian ye",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4507
+    },
+    {
+      "film_key": "hua hao yue yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6297
+    },
+    {
+      "film_key": "hong hai zi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6380
+    },
+    {
+      "film_key": "dang de nv er",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5412
+    },
+    {
+      "film_key": "xu qiu ying an jian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5455
+    },
+    {
+      "film_key": "xuan ya",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5200
+    },
+    {
+      "film_key": "gu cha zhong sheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4734
+    },
+    {
+      "film_key": "gong di qing nian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5063
+    },
+    {
+      "film_key": "nv she zhang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5490
+    },
+    {
+      "film_key": "li ming de he bian",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 4216
+    },
+    {
+      "film_key": "xin lian xin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5522
+    },
+    {
+      "film_key": "huan nan zhi jiao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5435
+    },
+    {
+      "film_key": "san nian zao zhi dao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4798
+    },
+    {
+      "film_key": "bing jian qian jin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4590
+    },
+    {
+      "film_key": "bai shou qi jia",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3293
+    },
+    {
+      "film_key": "hua zhong ren",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6027
+    },
+    {
+      "film_key": "fu wu yuan",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 3447
+    },
+    {
+      "film_key": "chun shui chang liu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3687
+    },
+    {
+      "film_key": "hong ling jin de gu shi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4085
+    },
+    {
+      "film_key": "chun lei (1958)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3833
+    },
+    {
+      "film_key": "bao shan zhi ge",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 1912
+    },
+    {
+      "film_key": "huo yan ju",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 0.0,
+      "samples": 6187
+    },
+    {
+      "film_key": "shang hai gu niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5252
+    },
+    {
+      "film_key": "sheng huo de lang hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6112
+    },
+    {
+      "film_key": "tan qin ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5489
+    },
+    {
+      "film_key": "shi san ling shui ku chang xiang qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5238
+    },
+    {
+      "film_key": "shan li de ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4666
+    },
+    {
+      "film_key": "yi tian yi ye",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4449
+    },
+    {
+      "film_key": "shei shi bei pao qi de ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4707
+    },
+    {
+      "film_key": "di san ci shi yan",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 1684
+    },
+    {
+      "film_key": "wang jiang ting",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5484
+    },
+    {
+      "film_key": "lan lan he dong dong",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 3253
+    },
+    {
+      "film_key": "san mao xue sheng yi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4481
+    },
+    {
+      "film_key": "da feng lang li de xiao gu shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4707
+    },
+    {
+      "film_key": "lin chong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5451
+    },
+    {
+      "film_key": "liang ge xun luo bing",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5195
+    },
+    {
+      "film_key": "miao jia er nv",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4947
+    },
+    {
+      "film_key": "lu ban de chuan shuo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4839
+    },
+    {
+      "film_key": "ai chang ru jia",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4448
+    },
+    {
+      "film_key": "di yi lie kuai che",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2992
+    },
+    {
+      "film_key": "mu gui ying gua shuai (1958)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4622
+    },
+    {
+      "film_key": "qing tan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5069
+    },
+    {
+      "film_key": "san ge zhan you",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4638
+    },
+    {
+      "film_key": "hei shan zu ji zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5094
+    },
+    {
+      "film_key": "chang kong bi yi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5619
+    },
+    {
+      "film_key": "hong xia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4400
+    },
+    {
+      "film_key": "ying xiong hu dan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5223
+    },
+    {
+      "film_key": "du jiang tan xian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4815
+    },
+    {
+      "film_key": "yi ri qian li",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 4030
+    },
+    {
+      "film_key": "yong bu xiao shi de dian bo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6596
+    },
+    {
+      "film_key": "fan lao huan tong",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3931
+    },
+    {
+      "film_key": "jin ling zhuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5485
+    },
+    {
+      "film_key": "hai kuo tian kong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5818
+    },
+    {
+      "film_key": "lang ya shan wu zhuang shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4874
+    },
+    {
+      "film_key": "gang zhu fei che",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4353
+    },
+    {
+      "film_key": "kang zhuang da dao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4759
+    },
+    {
+      "film_key": "wo men cun li de nian qing ren (shang ji)",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5944
+    },
+    {
+      "film_key": "xi cheng de gu shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5688
+    },
+    {
+      "film_key": "xiao zhu yan kai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6220
+    },
+    {
+      "film_key": "bing shang jie mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5933
+    },
+    {
+      "film_key": "wu duo jin hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 5729
+    },
+    {
+      "film_key": "yun wu shan zhong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4961
+    },
+    {
+      "film_key": "hai shang shen ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4937
+    },
+    {
+      "film_key": "huan le ren jian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5595
+    },
+    {
+      "film_key": "zhan huo zhong de qing chun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5495
+    },
+    {
+      "film_key": "qian shao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 5934
+    },
+    {
+      "film_key": "lin jia pu zi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4933
+    },
+    {
+      "film_key": "wu ming dao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5090
+    },
+    {
+      "film_key": "kuang deng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5722
+    },
+    {
+      "film_key": "fei yue tian xian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5293
+    },
+    {
+      "film_key": "feng bao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5933
+    },
+    {
+      "film_key": "qing chun zhi ge",
+      "source_pts_max_seconds_error": 1.8189894035458565e-12,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 9409
+    },
+    {
+      "film_key": "huan tian xi di (1959)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 3931
+    },
+    {
+      "film_key": "shui shang chun qiu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5530
+    },
+    {
+      "film_key": "liang shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5621
+    },
+    {
+      "film_key": "bai feng chao yang",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 3519
+    },
+    {
+      "film_key": "san ge mu qin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5893
+    },
+    {
+      "film_key": "nie er",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 6646
+    },
+    {
+      "film_key": "huang pu jiang de gu shi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5989
+    },
+    {
+      "film_key": "jin tian wo xiu xi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5069
+    },
+    {
+      "film_key": "qiao lao ye shang jiao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4152
+    },
+    {
+      "film_key": "lin ze xu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6003
+    },
+    {
+      "film_key": "lao bing xin zhuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6437
+    },
+    {
+      "film_key": "bai sui gua shuai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6877
+    },
+    {
+      "film_key": "chun man ren jian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 5769
+    },
+    {
+      "film_key": "sha mo zhui fei ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4266
+    },
+    {
+      "film_key": "di xia hang xian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6234
+    },
+    {
+      "film_key": "bao lian deng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4813
+    },
+    {
+      "film_key": "zhui yu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5342
+    },
+    {
+      "film_key": "hui min zhi dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6145
+    },
+    {
+      "film_key": "jiang shan duo jiao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5412
+    },
+    {
+      "film_key": "hai ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5070
+    },
+    {
+      "film_key": "wan shui qian shan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5731
+    },
+    {
+      "film_key": "wu duo hong yun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4723
+    },
+    {
+      "film_key": "ying xiong dao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4026
+    },
+    {
+      "film_key": "chi feng hao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 4204
+    },
+    {
+      "film_key": "you yi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4161
+    },
+    {
+      "film_key": "zhan shang hai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6111
+    },
+    {
+      "film_key": "yu dao zhi zi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4107
+    },
+    {
+      "film_key": "xue hai yin shan",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3022
+    },
+    {
+      "film_key": "tian shan ge sheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4863
+    },
+    {
+      "film_key": "huan hun ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6932
+    },
+    {
+      "film_key": "tai yang gang gang chu shan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 0.0,
+      "samples": 4650
+    },
+    {
+      "film_key": "zai sheng ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5818
+    },
+    {
+      "film_key": "tie dao wei shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5980
+    },
+    {
+      "film_key": "feng huo lie che",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 5520
+    },
+    {
+      "film_key": "shen yang shou",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2071
+    },
+    {
+      "film_key": "liu san jie",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6817
+    },
+    {
+      "film_key": "qiang di song",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5914
+    },
+    {
+      "film_key": "wo men shi yi dai ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 5879
+    },
+    {
+      "film_key": "you yuan jing meng (1960)",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 6.938893903907228e-18,
+      "samples": 3834
+    },
+    {
+      "film_key": "wei le liu shi yi ge jie ji di xiong",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3508
+    },
+    {
+      "film_key": "yang men nv jiang",
+      "source_pts_max_seconds_error": 1.8189894035458565e-12,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 8275
+    },
+    {
+      "film_key": "wu cai lu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 5338
+    },
+    {
+      "film_key": "yi ge ming de ming yi",
+      "source_pts_max_seconds_error": 1.8189894035458565e-12,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 8911
+    },
+    {
+      "film_key": "hong hua bian di kai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 4588
+    },
+    {
+      "film_key": "chun nuan hua kai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5570
+    },
+    {
+      "film_key": "geng yun bo yu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4385
+    },
+    {
+      "film_key": "ge ming jia ting",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5670
+    },
+    {
+      "film_key": "ji liu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5838
+    },
+    {
+      "film_key": "mian dian wen hua dai biao tuan fang hua yan chu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 2667
+    },
+    {
+      "film_key": "mo ya dai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6112
+    },
+    {
+      "film_key": "ma lan hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4725
+    },
+    {
+      "film_key": "qin niang mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6213
+    },
+    {
+      "film_key": "nv shen",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5645
+    },
+    {
+      "film_key": "xiang yang hua kai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5114
+    },
+    {
+      "film_key": "dou shi ting",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5431
+    },
+    {
+      "film_key": "sun wu kong san da bai gu jing",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5690
+    },
+    {
+      "film_key": "hong ying zhan chi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4991
+    },
+    {
+      "film_key": "shi er ci lie che",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4619
+    },
+    {
+      "film_key": "san ba xian shang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4466
+    },
+    {
+      "film_key": "ke shan hong ri",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6340
+    },
+    {
+      "film_key": "lin hai xue yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 7004
+    },
+    {
+      "film_key": "hong ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4455
+    },
+    {
+      "film_key": "meng long sha",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5423
+    },
+    {
+      "film_key": "qi xi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4467
+    },
+    {
+      "film_key": "ying xiong shi pian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4694
+    },
+    {
+      "film_key": "xin dui yuan",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4299
+    },
+    {
+      "film_key": "bi kong yin hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5044
+    },
+    {
+      "film_key": "yong heng de you yi",
+      "source_pts_max_seconds_error": 1.1368683772161603e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5440
+    },
+    {
+      "film_key": "kang han qu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 3688
+    },
+    {
+      "film_key": "san di xue",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6966
+    },
+    {
+      "film_key": "yi wen qian",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 3751
+    },
+    {
+      "film_key": "ma xi tuan de xin jie mu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5811
+    },
+    {
+      "film_key": "wan mu chun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4822
+    },
+    {
+      "film_key": "dong mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5332
+    },
+    {
+      "film_key": "shu jia de li wu",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4030
+    },
+    {
+      "film_key": "bao feng zhou yu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6481
+    },
+    {
+      "film_key": "bei da huang ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6147
+    },
+    {
+      "film_key": "51 hao bing zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5636
+    },
+    {
+      "film_key": "ku mu feng chun",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5713
+    },
+    {
+      "film_key": "man luo hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4631
+    },
+    {
+      "film_key": "chun cui tao li",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5456
+    },
+    {
+      "film_key": "hong se niang zi jun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 6658
+    },
+    {
+      "film_key": "ying xiong xiao ba lu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5401
+    },
+    {
+      "film_key": "xiao dao hui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 5107
+    },
+    {
+      "film_key": "tu po wu jiang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5373
+    },
+    {
+      "film_key": "hong shan hu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 6141
+    },
+    {
+      "film_key": "ba shan hong lang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5544
+    },
+    {
+      "film_key": "yan an you ji dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5581
+    },
+    {
+      "film_key": "san guan pai yan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 7283
+    },
+    {
+      "film_key": "liu yi chuan shu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6381
+    },
+    {
+      "film_key": "jia wu feng yun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 6091
+    },
+    {
+      "film_key": "lu huo zheng hong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5513
+    },
+    {
+      "film_key": "hua er duo duo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4241
+    },
+    {
+      "film_key": "kun lun shan shang yi ke cao",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 3699
+    },
+    {
+      "film_key": "ting zhan yi hou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 7127
+    },
+    {
+      "film_key": "jin shang tian hua",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4266
+    },
+    {
+      "film_key": "sun an dong ben",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6602
+    },
+    {
+      "film_key": "li shuang shuang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5797
+    },
+    {
+      "film_key": "mo shu shi de qi yu",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 2843
+    },
+    {
+      "film_key": "nv li fa shi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 2942
+    },
+    {
+      "film_key": "liao yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6258
+    },
+    {
+      "film_key": "da li 、 xiao li he lao li",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4923
+    },
+    {
+      "film_key": "dong jin xu qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 6071
+    },
+    {
+      "film_key": "ge lia hao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 0.0,
+      "samples": 4744
+    },
+    {
+      "film_key": "huai shu zhuang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5777
+    },
+    {
+      "film_key": "di lei zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4548
+    },
+    {
+      "film_key": "e er duo si feng bao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5175
+    },
+    {
+      "film_key": "bi hai dan xin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6229
+    },
+    {
+      "film_key": "ying xiong tan ke shou",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4128
+    },
+    {
+      "film_key": "han jiang hua si jin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5388
+    },
+    {
+      "film_key": "nan hai chao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6988
+    },
+    {
+      "film_key": "qi wang qiu jiang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 6204
+    },
+    {
+      "film_key": "sheng ming de huo hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5485
+    },
+    {
+      "film_key": "shang xiao yun wu tai yi shu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5351
+    },
+    {
+      "film_key": "bing shan shang de lai ke",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6091
+    },
+    {
+      "film_key": "hua wei mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6442
+    },
+    {
+      "film_key": "zi you hou lai ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5790
+    },
+    {
+      "film_key": "chao yang gou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6355
+    },
+    {
+      "film_key": "wo men cun li de nian qing ren (xu ji)",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5392
+    },
+    {
+      "film_key": "man yi bu man yi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5140
+    },
+    {
+      "film_key": "liang jia ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4537
+    },
+    {
+      "film_key": "qiang tou ma shang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6500
+    },
+    {
+      "film_key": "bing xue jin da lai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5631
+    },
+    {
+      "film_key": "fen shui chang liu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6597
+    },
+    {
+      "film_key": "hong he ji lang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5850
+    },
+    {
+      "film_key": "zao chun er yue",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6540
+    },
+    {
+      "film_key": "xiao bing zhang ga",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6074
+    },
+    {
+      "film_key": "chun yan zhan chi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4511
+    },
+    {
+      "film_key": "xiong mei tan bao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4529
+    },
+    {
+      "film_key": "fei dao hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5772
+    },
+    {
+      "film_key": "ru ci die niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5198
+    },
+    {
+      "film_key": "bei guo jiang nan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 7077
+    },
+    {
+      "film_key": "shui shou zhang de gu shi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5866
+    },
+    {
+      "film_key": "hong ri",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 7648
+    },
+    {
+      "film_key": "jin sha jiang pan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5684
+    },
+    {
+      "film_key": "bao hu lu de mi mi",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 6.938893903907228e-18,
+      "samples": 4063
+    },
+    {
+      "film_key": "can hua gu niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5869
+    },
+    {
+      "film_key": "wu song",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6788
+    },
+    {
+      "film_key": "qiu mi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 4953
+    },
+    {
+      "film_key": "ye huo chun feng dou gu cheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5961
+    },
+    {
+      "film_key": "nong nu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5302
+    },
+    {
+      "film_key": "nu chao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 5.551115123125783e-17,
+      "samples": 5935
+    },
+    {
+      "film_key": "zhua zhuang ding",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5758
+    },
+    {
+      "film_key": "ge ming li shi ge qu biao yan chang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5764
+    },
+    {
+      "film_key": "gen zong zhui ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5840
+    },
+    {
+      "film_key": "qi shi er jia fang ke",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4856
+    },
+    {
+      "film_key": "mao zi pei chuang gong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5938
+    },
+    {
+      "film_key": "tao hua shan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6874
+    },
+    {
+      "film_key": "du li da dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6443
+    },
+    {
+      "film_key": "bing lin cheng xia",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6084
+    },
+    {
+      "film_key": "ying xiong er nv",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6442
+    },
+    {
+      "film_key": "hao xi fu",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 2.7755575615628914e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 2988
+    },
+    {
+      "film_key": "nan hai de zao chen",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5217
+    },
+    {
+      "film_key": "nv tiao shui dui yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5562
+    },
+    {
+      "film_key": "cai die fen fei",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2894
+    },
+    {
+      "film_key": "xiao ling dang",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 3985
+    },
+    {
+      "film_key": "qing nian lu ban",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5164
+    },
+    {
+      "film_key": "xiao er hei jie hun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 4.163336342344337e-17,
+      "samples": 4754
+    },
+    {
+      "film_key": "qian wan bu yao wang ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5963
+    },
+    {
+      "film_key": "cao yuan xiong ying",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5193
+    },
+    {
+      "film_key": "jian gan he bian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6317
+    },
+    {
+      "film_key": "qing shan lian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5682
+    },
+    {
+      "film_key": "a shi ma",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5138
+    },
+    {
+      "film_key": "feng shou zhi hou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6324
+    },
+    {
+      "film_key": "jia ting wen ti",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5437
+    },
+    {
+      "film_key": "ni hong deng xia de shao bing",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6878
+    },
+    {
+      "film_key": "an bian ji lang",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4407
+    },
+    {
+      "film_key": "dai bing de ren",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5952
+    },
+    {
+      "film_key": "lei feng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4871
+    },
+    {
+      "film_key": "fen shui ling",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5211
+    },
+    {
+      "film_key": "ni feng qian li",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 5954
+    },
+    {
+      "film_key": "liu ming zhu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6529
+    },
+    {
+      "film_key": "shan cun kuai ji",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4373
+    },
+    {
+      "film_key": "san jin shan cheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5294
+    },
+    {
+      "film_key": "jing po gu niang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 5627
+    },
+    {
+      "film_key": "“te kuai” lie che",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5065
+    },
+    {
+      "film_key": "qing song ling",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6856
+    },
+    {
+      "film_key": "lu kao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5989
+    },
+    {
+      "film_key": "chuan qiang ji",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 4199
+    },
+    {
+      "film_key": "bai shan xin ge",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5249
+    },
+    {
+      "film_key": "yi ke hong xin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5465
+    },
+    {
+      "film_key": "jin yao chi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4468
+    },
+    {
+      "film_key": "lie huo zhong yong sheng",
+      "source_pts_max_seconds_error": 1.8189894035458565e-12,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 8323
+    },
+    {
+      "film_key": "shan cun jie mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5688
+    },
+    {
+      "film_key": "hong se bei lou",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5717
+    },
+    {
+      "film_key": "long ma jing shen",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6309
+    },
+    {
+      "film_key": "mai niu 、ba gua yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 4848
+    },
+    {
+      "film_key": "san duo xiao hong hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.220446049250313e-16,
+      "sd_error": 0.0,
+      "samples": 4378
+    },
+    {
+      "film_key": "lang tao gun gun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6968
+    },
+    {
+      "film_key": "xiao zu qiu dui",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5223
+    },
+    {
+      "film_key": "huang sha lv lang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 0.0,
+      "samples": 6302
+    },
+    {
+      "film_key": "nian qing de yi dai",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6510
+    },
+    {
+      "film_key": "gui tai",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 4060
+    },
+    {
+      "film_key": "wu tai jie mei",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 6478
+    },
+    {
+      "film_key": "shang hai zhi chun",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5401
+    },
+    {
+      "film_key": "da ji qin lve zhe",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 2.7755575615628914e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5516
+    },
+    {
+      "film_key": "ku cai hua",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 6524
+    },
+    {
+      "film_key": "mi mi tu zhi",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4637
+    },
+    {
+      "film_key": "di dao zhan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 5776
+    },
+    {
+      "film_key": "sheng li zai wang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 6564
+    },
+    {
+      "film_key": "dong fang hong",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 7199
+    },
+    {
+      "film_key": "shuang jiao zi",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 3830
+    },
+    {
+      "film_key": "shan cun xin qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 6342
+    },
+    {
+      "film_key": "da tong luo 、bu guo",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 2575
+    },
+    {
+      "film_key": "hong mei ling",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5475
+    },
+    {
+      "film_key": "ren huan ma jiao",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6723
+    },
+    {
+      "film_key": "jun ge liao liang",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 5543
+    },
+    {
+      "film_key": "hong se you lu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 5274
+    },
+    {
+      "film_key": "nv fei xing yuan",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 0.0,
+      "samples": 7088
+    },
+    {
+      "film_key": "hong shi zhong sheng",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.3877787807814457e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5920
+    },
+    {
+      "film_key": "yi bai ge fang xin",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 4384
+    },
+    {
+      "film_key": "qing chun hong si huo",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5279
+    },
+    {
+      "film_key": "da lang tao sha",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.1102230246251565e-16,
+      "sd_error": 0.0,
+      "samples": 7439
+    },
+    {
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "source_pts_max_seconds_error": 4.547473508864641e-13,
+      "mean_error": 0.0,
+      "sd_error": 0.0,
+      "samples": 3912
+    },
+    {
+      "film_key": "yi chuan xiang lian",
+      "source_pts_max_seconds_error": 2.2737367544323206e-13,
+      "mean_error": 1.6653345369377348e-16,
+      "sd_error": 1.3877787807814457e-17,
+      "samples": 1994
+    },
+    {
+      "film_key": "fu fu jin xing qu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 1.942890293094024e-16,
+      "sd_error": 0.0,
+      "samples": 5961
+    },
+    {
+      "film_key": "zhou xin fang de wu tai yi shu",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 0.0,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 5958
+    },
+    {
+      "film_key": "ai le zhong nian",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 8.326672684688674e-17,
+      "sd_error": 0.0,
+      "samples": 6172
+    },
+    {
+      "film_key": "li ren xing",
+      "source_pts_max_seconds_error": 9.094947017729282e-13,
+      "mean_error": 5.551115123125783e-17,
+      "sd_error": 2.7755575615628914e-17,
+      "samples": 6200
+    }
+  ],
+  "studio_mean_checks": [
+    {
+      "studio": "东北电影制片厂",
+      "member_films": 26,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "文华影业公司",
+      "member_films": 3,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "大同影片公司",
+      "member_films": 1,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "昆仑影业公司",
+      "member_films": 3,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "北京电影制片厂",
+      "member_films": 76,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "上海电影制片厂",
+      "member_films": 52,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "长江电影制片厂",
+      "member_films": 1,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "中央新闻纪录电影制片厂",
+      "member_films": 2,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "长春电影制片厂",
+      "member_films": 109,
+      "mean_error": 5.551115123125783e-17
+    },
+    {
+      "studio": "八一电影制片厂",
+      "member_films": 63,
+      "mean_error": 5.551115123125783e-17
+    },
+    {
+      "studio": "海燕电影制片厂",
+      "member_films": 38,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "天马电影制片厂",
+      "member_films": 36,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "江南电影制片厂",
+      "member_films": 14,
+      "mean_error": 5.551115123125783e-17
+    },
+    {
+      "studio": "珠江电影制片厂",
+      "member_films": 15,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "哈尔滨电影制片厂",
+      "member_films": 1,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "西安电影制片厂",
+      "member_films": 17,
+      "mean_error": 0.0
+    },
+    {
+      "studio": "鸿图影业公司（香港）",
+      "member_films": 4,
+      "mean_error": 0.0
+    }
+  ],
+  "fractional_weights_equal_eligible_film_count": true,
+  "interpretation": "Checks establish arithmetic/provenance, not historical photometry, independent human identities, or studio causality.",
+  "script_sha256": "f4ef0147c87eaf03cab9d080d9edbace639f038c16d50b6ebc6fb02ff21ebbf2"
+}

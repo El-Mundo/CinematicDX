@@ -210,13 +210,20 @@ def report_text(run,out,s,groups,bw):
         if test['status']=='BLOCKED':conditional.append(f"{name}：BLOCKED，{test['reason']}")
         else:conditional.append(f"{name}：{test['film_n']}影片、{test['cell_n']}匹配单元、{test['studio_n']}机构；组间残差份额{test['observed_between_studio_residual_share']:.4f}，999次置换中位{test['null_median']:.4f}，2.5–97.5%参照范围{test['null_q025']:.4f}–{test['null_q975']:.4f}，不小于观察量的参照比例{test['null_at_least_observed_fraction']:.4f}。")
     conditional_text='\n\n'.join(conditional)
+    reuse_path=run/'measurement_reuse.json'
+    refresh_text=''
+    if reuse_path.exists():
+        reuse=read(reuse_path)
+        refresh_text=f"本次版本更新重新提取{len(reuse['new_job_ids'])}个源文件，继承{len(reuse['inherited_jobs'])}个源文件的逐帧测量。继承清单绑定原运行目录、原收据SHA和视频版本；全部机构统计、时间曲线和条件参照由当前影片表重新计算。来源与更新清单见本次`plan.json`及上级目录`refresh.json`。"
     return f'''# 按制片机构的全可用语料硬切与转场检验
 
 硬切比较状态PROVISIONAL；当前渐变模型用于完整起止定位的主张REJECTED。检测器能输出数值不等于这些数值就是真实转场统计。
 
 ## 覆盖与实际计算
 
-732元数据、454原始路径，去重后{s['distinct_sources_attempted']}独特影片源全片逐帧尝试。成功{s['measured_films']}，失败{s['failed_films']}，无有效视频{s['missing_effective_video_films']}。实际解码{s['decoded_frames']:,}帧、{s['measured_hours']:.2f}小时；{s['studios_with_measured_films']}/{s['studios_in_metadata']}机构有测量。原始视频、JSON、Excel均只读。已知误名《永恒的友谊.mp4》与《延安游击队》同字节，复用上轮证据只计后者一次。
+{s['metadata_films']}元数据、{s['raw_video_paths']}视频路径，当前{s['distinct_sources_attempted']}个影片源具有全片逐帧测量。成功{s['measured_films']}，失败{s['failed_films']}，无有效视频{s['missing_effective_video_films']}。实际解码{s['decoded_frames']:,}帧、{s['measured_hours']:.2f}小时；{s['studios_with_measured_films']}/{s['studios_in_metadata']}机构有测量。来源对应关系由当前运行的影片key与视频SHA绑定。
+
+{refresh_text}
 
 首次作业失败{s['initial_failed_films']}个，其中{s['recovered_roundoff_films']}个通过保留原缓存的机器精度边界修复补齐。只允许ROI数值在0–1边界外不超过8×float64机器精度时裁回边界，较大偏差/NaN拒绝；原视频SHA、原缓存SHA及真实EOF尾帧重新核验。原失败记录、原`extraction_complete.json`保留，最终覆盖由单独`effective_extraction_complete.json`记录，不将失败悄悄抹掉。
 
@@ -226,7 +233,7 @@ def report_text(run,out,s,groups,bw):
 
 统一V-only避免了本片此前近灰色色相不稳定造成的大量HSV误检，但可能漏掉V接近、主要色相改变的彩色切点。没有自动依据不可靠的色彩标签切换算法；彩色材料的召回率没有由黑白《上甘岭》验证，黑白故事片分表必须单独读取。0.12秒最短间隔也会抑制极短插镜候选，抑制记录保留。
 
-与原PySceneDetect0.7.1基线在《上甘岭》150–750秒的候选逐点相同。保留两种QuickTime帧号解释，±0.08秒并排除独立人工渐变区间后，两种解释均为{primary[0]['tp']}匹配/{primary[0]['fp']}误报/{primary[0]['fn']}漏检，精确率/召回率{primary[0]['precision']:.4f}。±0.04/0.12秒和其他设置全部保存。该区间先前参与方法开发，不能外推为453片的准确率，也没有解决QuickTime独立帧计数校准。
+与原PySceneDetect0.7.1基线在《上甘岭》150–750秒的候选逐点相同。保留两种QuickTime帧号解释，±0.08秒并排除独立人工渐变区间后，两种解释均为{primary[0]['tp']}匹配/{primary[0]['fp']}误报/{primary[0]['fn']}漏检，精确率/召回率{primary[0]['precision']:.4f}。±0.04/0.12秒和其他设置全部保存。验证材料为该片十分钟人工参考，区间先前参与方法开发，QuickTime帧号保留两种起算情景。
 
 渐变为现有端点混合/近黑渐隐渐现规则的全片候选扫描，保留default、strict、fade-only。缓存为BGR2GRAY固定ROI直接16×12，区别于旧64×48缓存；不声称仅优化速度而信号完全不变。复测tIoU≥0.5，两种解释仍为{gprimary[0]['true_positive']}匹配/{gprimary[0]['false_positive']}误报/{gprimary[0]['false_negative']}漏检。原先完整起止定位失败得到保留；全库扫描用于检验候选密度、失败和参数敏感性，**不能推断真实叠化/淡出偏好**。
 

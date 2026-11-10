@@ -1,5 +1,11 @@
 # Pilot gap analysis
 
+## Data update, 10 November 2026
+
+The [current corpus release](../../research/quantitative_exploration/corpus_refresh/20261110/README.md) covers 454 videos. Three replacement sources have new measurements, with 451 unchanged-source measurements inherited through their original receipts. Digital-gray extraction succeeded for all 454 videos and retains 2,390,266 timestamped observations. Of the 732 metadata records, 278 lack a local video.
+
+The audit below is the 26 October snapshot. Its corpus totals and studio statistics retain that date, while current tables and figures are available in the release above. The *Shang Gan Ling* manual reference and narrative pilot use the same source version as the original study.
+
 The evidential baseline is not zero. A real analytical pilot and a qualified descriptive comparative extension already exist. No CRITICAL gap prevents presenting the bounded claims specified in [MINIMUM_PILOT_PLAN.md](MINIMUM_PILOT_PLAN.md). Stronger claims about complete shot censuses, narrative recognition, person distribution or historical causation would require substantial additional evidence. Absence of those capabilities is not a reason to rebuild the application before the Upgrade.
 
 Readiness uses the audit categories; severity concerns the **immediate limited Upgrade pilot**, not the eventual dissertation. Evidence IDs refer to [the inventory](EVIDENCE_INVENTORY.md).

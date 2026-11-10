@@ -1,5 +1,11 @@
 # Preliminary Pilot Study: Computational Extraction and Analysis of Cinematic Formal Properties
 
+## Data update, 10 November 2026
+
+The [current corpus release](../../research/quantitative_exploration/corpus_refresh/20261110/README.md) covers 454 videos. Three replacement sources have new measurements, with 451 unchanged-source measurements inherited through their original receipts. Digital-gray extraction succeeded for all 454 videos and retains 2,390,266 timestamped observations. Of the 732 metadata records, 278 lack a local video.
+
+The audit below is the 26 October snapshot. Its corpus totals and studio statistics retain that date, while current tables and figures are available in the release above. The *Shang Gan Ling* manual reference and narrative pilot use the same source version as the original study.
+
 This outline contains statements supported by inspected outputs. It can be adapted into the Upgrade Report; it is not a claim of official Upgrade compliance. Numerical details are traceable through [EVIDENCE_INVENTORY.md](EVIDENCE_INVENTORY.md). Proposed work and missing interpretive evidence are explicitly marked.
 
 ## 1. Aim and research question

@@ -82,3 +82,17 @@
 基于真实片尾反例追加事后[10%,90%)敏感性，沿用全部候选不重解码，453片均核对全片率。十组变化−0.180至+0.024/分，珠江超过海燕；主分析保持不变。不是叙事或片尾自动分割。
 
 全部453片独立标量切点/PTS/来源状态/产物、732行覆盖与机构权重/均值核验通过；原研究JSON/Excel SHA不变，255项Python测试通过。实际提取约5.86小时软件CPU，恢复另93.8秒。没有提交/推送、DB操作、下载或上传。最终入口[corpus_editing/ASSESSMENT.md](corpus_editing/ASSESSMENT.md)，复算和封存见同目录REPRODUCE。停止重复优化弱模型与机构排序；独立叙事对应仍是下一研究方向。
+
+## 2026-11-10T22:22:56.272947+00:00：全语料制片机构分析完成
+
+454/454视频成功；454影片纳入，278元数据无视频。全库约663.92小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。
+
+## 2026-11-10: Three-source version refresh
+
+Current source count is 454. File-state comparison identified replacements for 《买牛、扒瓜园》《永恒的友谊》《老保管、新媳妇来了》. All three received new full-file SHA256, ingestion records, grey-level samples and frame-complete cut/gradual candidate extraction. 451 other source measurements retain their original receipts and output digests. Current identity mapping assigns the new 永恒 source to its own key after opening-credit inspection.
+
+Both independent numerical audits passed across 454 sources and 732 metadata keys. Current aggregates contain 2,390,266 timestamped grey-level observations, 59,715,616 decoded editing frames, 194,781 primary cut candidates and 253,704 default gradual candidates. All institutional tables, temporal/threshold/crop/source strata, conditional references and central-interval comparisons were rebuilt. Nine fixed sampling checks on the new encodings passed, alongside the separately preserved 24-clip validation.
+
+New identity QA viewed 30 opening frames. Chroma QA extracted nine replacement-source frames and inherited 451 version-bound diagnostics. The current institutional candidate sample inspected 170 frames in six contact sheets. Sixteen gradual-candidate rows retained one scene configuration, while one showed image mixing. These assistant observations remain separate from the independent Shang Gan Ling manual reference and its existing validation.
+
+The Python suite passed 262 tests. Resume checks verified completed refresh jobs without republishing extraction receipts. Current run pointers select research-local/corpus-refresh/20261110/luminance and editing. Public tables, figures, source versions and verification records are packaged under corpus_refresh/20261110. October results and dated presentations remain snapshots linked to the current release.

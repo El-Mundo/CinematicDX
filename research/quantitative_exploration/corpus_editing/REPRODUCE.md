@@ -1,5 +1,36 @@
 # 实际运行与复算入口
 
+## 2026-11-10 当前版本
+
+当前运行是 `research-local/corpus-refresh/20261110/editing`，最终分析目录为 `analysis/`。454个视频的当前汇总、三部影片的新旧视频SHA与可公开查看的CSV见[版本更新与结果](../corpus_refresh/20261110/README.md)。当前入口由 `ACTIVE_EDITING_RUN.txt`记录。
+
+本次用同一逐帧算法重新提取《买牛、扒瓜园》《永恒的友谊》《老保管、新媳妇来了》。另451个未变源继承原逐帧缓存、候选和收据。`measurement_reuse.json`绑定每个继承作业的原运行、原配置SHA、原收据SHA与视频版本。数值审计验证提取参数一致，仅允许运行范围等描述字段变化。新源均重新读取完整SHA256并解码至EOF。
+
+建立一个新的增量运行目录与执行三部提取的命令见[明暗复算入口](../corpus_studio/REPRODUCE.md)。随后在新运行的 `editing/`目录执行以下步骤，替换为实际新目录即可。
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python MPLCONFIGDIR=/tmp/cinematicdx-mpl OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/analyse_corpus_editing.py \
+  --run research-local/corpus-refresh/replay-20261110/editing \
+  --report-directory research-local/corpus-refresh/replay-20261110/editing/report
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/challenge_editing_edges.py \
+  --run research-local/corpus-refresh/replay-20261110/editing
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/audit_corpus_editing.py \
+  --run research-local/corpus-refresh/replay-20261110/editing
+```
+
+聚合重新计算全部片厂表、时间曲线、参数与来源敏感性、条件置换参照及片中段挑战。审计独立重算标量切点规则、PTS、候选数和机构均值。输出目录必须尚未存在。重建继承结果需要父运行的逐片产物。
+
+人工验证仍使用同一SHA的《上甘岭》02:30–12:30参考。硬切主配置为43匹配、2误报、2漏检（±80毫秒），渐变默认配置在tIoU≥0.5为0匹配、91误报、4漏检。三部源版本更新增加了实际提取证据，验证样本仍为原独立标注区间。
+
+## 2026-10-26 历史运行说明
+
+以下命令、数量和路径记录10月版本；当前版本与结果以上方入口为准。
+
 当前运行指针：`research/quantitative_exploration/ACTIVE_EDITING_RUN.txt`。本次为`research-local/studio-editing/corpus-20261026T114911Z`，最终分析目录`analysis/`。453/453源已完成，数值审计、全部六张接触表的助手观察和研究解释均已完成；结论见[最终评估](ASSESSMENT.md)。`completion_receipt.json`绑定各阶段实际产物，`progress.json`仅表示原始批次进度，不能抹掉后续恢复记录。
 
 ## 输入与冻结

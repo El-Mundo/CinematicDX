@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL assistant visual inspection completed",
+  "reviewed_at_utc": "2026-11-10T22:28:47.771256+00:00",
+  "selection_receipt_sha256": "43f55a01829b3548b0bab8fd1a58a0cb60ad70448b1937355277078fe82c42ad",
+  "actually_viewed_contact_sheets": {
+    "contact_sheet_01.png": "38fdb34d0f5652261387f44a922f49b73f6f8c96157acd1a40cabb32295e51ce",
+    "contact_sheet_02.png": "64a140f80aee961f18fe7f29a88174797d16a93407e54de0841326f72b3e963a",
+    "contact_sheet_03.png": "2c14daaa75ff33b6016121bd587aaa3a507c1e08077f407f8a76dccd81ca221a",
+    "contact_sheet_04.png": "799a1bb7cf0819f09feff2d8619657fe8c941e67dedae5ca0a88801bf4c44235",
+    "contact_sheet_05.png": "bf571a3e4ad2f0499047e04bd2c3ef8929aad0957705b565ebb53c303b05a2a5",
+    "contact_sheet_06.png": "adcc4f4e26938563a16805ce2d381f9b7933caad225305998a2493025a7d48d2"
+  },
+  "reviewed_films": 17,
+  "reviewed_candidate_rows": 34,
+  "reviewed_original_pts_frames": 170,
+  "observations": [
+    {
+      "event_index": 0,
+      "film_key": "bai sui gua shuai",
+      "video_version_id": "sha256:993fed5a4e25eb2487f6120d3591eb9a2939d96a2919aa096f36ec802fd64a8a",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 38287648,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "45f8b9084ecf04dd-hard_cut_candidate-0.jpg",
+        "45f8b9084ecf04dd-hard_cut_candidate-1.jpg",
+        "45f8b9084ecf04dd-hard_cut_candidate-2.jpg",
+        "45f8b9084ecf04dd-hard_cut_candidate-3.jpg",
+        "45f8b9084ecf04dd-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        2392.855,
+        2392.895,
+        2392.935,
+        2392.975,
+        2393.015
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A black-bearded stage character changes abruptly to a white-bearded character in a different composition.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 1,
+      "film_key": "bai sui gua shuai",
+      "video_version_id": "sha256:993fed5a4e25eb2487f6120d3591eb9a2939d96a2919aa096f36ec802fd64a8a",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 102050688,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "45f8b9084ecf04dd-gradual_candidate_dissolve-0.jpg",
+        "45f8b9084ecf04dd-gradual_candidate_dissolve-1.jpg",
+        "45f8b9084ecf04dd-gradual_candidate_dissolve-2.jpg",
+        "45f8b9084ecf04dd-gradual_candidate_dissolve-3.jpg",
+        "45f8b9084ecf04dd-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        6378.005,
+        6378.125000000001,
+        6378.445000000001,
+        6378.725,
+        6378.845
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same crowned performer remains in close-up. Head and mouth position change while the background and framing remain stable.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 2,
+      "film_key": "fu fu jin xing qu",
+      "video_version_id": "sha256:88c17af9bad7a8c05067e24f531d64cfb37a3c698491cb7521df711ac932318b",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 96759000,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "e957bc306e1d74a8-hard_cut_candidate-0.jpg",
+        "e957bc306e1d74a8-hard_cut_candidate-1.jpg",
+        "e957bc306e1d74a8-hard_cut_candidate-2.jpg",
+        "e957bc306e1d74a8-hard_cut_candidate-3.jpg",
+        "e957bc306e1d74a8-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3870.2400000000002,
+        3870.28,
+        3870.32,
+        3870.36,
+        3870.4000000000005
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "The same table scene changes abruptly to a different camera angle and arrangement of the two seated figures.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 3,
+      "film_key": "fu fu jin xing qu",
+      "video_version_id": "sha256:88c17af9bad7a8c05067e24f531d64cfb37a3c698491cb7521df711ac932318b",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 107018000,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "e957bc306e1d74a8-gradual_candidate_dissolve-0.jpg",
+        "e957bc306e1d74a8-gradual_candidate_dissolve-1.jpg",
+        "e957bc306e1d74a8-gradual_candidate_dissolve-2.jpg",
+        "e957bc306e1d74a8-gradual_candidate_dissolve-3.jpg",
+        "e957bc306e1d74a8-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        4280.56,
+        4280.68,
+        4281.160000000001,
+        4281.68,
+        4281.8
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The two seated women retain the same setting and camera position. One leans and turns while speaking.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 4,
+      "film_key": "qi wang qiu jiang",
+      "video_version_id": "sha256:397b3440434849e960be7284660ad873464e96b2602ee470c9faae5b6444e4a2",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 97998784,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "461f2e45851c93c2-hard_cut_candidate-0.jpg",
+        "461f2e45851c93c2-hard_cut_candidate-1.jpg",
+        "461f2e45851c93c2-hard_cut_candidate-2.jpg",
+        "461f2e45851c93c2-hard_cut_candidate-3.jpg",
+        "461f2e45851c93c2-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        6124.801,
+        6124.841,
+        6124.881,
+        6124.921,
+        6124.961
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A group stage composition changes abruptly to a close-up of the crowned man.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 5,
+      "film_key": "qi wang qiu jiang",
+      "video_version_id": "sha256:397b3440434849e960be7284660ad873464e96b2602ee470c9faae5b6444e4a2",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 29671920,
+      "contact_sheet": "contact_sheet_01.png",
+      "frame_files": [
+        "461f2e45851c93c2-gradual_candidate_dissolve-0.jpg",
+        "461f2e45851c93c2-gradual_candidate_dissolve-1.jpg",
+        "461f2e45851c93c2-gradual_candidate_dissolve-2.jpg",
+        "461f2e45851c93c2-gradual_candidate_dissolve-3.jpg",
+        "461f2e45851c93c2-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1854.332,
+        1854.4520000000002,
+        1854.7720000000002,
+        1855.092,
+        1855.2120000000002
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same two seated stage figures and furnishing remain visible. Hand and head positions change.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 6,
+      "film_key": "song shi jie",
+      "video_version_id": "sha256:b24281acb2503d2917500bd1e27a0f230175c2598a588e1cd609487bbe08a34f",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 54461872,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "1ac6bf558264009c-hard_cut_candidate-0.jpg",
+        "1ac6bf558264009c-hard_cut_candidate-1.jpg",
+        "1ac6bf558264009c-hard_cut_candidate-2.jpg",
+        "1ac6bf558264009c-hard_cut_candidate-3.jpg",
+        "1ac6bf558264009c-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3403.744,
+        3403.784,
+        3403.824,
+        3403.864,
+        3403.904
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A multi-figure court-stage view changes abruptly to a closer view of a white-bearded man beside the bars.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 7,
+      "film_key": "song shi jie",
+      "video_version_id": "sha256:b24281acb2503d2917500bd1e27a0f230175c2598a588e1cd609487bbe08a34f",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 23528512,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "1ac6bf558264009c-gradual_candidate_dissolve-0.jpg",
+        "1ac6bf558264009c-gradual_candidate_dissolve-1.jpg",
+        "1ac6bf558264009c-gradual_candidate_dissolve-2.jpg",
+        "1ac6bf558264009c-gradual_candidate_dissolve-3.jpg",
+        "1ac6bf558264009c-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1470.3690000000001,
+        1470.489,
+        1470.8090000000002,
+        1471.1290000000001,
+        1471.2490000000003
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same bearded stage figure and painted background remain visible. Face and hand positions change.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 8,
+      "film_key": "bi hai dan xin",
+      "video_version_id": "sha256:ec54d905dd54a3c4868edd119525aea74a550a8341455e21f9ae6a87d19e69a1",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 63562048,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "71947a9cb298272f-hard_cut_candidate-0.jpg",
+        "71947a9cb298272f-hard_cut_candidate-1.jpg",
+        "71947a9cb298272f-hard_cut_candidate-2.jpg",
+        "71947a9cb298272f-hard_cut_candidate-3.jpg",
+        "71947a9cb298272f-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3972.505,
+        3972.545,
+        3972.585,
+        3972.625,
+        3972.665
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A nearly empty sky and wires change abruptly to a sailor viewed from behind with ship structures in the background.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 9,
+      "film_key": "bi hai dan xin",
+      "video_version_id": "sha256:ec54d905dd54a3c4868edd119525aea74a550a8341455e21f9ae6a87d19e69a1",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 63763648,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "71947a9cb298272f-gradual_candidate_dissolve-0.jpg",
+        "71947a9cb298272f-gradual_candidate_dissolve-1.jpg",
+        "71947a9cb298272f-gradual_candidate_dissolve-2.jpg",
+        "71947a9cb298272f-gradual_candidate_dissolve-3.jpg",
+        "71947a9cb298272f-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3985.065,
+        3985.185,
+        3985.545,
+        3985.9049999999997,
+        3986.025
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same uniformed men remain grouped in a dark confined setting. Facial and head movements occur.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 10,
+      "film_key": "dong fang hong",
+      "video_version_id": "sha256:d61258f495bfd8f1400939387ea5d076d46acd92cbc7217b0e5aba33bacbddeb",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 30914768,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "0784a502d2895832-hard_cut_candidate-0.jpg",
+        "0784a502d2895832-hard_cut_candidate-1.jpg",
+        "0784a502d2895832-hard_cut_candidate-2.jpg",
+        "0784a502d2895832-hard_cut_candidate-3.jpg",
+        "0784a502d2895832-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1932.0500000000002,
+        1932.0900000000001,
+        1932.13,
+        1932.17,
+        1932.21
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A closer view of a singing stage group changes abruptly to a wider formation.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 11,
+      "film_key": "dong fang hong",
+      "video_version_id": "sha256:d61258f495bfd8f1400939387ea5d076d46acd92cbc7217b0e5aba33bacbddeb",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 1777328,
+      "contact_sheet": "contact_sheet_02.png",
+      "frame_files": [
+        "0784a502d2895832-gradual_candidate_dissolve-0.jpg",
+        "0784a502d2895832-gradual_candidate_dissolve-1.jpg",
+        "0784a502d2895832-gradual_candidate_dissolve-2.jpg",
+        "0784a502d2895832-gradual_candidate_dissolve-3.jpg",
+        "0784a502d2895832-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        110.92,
+        111.03999999999999,
+        111.32,
+        111.6,
+        111.72
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same auditorium and balconies remain visible across the five samples. Small framing or brightness differences occur.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 12,
+      "film_key": "biao",
+      "video_version_id": "sha256:b831274163015eac6015e2a17dc723e9ec3fc836d5cf33bae2133ea4f75a5fdb",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 2211943670257,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "55af46b7a9c590d6-hard_cut_candidate-0.jpg",
+        "55af46b7a9c590d6-hard_cut_candidate-1.jpg",
+        "55af46b7a9c590d6-hard_cut_candidate-2.jpg",
+        "55af46b7a9c590d6-hard_cut_candidate-3.jpg",
+        "55af46b7a9c590d6-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3105.212977455167,
+        3105.252983291077,
+        3105.2929891269864,
+        3105.3329949628956,
+        3105.373000798805
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "The boy in close-up changes abruptly to a wider view showing his body and the wash tub.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 13,
+      "film_key": "biao",
+      "video_version_id": "sha256:b831274163015eac6015e2a17dc723e9ec3fc836d5cf33bae2133ea4f75a5fdb",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 2777518012556,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "55af46b7a9c590d6-gradual_candidate_dissolve-0.jpg",
+        "55af46b7a9c590d6-gradual_candidate_dissolve-1.jpg",
+        "55af46b7a9c590d6-gradual_candidate_dissolve-2.jpg",
+        "55af46b7a9c590d6-gradual_candidate_dissolve-3.jpg",
+        "55af46b7a9c590d6-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3899.1687969140016,
+        3899.28881442173,
+        3900.0089194681,
+        3900.6890186785604,
+        3900.8090361862887
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "Two men viewed from behind remain in the same outdoor composition with a fence or rubble. Their heads and positions move.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 14,
+      "film_key": "liang ge xun luo bing",
+      "video_version_id": "sha256:35c4376b151aaa451a28ea7a6186b08750fe2f41f0d744100bfdf57d74b0146d",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 53004000,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "47cdae6f159b2e0f-hard_cut_candidate-0.jpg",
+        "47cdae6f159b2e0f-hard_cut_candidate-1.jpg",
+        "47cdae6f159b2e0f-hard_cut_candidate-2.jpg",
+        "47cdae6f159b2e0f-hard_cut_candidate-3.jpg",
+        "47cdae6f159b2e0f-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        2120.0400000000004,
+        2120.0800000000004,
+        2120.1200000000003,
+        2120.1600000000003,
+        2120.2000000000003
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A close-up of one uniformed man changes abruptly to a close-up of another man from a different angle.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 15,
+      "film_key": "liang ge xun luo bing",
+      "video_version_id": "sha256:35c4376b151aaa451a28ea7a6186b08750fe2f41f0d744100bfdf57d74b0146d",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 128973000,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "47cdae6f159b2e0f-gradual_candidate_dissolve-0.jpg",
+        "47cdae6f159b2e0f-gradual_candidate_dissolve-1.jpg",
+        "47cdae6f159b2e0f-gradual_candidate_dissolve-2.jpg",
+        "47cdae6f159b2e0f-gradual_candidate_dissolve-3.jpg",
+        "47cdae6f159b2e0f-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        5158.76,
+        5158.88,
+        5159.6,
+        5160.320000000001,
+        5160.4400000000005
+      ],
+      "assistant_category": "visible_superposition_endpoints_unverified",
+      "assistant_observation": "Tree trunks and foliage progressively give way to a sky-dominated ridge with horse or rider silhouettes. The middle sample visibly superposes the two configurations.",
+      "independent_human_ground_truth": false,
+      "inference": "The samples support a cross-image mixing process. They leave precise onset, endpoint and full-interval matching unverified."
+    },
+    {
+      "event_index": 16,
+      "film_key": "er bai wu xiao zhuan",
+      "video_version_id": "sha256:acb07bf8cc7c348e576150693232a82e33642912d767a480274220ab99e7dea8",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 3584691745323,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "36747b54acaf358e-hard_cut_candidate-0.jpg",
+        "36747b54acaf358e-hard_cut_candidate-1.jpg",
+        "36747b54acaf358e-hard_cut_candidate-2.jpg",
+        "36747b54acaf358e-hard_cut_candidate-3.jpg",
+        "36747b54acaf358e-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        5169.05499472948,
+        5169.095001346831,
+        5169.135007964181,
+        5169.175014581531,
+        5169.215021198881
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A crowd composition changes abruptly to a costumed stage performer in close-up.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 17,
+      "film_key": "er bai wu xiao zhuan",
+      "video_version_id": "sha256:acb07bf8cc7c348e576150693232a82e33642912d767a480274220ab99e7dea8",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 2516972025658,
+      "contact_sheet": "contact_sheet_03.png",
+      "frame_files": [
+        "36747b54acaf358e-gradual_candidate_dissolve-0.jpg",
+        "36747b54acaf358e-gradual_candidate_dissolve-1.jpg",
+        "36747b54acaf358e-gradual_candidate_dissolve-2.jpg",
+        "36747b54acaf358e-gradual_candidate_dissolve-3.jpg",
+        "36747b54acaf358e-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3629.3603193906097,
+        3629.48033924266,
+        3629.680372329411,
+        3629.880405416162,
+        3630.0004252682124
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same room and seated group remain visible. The standing woman and foreground figure move.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 18,
+      "film_key": "xin dui yuan",
+      "video_version_id": "sha256:c89cba95f79eaceda10a8d5987dc789924722e0ae050f93d9626aa89cc727ff3",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 5489000,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "34ca5840beb1aaec-hard_cut_candidate-0.jpg",
+        "34ca5840beb1aaec-hard_cut_candidate-1.jpg",
+        "34ca5840beb1aaec-hard_cut_candidate-2.jpg",
+        "34ca5840beb1aaec-hard_cut_candidate-3.jpg",
+        "34ca5840beb1aaec-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        219.44000000000003,
+        219.48000000000002,
+        219.52000000000004,
+        219.56000000000003,
+        219.60000000000002
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A boy in close-up changes abruptly to a crowd viewed from behind in a wider outdoor composition.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 19,
+      "film_key": "xin dui yuan",
+      "video_version_id": "sha256:c89cba95f79eaceda10a8d5987dc789924722e0ae050f93d9626aa89cc727ff3",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 103698000,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "34ca5840beb1aaec-gradual_candidate_dissolve-0.jpg",
+        "34ca5840beb1aaec-gradual_candidate_dissolve-1.jpg",
+        "34ca5840beb1aaec-gradual_candidate_dissolve-2.jpg",
+        "34ca5840beb1aaec-gradual_candidate_dissolve-3.jpg",
+        "34ca5840beb1aaec-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        4147.76,
+        4147.88,
+        4148.160000000001,
+        4148.4800000000005,
+        4148.6
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same woman viewed from behind remains against an outdoor landscape. Minor body and hair movement occurs.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 20,
+      "film_key": "xiao gu xian",
+      "video_version_id": "sha256:df029c5be24b8c0e36c5915c5b6d835870f785dfdc6bdef96dc00dc7b09cc58f",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 20215216,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "6b7e2f66bb1241f7-hard_cut_candidate-0.jpg",
+        "6b7e2f66bb1241f7-hard_cut_candidate-1.jpg",
+        "6b7e2f66bb1241f7-hard_cut_candidate-2.jpg",
+        "6b7e2f66bb1241f7-hard_cut_candidate-3.jpg",
+        "6b7e2f66bb1241f7-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1263.3280000000002,
+        1263.3680000000002,
+        1263.4080000000001,
+        1263.448,
+        1263.488
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "Two stage figures in a wider composition change abruptly to a close-up of the younger woman.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 21,
+      "film_key": "xiao gu xian",
+      "video_version_id": "sha256:df029c5be24b8c0e36c5915c5b6d835870f785dfdc6bdef96dc00dc7b09cc58f",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 48104048,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "6b7e2f66bb1241f7-gradual_candidate_dissolve-0.jpg",
+        "6b7e2f66bb1241f7-gradual_candidate_dissolve-1.jpg",
+        "6b7e2f66bb1241f7-gradual_candidate_dissolve-2.jpg",
+        "6b7e2f66bb1241f7-gradual_candidate_dissolve-3.jpg",
+        "6b7e2f66bb1241f7-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3006.34,
+        3006.46,
+        3006.7,
+        3006.9,
+        3007.02
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same stage pair and background remain visible. Their arms and bodies move.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 22,
+      "film_key": "san guan pai yan",
+      "video_version_id": "sha256:7947a28f19c101bb1e91ffcaa2e38c910df204a710eb4a65c65b0b28c86e5228",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 303428250,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "e38464ed980241cf-hard_cut_candidate-0.jpg",
+        "e38464ed980241cf-hard_cut_candidate-1.jpg",
+        "e38464ed980241cf-hard_cut_candidate-2.jpg",
+        "e38464ed980241cf-hard_cut_candidate-3.jpg",
+        "e38464ed980241cf-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3371.302,
+        3371.342,
+        3371.382,
+        3371.422,
+        3371.462
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A stage figure facing the camera changes abruptly to a bearded figure in profile and another background figure.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 23,
+      "film_key": "san guan pai yan",
+      "video_version_id": "sha256:7947a28f19c101bb1e91ffcaa2e38c910df204a710eb4a65c65b0b28c86e5228",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 436855950,
+      "contact_sheet": "contact_sheet_04.png",
+      "frame_files": [
+        "e38464ed980241cf-gradual_candidate_dissolve-0.jpg",
+        "e38464ed980241cf-gradual_candidate_dissolve-1.jpg",
+        "e38464ed980241cf-gradual_candidate_dissolve-2.jpg",
+        "e38464ed980241cf-gradual_candidate_dissolve-3.jpg",
+        "e38464ed980241cf-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        4853.792,
+        4853.912,
+        4854.192000000001,
+        4854.472000000001,
+        4854.592000000001
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same bearded stage figure, other performer and background remain visible. Face and mouth movement occurs.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 24,
+      "film_key": "yi chuan xiang lian",
+      "video_version_id": "sha256:7e8a777db589c865a772e3d45f44c4dcebb4e8d6365884bd7102dde85e912bc3",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 12695776,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "23ea39041f6f88ea-hard_cut_candidate-0.jpg",
+        "23ea39041f6f88ea-hard_cut_candidate-1.jpg",
+        "23ea39041f6f88ea-hard_cut_candidate-2.jpg",
+        "23ea39041f6f88ea-hard_cut_candidate-3.jpg",
+        "23ea39041f6f88ea-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        793.363,
+        793.403,
+        793.443,
+        793.4830000000001,
+        793.523
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A seated man in a darker composition changes abruptly to a standing man in a brighter outdoor water setting.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 25,
+      "film_key": "yi chuan xiang lian",
+      "video_version_id": "sha256:7e8a777db589c865a772e3d45f44c4dcebb4e8d6365884bd7102dde85e912bc3",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 24474432,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "23ea39041f6f88ea-gradual_candidate_dissolve-0.jpg",
+        "23ea39041f6f88ea-gradual_candidate_dissolve-1.jpg",
+        "23ea39041f6f88ea-gradual_candidate_dissolve-2.jpg",
+        "23ea39041f6f88ea-gradual_candidate_dissolve-3.jpg",
+        "23ea39041f6f88ea-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1529.489,
+        1529.6090000000002,
+        1529.8090000000002,
+        1530.0090000000002,
+        1530.1290000000001
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same three costumed figures remain together outdoors. Gestures and head positions change.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 26,
+      "film_key": "huan tian xi di (1959)",
+      "video_version_id": "sha256:f780fbf614d6108290d4035c5ee208e18ccf2a38f08019834b8a4f1e8cd5dc29",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 75017000,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "3405c7eb1627d7d8-hard_cut_candidate-0.jpg",
+        "3405c7eb1627d7d8-hard_cut_candidate-1.jpg",
+        "3405c7eb1627d7d8-hard_cut_candidate-2.jpg",
+        "3405c7eb1627d7d8-hard_cut_candidate-3.jpg",
+        "3405c7eb1627d7d8-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3000.5600000000004,
+        3000.6000000000004,
+        3000.6400000000003,
+        3000.6800000000003,
+        3000.7200000000003
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A close view of a puppet changes abruptly to a wider stage view showing puppets and a human performer.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 27,
+      "film_key": "huan tian xi di (1959)",
+      "video_version_id": "sha256:f780fbf614d6108290d4035c5ee208e18ccf2a38f08019834b8a4f1e8cd5dc29",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 57936000,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "3405c7eb1627d7d8-gradual_candidate_dissolve-0.jpg",
+        "3405c7eb1627d7d8-gradual_candidate_dissolve-1.jpg",
+        "3405c7eb1627d7d8-gradual_candidate_dissolve-2.jpg",
+        "3405c7eb1627d7d8-gradual_candidate_dissolve-3.jpg",
+        "3405c7eb1627d7d8-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        2317.28,
+        2317.4,
+        2317.7200000000003,
+        2318.0400000000004,
+        2318.1600000000003
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same acrobat, balancing pole and audience remain visible. Body position changes within this composition.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 28,
+      "film_key": "wu ya yu ma que",
+      "video_version_id": "sha256:1ba659f022498ac739bcd4a8fc1d7cd7a7f6f7b0f22fb333888f03b305cf2ec4",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 27299392,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "a2d3940fc115ca1b-hard_cut_candidate-0.jpg",
+        "a2d3940fc115ca1b-hard_cut_candidate-1.jpg",
+        "a2d3940fc115ca1b-hard_cut_candidate-2.jpg",
+        "a2d3940fc115ca1b-hard_cut_candidate-3.jpg",
+        "a2d3940fc115ca1b-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1706.0890000000002,
+        1706.1290000000001,
+        1706.169,
+        1706.209,
+        1706.2490000000003
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A close view of a woman changes abruptly to a wider indoor composition showing people around a table or counter.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 29,
+      "film_key": "wu ya yu ma que",
+      "video_version_id": "sha256:1ba659f022498ac739bcd4a8fc1d7cd7a7f6f7b0f22fb333888f03b305cf2ec4",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 28270912,
+      "contact_sheet": "contact_sheet_05.png",
+      "frame_files": [
+        "a2d3940fc115ca1b-gradual_candidate_dissolve-0.jpg",
+        "a2d3940fc115ca1b-gradual_candidate_dissolve-1.jpg",
+        "a2d3940fc115ca1b-gradual_candidate_dissolve-2.jpg",
+        "a2d3940fc115ca1b-gradual_candidate_dissolve-3.jpg",
+        "a2d3940fc115ca1b-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1766.7690000000002,
+        1766.8890000000001,
+        1767.2490000000003,
+        1767.6490000000001,
+        1767.7690000000002
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same printed portrait and surrounding lettering remain visible across the five samples. Small image displacement or wear is visible.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 30,
+      "film_key": "ying xiong xiao ba lu",
+      "video_version_id": "sha256:2c842df9ba55e134195436cb19c55b9566a4cd67f61ffb59e4beae8f68c5c5d8",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 42496960,
+      "contact_sheet": "contact_sheet_06.png",
+      "frame_files": [
+        "24a75e83b4e9c570-hard_cut_candidate-0.jpg",
+        "24a75e83b4e9c570-hard_cut_candidate-1.jpg",
+        "24a75e83b4e9c570-hard_cut_candidate-2.jpg",
+        "24a75e83b4e9c570-hard_cut_candidate-3.jpg",
+        "24a75e83b4e9c570-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        2655.937,
+        2655.977,
+        2656.017,
+        2656.057,
+        2656.0969999999998
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A smiling figure changes abruptly to a group of children in a different composition.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 31,
+      "film_key": "ying xiong xiao ba lu",
+      "video_version_id": "sha256:2c842df9ba55e134195436cb19c55b9566a4cd67f61ffb59e4beae8f68c5c5d8",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 24240816,
+      "contact_sheet": "contact_sheet_06.png",
+      "frame_files": [
+        "24a75e83b4e9c570-gradual_candidate_dissolve-0.jpg",
+        "24a75e83b4e9c570-gradual_candidate_dissolve-1.jpg",
+        "24a75e83b4e9c570-gradual_candidate_dissolve-2.jpg",
+        "24a75e83b4e9c570-gradual_candidate_dissolve-3.jpg",
+        "24a75e83b4e9c570-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        1514.8880000000001,
+        1515.008,
+        1515.3280000000002,
+        1515.6480000000001,
+        1515.768
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same boy outdoors remains in close-up. His head turns and his mouth position changes.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    },
+    {
+      "event_index": 32,
+      "film_key": "xiao zhu yan kai",
+      "video_version_id": "sha256:84529d6562429a1a2d257dd3a6620be8704ceea96f4eedbaef8035d0147a0c97",
+      "kind": "hard_cut_candidate",
+      "anchor_pts": 153281000,
+      "contact_sheet": "contact_sheet_06.png",
+      "frame_files": [
+        "81e2fd10c8715384-hard_cut_candidate-0.jpg",
+        "81e2fd10c8715384-hard_cut_candidate-1.jpg",
+        "81e2fd10c8715384-hard_cut_candidate-2.jpg",
+        "81e2fd10c8715384-hard_cut_candidate-3.jpg",
+        "81e2fd10c8715384-hard_cut_candidate-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        6131.120000000001,
+        6131.160000000001,
+        6131.200000000001,
+        6131.240000000001,
+        6131.280000000001
+      ],
+      "assistant_category": "visible_spatial_discontinuity",
+      "assistant_observation": "A room with a boy changes abruptly to a woman at a doorway holding a curtain.",
+      "independent_human_ground_truth": false
+    },
+    {
+      "event_index": 33,
+      "film_key": "xiao zhu yan kai",
+      "video_version_id": "sha256:84529d6562429a1a2d257dd3a6620be8704ceea96f4eedbaef8035d0147a0c97",
+      "kind": "gradual_candidate_dissolve",
+      "anchor_pts": 95864000,
+      "contact_sheet": "contact_sheet_06.png",
+      "frame_files": [
+        "81e2fd10c8715384-gradual_candidate_dissolve-0.jpg",
+        "81e2fd10c8715384-gradual_candidate_dissolve-1.jpg",
+        "81e2fd10c8715384-gradual_candidate_dissolve-2.jpg",
+        "81e2fd10c8715384-gradual_candidate_dissolve-3.jpg",
+        "81e2fd10c8715384-gradual_candidate_dissolve-4.jpg"
+      ],
+      "sampled_playback_seconds": [
+        3834.4000000000005,
+        3834.5200000000004,
+        3834.8,
+        3835.0800000000004,
+        3835.2000000000003
+      ],
+      "assistant_category": "same_configuration_no_obvious_blend_in_five_frames",
+      "assistant_observation": "The same two women retain their positions in the dialogue setting. Face, mouth and hand movements occur.",
+      "independent_human_ground_truth": false,
+      "inference": "Within-shot movement or small image changes are plausible triggers of this candidate."
+    }
+  ],
+  "observation_counts": {
+    "hard_cut_candidate": {
+      "visible_spatial_discontinuity": 17
+    },
+    "gradual_candidate_dissolve": {
+      "same_configuration_no_obvious_blend_in_five_frames": 16,
+      "visible_superposition_endpoints_unverified": 1
+    }
+  },
+  "inferences": [
+    "The visible discontinuities support inspecting the hard-cut candidate locations in this selected sample.",
+    "Sixteen gradual rows retain a stable visual configuration and mainly show within-shot movement or small image changes. These provide possible failure mechanisms for the default dissolve rules.",
+    "One gradual row visibly mixes two configurations. The five-frame display does not establish complete transition boundaries."
+  ],
+  "selection_comparison": {
+    "previous_receipt_path": "/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/studio-editing/corpus-20261026T114911Z/visual_qa/selection_and_receipt.json",
+    "previous_receipt_sha256": "132ab391fbdb42810dd0dfe9c6224461605875e0466a5a69827d349314806934",
+    "common_films": [
+      "er bai wu xiao zhuan",
+      "fu fu jin xing qu",
+      "xiao zhu yan kai"
+    ],
+    "new_films": [
+      "bai sui gua shuai",
+      "bi hai dan xin",
+      "biao",
+      "dong fang hong",
+      "huan tian xi di (1959)",
+      "liang ge xun luo bing",
+      "qi wang qiu jiang",
+      "san guan pai yan",
+      "song shi jie",
+      "wu ya yu ma que",
+      "xiao gu xian",
+      "xin dui yuan",
+      "yi chuan xiang lian",
+      "ying xiong xiao ba lu"
+    ],
+    "previous_films_not_selected_now": [
+      "a fu xun bao ji",
+      "ai le zhong nian",
+      "dong jin xu qu",
+      "gao ge meng jin",
+      "ku mu feng chun",
+      "li ren xing",
+      "liang shan bo yu zhu ying tai",
+      "liu ming zhu",
+      "qi shi er jia fang ke",
+      "qiu mi",
+      "xia tian de gu shi",
+      "xue hai yin shan",
+      "yang men nv jiang",
+      "you yuan jing meng (1956)"
+    ],
+    "identical_candidate_rows": 6,
+    "new_candidate_rows": 28,
+    "removed_candidate_rows": 28
+  },
+  "changed_sources_in_this_sample": [],
+  "limitations": [
+    "The inspection covers five selected stills per candidate and leaves intervening frames and complete gradual endpoints unadjudicated.",
+    "The selection includes candidates only and has no randomly sampled non-candidate intervals or exhaustive independent human reference. No corpus precision, recall or F1 is estimated from these observations.",
+    "None of the three replacement source keys appears in this institution-balanced random sample. Their separate opening-credit and sampling checks are recorded elsewhere in the refresh package.",
+    "This is an assistant diagnostic review. The researcher's original manual annotations retain their independent status."
+  ],
+  "original_videos_or_manual_annotations_modified": false
+}

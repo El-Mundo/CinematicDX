@@ -2,7 +2,11 @@
 
 Computational research infrastructure for *Negotiating Film Form: Computational Approaches to Twentieth-Century Political Cinema*.
 
-## Latest update — 28 October 2026
+## Latest research data, 10 November 2026
+
+The current corpus contains 454 videos. Three replacement sources have new grey-level and frame-complete editing measurements. All institutional summaries, timelines and sensitivity comparisons have been recomputed. The [current results release](research/quantitative_exploration/corpus_refresh/20261110/README.md) includes downloadable CSV tables, figures, source-version changes and validation records. Codex assisted the refresh and audit.
+
+## Desktop update, 28 October 2026
 
 **GUI and interaction experience improvements using Codex.** The desktop refresh and its supporting metadata/research code are now published on the main development line, `master`. The `codex/quantitative-evidence-20261026` branch records the development work; its name identifies the workflow rather than a separate source of research authority.
 
@@ -14,7 +18,7 @@ The JavaFX desktop workspace now provides parallel local-directory/database setu
 
 ![Catalog filtered by production and year](docs/gui/screenshots/catalog-filters.jpg)
 
-These are screenshots of the running macOS application. The isolated preview catalog contains 732 rows from the local research inventory and 453 existing media references, populated through the existing CSV workflow. That private catalog, the original inventory, videos, annotations and experimental caches are not shipped with the repository. New users create/open their own catalog.
+These screenshots show the macOS application with a private preview catalog populated from the research inventory through the CSV workflow. The original inventory, videos, annotations and experimental caches remain local. New users create/open their own catalog.
 
 ```sh
 ./scripts/run-desktop.sh

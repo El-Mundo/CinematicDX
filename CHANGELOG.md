@@ -1,5 +1,13 @@
 # Update record
 
+## 10 November 2026, corpus source refresh using Codex
+
+Replaced-source checks identified 《买牛、扒瓜园》《永恒的友谊》《老保管、新媳妇来了》. Their full-file hashes, ingestion records, grey-level samples, hard-cut candidates and gradual-transition candidates now describe the new versions. The corpus remains 454 videos.
+
+All institutional tables, relative timelines, temporal/threshold/crop/source sensitivities and conditional references were rebuilt. The [published data release](research/quantitative_exploration/corpus_refresh/20261110/README.md) contains the current tables, figures and source-version manifest. It records 2,390,266 grey-level observations and 194,781 primary hard-cut candidates across 59,715,616 decoded frames. Gradual outputs retain their candidate status and the existing unsuccessful interval validation.
+
+451 measurements retain their original receipts through explicit source/configuration checks. New extraction, source-identity inspection, nine additional sampling checks and independent numerical audits completed successfully. The Python suite passed 262 tests. The dated October presentation and audit remain research snapshots linked to this current release.
+
 ## 28 October 2026 — GUI and interaction experience improvements using Codex
 
 This publication brings the desktop update developed in `ee00475c39e0fbff54fa34b68bcc04b33ff865b6` onto `master`. It preserves that existing commit and the Codex development branch. The mainline merge message identifies both the GUI/interaction focus and Codex assistance.

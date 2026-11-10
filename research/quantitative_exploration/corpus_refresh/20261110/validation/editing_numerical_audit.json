@@ -1,0 +1,3279 @@
+{
+  "status": "VERIFIED numerical/provenance assertions only",
+  "completed_at_utc": "2026-11-10T22:25:47.747901+00:00",
+  "decoded_frames": 59715616,
+  "cut_candidates": 194781,
+  "gradual_candidates": 253704,
+  "source_states_changed": [],
+  "originals_sha256_unchanged": true,
+  "film_checks": [
+    {
+      "film_key": "51 hao bing zhan",
+      "frame_count": 140875,
+      "cut_candidates": 609,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi chuan xiang lian",
+      "frame_count": 49834,
+      "cut_candidates": 58,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi jian ti an",
+      "frame_count": 117100,
+      "cut_candidates": 488,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi chang feng bo",
+      "frame_count": 125394,
+      "cut_candidates": 368,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi tian yi ye",
+      "frame_count": 111198,
+      "cut_candidates": 370,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi wen qian",
+      "frame_count": 93744,
+      "cut_candidates": 122,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi ri qian li",
+      "frame_count": 100726,
+      "cut_candidates": 290,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi bai ge fang xin",
+      "frame_count": 109576,
+      "cut_candidates": 305,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi guan hai ren dao",
+      "frame_count": 160081,
+      "cut_candidates": 553,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi ke hong xin",
+      "frame_count": 136605,
+      "cut_candidates": 210,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qi shi er jia fang ke",
+      "frame_count": 121373,
+      "cut_candidates": 473,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wan mu chun",
+      "frame_count": 120528,
+      "cut_candidates": 362,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wan shui qian shan",
+      "frame_count": 143250,
+      "cut_candidates": 466,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san ge zhan you",
+      "frame_count": 115950,
+      "cut_candidates": 471,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san ge mu qin",
+      "frame_count": 147325,
+      "cut_candidates": 635,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san ba xian shang",
+      "frame_count": 111625,
+      "cut_candidates": 393,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san guan pai yan",
+      "frame_count": 182050,
+      "cut_candidates": 299,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san nian zao zhi dao",
+      "frame_count": 119950,
+      "cut_candidates": 298,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san duo xiao hong hua",
+      "frame_count": 109431,
+      "cut_candidates": 255,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san mao xue sheng yi",
+      "frame_count": 112007,
+      "cut_candidates": 371,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san mao liu lang ji",
+      "frame_count": 104075,
+      "cut_candidates": 502,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san di xue",
+      "frame_count": 174125,
+      "cut_candidates": 346,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "san jin shan cheng",
+      "frame_count": 132312,
+      "cut_candidates": 618,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang hai zhi chun",
+      "frame_count": 135001,
+      "cut_candidates": 365,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang hai gu niang",
+      "frame_count": 131300,
+      "cut_candidates": 374,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang gan ling",
+      "frame_count": 185825,
+      "cut_candidates": 934,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang jin shan",
+      "frame_count": 39250,
+      "cut_candidates": 55,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang rao ji zhong ying",
+      "frame_count": 141876,
+      "cut_candidates": 428,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bu ye cheng",
+      "frame_count": 169350,
+      "cut_candidates": 700,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bu ju xiao jie de ren",
+      "frame_count": 78375,
+      "cut_candidates": 198,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bu neng zou na tiao lu",
+      "frame_count": 86725,
+      "cut_candidates": 240,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dong fang hong",
+      "frame_count": 179930,
+      "cut_candidates": 321,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dong jin xu qu",
+      "frame_count": 145667,
+      "cut_candidates": 445,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liang ge xiao zu qiu dui",
+      "frame_count": 115925,
+      "cut_candidates": 591,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liang ge xun luo bing",
+      "frame_count": 129875,
+      "cut_candidates": 461,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liang jia ren",
+      "frame_count": 113401,
+      "cut_candidates": 406,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhong hua nv er",
+      "frame_count": 128359,
+      "cut_candidates": 563,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "feng shou",
+      "frame_count": 128642,
+      "cut_candidates": 421,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "feng shou zhi hou",
+      "frame_count": 158067,
+      "cut_candidates": 468,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wei le liu shi yi ge jie ji di xiong",
+      "frame_count": 87700,
+      "cut_candidates": 310,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wei le he ping",
+      "frame_count": 159666,
+      "cut_candidates": 593,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "li ren xing",
+      "frame_count": 154958,
+      "cut_candidates": 819,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu ya yu ma que",
+      "frame_count": 160868,
+      "cut_candidates": 564,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiao lao ye shang jiao",
+      "frame_count": 103771,
+      "cut_candidates": 500,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "cheng feng po lang",
+      "frame_count": 142400,
+      "cut_candidates": 621,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mai niu 、ba gua yuan",
+      "frame_count": 121169,
+      "cut_candidates": 177,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "er bai wu xiao zhuan",
+      "frame_count": 138691,
+      "cut_candidates": 518,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yun wu shan zhong",
+      "frame_count": 124025,
+      "cut_candidates": 417,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu cai lu",
+      "frame_count": 133420,
+      "cut_candidates": 425,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu geng han",
+      "frame_count": 163105,
+      "cut_candidates": 429,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu duo hong yun",
+      "frame_count": 118038,
+      "cut_candidates": 316,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu duo jin hua",
+      "frame_count": 143200,
+      "cut_candidates": 520,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ren huan ma jiao",
+      "frame_count": 168050,
+      "cut_candidates": 222,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin tian wo xiu xi",
+      "frame_count": 126700,
+      "cut_candidates": 417,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yi ge ming de ming yi",
+      "frame_count": 222759,
+      "cut_candidates": 258,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wei da de qi dian",
+      "frame_count": 157625,
+      "cut_candidates": 410,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chuan qiang ji",
+      "frame_count": 104944,
+      "cut_candidates": 202,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jie dong feng",
+      "frame_count": 137319,
+      "cut_candidates": 239,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ting zhan yi hou",
+      "frame_count": 178144,
+      "cut_candidates": 639,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "er nv qin shi",
+      "frame_count": 98775,
+      "cut_candidates": 468,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiong mei tan bao",
+      "frame_count": 113192,
+      "cut_candidates": 690,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "guang mang wan zhang",
+      "frame_count": 121445,
+      "cut_candidates": 562,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "guang rong ren jia",
+      "frame_count": 120591,
+      "cut_candidates": 544,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dang de nv er",
+      "frame_count": 135275,
+      "cut_candidates": 449,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu hao men",
+      "frame_count": 145492,
+      "cut_candidates": 496,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lan lan he dong dong",
+      "frame_count": 81325,
+      "cut_candidates": 355,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bing lin cheng xia",
+      "frame_count": 152060,
+      "cut_candidates": 500,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zai sheng ji",
+      "frame_count": 145450,
+      "cut_candidates": 512,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jun ge liao liang",
+      "frame_count": 138539,
+      "cut_candidates": 229,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nong nu",
+      "frame_count": 132518,
+      "cut_candidates": 300,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nong jia le",
+      "frame_count": 122993,
+      "cut_candidates": 418,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dong mei",
+      "frame_count": 133300,
+      "cut_candidates": 586,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bing shang jie mei",
+      "frame_count": 148300,
+      "cut_candidates": 536,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bing shan shang de lai ke",
+      "frame_count": 152250,
+      "cut_candidates": 621,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bing xue jin da lai",
+      "frame_count": 140756,
+      "cut_candidates": 492,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chong po li ming qian de hei an",
+      "frame_count": 140125,
+      "cut_candidates": 414,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "feng huang zhi ge",
+      "frame_count": 136834,
+      "cut_candidates": 487,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fen shui ling",
+      "frame_count": 130243,
+      "cut_candidates": 428,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu san jie",
+      "frame_count": 170400,
+      "cut_candidates": 754,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu qiao er",
+      "frame_count": 156125,
+      "cut_candidates": 241,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu ming zhu",
+      "frame_count": 163201,
+      "cut_candidates": 369,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu hu lan",
+      "frame_count": 128709,
+      "cut_candidates": 423,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qian shao",
+      "frame_count": 148350,
+      "cut_candidates": 448,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "meng long sha",
+      "frame_count": 135550,
+      "cut_candidates": 503,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bei guo jiang nan",
+      "frame_count": 176892,
+      "cut_candidates": 461,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bei da huang ren",
+      "frame_count": 153637,
+      "cut_candidates": 469,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shi san ling shui ku chang xiang qu",
+      "frame_count": 130930,
+      "cut_candidates": 339,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shi er ci lie che",
+      "frame_count": 115475,
+      "cut_candidates": 473,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shi wu guan",
+      "frame_count": 171115,
+      "cut_candidates": 283,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qian wan bu yao wang ji",
+      "frame_count": 149045,
+      "cut_candidates": 487,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nan dao feng yun",
+      "frame_count": 145025,
+      "cut_candidates": 639,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nan zheng bei zhan",
+      "frame_count": 184225,
+      "cut_candidates": 758,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nan hai chao",
+      "frame_count": 167676,
+      "cut_candidates": 903,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nan hai de zao chen",
+      "frame_count": 130399,
+      "cut_candidates": 510,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wei guo bao jia",
+      "frame_count": 131655,
+      "cut_candidates": 580,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "you yi",
+      "frame_count": 104006,
+      "cut_candidates": 227,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shuang tui mo",
+      "frame_count": 64083,
+      "cut_candidates": 81,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shuang jiao zi",
+      "frame_count": 95734,
+      "cut_candidates": 175,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gu cha zhong sheng",
+      "frame_count": 118326,
+      "cut_candidates": 420,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiang yang hua kai",
+      "frame_count": 127814,
+      "cut_candidates": 374,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lv liang ying xiong",
+      "frame_count": 132068,
+      "cut_candidates": 348,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhou xin fang de wu tai yi shu",
+      "frame_count": 148924,
+      "cut_candidates": 239,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "he ping bao wei zhe",
+      "frame_count": 80795,
+      "cut_candidates": 351,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ai le zhong nian",
+      "frame_count": 154275,
+      "cut_candidates": 361,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ha sen yu jia mi la",
+      "frame_count": 147600,
+      "cut_candidates": 404,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ge lia hao",
+      "frame_count": 118578,
+      "cut_candidates": 362,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ge ge he mei mei",
+      "frame_count": 97425,
+      "cut_candidates": 385,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hui min zhi dui",
+      "frame_count": 153600,
+      "cut_candidates": 541,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tuan jie qi lai dao ming tian",
+      "frame_count": 143069,
+      "cut_candidates": 542,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "guo qing shi dian zhong",
+      "frame_count": 139150,
+      "cut_candidates": 627,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tu di",
+      "frame_count": 159475,
+      "cut_candidates": 445,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di xia jian bing",
+      "frame_count": 139975,
+      "cut_candidates": 527,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di xia hang xian",
+      "frame_count": 155850,
+      "cut_candidates": 549,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di dao zhan",
+      "frame_count": 144375,
+      "cut_candidates": 578,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di lei zhan",
+      "frame_count": 113675,
+      "cut_candidates": 438,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiang tou ma shang",
+      "frame_count": 162475,
+      "cut_candidates": 326,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fu shi (1957)",
+      "frame_count": 69600,
+      "cut_candidates": 281,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xia tian de gu shi",
+      "frame_count": 125850,
+      "cut_candidates": 393,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da di chong guang",
+      "frame_count": 136388,
+      "cut_candidates": 518,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da li 、 xiao li he lao li",
+      "frame_count": 123045,
+      "cut_candidates": 616,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da lang tao sha",
+      "frame_count": 185950,
+      "cut_candidates": 854,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da feng lang li de xiao gu shi",
+      "frame_count": 117675,
+      "cut_candidates": 469,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tian xian pei",
+      "frame_count": 144026,
+      "cut_candidates": 326,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tian shan ge sheng",
+      "frame_count": 121550,
+      "cut_candidates": 415,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tian luo di wang",
+      "frame_count": 143900,
+      "cut_candidates": 239,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tai yang gang gang chu shan",
+      "frame_count": 116250,
+      "cut_candidates": 273,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fu fu jin xing qu",
+      "frame_count": 149014,
+      "cut_candidates": 512,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qi xi",
+      "frame_count": 111645,
+      "cut_candidates": 384,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv si ji",
+      "frame_count": 123275,
+      "cut_candidates": 490,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv shen",
+      "frame_count": 141087,
+      "cut_candidates": 368,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv li fa shi",
+      "frame_count": 73520,
+      "cut_candidates": 279,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv she zhang",
+      "frame_count": 137250,
+      "cut_candidates": 334,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv lan 5 hao",
+      "frame_count": 129061,
+      "cut_candidates": 812,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv tiao shui dui yuan",
+      "frame_count": 139025,
+      "cut_candidates": 666,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nv fei xing yuan",
+      "frame_count": 177156,
+      "cut_candidates": 565,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hao xi fu",
+      "frame_count": 74672,
+      "cut_candidates": 122,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ru ci duo qing",
+      "frame_count": 80150,
+      "cut_candidates": 248,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ru ci die niang",
+      "frame_count": 129922,
+      "cut_candidates": 501,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fu nv dai biao",
+      "frame_count": 117050,
+      "cut_candidates": 245,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ma ma yao wo chu jia",
+      "frame_count": 112150,
+      "cut_candidates": 398,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sun an dong ben",
+      "frame_count": 165025,
+      "cut_candidates": 370,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sun wu kong san da bai gu jing",
+      "frame_count": 142219,
+      "cut_candidates": 442,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yu zhou feng",
+      "frame_count": 98788,
+      "cut_candidates": 74,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "song shi jie",
+      "frame_count": 145500,
+      "cut_candidates": 257,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "song jing shi",
+      "frame_count": 194743,
+      "cut_candidates": 940,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bao shan zhi ge",
+      "frame_count": 47800,
+      "cut_candidates": 107,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bao lian deng",
+      "frame_count": 120308,
+      "cut_candidates": 416,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bao hu lu de mi mi",
+      "frame_count": 101575,
+      "cut_candidates": 474,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jia",
+      "frame_count": 181350,
+      "cut_candidates": 500,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jia ting wen ti",
+      "frame_count": 135894,
+      "cut_candidates": 445,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ji jing de shan lin",
+      "frame_count": 141875,
+      "cut_candidates": 383,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xun ai ji",
+      "frame_count": 96450,
+      "cut_candidates": 398,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao er hei jie hun",
+      "frame_count": 118820,
+      "cut_candidates": 386,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao huo ban",
+      "frame_count": 101575,
+      "cut_candidates": 300,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao bing zhang ga",
+      "frame_count": 151825,
+      "cut_candidates": 519,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao dao hui",
+      "frame_count": 127659,
+      "cut_candidates": 591,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao gu xian",
+      "frame_count": 79511,
+      "cut_candidates": 105,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao bai tu",
+      "frame_count": 101655,
+      "cut_candidates": 398,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao bai qi de feng bo",
+      "frame_count": 84830,
+      "cut_candidates": 293,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao zu qiu dui",
+      "frame_count": 130553,
+      "cut_candidates": 618,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao ling dang",
+      "frame_count": 99598,
+      "cut_candidates": 438,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shang xiao yun wu tai yi shu",
+      "frame_count": 133757,
+      "cut_candidates": 182,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan cun kuai ji",
+      "frame_count": 109302,
+      "cut_candidates": 369,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan cun jie mei",
+      "frame_count": 142169,
+      "cut_candidates": 473,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan cun xin qu",
+      "frame_count": 158526,
+      "cut_candidates": 407,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan li de ren",
+      "frame_count": 116623,
+      "cut_candidates": 432,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan jian ling xiang ma bang lai",
+      "frame_count": 128287,
+      "cut_candidates": 424,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "an bian ji lang",
+      "frame_count": 110151,
+      "cut_candidates": 375,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gong di qing nian",
+      "frame_count": 126575,
+      "cut_candidates": 344,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ba shan hong lang",
+      "frame_count": 138567,
+      "cut_candidates": 449,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dai bing de ren",
+      "frame_count": 148768,
+      "cut_candidates": 605,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ping yuan you ji dui",
+      "frame_count": 128713,
+      "cut_candidates": 597,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nian qing de yi dai",
+      "frame_count": 162715,
+      "cut_candidates": 497,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bing jian qian jin",
+      "frame_count": 114736,
+      "cut_candidates": 390,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "guang chang za ji biao yan",
+      "frame_count": 54984,
+      "cut_candidates": 237,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "an tang xiang hui",
+      "frame_count": 68902,
+      "cut_candidates": 139,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "an tang ren mu",
+      "frame_count": 87128,
+      "cut_candidates": 126,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "kang zhuang da dao",
+      "frame_count": 118950,
+      "cut_candidates": 433,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yan an you ji dui",
+      "frame_count": 139518,
+      "cut_candidates": 610,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "cai die fen fei",
+      "frame_count": 69437,
+      "cut_candidates": 126,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xu qiu ying an jian",
+      "frame_count": 136336,
+      "cut_candidates": 347,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xin lian xin",
+      "frame_count": 138050,
+      "cut_candidates": 439,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nu chao",
+      "frame_count": 148343,
+      "cut_candidates": 605,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huan nan zhi jiao",
+      "frame_count": 135875,
+      "cut_candidates": 482,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xuan ya",
+      "frame_count": 130000,
+      "cut_candidates": 468,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing tan",
+      "frame_count": 126686,
+      "cut_candidates": 241,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing chang yi shen",
+      "frame_count": 149350,
+      "cut_candidates": 636,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wo men shi yi dai ren",
+      "frame_count": 146975,
+      "cut_candidates": 394,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wo men cun li de nian qing ren (shang ji)",
+      "frame_count": 148575,
+      "cut_candidates": 602,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wo men cun li de nian qing ren (xu ji)",
+      "frame_count": 134761,
+      "cut_candidates": 470,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wo zhe yi bei zi",
+      "frame_count": 156485,
+      "cut_candidates": 439,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhan shang hai",
+      "frame_count": 152742,
+      "cut_candidates": 491,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhan dou li cheng zhang",
+      "frame_count": 138800,
+      "cut_candidates": 411,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhan huo zhong de qing chun",
+      "frame_count": 137350,
+      "cut_candidates": 559,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "pu bu mie de huo yan",
+      "frame_count": 148850,
+      "cut_candidates": 510,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da ji qin lve zhe",
+      "frame_count": 137875,
+      "cut_candidates": 461,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da jin zhi",
+      "frame_count": 128360,
+      "cut_candidates": 142,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "da tong luo 、bu guo",
+      "frame_count": 64350,
+      "cut_candidates": 119,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhua zhuang ding",
+      "frame_count": 143919,
+      "cut_candidates": 450,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "kang han qu",
+      "frame_count": 92170,
+      "cut_candidates": 314,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hu shi ri ji",
+      "frame_count": 143580,
+      "cut_candidates": 447,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shi yu zhuo",
+      "frame_count": 83746,
+      "cut_candidates": 76,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huan le ren jian",
+      "frame_count": 139853,
+      "cut_candidates": 582,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tan qin ji",
+      "frame_count": 137225,
+      "cut_candidates": 392,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sou shu yuan",
+      "frame_count": 178755,
+      "cut_candidates": 196,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mo ya dai",
+      "frame_count": 152794,
+      "cut_candidates": 439,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dou shi ting",
+      "frame_count": 130322,
+      "cut_candidates": 282,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhan duan mo zhua",
+      "frame_count": 131280,
+      "cut_candidates": 313,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xin er nv ying xiong zhuan",
+      "frame_count": 204600,
+      "cut_candidates": 558,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xin ju zhang dao lai zhi qian",
+      "frame_count": 69775,
+      "cut_candidates": 183,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xin dui yuan",
+      "frame_count": 107456,
+      "cut_candidates": 518,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu ming dao",
+      "frame_count": 127229,
+      "cut_candidates": 473,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu xing de zhan xian",
+      "frame_count": 146725,
+      "cut_candidates": 581,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu qiong de qian li",
+      "frame_count": 126024,
+      "cut_candidates": 415,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zao chun er yue",
+      "frame_count": 163471,
+      "cut_candidates": 492,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "kun lun shan shang yi ke cao",
+      "frame_count": 92452,
+      "cut_candidates": 194,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun cui tao li",
+      "frame_count": 136370,
+      "cut_candidates": 452,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun tian lai le",
+      "frame_count": 141825,
+      "cut_candidates": 421,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun nuan hua kai",
+      "frame_count": 139250,
+      "cut_candidates": 426,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun shui chang liu",
+      "frame_count": 92175,
+      "cut_candidates": 321,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun man ren jian",
+      "frame_count": 144225,
+      "cut_candidates": 526,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun yan zhan chi",
+      "frame_count": 112751,
+      "cut_candidates": 230,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun lei (1958)",
+      "frame_count": 95825,
+      "cut_candidates": 353,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chun feng chui dao nuo min he",
+      "frame_count": 158963,
+      "cut_candidates": 406,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jing po gu niang",
+      "frame_count": 140635,
+      "cut_candidates": 509,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhi qu hua shan",
+      "frame_count": 173700,
+      "cut_candidates": 602,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shu jia de li wu",
+      "frame_count": 100720,
+      "cut_candidates": 410,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bao feng zhong de xiong ying",
+      "frame_count": 150375,
+      "cut_candidates": 728,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bao feng zhou yu",
+      "frame_count": 162000,
+      "cut_candidates": 455,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fu wu yuan",
+      "frame_count": 86175,
+      "cut_candidates": 235,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wang jiang ting",
+      "frame_count": 137069,
+      "cut_candidates": 244,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chao yang gou",
+      "frame_count": 158850,
+      "cut_candidates": 377,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wei wan cheng de xi ju",
+      "frame_count": 119175,
+      "cut_candidates": 339,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "li shuang shuang",
+      "frame_count": 144897,
+      "cut_candidates": 396,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "li shi zhen",
+      "frame_count": 155325,
+      "cut_candidates": 440,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "du shi niang",
+      "frame_count": 131920,
+      "cut_candidates": 174,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yang men nv jiang",
+      "frame_count": 206825,
+      "cut_candidates": 377,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lin chong",
+      "frame_count": 136269,
+      "cut_candidates": 404,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lin ze xu",
+      "frame_count": 150050,
+      "cut_candidates": 712,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lin jia pu zi",
+      "frame_count": 123300,
+      "cut_candidates": 388,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lin hai xue yuan",
+      "frame_count": 175075,
+      "cut_candidates": 541,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ku mu feng chun",
+      "frame_count": 142825,
+      "cut_candidates": 396,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gui tai",
+      "frame_count": 101476,
+      "cut_candidates": 333,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ke shan hong ri",
+      "frame_count": 158500,
+      "cut_candidates": 313,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu bao de gu shi",
+      "frame_count": 118350,
+      "cut_candidates": 382,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liu yi chuan shu",
+      "frame_count": 159497,
+      "cut_candidates": 344,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tao hua shan",
+      "frame_count": 171825,
+      "cut_candidates": 494,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liang shan bo yu zhu ying tai",
+      "frame_count": 159679,
+      "cut_candidates": 285,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mei lan fang de wu tai yi shu (shang ji)",
+      "frame_count": 164005,
+      "cut_candidates": 197,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mei lan fang de wu tai yi shu (xia ji)",
+      "frame_count": 140621,
+      "cut_candidates": 138,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ye lin qu",
+      "frame_count": 146247,
+      "cut_candidates": 379,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huai shu zhuang",
+      "frame_count": 144389,
+      "cut_candidates": 414,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huan tian xi di (1959)",
+      "frame_count": 98275,
+      "cut_candidates": 388,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu song",
+      "frame_count": 169672,
+      "cut_candidates": 267,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mu qin",
+      "frame_count": 156196,
+      "cut_candidates": 562,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mu nv jiao shi",
+      "frame_count": 125350,
+      "cut_candidates": 423,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mao zi pei chuang gong",
+      "frame_count": 148413,
+      "cut_candidates": 330,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "min zhu qing nian jin xing qu",
+      "frame_count": 149828,
+      "cut_candidates": 705,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shui",
+      "frame_count": 72997,
+      "cut_candidates": 319,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shui shang chun qiu",
+      "frame_count": 138246,
+      "cut_candidates": 506,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shui xiang de chun tian",
+      "frame_count": 158750,
+      "cut_candidates": 478,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shui shou zhang de gu shi",
+      "frame_count": 146623,
+      "cut_candidates": 553,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yong bu xiao shi de dian bo",
+      "frame_count": 164871,
+      "cut_candidates": 417,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yong heng de you yi",
+      "frame_count": 135988,
+      "cut_candidates": 395,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jiang shan duo jiao",
+      "frame_count": 135276,
+      "cut_candidates": 392,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fen shui chang liu",
+      "frame_count": 164901,
+      "cut_candidates": 507,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sha jia dian liang zhan",
+      "frame_count": 130583,
+      "cut_candidates": 487,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sha mo zhui fei ji",
+      "frame_count": 106650,
+      "cut_candidates": 571,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sha mo li de zhan dou",
+      "frame_count": 162257,
+      "cut_candidates": 633,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "luo shen",
+      "frame_count": 93781,
+      "cut_candidates": 90,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dong xiao heng chui",
+      "frame_count": 135720,
+      "cut_candidates": 415,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lang tao gun gun",
+      "frame_count": 174163,
+      "cut_candidates": 484,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hai shang shen ying",
+      "frame_count": 123425,
+      "cut_candidates": 399,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hai shang feng bao",
+      "frame_count": 119600,
+      "cut_candidates": 540,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hai kuo tian kong",
+      "frame_count": 145425,
+      "cut_candidates": 432,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hai hun",
+      "frame_count": 132875,
+      "cut_candidates": 687,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hai ying",
+      "frame_count": 126725,
+      "cut_candidates": 601,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huai shang ren jia",
+      "frame_count": 167766,
+      "cut_candidates": 529,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yu dao zhi zi",
+      "frame_count": 102654,
+      "cut_candidates": 505,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "du jiang zhen cha ji",
+      "frame_count": 159650,
+      "cut_candidates": 704,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "du jiang tan xian",
+      "frame_count": 120375,
+      "cut_candidates": 384,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "you yuan jing meng (1960)",
+      "frame_count": 95850,
+      "cut_candidates": 76,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "you yuan jing meng (1956)",
+      "frame_count": 53350,
+      "cut_candidates": 408,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hu shang de dou zheng",
+      "frame_count": 144056,
+      "cut_candidates": 417,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "man yi bu man yi",
+      "frame_count": 128471,
+      "cut_candidates": 442,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ji zhan qian ye",
+      "frame_count": 112645,
+      "cut_candidates": 373,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ji liu",
+      "frame_count": 145916,
+      "cut_candidates": 544,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huo yan ju",
+      "frame_count": 154651,
+      "cut_candidates": 279,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lu huo zheng hong",
+      "frame_count": 137784,
+      "cut_candidates": 350,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lian yin",
+      "frame_count": 117469,
+      "cut_candidates": 147,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lie huo zhong yong sheng",
+      "frame_count": 208044,
+      "cut_candidates": 913,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "feng huo lie che",
+      "frame_count": 137974,
+      "cut_candidates": 533,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liao yuan",
+      "frame_count": 156421,
+      "cut_candidates": 591,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ai chang ru jia",
+      "frame_count": 111177,
+      "cut_candidates": 382,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mu ren zhi zi",
+      "frame_count": 153900,
+      "cut_candidates": 431,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mu tong tou jun",
+      "frame_count": 124216,
+      "cut_candidates": 544,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "“te kuai” lie che",
+      "frame_count": 126600,
+      "cut_candidates": 574,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "du li da dui",
+      "frame_count": 161049,
+      "cut_candidates": 658,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lang ya shan wu zhuang shi",
+      "frame_count": 121825,
+      "cut_candidates": 396,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "meng he de li ming",
+      "frame_count": 150000,
+      "cut_candidates": 499,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiu chang feng bo",
+      "frame_count": 113671,
+      "cut_candidates": 506,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiu mi",
+      "frame_count": 123795,
+      "cut_candidates": 522,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sheng ming de huo hua",
+      "frame_count": 137085,
+      "cut_candidates": 466,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sheng huo de lang hua",
+      "frame_count": 152794,
+      "cut_candidates": 441,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jia wu feng yun",
+      "frame_count": 152000,
+      "cut_candidates": 800,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hua zhong ren",
+      "frame_count": 150675,
+      "cut_candidates": 803,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai shan xin ge",
+      "frame_count": 131200,
+      "cut_candidates": 191,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai shou qi jia",
+      "frame_count": 82325,
+      "cut_candidates": 403,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai mao nv",
+      "frame_count": 159475,
+      "cut_candidates": 742,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai yi zhan shi",
+      "frame_count": 115425,
+      "cut_candidates": 564,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai feng chao yang",
+      "frame_count": 87975,
+      "cut_candidates": 148,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bai sui gua shuai",
+      "frame_count": 171896,
+      "cut_candidates": 444,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "pi bao",
+      "frame_count": 57450,
+      "cut_candidates": 217,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "kuang deng",
+      "frame_count": 143049,
+      "cut_candidates": 453,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bi hai dan xin",
+      "frame_count": 155684,
+      "cut_candidates": 493,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bi kong yin hua",
+      "frame_count": 126100,
+      "cut_candidates": 530,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zu guo de hua duo",
+      "frame_count": 113786,
+      "cut_candidates": 417,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhu fu",
+      "frame_count": 139250,
+      "cut_candidates": 371,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shen mi de lv ban",
+      "frame_count": 129772,
+      "cut_candidates": 490,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shen yang shou",
+      "frame_count": 51775,
+      "cut_candidates": 218,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiu weng yu xian ji",
+      "frame_count": 124122,
+      "cut_candidates": 548,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mi mi tu zhi",
+      "frame_count": 115895,
+      "cut_candidates": 516,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qin niang mei",
+      "frame_count": 155286,
+      "cut_candidates": 356,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mu gui ying gua shuai (1958)",
+      "frame_count": 115526,
+      "cut_candidates": 249,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tu po wu jiang",
+      "frame_count": 134300,
+      "cut_candidates": 405,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xiao zhu yan kai",
+      "frame_count": 155500,
+      "cut_candidates": 359,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di yi lie kuai che",
+      "frame_count": 74800,
+      "cut_candidates": 329,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "di san ci shi yan",
+      "frame_count": 42100,
+      "cut_candidates": 149,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jian gan he bian",
+      "frame_count": 157880,
+      "cut_candidates": 207,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liang shi",
+      "frame_count": 140507,
+      "cut_candidates": 369,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong hai zi",
+      "frame_count": 159500,
+      "cut_candidates": 502,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong qi ge",
+      "frame_count": 142150,
+      "cut_candidates": 457,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong ri",
+      "frame_count": 191157,
+      "cut_candidates": 718,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong mei ling",
+      "frame_count": 136856,
+      "cut_candidates": 627,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong he ji lang",
+      "frame_count": 146211,
+      "cut_candidates": 821,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong shan hu",
+      "frame_count": 153501,
+      "cut_candidates": 379,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong shi zhong sheng",
+      "frame_count": 147959,
+      "cut_candidates": 285,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong se niang zi jun",
+      "frame_count": 166425,
+      "cut_candidates": 679,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong se bei lou",
+      "frame_count": 142889,
+      "cut_candidates": 497,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong se you lu",
+      "frame_count": 131824,
+      "cut_candidates": 377,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong hua bian di kai",
+      "frame_count": 114665,
+      "cut_candidates": 261,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong xia",
+      "frame_count": 110000,
+      "cut_candidates": 186,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong ling jin de gu shi",
+      "frame_count": 102125,
+      "cut_candidates": 379,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong ying",
+      "frame_count": 111337,
+      "cut_candidates": 377,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hong ying zhan chi",
+      "frame_count": 124775,
+      "cut_candidates": 367,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mian dian wen hua dai biao tuan fang hua yan chu",
+      "frame_count": 66675,
+      "cut_candidates": 212,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "luo xiao lin de jue xin",
+      "frame_count": 64204,
+      "cut_candidates": 260,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "luo han qian",
+      "frame_count": 152180,
+      "cut_candidates": 310,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "yang cheng an shao",
+      "frame_count": 144370,
+      "cut_candidates": 527,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qiang di song",
+      "frame_count": 147825,
+      "cut_candidates": 555,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qun ying hui",
+      "frame_count": 148398,
+      "cut_candidates": 301,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "cui gang hong qi",
+      "frame_count": 144141,
+      "cut_candidates": 531,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "frame_count": 97785,
+      "cut_candidates": 127,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lao bing xin zhuan",
+      "frame_count": 160879,
+      "cut_candidates": 435,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "geng yun bo yu",
+      "frame_count": 109605,
+      "cut_candidates": 490,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "nie er",
+      "frame_count": 166150,
+      "cut_candidates": 546,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sheng li zai wang",
+      "frame_count": 164065,
+      "cut_candidates": 614,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "sheng li chong feng",
+      "frame_count": 136650,
+      "cut_candidates": 713,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jiao yin",
+      "frame_count": 49025,
+      "cut_candidates": 186,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zi you hou lai ren",
+      "frame_count": 144712,
+      "cut_candidates": 340,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu tai jie mei",
+      "frame_count": 161925,
+      "cut_candidates": 556,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lu sheng lian ge",
+      "frame_count": 136128,
+      "cut_candidates": 649,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hua wei mei",
+      "frame_count": 161025,
+      "cut_candidates": 232,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hua er duo duo",
+      "frame_count": 106000,
+      "cut_candidates": 343,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hua hao yue yuan",
+      "frame_count": 157389,
+      "cut_candidates": 548,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hua mu lan",
+      "frame_count": 153245,
+      "cut_candidates": 239,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "miao jia er nv",
+      "frame_count": 123652,
+      "cut_candidates": 383,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ku cai hua",
+      "frame_count": 163075,
+      "cut_candidates": 514,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong er nv",
+      "frame_count": 161025,
+      "cut_candidates": 768,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong si ji",
+      "frame_count": 152936,
+      "cut_candidates": 345,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong tan ke shou",
+      "frame_count": 103168,
+      "cut_candidates": 541,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong xiao ba lu",
+      "frame_count": 134992,
+      "cut_candidates": 595,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong dao",
+      "frame_count": 100620,
+      "cut_candidates": 476,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong hu dan",
+      "frame_count": 130550,
+      "cut_candidates": 421,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ying xiong shi pian",
+      "frame_count": 117342,
+      "cut_candidates": 576,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "cao yuan shang de ren men",
+      "frame_count": 137920,
+      "cut_candidates": 500,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "cao yuan xiong ying",
+      "frame_count": 129797,
+      "cut_candidates": 393,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huang shan lei",
+      "frame_count": 158416,
+      "cut_candidates": 185,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "luo shui ji",
+      "frame_count": 105875,
+      "cut_candidates": 349,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "pu tao shu le de shi hou",
+      "frame_count": 126367,
+      "cut_candidates": 412,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "dong cun rui",
+      "frame_count": 150782,
+      "cut_candidates": 678,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lan qiao hui",
+      "frame_count": 73150,
+      "cut_candidates": 88,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "man luo hua",
+      "frame_count": 115748,
+      "cut_candidates": 462,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hu xue zhui zong",
+      "frame_count": 129400,
+      "cut_candidates": 459,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "can hua gu niang",
+      "frame_count": 146700,
+      "cut_candidates": 413,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hu die bei",
+      "frame_count": 170721,
+      "cut_candidates": 187,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "biao",
+      "frame_count": 158292,
+      "cut_candidates": 664,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shei shi xiong shou",
+      "frame_count": 91473,
+      "cut_candidates": 355,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shei shi bei pao qi de ren",
+      "frame_count": 117667,
+      "cut_candidates": 385,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chi feng hao",
+      "frame_count": 105100,
+      "cut_candidates": 369,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zou xiang xin zhong guo",
+      "frame_count": 140231,
+      "cut_candidates": 651,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhao yi man",
+      "frame_count": 138190,
+      "cut_candidates": 762,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhao xiao lan",
+      "frame_count": 76700,
+      "cut_candidates": 257,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gen zong zhui ji",
+      "frame_count": 145970,
+      "cut_candidates": 582,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lu kao",
+      "frame_count": 149700,
+      "cut_candidates": 592,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "bian zhai feng huo",
+      "frame_count": 124775,
+      "cut_candidates": 490,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "liao yuan de xiang cun",
+      "frame_count": 133021,
+      "cut_candidates": 376,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fan lao huan tong",
+      "frame_count": 98275,
+      "cut_candidates": 207,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huan hun ji",
+      "frame_count": 173271,
+      "cut_candidates": 236,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhei jue bu shi xiao shi qing",
+      "frame_count": 94575,
+      "cut_candidates": 294,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "zhui yu",
+      "frame_count": 133526,
+      "cut_candidates": 349,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ni feng qian li",
+      "frame_count": 148807,
+      "cut_candidates": 464,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "e er duo si feng bao",
+      "frame_count": 129342,
+      "cut_candidates": 618,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ye huo chun feng dou gu cheng",
+      "frame_count": 149000,
+      "cut_candidates": 460,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin sha jiang pan",
+      "frame_count": 142073,
+      "cut_candidates": 732,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin yao chi",
+      "frame_count": 111686,
+      "cut_candidates": 207,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin ling zhuan",
+      "frame_count": 137125,
+      "cut_candidates": 409,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin yin tan",
+      "frame_count": 155082,
+      "cut_candidates": 579,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gang zhu fei che",
+      "frame_count": 108825,
+      "cut_candidates": 315,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gang tie zhan shi",
+      "frame_count": 142065,
+      "cut_candidates": 598,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tie dao wei shi",
+      "frame_count": 149475,
+      "cut_candidates": 684,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "tie dao you ji dui",
+      "frame_count": 125176,
+      "cut_candidates": 697,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xi cheng de gu shi",
+      "frame_count": 142200,
+      "cut_candidates": 286,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "jin shang tian hua",
+      "frame_count": 106621,
+      "cut_candidates": 339,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chang kong bi yi",
+      "frame_count": 140450,
+      "cut_candidates": 474,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "min jiang ju zi hong",
+      "frame_count": 123045,
+      "cut_candidates": 427,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "a fu xun bao ji",
+      "frame_count": 104525,
+      "cut_candidates": 427,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "a shi ma",
+      "frame_count": 128423,
+      "cut_candidates": 454,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "chen san wu niang",
+      "frame_count": 160794,
+      "cut_candidates": 214,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "shan bei mu ge",
+      "frame_count": 118934,
+      "cut_candidates": 534,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "xue hai yin shan",
+      "frame_count": 75535,
+      "cut_candidates": 251,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lei feng",
+      "frame_count": 116872,
+      "cut_candidates": 339,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "wu hai ye hang",
+      "frame_count": 119850,
+      "cut_candidates": 762,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ni hong deng xia de shao bing",
+      "frame_count": 171917,
+      "cut_candidates": 535,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing shan lian",
+      "frame_count": 142017,
+      "cut_candidates": 385,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing nian lu ban",
+      "frame_count": 129073,
+      "cut_candidates": 475,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing chun zhi ge",
+      "frame_count": 235175,
+      "cut_candidates": 564,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing chun de yuan di",
+      "frame_count": 119850,
+      "cut_candidates": 389,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing chun de jiao bu",
+      "frame_count": 120225,
+      "cut_candidates": 415,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing chun hong si huo",
+      "frame_count": 131939,
+      "cut_candidates": 257,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qing song ling",
+      "frame_count": 171363,
+      "cut_candidates": 514,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ge ming li shi ge qu biao yan chang",
+      "frame_count": 144062,
+      "cut_candidates": 381,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ge ming jia ting",
+      "frame_count": 141725,
+      "cut_candidates": 502,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "han jiang hua si jin",
+      "frame_count": 134683,
+      "cut_candidates": 296,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "feng bao",
+      "frame_count": 148300,
+      "cut_candidates": 402,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fei dao hua",
+      "frame_count": 144270,
+      "cut_candidates": 639,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "fei yue tian xian",
+      "frame_count": 132325,
+      "cut_candidates": 566,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ma",
+      "frame_count": 68150,
+      "cut_candidates": 199,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ma lan hua",
+      "frame_count": 118092,
+      "cut_candidates": 640,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ma lan hua kai",
+      "frame_count": 135422,
+      "cut_candidates": 552,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ma xi tuan de xin jie mu",
+      "frame_count": 145275,
+      "cut_candidates": 418,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gao ge meng jin",
+      "frame_count": 122996,
+      "cut_candidates": 441,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gui shen bu ling",
+      "frame_count": 59434,
+      "cut_candidates": 319,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "gui hua",
+      "frame_count": 40220,
+      "cut_candidates": 125,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "mo shu shi de qi yu",
+      "frame_count": 71051,
+      "cut_candidates": 216,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "lu ban de chuan shuo",
+      "frame_count": 120975,
+      "cut_candidates": 318,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "ji mao xin",
+      "frame_count": 111400,
+      "cut_candidates": 573,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huang sha lv lang",
+      "frame_count": 157526,
+      "cut_candidates": 462,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "huang pu jiang de gu shi",
+      "frame_count": 149725,
+      "cut_candidates": 567,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "li ming de he bian",
+      "frame_count": 105400,
+      "cut_candidates": 396,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "hei shan zu ji zhan",
+      "frame_count": 127325,
+      "cut_candidates": 503,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "qi wang qiu jiang",
+      "frame_count": 155062,
+      "cut_candidates": 302,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "long xu gou",
+      "frame_count": 161500,
+      "cut_candidates": 578,
+      "scalar_exact_match": true
+    },
+    {
+      "film_key": "long ma jing shen",
+      "frame_count": 157684,
+      "cut_candidates": 382,
+      "scalar_exact_match": true
+    }
+  ],
+  "studio_checks": [
+    {
+      "studio": "东北电影制片厂",
+      "n": 26,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "文华影业公司",
+      "n": 3,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "大同影片公司",
+      "n": 1,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "昆仑影业公司",
+      "n": 3,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "北京电影制片厂",
+      "n": 76,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "上海电影制片厂",
+      "n": 52,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "长江电影制片厂",
+      "n": 1,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "中央新闻纪录电影制片厂",
+      "n": 2,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "长春电影制片厂",
+      "n": 109,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "八一电影制片厂",
+      "n": 63,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "海燕电影制片厂",
+      "n": 38,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "天马电影制片厂",
+      "n": 36,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "江南电影制片厂",
+      "n": 14,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "珠江电影制片厂",
+      "n": 15,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "哈尔滨电影制片厂",
+      "n": 1,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "西安电影制片厂",
+      "n": 17,
+      "rate_mean_verified": true
+    },
+    {
+      "studio": "鸿图影业公司（香港）",
+      "n": 4,
+      "rate_mean_verified": true
+    }
+  ],
+  "metadata_rows_verified": 732,
+  "inherited_receipts_verified": [
+    "1cc6e7fe9555969e",
+    "23ea39041f6f88ea",
+    "6586278e66b3526b",
+    "eb122e278482b23c",
+    "ea57e90beba319ce",
+    "5c354a206ff25b71",
+    "4a8905388e1e9cdb",
+    "87dd858021b50a97",
+    "a04f2f2a67802a30",
+    "c9f4111da254b405",
+    "224594015920be9c",
+    "629c17f3e244d00c",
+    "c514c3d9bc9ac5d0",
+    "566a47a3671aaf2f",
+    "b7f800b9c8b36e6f",
+    "8c20893495cadbc3",
+    "e38464ed980241cf",
+    "247a5d87dd011bc7",
+    "f8aee25842d343bc",
+    "30bec37bd66dd3a7",
+    "428909c1cd014439",
+    "d154bd86d693b3ba",
+    "aea65a31c766066b",
+    "402a3de71a3c76cd",
+    "5f15c0b3e35c33c8",
+    "d7373c22b69e921e",
+    "284e92c2d8d34f58",
+    "de67857eeefbd050",
+    "a181d95539a86613",
+    "0ed4aeab4e1b10c9",
+    "029798a04f5d9644",
+    "0784a502d2895832",
+    "577105d5872da3f8",
+    "f3e4b9de9493ccfb",
+    "47cdae6f159b2e0f",
+    "dd9dda30d3bd001d",
+    "bdb36244635aa401",
+    "c5c7321e31cf51c9",
+    "4135c8eec4f42b18",
+    "6d34944f4c386f66",
+    "54c195d6277a0848",
+    "1211210fdea37752",
+    "a2d3940fc115ca1b",
+    "481eac5107f85d6b",
+    "eea023b206be8dcb",
+    "36747b54acaf358e",
+    "0e96c718ce63a97b",
+    "320c7926fdd43c81",
+    "f3e195fc4de20a62",
+    "259457ed6f3c0b6f",
+    "4d50cee618bece12",
+    "4242c460e41cdcb2",
+    "a794d993b5b51467",
+    "0c2cbf923c61d5dc",
+    "6663afefe19a1822",
+    "50fa4fbd7b5a5bd7",
+    "54ad7ec7cae6b3c5",
+    "83e3b4154f29ca59",
+    "300f25a77dd71aad",
+    "501b45ef078ade4e",
+    "55eb675fdfb58c50",
+    "42018cd743a9f39c",
+    "70177bfad666ba50",
+    "84f860f8f853e91a",
+    "0c6ba65a95ad6485",
+    "687ce62a0799772f",
+    "a00a0dae7948f31d",
+    "bc8db580beccf652",
+    "72e06d8b3be501d5",
+    "6ae6a3a6fe3d5dee",
+    "e0ed52c21adeefd9",
+    "b8cfb776c0b5006c",
+    "13185bc3c75e0115",
+    "89f4e3f13f0a0ab7",
+    "a6db987a85a6650b",
+    "c8a13244580b1a10",
+    "1c362d6987874957",
+    "e2826ea10ec9ba4b",
+    "91aa33c380898a67",
+    "9b1141620beb8b2b",
+    "4fba5ec8b6065689",
+    "ba108ca7431a7a10",
+    "9e6746cf701c669c",
+    "0c3db8a390016160",
+    "99ef0daf74c9b9c1",
+    "689b71baf0596bef",
+    "4a568a048b9c8ae8",
+    "37b455aaa5ff9e0d",
+    "47918a71c48334ff",
+    "d3f742afffdbcaf0",
+    "1f506b9fcb006f59",
+    "ba9a76a91a8ea72d",
+    "a496d970bc498e46",
+    "be43f468f4a67580",
+    "4163a55870372e1e",
+    "0ea1639ed787186e",
+    "1f178a2b3a823306",
+    "1aa13d7476d3e4fc",
+    "78fc5ef09f607a61",
+    "33e3bce845e298f6",
+    "c180d961075e2143",
+    "81850f527ddacb1c",
+    "93415c929db8b3a0",
+    "1b4c2f423641782e",
+    "2587c18a10b05693",
+    "6793f2163390ae06",
+    "b7bcfbfadf3e1478",
+    "680fabef85106f58",
+    "66f04aa4964758e7",
+    "656f6b637cb6f57c",
+    "77d881bf121ba7e7",
+    "60bb0ae59d73c328",
+    "03856eb19135d7aa",
+    "5e1bf16c5bafdb6d",
+    "974ec0d0edba0b59",
+    "898d8a1924e19857",
+    "75bec83147a80610",
+    "5aa82c88c469d875",
+    "67ea9970ea9a6dba",
+    "67250920f51fbb68",
+    "c1b27abf524ca131",
+    "293a4b9e070be027",
+    "0ada0b01ee99b4d1",
+    "ba58994c220c479d",
+    "7d3cb66f06b2d618",
+    "e957bc306e1d74a8",
+    "30916f57e8a6855e",
+    "69ee64b46c8c2e7f",
+    "f316b8ef1f43e210",
+    "8ba2910afb01ecde",
+    "848e14d153e58348",
+    "ae883ab0e031cccd",
+    "72c4a9c208ba12a1",
+    "4081cb35a8d67b7f",
+    "319cc2eaf757e05a",
+    "1032919074f9a341",
+    "af3dce66af1f0dbf",
+    "d28610d986464994",
+    "ed51dc6d5bcf4503",
+    "d084ca1fd2a6dce3",
+    "0dba73a7a5079bbd",
+    "5b112ed6ed4b1740",
+    "1ac6bf558264009c",
+    "ba53d0934dc5ad9b",
+    "1894397f1dd70aa5",
+    "d650ef70a984017c",
+    "ed7a5f7a4569d9e6",
+    "30a094c3d55bf77f",
+    "ebfdb4a2e2cc9e6b",
+    "0641d1cf4a1c79bc",
+    "7e3c31d020f8ad75",
+    "ccf25742b87279bc",
+    "3cf446a873438042",
+    "55b60a4fdc2db631",
+    "3d1f75e05ac77eec",
+    "6b7e2f66bb1241f7",
+    "0d24933e07af8ed7",
+    "ba510e0a67f691d1",
+    "39bd7f5940a76f61",
+    "c65cba7d2c8a1e38",
+    "2f56058e6bcf997a",
+    "b0babd3a733da4a2",
+    "842ee31d7fd90d52",
+    "e6c5e153296573bb",
+    "5907057eb89fa7de",
+    "27393c44b4fe59e5",
+    "80a94915050c8b69",
+    "8293a9e04093eb52",
+    "633337195dd5421e",
+    "714bd6e20960cacd",
+    "be33a869a93323f5",
+    "2a8a06374c4f776b",
+    "4f6733b0f2cd0642",
+    "7933bb0fa28cc668",
+    "e08a00e09cc9cd26",
+    "4910d087be63bf04",
+    "7979882423b7f615",
+    "06f0b4ff7f3b1d99",
+    "efc7b9412f8b5067",
+    "a264549970b3c1ae",
+    "dce1022a8c923839",
+    "b9dbc745c446c130",
+    "26ced89e79a42228",
+    "f8d383560079345e",
+    "e077ae07c034de62",
+    "088f212c4fa6a731",
+    "e35a45a73cfc69fa",
+    "f768a68e136f061c",
+    "a950c4ecf19fb6d8",
+    "44edb211b8346dce",
+    "f6e594a5d52f8266",
+    "fd9999760fc25d94",
+    "9b4d5fb14ca6b905",
+    "fc122ad0e90ef658",
+    "5becefc05d022672",
+    "97930187a9e64cb5",
+    "33970697eba68ede",
+    "e0ab5c5e874f6dc9",
+    "71b81a9b18421d49",
+    "89448ad940a494f5",
+    "88d2d541ef2d8618",
+    "0fe5ca8e3b72a31b",
+    "7fdb2925717a7284",
+    "7d080186543cce3e",
+    "d61e0c358da809f3",
+    "0c1e94dde129f4cb",
+    "84343186ba8f08f9",
+    "a54c32bfdb401146",
+    "15843669670af9ec",
+    "34ca5840beb1aaec",
+    "a9d15f5ba4ac80dc",
+    "dee6765eed18428f",
+    "6203102af230219b",
+    "1ee82930124af9cb",
+    "d99118bfce0b45c2",
+    "090df7bee1648858",
+    "477ff3cf42925551",
+    "a1ff9b5533cf15c2",
+    "ed826dbe7b4c5e58",
+    "b280875229bc6003",
+    "a724537b54c03c81",
+    "7a4063237a2153c5",
+    "d935b17bb84a4282",
+    "30f2bd43d5d5868d",
+    "c6dd72fec07b86de",
+    "c562f6aa986f683d",
+    "252832b25e0f8ff4",
+    "a82e383de0bfdcb4",
+    "255624440e7c4c58",
+    "e147ca82611f1d1a",
+    "5969acb02ed870a3",
+    "682870ccf60e4353",
+    "41f00254ca62a03c",
+    "ee7f8e8ff69ad949",
+    "23438df58652a97b",
+    "9514260e54a671c0",
+    "e2035d673a49c2c7",
+    "bba92ca4b029fc10",
+    "b3f1ab88816fdfad",
+    "ab5f10b24d864ac0",
+    "52b6d4c476281d4b",
+    "179924b0f44ec4e8",
+    "5eea0c24d19a7850",
+    "7b687d83ee87a540",
+    "b96acc097b1eb05d",
+    "c2cc85f4a4ddc4cc",
+    "53ec31242075f9be",
+    "9e936ba15198fd1a",
+    "13f0b9c2c8c01c46",
+    "05cf2216f19aaeef",
+    "e35d933b40a0621b",
+    "3405c7eb1627d7d8",
+    "b930e08800c674d6",
+    "c1c7b67e95bf8083",
+    "d2d776fd67e87920",
+    "edeca68954d0badc",
+    "ef98ec1af12c5b07",
+    "4739b170b5c2b84e",
+    "96a655fc11153324",
+    "ff8982d16a778f11",
+    "df46f751fe915f2a",
+    "63f8f0b79d0b6037",
+    "e1bcbd62ec56c665",
+    "455d00b2bea87931",
+    "5e7d40bcfa8a0171",
+    "725e6a7416beb979",
+    "4367e3fe1f0a5004",
+    "98df1c40cc613fbe",
+    "0f06e7d5004bbec9",
+    "64f90a76fb7b3999",
+    "5e09a85d737d3fb3",
+    "ad176e2ced6d5cc2",
+    "36cda111b6f05520",
+    "ce264a127f25103c",
+    "a78398db4a13d45a",
+    "033eb28cbc1483a9",
+    "0d5bc46bcd7e23ae",
+    "05eb1083a0b2839a",
+    "443f587c8e6a8721",
+    "ad089dc84a8182b1",
+    "a033793b706fc170",
+    "46cad2cc5b75e69a",
+    "380c00f023719627",
+    "adb59ef750f95699",
+    "826e038c7f7413b1",
+    "6fed1fe365af456d",
+    "3cf6e6dc230397f3",
+    "ab2cd8c0c2ec71fd",
+    "048a7a01ab285a9d",
+    "6c066a3274c01437",
+    "ac0292532b62b15a",
+    "e4ebdfe2264c85be",
+    "da960c6681b1fc3b",
+    "bb1769ffbd09d068",
+    "3f54a815407ad7a8",
+    "0e9f02b21d105eb6",
+    "b16b4e6118772cf5",
+    "4ffdf1acb955a118",
+    "f000653be3dc1247",
+    "c30a1cb588585baf",
+    "a22775e6186cde64",
+    "8decb3f80688642b",
+    "b167d330f0232cc7",
+    "15dca5e9beab5904",
+    "f3d891dfe254b1ee",
+    "31736a2a7ffddf3a",
+    "3d33911de1381f0b",
+    "f1c8704bd7196c4e",
+    "bf2b318e0ca98ff3",
+    "45f8b9084ecf04dd",
+    "80e29e36a3e8cb5a",
+    "15fd7559cb9c171e",
+    "71947a9cb298272f",
+    "1f480f87dec3869e",
+    "80a881cdedf7b0b7",
+    "92978481433bb21a",
+    "6d6c53c27f839141",
+    "f8a95b03266897a2",
+    "cf23d4ee8ac15400",
+    "16a31de1def71d00",
+    "3cd58429abe308f2",
+    "7521cb361844959f",
+    "3b7e7df7de89321c",
+    "81e2fd10c8715384",
+    "56aa1711494baa9b",
+    "7d5ceb1132177201",
+    "5d45a34e9e9c7e71",
+    "626839cbea6b5d43",
+    "7ed07f375f6fbef1",
+    "16ca665373ae83f2",
+    "8c8f1933271acc8f",
+    "be5c9891ee71b0b2",
+    "48baf2239ec1a997",
+    "96f602210e433a0e",
+    "4536b4e171fca3d8",
+    "5dc75ea0de4cf47b",
+    "9cf333b9086d5250",
+    "c1b9691f33198275",
+    "9bc562c0d7f48d11",
+    "6d4ee4b051dfbf28",
+    "5bb40b5cdddacb10",
+    "398383b770d9e1db",
+    "ca502e9fc105ce3d",
+    "a1eb94af9300f01d",
+    "747a054cba055009",
+    "23bf31f311ff2e07",
+    "a2f64c23300dbc42",
+    "4e854e59f086c3fc",
+    "d54153fd01a08e81",
+    "295e08f41c73645d",
+    "8c552fc58c46013c",
+    "21a23da5cc591199",
+    "e3a23c17d60a79d5",
+    "72d8fabbdaea849d",
+    "33aac927215ac23c",
+    "addf5b0e3ab485dd",
+    "527be68f6ec4cf9b",
+    "bc4f72a1f096bcd9",
+    "725645fb43fc93fd",
+    "d4039e160145cd66",
+    "1c590be503b705df",
+    "ee31e17c19ce942a",
+    "9d9e50b0de9d4036",
+    "1d98eca844ce3083",
+    "76adde46bfd0944b",
+    "9777a92d1aac1d19",
+    "d0711bac23eb6229",
+    "d85622bd16e5c8c7",
+    "24a75e83b4e9c570",
+    "8ecc4b7b6c1d2749",
+    "38ea47558dce6dbe",
+    "199eeb5c123a8fe6",
+    "f3d8073f3c89ff71",
+    "554add8d6d0a1759",
+    "57edbb0f0c2ba531",
+    "1edb9b3e7486953b",
+    "fe17b3278a6a821e",
+    "0d6b51c982c1f7a5",
+    "e2be061f9c5a0269",
+    "07d92b7b6899de43",
+    "1622c7640150f7b9",
+    "ac31c6b3e96eca6a",
+    "7b0066a48bc897a8",
+    "55af46b7a9c590d6",
+    "7082004793b2200c",
+    "7dbcbeb33562cd66",
+    "5e234141641b1c74",
+    "d411dc362dd04c4d",
+    "8beee6a92dd6efff",
+    "ecff32359e29da81",
+    "fab30796102fdc50",
+    "a196ecba460a6757",
+    "abc4101124d0a4ef",
+    "cbbbc1a54996b9a3",
+    "11b1047c1f646d4f",
+    "74dda0ed33a1bb87",
+    "b15becf39b565826",
+    "af963cdd92a5cc7e",
+    "b925eda9991452a5",
+    "465f16bbf205dc29",
+    "b4e700d5e21c88c0",
+    "daeb9343eb53f32c",
+    "e69619d8948c48f1",
+    "d3381164ef7d3cf8",
+    "7f5adc8a76721dd9",
+    "a599cc710559d0bf",
+    "5fdccfcd7dc397db",
+    "28bf2a03f6871c3c",
+    "48fd3301a258cc5e",
+    "ba727d52b9ee98f6",
+    "8b7a2c8467b85692",
+    "07925adcb4cdd8d1",
+    "12d4bdee3eb1b7c7",
+    "028ab3f39253de26",
+    "a9be7f3bf11e9505",
+    "af6e06458252d79f",
+    "bc0b20a565983605",
+    "b7a7814aace41796",
+    "7bf03ece01916b7a",
+    "3df0b8d9101fee40",
+    "9b243f51dd645064",
+    "e65e31aed92d504e",
+    "1769dda0451290e5",
+    "043030eb9a828c98",
+    "e22bd244a888a352",
+    "3d79ea242909b385",
+    "b8c2d66d79bab8f0",
+    "d2153d2355c1a9d1",
+    "8b6609d81f17ac1a",
+    "058582a159d8e06f",
+    "a6b2feff1fa7d3d3",
+    "03eb3cbfb4d4d959",
+    "024abc28f3c0f277",
+    "a51284babb1d2772",
+    "06b6c8ad4da2b0f4",
+    "782e3654348d016d",
+    "594714c3c391fc71",
+    "48591d36ec64a59b",
+    "a7e81fa0d7bd0b0e",
+    "8d1ff42ed495f317",
+    "f02c65c421f79f88",
+    "56a00ef087573dc5",
+    "4182f98895de558e",
+    "a0dc47dda955dc9b",
+    "89c08246781dcf31",
+    "6b5499554f919e55",
+    "ac6c03c2c468e52c",
+    "002a86d9d7423d1e",
+    "461f2e45851c93c2",
+    "348979e378adc287",
+    "0703753a06acc8fc"
+  ],
+  "measurement_reuse_manifest_sha256": "5704ba21ec2f11396faf29fdd173f0ad904333c80b78d9a62acbf9eeacebf8dc",
+  "interpretation": "This does not establish fullcorpus cut/transition precision, true photographic transitions or studio style.",
+  "script_sha256": "f8c0eaa5bfe0c5a5cd47beb936a384666d535ddf38623cc9458d019a04a93fe0"
+}

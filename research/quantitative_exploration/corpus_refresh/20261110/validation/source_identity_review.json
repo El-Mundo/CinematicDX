@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "status": "assistant_visual_review_completed",
+  "scope": "Three researcher-updated video versions on 2026-11-10; opening credits and bounded technical ingestion.",
+  "method": "Original PTS frames at 0/10/20/30/45/60/90/120 seconds per source, with six additional credit frames at 2/4/6/8 and 24/26 seconds. Each requested frame is the first decoded frame at or after the requested playback time.",
+  "sources": [
+    {
+      "job_id": "e2ccb74ebd80568f",
+      "film_key": "mai niu 、ba gua yuan",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "manifest_path": "/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/ingestion/e2ccb74ebd80568f/source_manifest.json",
+      "manifest_sha256": "e65da5948beb58aecd7818ad5106028bf771139d5ecf95f7211f551ca299541a",
+      "technical": {
+        "video_stream_index": 0,
+        "genuine_video_stream_count": 1,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec_name": "h264",
+        "width": 852,
+        "height": 638,
+        "pixel_format": "yuv420p",
+        "field_order": "progressive",
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "426:319",
+        "time_base": "1/16000",
+        "avg_frame_rate": "60584500/2423579",
+        "r_frame_rate": "25/1",
+        "frame_rate_mode": "unknown",
+        "reported_frame_count": 121169,
+        "duration_ts": 77554528,
+        "duration_seconds": 4847.158,
+        "duration_rational": "2423579/500",
+        "duration_source": "stream.duration_ts",
+        "reported_stream_duration_seconds": 4847.158,
+        "reported_container_duration_seconds": 4847.221833,
+        "source_start_pts": 336,
+        "source_start_time": "0.021000",
+        "source_start_time_seconds": 0.021,
+        "source_start_pts_seconds": 0.021,
+        "container_start_time": "0.000000",
+        "playback_origin": {
+          "source": "stream.start_pts",
+          "source_seconds": 0.021,
+          "source_seconds_rational": "21/1000"
+        },
+        "color_range": null,
+        "color_space": null,
+        "color_transfer": null,
+        "color_primaries": null
+      },
+      "opening_frame_count": 8,
+      "supplementary_frame_count": 0,
+      "status": "assistant_opening_identity_supported",
+      "visible_title": "买牛、扒瓜园（河南曲剧）",
+      "visible_studio": "北京电影制片厂",
+      "visible_directors": [
+        "伊明"
+      ],
+      "visual_evidence": [
+        {
+          "playback_seconds": 10,
+          "source_pts": 160336,
+          "text": "北京电影制片厂"
+        },
+        {
+          "playback_seconds": 30,
+          "source_pts": 480336,
+          "text": "买牛、扒瓜园（河南曲剧）"
+        },
+        {
+          "playback_seconds": 45,
+          "source_pts": 720336,
+          "text": "导演 伊明"
+        }
+      ],
+      "limitations": [
+        "Opening credits visibly name both titles. The sampled credits show 伊明 but do not separately verify 张铮, the other director listed in the combined metadata record.",
+        "The release year 1965 comes from the research metadata and was not visible in these sampled credits."
+      ],
+      "source_conditions": [
+        "Colour image and 1905电影网 overlay visible. Exact scan/restoration history unknown."
+      ]
+    },
+    {
+      "job_id": "2fe0d0d0158e0407",
+      "film_key": "yong heng de you yi",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "manifest_path": "/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/ingestion/2fe0d0d0158e0407/source_manifest.json",
+      "manifest_sha256": "adfa187e90ecdc8676c616f3e83f671a5ec88020e2704da33746ea60881bf751",
+      "technical": {
+        "video_stream_index": 0,
+        "genuine_video_stream_count": 1,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec_name": "h264",
+        "width": 720,
+        "height": 576,
+        "pixel_format": "yuv420p",
+        "field_order": "progressive",
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:4",
+        "time_base": "1/16000",
+        "avg_frame_rate": "25/1",
+        "r_frame_rate": "25/1",
+        "frame_rate_mode": "unknown",
+        "reported_frame_count": 135988,
+        "duration_ts": 87032320,
+        "duration_seconds": 5439.52,
+        "duration_rational": "135988/25",
+        "duration_source": "stream.duration_ts",
+        "reported_stream_duration_seconds": 5439.52,
+        "reported_container_duration_seconds": 5440.554833,
+        "source_start_pts": 0,
+        "source_start_time": "0.000000",
+        "source_start_time_seconds": 0.0,
+        "source_start_pts_seconds": 0.0,
+        "container_start_time": "0.000000",
+        "playback_origin": {
+          "source": "stream.start_pts",
+          "source_seconds": 0.0,
+          "source_seconds_rational": "0/1"
+        },
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709"
+      },
+      "opening_frame_count": 8,
+      "supplementary_frame_count": 2,
+      "status": "assistant_opening_identity_supported",
+      "visible_title": "永恒的友谊",
+      "visible_studio": "西安电影制片厂",
+      "visible_directors": [
+        "刘宝德"
+      ],
+      "visual_evidence": [
+        {
+          "playback_seconds": 0,
+          "source_pts": 0,
+          "text": "西安电影制片厂 摄制"
+        },
+        {
+          "playback_seconds": 10,
+          "source_pts": 160000,
+          "text": "永恒的友谊"
+        },
+        {
+          "playback_seconds": 24,
+          "source_pts": 384000,
+          "text": "导演 刘宝德"
+        },
+        {
+          "playback_seconds": 26,
+          "source_pts": 416000,
+          "text": "导演 刘宝德"
+        }
+      ],
+      "limitations": [
+        "The release year 1960 comes from the research metadata and was not visible in these sampled credits."
+      ],
+      "source_conditions": [
+        "Monochrome image with M1905电影网 overlay and a smaller lower-right logo. The title, studio and director support the current 永恒的友谊 metadata key."
+      ]
+    },
+    {
+      "job_id": "0b6972aca11384a5",
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "manifest_path": "/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/ingestion/0b6972aca11384a5/source_manifest.json",
+      "manifest_sha256": "2a0929b280aaeec0b015760da1407ee3df4cb869eda1caf6752813023fd51cbb",
+      "technical": {
+        "video_stream_index": 0,
+        "genuine_video_stream_count": 1,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec_name": "h264",
+        "width": 852,
+        "height": 662,
+        "pixel_format": "yuv420p",
+        "field_order": "progressive",
+        "sample_aspect_ratio": "254:255",
+        "display_aspect_ratio": "36068:28135",
+        "time_base": "1/16000",
+        "avg_frame_rate": "6519000/260777",
+        "r_frame_rate": "25/1",
+        "frame_rate_mode": "unknown",
+        "reported_frame_count": 97785,
+        "duration_ts": 62586480,
+        "duration_seconds": 3911.655,
+        "duration_rational": "782331/200",
+        "duration_source": "stream.duration_ts",
+        "reported_stream_duration_seconds": 3911.655,
+        "reported_container_duration_seconds": 3911.676,
+        "source_start_pts": 336,
+        "source_start_time": "0.021000",
+        "source_start_time_seconds": 0.021,
+        "source_start_pts_seconds": 0.021,
+        "container_start_time": "0.000000",
+        "playback_origin": {
+          "source": "stream.start_pts",
+          "source_seconds": 0.021,
+          "source_seconds_rational": "21/1000"
+        },
+        "color_range": null,
+        "color_space": null,
+        "color_transfer": null,
+        "color_primaries": null
+      },
+      "opening_frame_count": 8,
+      "supplementary_frame_count": 4,
+      "status": "assistant_opening_first_component_supported",
+      "visible_title": "老保管",
+      "visible_studio": "西安电影制片厂",
+      "visible_directors": [
+        "刘斌"
+      ],
+      "visual_evidence": [
+        {
+          "playback_seconds": 4,
+          "source_pts": 64336,
+          "text": "西安电影制片厂 摄制"
+        },
+        {
+          "playback_seconds": 10,
+          "source_pts": 160336,
+          "text": "甘肃省武威专区人民歌舞剧团 创作并演出"
+        },
+        {
+          "playback_seconds": 20,
+          "source_pts": 320336,
+          "text": "导演 刘斌"
+        },
+        {
+          "playback_seconds": 45,
+          "source_pts": 720336,
+          "text": "老保管"
+        }
+      ],
+      "limitations": [
+        "The inspected opening verifies 老保管 and the metadata studio/director. The second named component 新媳妇来了 lies outside this opening sample and was not visually verified here.",
+        "The release year 1966 comes from the research metadata and was not visible in these sampled credits."
+      ],
+      "source_conditions": [
+        "Monochrome stage performance with a 1905电影网 overlay. Historical transfer and restoration provenance unknown."
+      ]
+    }
+  ],
+  "reviewed_opening_frames": 24,
+  "reviewed_supplementary_frames": 6,
+  "independent_human_validation": false,
+  "metadata_and_original_videos_modified": false,
+  "source_state_unchanged": true,
+  "full_sha256_matches_refresh_for_all_sources": true
+}

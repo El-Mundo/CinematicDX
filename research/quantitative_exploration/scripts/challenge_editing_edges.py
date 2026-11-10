@@ -22,13 +22,25 @@ def main():
     out = args.run / "edge_challenge"
     out.mkdir(exist_ok=False)
     source = args.run / "analysis/film_measurements_and_coverage.csv"
-    inputs = {str(source): sha(source)}
+    plan_path = args.run / "plan.json"
+    completion_path = args.run / "effective_extraction_complete.json"
+    plan = json.loads(plan_path.read_text())
+    complete = json.loads(completion_path.read_text())["complete"]
+    jobs = {job["job_id"]: job for job in plan["jobs"]}
+    if len(jobs) != len(plan["jobs"]) or len({job["film_key"] for job in plan["jobs"]}) != len(jobs):
+        raise ValueError("Expected unique job and film identifiers in the current plan.")
+    if len(complete) != len(set(complete)) or not set(complete).issubset(jobs):
+        raise ValueError("Completion identifiers must be unique members of the current plan.")
+    inputs = {str(path): sha(path) for path in (source, plan_path, completion_path)}
     films, groups = [], {}
     with source.open(encoding="utf-8-sig", newline="") as handle:
         records = list(csv.DictReader(handle))
     for record in records:
         if not record["job_id"]:
             continue
+        job = jobs[record["job_id"]]
+        if record["film_key"] != job["film_key"] or record["video_version_id"] != job["video_version_id"]:
+            raise ValueError("Measured row differs from the current job identity or video version.")
         path = args.run / "films" / record["job_id"] / "cut_candidates.json"
         inputs[str(path)] = sha(path)
         points = json.loads(path.read_text())["primary"]["playback_seconds"]
@@ -49,7 +61,8 @@ def main():
         for studio in json.loads(record["studios"]):
             name = studio["chn"] or studio["name"]
             groups.setdefault(name, []).append((float(studio["fractional_weight"]), row))
-    assert len(films) == 453
+    if len(films) != len(complete) or {film["job_id"] for film in films} != set(complete):
+        raise ValueError("Edge analysis must cover every completed job exactly once.")
     studios = []
     for name, members in groups.items():
         weight = sum(w for w, _ in members)

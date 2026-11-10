@@ -1,5 +1,48 @@
 # 复算与产物定位
 
+## 2026-11-10 当前版本
+
+当前运行是 `research-local/corpus-refresh/20261110/luminance`，最终分析目录为 `analysis/`。当前结果、三部影片的新旧视频SHA与可公开查看的CSV见[版本更新与结果](../corpus_refresh/20261110/README.md)。454个视频全部成功，保留2,390,266个时间戳观察，732条元数据中278条缺本地视频。
+
+本次仅对《买牛、扒瓜园》《永恒的友谊》《老保管、新媳妇来了》的新版本重新提取。另451个源文件核对设备、inode、大小、mtime及ctime后，继承原测量和原收据。三部变化文件重新读取完整SHA256。`measurement_reuse.json`记录继承来源、原收据SHA与视频版本，`refresh.json`记录新旧源对应。测量参数保持原协议。
+
+从同一批本地视频复现增量更新时，使用新输出目录，并将生成的变化清单与公开版本表中的三个SHA核对。
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/refresh_corpus_sources.py \
+  --output-directory research-local/corpus-refresh/replay-20261110 \
+  --luminance-parent research-local/studio-luminance/corpus-20261026T083348Z \
+  --editing-parent research-local/studio-editing/corpus-20261026T114911Z
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/refresh_corpus_sources.py \
+  --output-directory research-local/corpus-refresh/replay-20261110 --extract
+```
+
+只复算当前明暗汇总时，从新版本的逐片结果生成另一分析目录。
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python MPLCONFIGDIR=/tmp/cinematicdx-mpl OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/analyse_studio_corpus.py \
+  --run research-local/corpus-refresh/20261110/luminance \
+  --output-directory research-local/corpus-refresh/20261110/luminance/analysis_replay \
+  --report-directory research-local/corpus-refresh/20261110/luminance/report_replay \
+  --source-diagnostic-directory research-local/corpus-refresh/20261110/luminance/colour_label_qa
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python OPENBLAS_NUM_THREADS=1 \
+  .venv-m3/bin/python research/quantitative_exploration/scripts/audit_studio_corpus.py \
+  --run research-local/corpus-refresh/20261110/luminance \
+  --analysis-directory research-local/corpus-refresh/20261110/luminance/analysis_replay \
+  --output-file research-local/corpus-refresh/20261110/luminance/corpus_audit_replay.json
+```
+
+24段采样验证及《上甘岭》的独立人工参考仍绑定原视频版本。新版本的三部影片另有技术探测、片头核对和色度抽样记录。色度诊断按视频SHA复用未变源的帧和记录，变化源重新抽样，片厂排除敏感性完整重算。重建增量结果需要本地原视频及父运行目录中的逐片产物。
+
+## 2026-10-26 历史运行说明
+
+以下命令、数量和路径记录10月版本；当前版本与结果以上方入口为准。
+
 本次运行：`research-local/studio-luminance/corpus-20261026T083348Z`。当前结果为`analysis_final/`；`analysis/`与`analysis_revision2/`是保留的先前分析。`CURRENT_ANALYSIS.txt`指向当前版。
 
 影片文件位于外置盘`/Volumes/Extreme SSD/Video/Chinese1949-66`。研究JSON、既有M2身份映射的绝对路径及SHA见`plan.json`；原Excel的SHA见`config.json`。完整视频SHA保存在每个`films/<job_id>/summary.json`中，软件/参数/原始PTS与结果SHA见相邻的`run.json`。影片key和源字节版本分开标识；同名文件不能自动证明身份。

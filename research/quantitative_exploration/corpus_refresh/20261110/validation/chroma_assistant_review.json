@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "status": "assistant_visual_review_completed",
+  "scope": "New-source three-frame review plus explicitly inherited review of unchanged flagged sources.",
+  "new_samples_actually_viewed": 9,
+  "new_sources": [
+    {
+      "film_key": "lao bao guan 、xin xi fu lai le",
+      "job_id": "0b6972aca11384a5",
+      "video_version_id": "sha256:486d995e4d8824d867ff5eb7923a8f3acbb1f750c95f5ced5f633822e0878a3a",
+      "metadata_colour": "B&W",
+      "metadata_bw_chroma_review_flag": false,
+      "observation": "All three inspected images show a monochrome stage performance. The 20% and 80% samples show two performers in exterior stage settings. The 50% sample shows a performer beside a stage doorway. No broad chromatic scene content is visible in these three samples.",
+      "frames": [
+        {
+          "fraction": 0.2,
+          "source_pts": 12518096,
+          "time_base": "1/16000",
+          "playback_seconds": 782.36,
+          "rgb_spread_over20_fraction": 0.0,
+          "channel_centered_spread_over20_fraction": 0.0,
+          "image_filename": "0b6972aca11384a5-0.2.png",
+          "image_sha256": "fc78ebd0edd6d02a53cbc215d15837e2fb7db901473188a5ab6ff0dafc96b680"
+        },
+        {
+          "fraction": 0.5,
+          "source_pts": 31293776,
+          "time_base": "1/16000",
+          "playback_seconds": 1955.84,
+          "rgb_spread_over20_fraction": 0.0,
+          "channel_centered_spread_over20_fraction": 0.0,
+          "image_filename": "0b6972aca11384a5-0.5.png",
+          "image_sha256": "e3395e5983295f22a28349c6662a275c13dae0b1641bb6ecc8979a1475d2bf9c"
+        },
+        {
+          "fraction": 0.8,
+          "source_pts": 50069584,
+          "time_base": "1/16000",
+          "playback_seconds": 3129.328,
+          "rgb_spread_over20_fraction": 0.0,
+          "channel_centered_spread_over20_fraction": 0.0,
+          "image_filename": "0b6972aca11384a5-0.8.png",
+          "image_sha256": "80b4cd2bc2579c2b3c5093dca8acdcbd3dd679fcadb9c9739e140d90403bd63d"
+        }
+      ]
+    },
+    {
+      "film_key": "mai niu 、ba gua yuan",
+      "job_id": "e2ccb74ebd80568f",
+      "video_version_id": "sha256:1b693b9b825bef637596b4dc0564f0e8ad7a6068e3b90593c513ebe0a3220fa8",
+      "metadata_colour": "Colour",
+      "metadata_bw_chroma_review_flag": false,
+      "observation": "All three inspected images show clearly coloured scenery and costumes. The 20% and 50% samples show an orchard or rural stage setting. The 80% sample shows three performers with differently coloured clothing. These observations agree with the existing Colour metadata label.",
+      "frames": [
+        {
+          "fraction": 0.2,
+          "source_pts": 15511376,
+          "time_base": "1/16000",
+          "playback_seconds": 969.44,
+          "rgb_spread_over20_fraction": 0.9692563657407407,
+          "channel_centered_spread_over20_fraction": 0.6559606481481481,
+          "image_filename": "e2ccb74ebd80568f-0.2.png",
+          "image_sha256": "b712ced57c9df1337e9009d099a530bbea738ee17e5310c788fe96b5697d1527"
+        },
+        {
+          "fraction": 0.5,
+          "source_pts": 38777936,
+          "time_base": "1/16000",
+          "playback_seconds": 2423.6,
+          "rgb_spread_over20_fraction": 0.9508825231481481,
+          "channel_centered_spread_over20_fraction": 0.6262297453703703,
+          "image_filename": "e2ccb74ebd80568f-0.5.png",
+          "image_sha256": "1d5e4bf15dd1577b147021d41c93c5ada510d6988c544418b064d120e9e101bf"
+        },
+        {
+          "fraction": 0.8,
+          "source_pts": 62044368,
+          "time_base": "1/16000",
+          "playback_seconds": 3877.752,
+          "rgb_spread_over20_fraction": 0.6691261574074074,
+          "channel_centered_spread_over20_fraction": 0.8110532407407407,
+          "image_filename": "e2ccb74ebd80568f-0.8.png",
+          "image_sha256": "1c44f1abdc7af882890e6f3933fc40b13556a7b63b2ba686860c84b0a7dbf5dc"
+        }
+      ]
+    },
+    {
+      "film_key": "yong heng de you yi",
+      "job_id": "2fe0d0d0158e0407",
+      "video_version_id": "sha256:a6f0aca4d820a046b6f36444c21d3d6f21d2344dd09acf2200324877edd0b9ab",
+      "metadata_colour": "B&W",
+      "metadata_bw_chroma_review_flag": false,
+      "observation": "The three inspected images show monochrome snow/mountain travel, a group dance, and a seated uniformed group. A small cyan broadcaster/logo element is visible. Scene content is predominantly monochrome in these samples.",
+      "frames": [
+        {
+          "fraction": 0.2,
+          "source_pts": 17406720,
+          "time_base": "1/16000",
+          "playback_seconds": 1087.92,
+          "rgb_spread_over20_fraction": 0.0023148148148148147,
+          "channel_centered_spread_over20_fraction": 0.0023148148148148147,
+          "image_filename": "2fe0d0d0158e0407-0.2.png",
+          "image_sha256": "5d1d5f2f1344861dea5b04b3097f72212759630c1e94c943c78d017ba2c139a8"
+        },
+        {
+          "fraction": 0.5,
+          "source_pts": 43516160,
+          "time_base": "1/16000",
+          "playback_seconds": 2719.76,
+          "rgb_spread_over20_fraction": 0.002178649237472767,
+          "channel_centered_spread_over20_fraction": 0.002178649237472767,
+          "image_filename": "2fe0d0d0158e0407-0.5.png",
+          "image_sha256": "4bebb1572dee4f4bb62734eebd05125f687d8bcddf85309cf6ffccec98b2d963"
+        },
+        {
+          "fraction": 0.8,
+          "source_pts": 69626240,
+          "time_base": "1/16000",
+          "playback_seconds": 4351.64,
+          "rgb_spread_over20_fraction": 0.002042483660130719,
+          "channel_centered_spread_over20_fraction": 0.002042483660130719,
+          "image_filename": "2fe0d0d0158e0407-0.8.png",
+          "image_sha256": "505d634117f4b9f14958fe225f3efa97aa2aac480c8cbb1a2b091f8e3b61c29c"
+        }
+      ]
+    }
+  ],
+  "inherited_flagged_source_count": 14,
+  "inherited_flagged_sources": [
+    {
+      "film_key": "bao shan zhi ge",
+      "video_version_id": "sha256:a1abd203c91e8dc2876289eeaca31e49aea81d3e8c9f406825da8ef03fc041b1",
+      "frames": [
+        {
+          "image_filename": "1894397f1dd70aa5-0.2.png",
+          "sha256": "2025844a565fe86404f5e126bb2b2e9630e6bccc4c2e97e663beb21fd6297f64"
+        },
+        {
+          "image_filename": "1894397f1dd70aa5-0.5.png",
+          "sha256": "bc371e5d3a92ca7d208a6cb961375827ed3c98352130939eb6fa0d0dbda0bcfe"
+        },
+        {
+          "image_filename": "1894397f1dd70aa5-0.8.png",
+          "sha256": "e140fc7c405b13406224b872904705ae3aa54db3f2550aeab4c421a47612508d"
+        }
+      ]
+    },
+    {
+      "film_key": "bing lin cheng xia",
+      "video_version_id": "sha256:b4d4fc55d635e2c0c2aa63f94e3a447667d52dc974c06d7a13cc65324624b9d6",
+      "frames": [
+        {
+          "image_filename": "687ce62a0799772f-0.2.png",
+          "sha256": "8924dd5572d5b7410ed50ff712fe854a0a510c68949c30f4947ce305aaeb48bb"
+        },
+        {
+          "image_filename": "687ce62a0799772f-0.5.png",
+          "sha256": "94f3f0c787c7334e1bce6a938c8c79767c4f1ab20769208c4ae99a4c54838b35"
+        },
+        {
+          "image_filename": "687ce62a0799772f-0.8.png",
+          "sha256": "71b75f768b59971aa14c5a5f06b612970fac709c8973026ffbf4509ce1a4c09c"
+        }
+      ]
+    },
+    {
+      "film_key": "chun lei (1958)",
+      "video_version_id": "sha256:05f82fc334840de5a7ce44fa1bc20523262e09365293e9475aa6b91b55cd08a2",
+      "frames": [
+        {
+          "image_filename": "7a4063237a2153c5-0.2.png",
+          "sha256": "aa825c9040fb50cf943ace436432504af330ca631e0bb62dbfbc57b8034dceba"
+        },
+        {
+          "image_filename": "7a4063237a2153c5-0.5.png",
+          "sha256": "670b4aab0fa71115e1ca72f8d555a75fff4a4095094c862a0cdc10c616f0a7be"
+        },
+        {
+          "image_filename": "7a4063237a2153c5-0.8.png",
+          "sha256": "50f424d872867953f6a95c5f8fc3bb31018fb575ca83e10461a29d5b4b140591"
+        }
+      ]
+    },
+    {
+      "film_key": "chun shui chang liu",
+      "video_version_id": "sha256:a8e0642e48a2fd379dcff084b1f373ad8772f4ddb03869526fa405e9da599dc8",
+      "frames": [
+        {
+          "image_filename": "ed826dbe7b4c5e58-0.2.png",
+          "sha256": "5ec21e632f366276de3294fcf0baed5119f4d5fb1c6d0a1b17fa3ddb4903b608"
+        },
+        {
+          "image_filename": "ed826dbe7b4c5e58-0.5.png",
+          "sha256": "f310bc7ec53aff2b2edaf519b1eb8721044c569eae3d398a835d6285b1f308e8"
+        },
+        {
+          "image_filename": "ed826dbe7b4c5e58-0.8.png",
+          "sha256": "0cd977ca9cfc27a0052ddd88b9791ec2183bc2621dc3a810e8415d2480c3eb66"
+        }
+      ]
+    },
+    {
+      "film_key": "dong jin xu qu",
+      "video_version_id": "sha256:5b37574095aab1e38320a4f058c15695c2e0b852b7681f84e3853816e7be48e4",
+      "frames": [
+        {
+          "image_filename": "577105d5872da3f8-0.2.png",
+          "sha256": "fb3a403f0c5113d26c992158c9e11c122538caa055035cbffdf78df7105b3adc"
+        },
+        {
+          "image_filename": "577105d5872da3f8-0.5.png",
+          "sha256": "31c3a6489fedc88c76cc39eecb97ab40995fa409f768569e95223bc041423e0e"
+        },
+        {
+          "image_filename": "577105d5872da3f8-0.8.png",
+          "sha256": "a648ca0f00d2ec823109a17d3520e0b777f876d1909cab1ed93f6ced5c8da84b"
+        }
+      ]
+    },
+    {
+      "film_key": "feng shou",
+      "video_version_id": "sha256:8570efe362741ffecd48cd14d9e9542fb848f8a2cc28b2ba027d894d203d8d4c",
+      "frames": [
+        {
+          "image_filename": "c5c7321e31cf51c9-0.2.png",
+          "sha256": "18e9a2c6ff68a4f96ac13ee4cee98748ac339a71c03fe296c23511533ec0fd2e"
+        },
+        {
+          "image_filename": "c5c7321e31cf51c9-0.5.png",
+          "sha256": "3ce4862b9753f5cb57a0547eb0147f7261f05bc564decf430e6bbfb4de2d8cb8"
+        },
+        {
+          "image_filename": "c5c7321e31cf51c9-0.8.png",
+          "sha256": "03602ed4fac53906c4e8538181100e81a90e848b14841c1e6da41c6fde290611"
+        }
+      ]
+    },
+    {
+      "film_key": "lang tao gun gun",
+      "video_version_id": "sha256:dc902343c28297a0dd05e387380ff570daf2c3243c15d47cb3bd0596027408aa",
+      "frames": [
+        {
+          "image_filename": "64f90a76fb7b3999-0.2.png",
+          "sha256": "6b1ef1ff5e9c5b4b0f2677e11ce0c661d915a51ce539a7447fb797726cef653a"
+        },
+        {
+          "image_filename": "64f90a76fb7b3999-0.5.png",
+          "sha256": "f22644bdf575c1142aab7f7b998cc156febdce510df3feee383a492dd1cae9d9"
+        },
+        {
+          "image_filename": "64f90a76fb7b3999-0.8.png",
+          "sha256": "165fc7fb8f8e337d7c2dac4da1b4621afe291b8e06144c67668dae449baf050c"
+        }
+      ]
+    },
+    {
+      "film_key": "liu san jie",
+      "video_version_id": "sha256:771ed76487473b5f1322c2d37b24dd9babce2f5743832b0857759d234c2f15db",
+      "frames": [
+        {
+          "image_filename": "e2826ea10ec9ba4b-0.2.png",
+          "sha256": "5ea00aa2500e8bfd9d8760a08034330488cfb9ea8183a6eebde309b669e99d6b"
+        },
+        {
+          "image_filename": "e2826ea10ec9ba4b-0.5.png",
+          "sha256": "6000374654a0a644bd6082edab02f009c88e787d34c539a144032160fd81f814"
+        },
+        {
+          "image_filename": "e2826ea10ec9ba4b-0.8.png",
+          "sha256": "d7d38eb033df1c160e148183e0452f5f0094e56aec640c52ce932eac0a204ca3"
+        }
+      ]
+    },
+    {
+      "film_key": "mu ren zhi zi",
+      "video_version_id": "sha256:2fa736722f9f34a8e2a276e6d26ef3dc9ab99b73ca75f8f8f3af3945f150a414",
+      "frames": [
+        {
+          "image_filename": "da960c6681b1fc3b-0.2.png",
+          "sha256": "b225be5e5fadf221aece4221d3eec815a9511b5341402114986f1c8ae7d120d6"
+        },
+        {
+          "image_filename": "da960c6681b1fc3b-0.5.png",
+          "sha256": "574bdbd2c613c7c3c1a62ced2e6ceb102133ba82d1c021b6b209d9cb2ec6fa7a"
+        },
+        {
+          "image_filename": "da960c6681b1fc3b-0.8.png",
+          "sha256": "a6d004994e7075adfb1e5c596b90669023a064f3e76b9e5fc37247cc13888076"
+        }
+      ]
+    },
+    {
+      "film_key": "nv she zhang",
+      "video_version_id": "sha256:c922614da658ceaf85ae2f55990276568ecbf555177e40339ffeaea734bf7014",
+      "frames": [
+        {
+          "image_filename": "848e14d153e58348-0.2.png",
+          "sha256": "f798890c97140c196b1f34e238f8b993beb5e22d02baad1b2b1e02450a2092a3"
+        },
+        {
+          "image_filename": "848e14d153e58348-0.5.png",
+          "sha256": "7194680a138f77117a73b263b330ad6beea6a62439573406580a672e230dd97d"
+        },
+        {
+          "image_filename": "848e14d153e58348-0.8.png",
+          "sha256": "16f637c3fa303299a48fdc78d08632a8373e32bc503989029a555a5734b82afc"
+        }
+      ]
+    },
+    {
+      "film_key": "qing song ling",
+      "video_version_id": "sha256:68c140e4db49f207a0c209538d0c71200668b2ca083af48f08e80e748fe31ed1",
+      "frames": [
+        {
+          "image_filename": "d2153d2355c1a9d1-0.2.png",
+          "sha256": "5979e129001a762efc3c6f19262d1624013f68cd905e60a03c0e9f3c3b3c7eb4"
+        },
+        {
+          "image_filename": "d2153d2355c1a9d1-0.5.png",
+          "sha256": "e8595d44651d55f175be03799314206bc43bfc5afa7ba8b8e3dda2cccfb7570c"
+        },
+        {
+          "image_filename": "d2153d2355c1a9d1-0.8.png",
+          "sha256": "6af344ee001e30a27dd87bf31fe6d0909a15de3c5f1b8e6edf0f8aebeeb253d4"
+        }
+      ]
+    },
+    {
+      "film_key": "shu jia de li wu",
+      "video_version_id": "sha256:195a4eb06b16f91ece38e73c9b5a720e56368a9c5a76c15e20da0f06bf68d487",
+      "frames": [
+        {
+          "image_filename": "c562f6aa986f683d-0.2.png",
+          "sha256": "63d6673304632bb0e3570c9a8cb0e4211b05b0c2b4d124c48beb404323e4246f"
+        },
+        {
+          "image_filename": "c562f6aa986f683d-0.5.png",
+          "sha256": "7efd25509b298c0006d273ec8f53c457d32abeb41f232ab02bb588f617110c3f"
+        },
+        {
+          "image_filename": "c562f6aa986f683d-0.8.png",
+          "sha256": "f1d4839138f3d6d245e6db137ab67259637b3f308790e25af0867cf05b5027e6"
+        }
+      ]
+    },
+    {
+      "film_key": "tu di",
+      "video_version_id": "sha256:2dbee90d7d6e7155bcdeb5a8759a871197047d6451e1059a117d6d27a66ed6a9",
+      "frames": [
+        {
+          "image_filename": "656f6b637cb6f57c-0.2.png",
+          "sha256": "e155b599ccf58e4c07a31560c751883dd29aaa386e06c858c3c5cf6204bd6701"
+        },
+        {
+          "image_filename": "656f6b637cb6f57c-0.5.png",
+          "sha256": "eee869ec59b94547ca42e0f53e956c639463a77b244cedc6dade7200a0efead9"
+        },
+        {
+          "image_filename": "656f6b637cb6f57c-0.8.png",
+          "sha256": "37f778c81652051d22f9a2896e4e7bf5dc689e3f0b6ca3bede6346a895087e58"
+        }
+      ]
+    },
+    {
+      "film_key": "xin lian xin",
+      "video_version_id": "sha256:7969b40f3547b6d0d7419e9322519a801c4d09986953112b21004fdf2ae905af",
+      "frames": [
+        {
+          "image_filename": "dce1022a8c923839-0.2.png",
+          "sha256": "149fe77f7bb0f87501682a5c2f687f34afba9eb2393aed8b89e95ad01a657b82"
+        },
+        {
+          "image_filename": "dce1022a8c923839-0.5.png",
+          "sha256": "88bf5e08dc69c61859e1818aafddd0aedf3613b6439661f600ce4db4b3b33e49"
+        },
+        {
+          "image_filename": "dce1022a8c923839-0.8.png",
+          "sha256": "76983c78535f45c29918ab6cff29aea2483c46b1f96df3012f396d5bd6d2a5f2"
+        }
+      ]
+    }
+  ],
+  "prior_assistant_review_path": "/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/studio-luminance/corpus-20261026T083348Z/colour_label_qa/assistant_review.json",
+  "prior_assistant_review_sha256": "8d25646981fbada7f99603e616b7e44a05390457ad544d8e5c27813055b0e00c",
+  "prior_flagged_frame_bytes_identical": true,
+  "independent_human_validation": false,
+  "colour_metadata_relabelled": false,
+  "interpretation": "The new frames support descriptive source-colour QA. The 14 existing flags retain the prior assistant review of identical video versions and identical sampled frame bytes. The heuristic and sparse frames leave historical colour process and restoration provenance unresolved.",
+  "contact_sheet": "updated_sources_contact_sheet.png",
+  "contact_sheet_sha256": "5cdc83703781157fd8ef60309fc40beeb6d4bdd23b1daa309c2ee6abe32a30b4",
+  "frozen_results_and_run_sha256": {
+    "results.json": "9ee06a145922cd5a3c86d6fce460bee3794ee78eb05a65de2ca0db90db674991",
+    "run.json": "0230d1c2b5d2a603e8b6f65e275c19fe87510f94d455ac4928f7ae77b4522992"
+  }
+}

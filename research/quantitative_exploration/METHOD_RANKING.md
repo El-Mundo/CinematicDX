@@ -1,30 +1,30 @@
-# 证据支持的方法排序（2026-10-26）
+# Method ranking supported by evidence (2026-10-26)
 
-## 2026-11-10 当前数据入口
+## Current data entry point, 2026-11-10
 
-454个视频的当前结果见[版本更新与结果](corpus_refresh/20261110/README.md)。三部源更新采用相同测量协议，451部结果附原收据继承，全部片厂统计重新计算。硬切与数字明暗继续构成核心测量，完整渐变分割用途维持REJECTED。
+Current results for 454 videos are in the [version update and results](corpus_refresh/20261110/README.md). Three source updates use the same measurement protocol, 451 results retain their original receipts, and all studio statistics were recomputed. Hard cuts and digital brightness remain the core measurements. Complete gradual segmentation remains REJECTED for its stated use.
 
-以下排序与数值为2026-10-26的方法评估快照。此次数据更新的组统计以新版本表为准，《上甘岭》单片人工验证及叙事对应的证据范围沿用原实验。
+The ranking and numbers below are a method-assessment snapshot from 2026-10-26. Group statistics for the data update should use the new-version tables. The original experiment's evidence scope continues to apply to single-film human validation and narrative correspondence for 《上甘岭》.
 
-| 排名 | 候选 | 当前状态与证据 | 决定 |
+| Rank | Candidate | Current status and evidence | Decision |
 |---|---|---|---|
-| 1 | C01 硬切时间、保守时长及顺序 | 时间/分布算术VERIFIED；额外细序列组织PROVISIONAL。41间隔、37相邻关系，块内乱序不突出 | 核心数据；保留时间轴与对照，不给蒙太奇标签 |
-| 2 | C02 版本内数字明暗/对比度 | 提取VERIFIED；叙事对应PROVISIONAL。硬切关联六事件0.1012，对照约0.0185，逐帧/留一/源扰动仍在 | 最强新叙事候选，条件关联不等于普遍规律 |
-| 3 | C04 低频配置相似检索 | PROVISIONAL。代表帧更换保留top10中5–7对，有明确误配；明暗基线优势依间隔改变 | 辅助查找视觉关系；尚非语义母题/地点工具 |
-| 4 | C03 视觉活动代理 | PROVISIONAL。相关与光流秩相关0.932；事件完整曝光仅4/10 | 首选廉价相关与缺测旗标；暂不做摄像机运动/完整事件对照 |
-| 5 | C05 当前Haar脸框充当人数/景别 | REJECTED用于该用途。侧脸漏检、躯干误框；21.5%代表图计数受参数影响 | 不入核心；脸框仅保留预测状态 |
-| 6 | C06 当前完整渐变自动分割 | REJECTED用于该用途。既有严格区间主评分失败 | 不再围绕4例优化，不自动改镜头表 |
+| 1 | C01 hard-cut timing, conservative durations and ordering | Timing/distribution arithmetic VERIFIED; additional fine-sequence organisation PROVISIONAL. 41 intervals, 37 adjacent relations; within-block permutations show no exceptional ordering | Core data; retain timelines and controls without montage labels |
+| 2 | C02 within-version digital brightness/contrast | Extraction VERIFIED; narrative correspondence PROVISIONAL. Six cut-associated events: 0.1012 versus controls around 0.0185, retained under frame integration, leave-one-out and source perturbations | Strongest new narrative candidate; conditional association does not establish a general rule |
+| 3 | C04 low-frequency configuration-similarity retrieval | PROVISIONAL. Changing representative frames retains 5–7 of the top10 pairs, with clear mismatches; advantage over brightness baseline varies by temporal gap | Assist visual-relation retrieval; not yet a semantic motif/location tool |
+| 4 | C03 visual-activity proxy | PROVISIONAL. Correlation and optical-flow rank correlation 0.932; complete event exposure for only 4/10 | Prefer inexpensive correlation and missingness flags; defer camera-movement classification/full-event comparisons |
+| 5 | C05 current Haar boxes as person-count/shot-scale proxies | REJECTED for this use. Missed profiles and torso false boxes; parameters affect counts for 21.5% of representative images | Exclude from core; retain face boxes as predictions only |
+| 6 | C06 current automatic complete gradual segmentation | REJECTED for this use. Existing strict-interval primary scoring failed | Stop optimising around 4 examples; do not automatically change the shot table |
 
-排序不是跨片准确率榜单。VERIFIED仅限所述计量/数值主张；人物身份、叙事功能、注意机制、政治意义均未被自动验证。
+This is not a cross-film accuracy leaderboard. VERIFIED covers only the stated measurement/numerical claims. Character identity, narrative function, attention mechanisms and political meaning have not been automatically validated.
 
-最小组合：来源版本/PTS/质量与缺测 + 有参考的硬切/保守时长序列 + 同拷贝灰度均值/对比度 + 独立叙事事件层及条件对照。活动是可选附加，相似性是探索辅助。
+Minimum combination: source version/PTS/quality and missingness + reference-checked hard cuts/conservative duration sequences + same-copy grayscale mean/contrast + an independent narrative-event layer and conditional controls. Activity is optional, and similarity supports exploration.
 
-完整依据：[报告](REPORT.md)。本轮输出 `research-local/quantitative-exploration/round-20261026T001205Z`。
+Full evidence: [report](REPORT.md). This round's outputs: `research-local/quantitative-exploration/round-20261026T001205Z`.
 
-## 全语料扩展后的判断
+## Assessment after the corpus extension
 
-C02的计算可行性获得453影片/17机构的实际输出支持，统一采样在24段固定片段中与全解码1Hz一致性通过；此前仅关键帧方案因3段偏差被拒绝。跨厂30秒均值相近、影片差异重叠，10/30/60秒排名有变化；来源色偏/色彩标签及重复文件提供了真实反例。因此保留C02为**数字版本内明暗时间组织**的核心测量，跨厂历史/风格解释维持PROVISIONAL；不因数据量增加而提升为原始照明、叙事结构或厂风格的验证。C01等其他方法的验证范围没有被这次全库灰度处理扩大。见[扩展报告](corpus_studio/REPORT.md)。
+Actual outputs for 453 films/17 institutions support C02's computational feasibility. Uniform sampling passed agreement checks against fully decoded 1Hz observations in 24 fixed clips. The earlier keyframe-only approach was rejected after deviations in 3 clips. Cross-studio 30-second means are close, film-level differences overlap, and 10/30/60-second rankings vary. Source colour casts/colour labels and duplicate files provide empirical counterexamples. C02 therefore remains a core measurement of **brightness organisation within digital versions**. Cross-studio historical/style interpretation remains PROVISIONAL; a larger dataset does not validate original lighting, narrative structure or studio style. This full-corpus grayscale processing does not expand validation for C01 or the other methods. See the [extension report](corpus_studio/REPORT.md).
 
-## 全库剪辑检验后的排序决定
+## Ranking decision after corpus-wide editing tests
 
-C01与C02仍是最小核心。C01计算可行性现由453片全帧实算和独立标量/PTS审计支持；人工准确率范围仍只限《上甘岭》十分钟开发区间，不能泛化为全片厂。机构均值与局部/全片率可作描述，条件置换参照留下待解释差异，名次对阈值、影片构成、文件边缘敏感。C06虽然全库候选已扫描，完整起止严格复测仍失败，助手抽查也见大量镜内变化，因此保持最后、不用于真实转场率。未据此调整C03–C05的验证范围。见[最终评估](corpus_editing/ASSESSMENT.md)。
+C01 and C02 remain the minimum core. Frame-complete computation for 453 films and independent scalar/PTS audits now support C01's computational feasibility. Human accuracy evidence still covers only the ten-minute 《上甘岭》 development interval and cannot be generalised across studios. Institutional means and local/whole-film rates support description. Conditional permutation references leave differences requiring interpretation, while rankings remain sensitive to thresholds, film composition and file edges. Although C06 candidates have been scanned across the corpus, strict complete start–end localisation still fails, and assistant checks show many within-shot changes. It therefore remains last and cannot represent true transition rates. These tests do not expand C03–C05 validation. See the [final assessment](corpus_editing/ASSESSMENT.md).

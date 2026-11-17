@@ -1,33 +1,33 @@
-# 全可用语料按制片机构的剪辑检验：最终评估
+# Editing across the available corpus by production institution: final assessment
 
-## 2026-11-10 当前结果入口
+## Current results entry point: 2026-11-10
 
-当前数据版本覆盖454个视频，三部变化源重新逐帧提取，451个未变源的测量附原收据继承。新片厂汇总、全部候选统计、时间曲线及审计见[版本更新与结果](../corpus_refresh/20261110/README.md)，当前运行是 `research-local/corpus-refresh/20261110/editing`。
+The current data version covers 454 videos. Three changed sources were re-extracted frame by frame; measurements for 451 unchanged sources are inherited with original receipts. See [source refresh and results](../corpus_refresh/20261110/README.md) for updated studio summaries, all candidate statistics, temporal profiles and audits. The current run is `research-local/corpus-refresh/20261110/editing`.
 
-《上甘岭》的独立人工参考及严格渐变验证仍使用同一视频版本。硬切候选可供带质量标记的描述性比较，完整渐变分割用途维持REJECTED。
+The independent manual reference and strict gradual validation for 《上甘岭》 still use the same video version. Hard-cut candidates support descriptive comparisons with quality flags. Complete gradual segmentation remains REJECTED.
 
-## 2026-10-26 评估快照
+## Assessment snapshot: 2026-10-26
 
-以下覆盖数字、表格、成本和视觉抽查记录属于10月运行。涉及当前语料数量与组统计时，请使用上方新版本结果。
+The coverage counts, tables, costs and visual inspections below belong to the October run. Use the newer results above for current corpus counts and group statistics.
 
-本轮已完成453部可用影片的全片逐帧计算。**硬切候选可以进入有质量标记的描述性研究；当前渐变检测不能进入真实转场频率或片厂偏好比较。** 这里检验的是数字文件中的编辑变化及其分布，尚未证明片厂风格、叙事结构或历史因果。
+Frame-complete processing of all 453 available films is complete. **Hard-cut candidates can support descriptive research with quality flags; the current gradual detector cannot support actual transition-frequency or studio-preference comparisons.** This study tests editing changes and their distributions in digital files. It has not established studio style, narrative structure or historical causation.
 
-主运行：`research-local/studio-editing/corpus-20261026T114911Z`。技术定义、全部验证表见[完整测量报告](REPORT.md)，操作见[复算说明](REPRODUCE.md)。运行目录内`analysis/REPORT.md`及其哈希收据保持不变；本文件补充结果解释和实际画面观察。
+Main run: `research-local/studio-editing/corpus-20261026T114911Z`. See the [complete measurement report](REPORT.md) for technical definitions and all validation tables, and [reproduction notes](REPRODUCE.md) for operations. The run directory's `analysis/REPORT.md` and its hash receipt remain unchanged. This document adds interpretation and actual image observations.
 
-## 实际覆盖和成本
+## Actual coverage and cost
 
-- 732条元数据、454个原视频路径；已确认的误名字节副本仅计《延安游击队》一次，形成453部独特文件版本。453/453完成，279条没有有效视频；不能把缺片理解为零切点。
-- 共59,478,844个解码帧、661.2911小时；60家元数据机构中17家有可用影片。全片指当前本地文件完整解码至EOF，不证明历史拷贝完整。
-- 四进程软件CPU提取约21,098.8秒（5.86小时），另有两项浮点边界恢复合计93.8秒；这些时间不含所有预检、分组和审计。已有硬件解码试验失败，未声称使用GPU。
-- 两片完整缓存中分别1/2个ROI均值为1.0000000000000002。仅对机器精度范围内的计算副本处理，原缓存、原失败及源文件保留，重新核对完整视频SHA和真实EOF。失败不等于视频未处理。
-- 输入链接中449项仍是暂定的唯一文件名匹配，4项标有片头助手复核；重复文件的身份裁决另有继承证据。**453部不是453部都经过独立身份鉴定**，年份、色彩及机构仍主要来自研究元数据。
-- 每片有完整源SHA、原PTS、方法参数/版本、缓存、候选、缺测/警示及收据。全部源在提取前校验完整SHA，结束及最终审计检查文件状态；研究JSON和原Excel最终SHA不变。没有改视频、标注或数据库。
+- There are 732 metadata records and 454 original video paths. The confirmed misnamed byte-identical duplicate counts only once as 《延安游击队》, giving 453 unique file versions. All 453/453 completed; 279 records lack valid video. Missing films must not be interpreted as having zero cuts.
+- Processing covered 59,478,844 decoded frames and 661.2911 hours. Of 60 metadata institutions, 17 have available films. Complete-film processing means decoding the complete current local file to EOF, not proof of a complete historical copy.
+- Four-process software CPU extraction took about 21,098.8 seconds (5.86 hours), plus 93.8 seconds in total for two floating-point-boundary recoveries. These times exclude some preflight, grouping and auditing. Existing hardware-decoding experiments failed; no GPU use is claimed.
+- In two complete caches, respectively 1/2 ROI means were 1.0000000000000002. Only computational copies were repaired within machine precision. Original caches, failures and source files remain intact; complete-video SHA and actual EOF were rechecked. A failure does not mean the video was unprocessed.
+- Of the input links, 449 remain provisional unique-filename matches and 4 are marked as assistant-reviewed against opening titles. The duplicate-file identity decision has separate inherited evidence. **Having 453 films does not mean 453 independent identity authentications.** Year, colour and institution still mainly derive from research metadata.
+- Each film retains complete source SHA, original PTS, method parameters/versions, caches, candidates, missingness/warnings and receipts. Complete source SHA is checked before extraction, and file state is checked at completion and in the final audit. Final SHA values for the research JSON and original Excel are unchanged. Videos, annotations and the database were not modified.
 
-## 片厂硬切候选差异：有信号，排序不固定
+## Studio hard-cut candidate differences: a signal with unstable ordering
 
-以下为至少10部可用片的机构。先计算每片候选/分钟，再作影片等权平均；合拍片每机构权重1/k。n是包含该机构的影片数，各机构n不能直接相加成独特影片总数。东北/长春、上海/天马/海燕按原具体机构分开。
+The following institutions each have at least 10 available films. Compute candidates/minute per film, then average with equal film weights and 1/k per institution for co-productions. Here n counts films including that institution; institutional n values cannot be added to obtain the unique-film total. 东北/长春 and 上海/天马/海燕 remain distinct original institutions.
 
-| 制片机构 | 可用n | 主设置候选/分钟 | 影片间四分位范围 | 片中10–90%候选/分钟* |
+| Production institution | Available n | Primary candidates/minute | Between-film interquartile range | Central 10–90% candidates/minute* |
 |---|---:|---:|---:|---:|
 | 天马 | 36 | 5.440 | 4.474–6.468 | 5.334 |
 | 海燕 | 38 | 5.365 | 4.159–6.484 | 5.185 |
@@ -40,66 +40,66 @@
 | 北京 | 76 | 4.493 | 3.495–5.376 | 4.370 |
 | 西安 | 16 | 4.011 | 2.011–5.115 | 3.876 |
 
-*片中段是看到文件结尾材料和相对位置曲线后追加的**事后敏感性**，不替换主分析。对实际解码覆盖截取[10%,90%)，候选规则和影片权重均不改；不是经过验证的片头片尾/叙事边界分割。来源和数值见`edge_challenge/run.json`，可复算脚本`challenge_editing_edges.py`；未重解码。
+*The central-film analysis is **post-result sensitivity**, added after inspecting end-title material and relative-position curves; it does not replace the primary analysis. It restricts actual decoded coverage to [10%,90%) without changing candidate rules or film weights. It is not validated segmentation of titles/credits or narrative boundaries. See `edge_challenge/run.json` for provenance and numbers, and `challenge_editing_edges.py` for reproduction. No redecoding was performed.
 
-十组影片间四分位范围均在4.474–5.115处重叠。均值存在差别，但大量影片跨组重叠；IQR是分布范围，不是均值置信区间，也不据重叠断言没有关联。
+The between-film interquartile ranges of all ten groups overlap at 4.474–5.115. Means differ, but many films overlap across groups. IQR describes a distribution rather than a confidence interval for the mean, and overlap does not itself establish absence of association.
 
-排序受到以下实际挑战：
+The ordering faces these empirical challenges:
 
-1. 比值阈值从3降到2.5，东北由5.096升至5.623，超过天马5.545；主设置则天马最高。ROI也改变部分值。不能把阈值特定名次称为稳定机构特征。
-2. 仅元数据黑白故事片，至少10片机构中海燕5.937（22片）高于天马5.855（21片）；八一4.962（49片）。类型/色彩构成与全类型排序有关。彩色故事片达到10片的只有长春17片5.701、北京17片4.927，且V-only对主要色相变化可能漏检，黑白试标不能验证彩色召回率。
-3. 仅元数据列出一个制作机构的片，珠江11片均值5.448，略过天马5.440。差距很小；“单厂”表示元数据只列一个机构，不证明历史上没有其他合作。
-4. 片中段挑战中珠江5.230超过海燕5.185；十组均值变化为−0.180至+0.024次/分钟。完整文件的首尾呈现方式参与了当前统计，不能直接把位置箱叫开端、高潮或结局。
-5. 实际帧间隔中位数换算为447片约25Hz、6片约23.81Hz。自适应窗口按帧数定义，PTS间隔及最短间隔过滤会影响结果；这不是对原始摄影或放映速度的认定。
+1. Lowering the ratio threshold from 3 to 2.5 raises 东北 from 5.096 to 5.623, above 天马 at 5.545; 天马 is highest under the primary setting. ROI also changes some values. Threshold-specific ranks are not stable institutional characteristics.
+2. Among metadata-labelled B&W features and institutions with at least 10 films, 海燕 at 5.937 (22 films) exceeds 天马 at 5.855 (21 films); 八一 is 4.962 (49 films). Type/colour composition affects the all-type ordering. Only 长春 (17 films, 5.701) and 北京 (17 films, 4.927) reach 10 Colour features. V-only processing may miss changes distinguished mainly by hue, and the B&W pilot reference does not validate colour recall.
+3. Restricting to films whose metadata lists one production institution gives 珠江 a mean of 5.448 across 11 films, just above 天马 at 5.440. The gap is small. “Single-studio” means metadata lists one institution, not proof of no other historical collaboration.
+4. In the central-film challenge, 珠江 at 5.230 exceeds 海燕 at 5.185. Mean changes across the ten groups range from −0.180 to +0.024 candidates/minute. Full-file opening/ending presentation contributes to these statistics. Position bins cannot directly be called exposition, climax or ending.
+5. Actual median frame intervals correspond to about 25Hz in 447 films and 23.81Hz in 6 films. The adaptive window is defined in frame counts; PTS intervals and minimum-interval filtering affect results. This does not identify original camera or projection speed.
 
-### 条件置换参照
+### Conditional permutation reference
 
-只在元数据单厂样本中，对原可用n≥10的机构，保留同年×类型×色彩单元中至少5片、至少2机构的重叠样本。先扣除单元均值，再计算机构间残差平方和占总残差平方和；单元内置换影片值999次，种子20261026。
+Restrict metadata single-studio samples to institutions with original available n≥10. Retain overlapping same-year×type×colour cells with at least 5 films and at least 2 institutions. Subtract cell means, then calculate the between-institution residual sum of squares as a share of total residual sum of squares. Permute film values within cells 999 times, using seed 20261026.
 
-| 条件 | 实际影片/单元 | 观察份额 | 置换中位 | 置换2.5–97.5%范围 | ≥观察值的修正尾部比例 |
+| Condition | Actual films/cells | Observed share | Permutation median | Permutation 2.5–97.5% range | Corrected tail fraction ≥ observed |
 |---|---:|---:|---:|---:|---:|
-| 年份×类型×色彩 | 347/25 | 0.0764 | 0.0220 | 0.0075–0.0487 | 0.001 |
-| 再要求源宽相同 | 299/30 | 0.1135 | 0.0265 | 0.0081–0.0563 | 0.001 |
+| Year×type×colour | 347/25 | 0.0764 | 0.0220 | 0.0075–0.0487 | 0.001 |
+| Also require equal source width | 299/30 | 0.1135 | 0.0265 | 0.0081–0.0563 | 0.001 |
 
-两种条件下，观察组差异超过了此置换参照，值得后续有来源控制的研究。**两行不是同一影片集合，不能据0.0764→0.1135说控制分辨率增强了机构效应。** 入选机构的n门槛在筛单元前应用，匹配后有机构仅8/9片；原样本数保留在JSON。999次无参照量达到观察值，加1修正得到0.001，不是零概率。
+Under both conditions, observed group differences exceed this permutation reference and merit research with further provenance controls. **The rows contain different film sets; the change from 0.0764→0.1135 does not establish that resolution control strengthens an institutional effect.** Institutional n eligibility is applied before cell filtering, leaving some institutions with only 8/9 films after matching. Original sample counts remain in JSON. None of the 999 reference statistics reached the observed value; the plus-one correction gives 0.001, not zero probability.
 
-条件交换性尚未证实；非随机缺片、共同主创、题材、机构选择、转录/修复来源及身份链接都可能解释差异。源宽不是修复批次。这是探索性参照，不建立总体显著性、特定片厂的因果效应或政治解释。
+Conditional exchangeability remains unestablished. Nonrandom missing films, shared creative personnel, subjects, institutional selection, transfer/restoration provenance and identity links may explain differences. Source width is not restoration batch. This exploratory reference establishes neither population significance, a specific studio's causal effect nor a political interpretation.
 
-## 硬切与渐变的验证结论不同
+## Hard-cut and gradual validation have different conclusions
 
-全库输出194,243处主硬切候选、252,711段默认渐变候选。两者有冲突/重叠，不能相加成真实转场总数，也不能由硬切间隔直接得到完整真实平均镜头长度。
+Corpus-wide outputs contain 194,243 primary hard-cut candidates and 252,711 default gradual candidates. They conflict/overlap and cannot be added into an actual total transition count. Hard-cut intervals do not directly yield complete, true average shot length.
 
-独立研究者参考仍只有《上甘岭》02:30–12:30：45处硬切、4段渐变。保留QuickTime帧号0/1起算两情景，不强行偏移一帧；±0.08秒时两者主设置均43匹配、2未匹配预测、2漏检，精确率和召回率95.56%。宽松设置44/3/1、严格42/2/3；无人工渐变排除区间的挑战同样43/2/2。全片934候选与旧原生PySceneDetect基线逐时间戳一致，这是工程回归，不能作为独立准确率。
+The only independent researcher reference remains 《上甘岭》 at 02:30–12:30: 45 hard cuts and 4 gradual intervals. Both QuickTime frame-number origins, 0/1, are retained without forcing a 1-frame shift. At ±0.08 seconds, both primary settings yield 43 matches, 2 unmatched predictions and 2 misses, with precision and recall of 95.56%. Lenient results are 44/3/1 and strict results 42/2/3. The challenge without manual gradual-exclusion intervals also gives 43/2/2. All 934 full-film candidates match the old native PySceneDetect baseline timestamp by timestamp. This is an engineering regression check, not independent accuracy validation.
 
-该10分钟此前参与方法开发，不能把95.56%当作453片的准确率。容差、原始人工时间误差、爆炸烟雾、闪光、镜内运动、极短插镜、色彩差异仍有限制。全库没有新增独立漏检调查。
+Those 10 minutes previously contributed to method development; 95.56% cannot be treated as accuracy across 453 films. Tolerance, original manual timing error, explosion smoke, flashes, within-shot movement, very short inserts and colour differences remain limitations. No new independent missed-detection survey was conducted across the corpus.
 
-渐变完整区间以tIoU≥0.5评分：默认0匹配/91未匹配预测/4漏检，严格0/6/4，仅淡入淡出0/2/4；两种帧号情景相同。降到0.3时严格配置2/4/2，说明部分局部候选可能有用，不能以宽松标准替换完整定位目标。当前规则不涵盖所有划变、虹膜等形式，复合淡出—黑场—新画面的计数单位也未解决。
+At complete-interval tIoU≥0.5, default gradual detection gives 0 matches/91 unmatched predictions/4 misses, strict gives 0/6/4, and fade-only gives 0/2/4, identically under both frame-number interpretations. At the lower threshold of 0.3, strict results are 2/4/2, suggesting some local candidates may be useful without replacing the complete-localisation target with a more lenient standard. Current rules do not cover every wipe, iris or other form. Counting units for composite fade-out—black hold—new image sequences also remain unresolved.
 
-**当前自动完整渐变分割用途为REJECTED；跨厂渐变频率/类型偏好无法由本轮可靠估计。** 不再用四例反复优化或启动已有弱模型的多日全库推理。负结果与候选均保留。
+**Automatic complete gradual segmentation is currently REJECTED; this run cannot reliably estimate cross-studio gradual frequencies or type preferences.** Do not repeatedly optimise on four examples or launch multi-day corpus inference with the existing weak model. Negative results and candidates remain preserved.
 
-## 实际画面抽查及失败例
+## Actual image inspection and failure examples
 
-固定种子按17个有数据机构各抽一部，去重后17片。每片随机1处主硬切、1段默认渐变，共34行、170幅帧、6张接触表；助手已实际查看全部。逐帧来源原PTS精确匹配，旧直接seek不能定位的失败材料另存，改用提前解码后未替换成“附近差不多的帧”。
+With a fixed seed, sample one film from each of 17 institutions with data; deduplication leaves 17 films. Randomly select 1 primary hard cut and 1 default gradual candidate per film, totalling 34 rows, 170 frames and 6 contact sheets, all actually viewed by the assistant. Every source frame matches original PTS exactly. Preserve failures from the former direct-seek method separately; the revised earlier-start decoding does not substitute merely approximate nearby frames.
 
-- 15处硬切行可见明确空间/构图突变；《杨门女将》所选点附近已有重影，《丽人行》所选点从画面转黑，提示普通硬切与复合转场的类别/单位问题。这不是15/17的准确率估计。
-- 17段渐变中，13段五帧图没有明显跨场景混合，多表现为同一镜头内动作。《枯木逢春》5582.04秒、《球迷》2216.374秒是可查反例。
-- 《东进序曲》3752.754秒候选的起始样本已在叠化中，旧图像随后消失：可能找到过程的一部分，没有证明完整起点。《刘明珠》1661.488秒逐暗却标成dissolve，说明分类也有问题。
-- 《阿福寻宝记》4175.680秒包含“完”字及结束背景图案变化，提醒全文件计数会纳入片尾呈现材料；《丽人行》2312.095秒近黑渐亮提供候选用途的正面线索，但五帧不验证全部端点。
+- Clear spatial/compositional discontinuities appear in 15 hard-cut rows. Ghosting is already visible near the selected point in 《杨门女将》, and the selected point in 《丽人行》 changes from an image to black. These raise category/counting-unit questions for ordinary hard cuts versus composite transitions. This is not a 15/17 accuracy estimate.
+- In 13 of 17 gradual candidates, the five-frame images show no obvious cross-scene mixing, often showing action within one shot. 《枯木逢春》 at 5582.04 seconds and 《球迷》 at 2216.374 seconds are inspectable counterexamples.
+- The opening sample of the candidate in 《东进序曲》 at 3752.754 seconds is already within a dissolve, followed by disappearance of the old image. It may identify part of the process without establishing its complete start. 《刘明珠》 at 1661.488 seconds darkens gradually but is labelled dissolve, also indicating classification problems.
+- 《阿福寻宝记》 at 4175.680 seconds contains the character “完” and a changing ending background, reminding us that full-file counts include end presentation. A near-black brightening in 《丽人行》 at 2312.095 seconds gives a positive indication of candidate usefulness, but five frames do not validate all endpoints.
 
-记录在`visual_qa/assistant_review.json`，原抽样/帧哈希收据不改。以上是助手的有限视觉观察，不是研究者重新标注、全段盲评或全库真值。只抽候选，没有随机无候选区间，不能估计全库召回率或宣称消除误报。
+Observations are in `visual_qa/assistant_review.json`; original sampling/frame-hash receipts remain unchanged. These are limited assistant visual observations, not researcher reannotation, blind full-interval evaluation or corpus ground truth. Sampling only candidates, without random no-candidate intervals, cannot estimate corpus-wide recall or establish elimination of false positives.
 
-## 研究用途与停止决定
+## Research uses and stopping decision
 
-| 属性 | 已实现/实测 | 可靠性与成本 | 叙事/形式相关性 | 建议 |
+| Property | Implemented/measured | Reliability and cost | Narrative/form relevance | Recommendation |
 |---|---|---|---|---|
-| 硬切候选原PTS及局部率 | 453片全逐帧 | 开发区间有独立参考；跨片准确率PROVISIONAL；约5.86小时CPU批处理 | 描述切换组织，支持独立事件对齐；本身不识别事件 | 纳入核心，但保留预测标记/阈值/冲突 |
-| 候选间隔与相邻顺序 | 453片缓存派生 | 算术可核验；渐变漏检使间隔不等于全体镜头 | 比平均值更接近组织问题，仍需合适乱序对照 | 保守使用，不称度量蒙太奇 |
-| 相对时间局部/全片率 | 453片、100箱 | 可复算；文件首尾与缺测影响，按影片而非帧作样本 | 检查分布与均值的区别，不能自动命名叙事幕 | 与原时间轴并存，保留有效n |
-| 默认/严格渐变完整区间 | 453片候选；4段参考复测 | 严格主标准失败；便宜不意味着有效 | 过渡组织可能重要，但当前测量未达到目标 | 完整分割REJECTED，检索候选PROVISIONAL |
-| 数字近黑停留 | 453片规则派生 | 阈值明确定义；未验证为摄影黑场/真实淡出 | 可对齐叙事停顿，但视觉属性不等于功能 | 仅辅助描述，不作为淡出计数 |
+| Original hard-cut candidate PTS and local rates | All 453 films, frame complete | Independent reference in a development interval; cross-film accuracy PROVISIONAL; about 5.86 hours of CPU batch processing | Describes switching organisation and supports alignment to independent events; does not identify events itself | Include in the core while retaining prediction flags, thresholds and conflicts |
+| Candidate intervals and adjacent order | Derived from caches for 453 films | Arithmetic is verifiable; missed graduals mean intervals are not all actual shots | Closer to organisation than a mean, but still requires an appropriate shuffled-order control | Use conservatively; do not call it metric montage |
+| Relative-time local/whole-film rate | 453 films, 100 bins | Reproducible; affected by file edges/missingness; films rather than frames are samples | Separates distribution from mean without automatically naming narrative acts | Retain alongside original timelines and preserve effective n |
+| Default/strict complete gradual intervals | Candidates for 453 films; 4 reference intervals revalidated | Strict primary criterion failed; low cost does not imply validity | Transition organisation may matter, but this measurement did not meet its target | Complete segmentation REJECTED; retrieval candidates PROVISIONAL |
+| Digital near-black holds | Rule-derived for 453 films | Explicit thresholds; not validated as photographic black frames/actual fades | May align with narrative pauses, but visual property is not function | Auxiliary description only, without fade counts |
 
-独立数值审计已对453片检查原PTS、候选标量重实现、影片率、60机构覆盖/权重、原始文件状态和产物哈希，全部通过；255项Python测试通过。二者验证计算与来源完整性，不验证所有电影理论推断。
+The independent numerical audit checked original PTS, scalar reimplementations of candidate rules, per-film rates, coverage/weights for 60 institutions, original-file state and output hashes across all 453 films; all passed. All 255 Python tests passed. These verify computation and provenance integrity, not every film-theoretical inference.
 
-最小可辩护组合仍是：源版本/PTS/缺测 + 有标记的硬切/保守间隔 + 版本内明暗时间曲线 + 独立叙事标注。全库按机构结果提供选片和描述性关系，尚不能替代叙事对应检验。最强下一实验是在既有独立事件附近比较“明暗重组＋局部切换率”与同时间段普通硬切对照，冻结窗口、保留E010等反例；同一《上甘岭》10分钟只能继续作探索性挑战。确认性扩展需要新的独立参考，当前不要求研究者补看或重标。
+The minimal defensible combination remains source version/PTS/missingness + flagged hard cuts/conservative intervals + within-version gray-level temporal profiles + independent narrative annotations. Studio-grouped corpus results aid film selection and descriptive relationships, but cannot replace tests of narrative correspondence. The strongest next experiment compares “gray-level reorganisation + local switching rate” near existing independent events with ordinary hard-cut controls from the same period, freezing windows and retaining counterexamples such as E010. The same 10 minutes of 《上甘岭》 can only continue as an exploratory challenge. Confirmatory expansion needs new independent references; no additional researcher viewing or reannotation is requested now.
 
-本轮全可用语料尝试、参数/构成挑战、真实失败例和研究记录已完成。停止继续优化排名和弱渐变模型；保留缺片、身份、机构谱系、复合转场计数及来源条件作为开放研究判断。
+The attempt across all available sources, parameter/composition challenges, actual failure examples and research records is complete. Stop further optimisation of rankings and the weak gradual model. Retain missing films, identities, institutional genealogy, composite-transition counting and provenance conditions as open research judgements.

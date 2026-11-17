@@ -47,128 +47,128 @@ def main():
     events=[r for r in q5['event_absolute_changes'] if r['scenario_id'].endswith('_0')]
     fig,axes=plt.subplots(1,2,figsize=(13,4.6))
     obs=np.asarray([r['absolute_gray_change'] for r in events]);x=np.arange(len(events));lo=np.quantile(controls,.025,axis=0);hi=np.quantile(controls,.975,axis=0);median=np.median(controls,axis=0)
-    axes[0].plot(x,obs,'o',color='#c56835',label='人工事件起点的变化')
-    axes[0].errorbar(x,median,yerr=np.stack([median-lo,hi-median]),fmt='o',color='#245a81',capsize=4,label='普通硬切条件对照范围')
-    axes[0].set_xticks(x,[r['event_id'] for r in events]);axes[0].set_ylabel('|后均值−前均值|，数字灰度0–1');axes[0].legend(fontsize=9)
-    axes[1].hist(controls.mean(axis=1),bins=25,color='#d4dee7',label='1999组硬切条件对照')
-    axes[1].axvline(obs.mean(),color='#c56835',lw=2,label=f'六事件均值 {obs.mean():.3f}');axes[1].set_xlabel('平均绝对数字灰度变化');axes[1].set_ylabel('条件抽样次数');axes[1].legend(fontsize=9)
+    axes[0].plot(x,obs,'o',color='#c56835',label='Change at annotated event onsets')
+    axes[0].errorbar(x,median,yerr=np.stack([median-lo,hi-median]),fmt='o',color='#245a81',capsize=4,label='Conditional ranges for ordinary hard cuts')
+    axes[0].set_xticks(x,[r['event_id'] for r in events]);axes[0].set_ylabel('|Post-mean − pre-mean|, digital grayscale 0–1');axes[0].legend(fontsize=9)
+    axes[1].hist(controls.mean(axis=1),bins=25,color='#d4dee7',label='1999 hard-cut control groups')
+    axes[1].axvline(obs.mean(),color='#c56835',lw=2,label=f'Six-event mean {obs.mean():.3f}');axes[1].set_xlabel('Mean absolute digital grayscale change');axes[1].set_ylabel('Conditional draws');axes[1].legend(fontsize=9)
     for ax in axes:ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.12)
-    fig.suptitle('探索发现：事件附近的明暗变化较大，但E010没有同样表现')
-    fig.text(.02,.01,'前后各5秒，移除中心±1秒；条件对照范围不是置信区间，不表示总体显著性。',fontsize=9)
+    fig.suptitle('Exploratory brightness changes near events, with E010 as a counterexample')
+    fig.text(.02,.01,'Five-second windows before/after, excluding central ±1 second. Conditional ranges are not confidence intervals or population significance.',fontsize=9)
     fig.tight_layout(rect=[0,.035,1,.95]);savefig(fig,output/'brightness_event_controls')
     # Preserve full observed lag strata, including reversals and tiny positive sets.
     ar=[r for r in q3['lag_stratified_event_proxy_auc'] if r['fraction']==.5 and r['same_event_proxy_auc'] is not None]
     fig,ax=plt.subplots(figsize=(10,4))
     for method,color in [('dct','#245a81'),('dhash','#2b916f'),('brightness','#a26874')]:
         r=[x for x in ar if x['method']==method];ax.plot([x['lag_bin_seconds'] for x in r],[x['same_event_proxy_auc'] for x in r],'o-',label=method,color=color)
-    ax.axhline(.5,color='gray',ls='--',lw=.8);ax.set_ylim(0,1.05);ax.set_xlabel('镜头代表帧间隔分层下界／秒（每层20秒）');ax.set_ylabel('同事件代理AUC；不是母题检索准确率');ax.legend()
-    ax.set_title('低层相似性与叙事代理的对应随时间间隔变化，未形成稳定通用优势');ax.spines[['top','right']].set_visible(False)
-    fig.text(.02,.01,'较长间隔层仅有1–2个同事件配对；配对共享镜头，不能当独立样本。',fontsize=9);fig.tight_layout(rect=[0,.03,1,1]);savefig(fig,output/'recurrence_lag_controls')
+    ax.axhline(.5,color='gray',ls='--',lw=.8);ax.set_ylim(0,1.05);ax.set_xlabel('Lower bound of representative-frame gap / seconds (20-second strata)');ax.set_ylabel('Same-event proxy AUC; not motif-retrieval accuracy');ax.legend()
+    ax.set_title('Low-level similarity and narrative-proxy correspondence vary with temporal gap');ax.spines[['top','right']].set_visible(False)
+    fig.text(.02,.01,'Longer-gap strata contain only 1–2 same-event pairs. Pairs share shots and are not independent samples.',fontsize=9);fig.tight_layout(rect=[0,.03,1,1]);savefig(fig,output/'recurrence_lag_controls')
     # Log and source records are small and remain outside source control.
     for source,name in [('/tmp/cinematicdx-quantitative-tests-all.log','tests_225.log'),('/tmp/cinematicdx-quantitative-exploration.log','initial_execution.log'),('/tmp/cinematicdx-quantitative-challenges.log','followup_execution.log'),('/tmp/cinematicdx-quantitative-audit.log','audit_execution.log')]:
         shutil.copy2(source,output/name)
     links='../../'+str(run.relative_to(ROOT))
-    report=f'''# CinematicDX：定量证据探索报告
+    report=f'''# CinematicDX: quantitative evidence exploration report
 
-日期：2026-10-26。工作分支 `codex/quantitative-evidence-20261026`。本轮已完成五项新实验/挑战，评估六项候选；达到有证据的停止条件。
+Date: 2026-10-26. Working branch: `codex/quantitative-evidence-20261026`. This round completed five new experiments/challenges and assessed six candidates, meeting evidence-based stopping conditions.
 
-最有价值的新发现是：**本片现有人工事件附近的数字明暗变化，在普通硬切条件对照下仍较大，值得进一步验证。** 这不是自动叙事识别器，也没有证实电影形式与政治语境之间的因果关系。
+The most useful new finding is that **digital brightness changes near this film's existing human-annotated events remain larger under conditional controls using ordinary hard cuts, warranting further validation.** This is not an automatic narrative recogniser and does not establish causation between film form and political context.
 
-## 材料、独立性与范围
+## Material, independence and scope
 
-- 《上甘岭》(1956)，`research-inventory:shang gan ling`，视频版本 `{receipt['video_version_id']}`。实际文件来自本地外置盘，已重新计算完整SHA；原始来源/转录历史仍未知。
-- 唯一分析区间为播放偏移 `[150,750)`，600秒；不分析其他影片。复用此前逐帧缓存，额外只在同一范围解码144张代表图，没有扩大30分钟上限。
-- 已有M2记录显示454个视频候选头部探测成功；这是此前清点，不是454部独立影片已验证、本轮也没有重新全库扫描。
-- 现有独立人工参考为45处硬切、4段渐变、11条事件；10个区间内部起点。秒级叙事时间保持原精度；E001左边缘不充当新事件，E011实际终点为空、仅观察至750秒。
-- QuickTime帧号与解码帧序仍未独立校准；涉及切点的主对照保留0/1起算，不能按拟合择优。图像代表帧采样用0起算情景，明确仍有该限制。
-- 原视频、原Excel、既有标注与渐变失败结果未改；没有新模型/数据下载、训练、上传、数据库操作或付费服务。
-- 新方案在本轮输出前冻结，但标注区间本就已知。因此全轮是内部探索，不是盲测或预注册确认。
+- 《上甘岭》(1956), `research-inventory:shang gan ling`, video version `{receipt['video_version_id']}`. The actual file is on a local external drive, and its complete SHA was recalculated. Original provenance/transfer history remain unknown.
+- The sole analysis interval is playback offset `[150,750)`, lasting 600 seconds. No other film is analysed. Existing per-frame caches were reused, with only 144 additional representative images decoded within the same interval, without expanding the 30-minute limit.
+- Existing M2 records show successful header probes for 454 video candidates. This is an earlier inventory, not validation of 454 independent films, and this round did not rescan the whole corpus.
+- Existing independent human references comprise 45 hard cuts, 4 gradual intervals and 11 events, including 10 onsets inside the interval. Narrative times retain their original second-level precision. E001 at the left edge is not a new event, and E011 has no actual end time and is observed only to 750 seconds.
+- QuickTime frame numbers have not been independently calibrated against decoding order. Primary cut-based controls retain both 0/1 numbering conventions without choosing whichever fits best. Representative-frame sampling uses the 0-based scenario with this limitation explicitly retained.
+- Original video, Excel, existing annotations and failed gradual-transition results are unchanged. No new models/data were downloaded, trained or uploaded. No database operations or paid services were used.
+- New procedures were frozen before this round's outputs, but the annotation interval was already known. The whole round is therefore internal exploration, rather than blind testing or preregistered confirmation.
 
-## 六项候选的结论
+## Conclusions for the six candidates
 
-| 属性 | 理论动机 | 已实现？ | 实验证据 | 可靠性 | 本轮成本 | 叙事相关性 | 建议 |
+| Property | Theoretical motivation | Implemented? | Experimental evidence | Reliability | Cost in this round | Narrative relevance | Recommendation |
 |---|---|---|---|---|---|---|---|
-| 硬切时长与顺序 | 重复、反差、节奏分布，超越全片均值 | 是，Q01 | 41个完整硬切间隔；37个有效相邻关系；分块乱序1999次 | 时间表与算术已核查；顺序主张PROVISIONAL | 约0.63秒，已有参考 | 可对齐事件；不等于叙事、注意或度量蒙太奇 | 核心保留；区间/序列/截断同时存 |
-| 数字灰度均值与对比度 | 明暗对比及沿时间轴的组织 | 是，Q02/Q05 | 六个硬切关联事件均值变化0.1012，对照中位0.0185；多项挑战仍存在 | 提取VERIFIED；叙事对应PROVISIONAL | 与活动/对照合计约2.9秒，复用缓存 | 本轮最强探索线索；E010反例保留 | 核心保留，限定同一数字版本 |
-| 图像活动代理 | 运动/变化分布及与剪辑关系 | 是，Q02 | 1499帧对，1427有效；相关差与光流秩相关0.932；仅4/10事件窗口足够完整 | PROVISIONAL，无真实运动标签；摄像机分类未验证 | 光流约0.83秒@64×48、2.5Hz | 现有窄窗对照被缺测阻断 | 先留廉价相关和质量旗标，光流研究性保存 |
-| 配置相似性 | 视觉返回、重复、对比 | 是，Q03 | 48段×3代表帧；DCT top10仅5/7对在替换代表帧后保留；存在烟雾/战场误配 | PROVISIONAL，助手定性检查不是人类真值 | 描述符轻量；144张较大代表图解码约12.93秒 | 同事件代理结果依时间间隔改变 | 保留检索工具，不升级成母题/地点识别 |
-| 正脸框大小/数量 | 人物空间显著性的候选代理 | 是，Q04 | 144张图中79张零检测；31张随参数变脸数；有躯干误框和侧脸漏检 | REJECTED：当前配置不适合人数/景别代理；原框仍为预测 | 两设置合计约3.14秒；使用现有模型 | 不能从脸框得出人物配置或角色注意 | 不进入核心测量；以后须独立框/景别参考 |
-| 完整渐变起止 | 编辑过渡组织 | 既有G00，本轮不重跑 | 主tIoU≥0.5：规则0/91/4，冻结预训练0/3/4 | REJECTED：当前配置的自动完整分割用途 | 本轮0次推理 | 错误会污染时长/事件边界分析 | 单列候选与人工区间，不自动合入镜头表 |
+| Hard-cut durations and ordering | Repetition, contrast and rhythm distribution beyond whole-film means | Yes, Q01 | 41 complete hard-cut intervals; 37 valid adjacent relations; 1999 blockwise permutations | Timing table and arithmetic checked; ordering claims PROVISIONAL | About 0.63 seconds using existing references | Can align with events; does not establish narrative, attention or metric montage | Retain as core; store intervals, sequences and truncation together |
+| Digital grayscale mean and contrast | Brightness contrast and its organisation along the timeline | Yes, Q02/Q05 | Mean change 0.1012 for six cut-associated events versus control median 0.0185; retained across several challenges | Extraction VERIFIED; narrative correspondence PROVISIONAL | About 2.9 seconds including activity/controls, using cached data | Strongest exploratory lead in this round; E010 counterexample retained | Retain as core, restricted to the same digital version |
+| Image-activity proxies | Motion/change distributions and relations with editing | Yes, Q02 | 1499 frame pairs, 1427 valid; correlation difference and optical-flow rank correlation 0.932; only 4/10 event windows sufficiently complete | PROVISIONAL, with no true motion labels; camera-movement classification unvalidated | Optical flow about 0.83 seconds at 64×48 and 2.5Hz | Missingness blocks existing narrow-window controls | First retain inexpensive correlation and quality flags; preserve optical flow for research |
+| Configuration similarity | Visual returns, repetition and contrast | Yes, Q03 | 48 intervals × 3 representative frames; only 5/7 DCT top10 pairs retained after frame replacement; smoke/battlefield mismatches | PROVISIONAL; qualitative assistant inspection is not human ground truth | Lightweight descriptors; decoding 144 larger representative images about 12.93 seconds | Same-event proxy results vary by temporal gap | Retain as retrieval support without upgrading to motif/location recognition |
+| Frontal-face box sizes/counts | Candidate proxies for characters' spatial salience | Yes, Q04 | Zero detections in 79 of 144 images; counts change with parameters in 31 images; torso false boxes and missed profiles | REJECTED: current configuration unsuitable for person-count/shot-scale proxies; original boxes remain predictions | About 3.14 seconds for both settings, using an existing model | Boxes cannot establish character configuration or character attention | Exclude from core measurements; future use requires independent box/shot-scale references |
+| Complete gradual start/end intervals | Organisation of editing transitions | Existing G00, not rerun here | Primary tIoU≥0.5: rule-based 0/91/4, frozen pretrained 0/3/4 | REJECTED: automatic complete segmentation with these configurations | 0 inference runs this round | Errors would contaminate duration/event-boundary analysis | Keep candidates and human intervals separate; do not automatically merge into shot tables |
 
-上述状态针对明确用途：数值能够复算，不等于电影理论解释已被验证。计算时间是本机缩小图像/已有缓存条件，不能直接当作原分辨率全库预算。四项初始真实材料实验整体约{receipt['elapsed_seconds']:.2f}秒；生成报告、检验与阅读另计。
+These statuses address stated uses. Reproducible numbers do not validate film-theoretical interpretation. Timings reflect reduced-resolution images/existing caches on this machine and cannot directly budget original-resolution full-corpus processing. The four initial real-material experiments took about {receipt['elapsed_seconds']:.2f} seconds overall; reporting, testing and reading are additional.
 
-## Q01：顺序比均值多告诉了什么
+## Q01: information in ordering beyond means
 
-保守地仅取两端都是硬切、且不跨渐变的41个间隔，合计366.763秒；均值8.945秒、中位4.960秒。**它们不是完整600秒或全片的平均镜头长度。** 其余范围因渐变相邻、观察边缘等原因不进入本项完整间隔分析。
+The conservative analysis includes only 41 intervals bounded by hard cuts at both ends and crossing no gradual transition, totalling 366.763 seconds, with mean 8.945 seconds and median 4.960 seconds. **These are not average shot lengths for the complete 600-second interval or the whole film.** Other ranges are excluded from this complete-interval analysis because of adjacent gradual transitions, observation edges or related reasons.
 
-四个连续可用块的间隔数量为6/1/7/27，块内均值约1.280/29.640/6.006/10.645秒。全段一个均值明显隐藏了这些不同节奏区域，因而保留序列和位置有描述价值。
+The four consecutive usable blocks contain 6/1/7/27 intervals, with within-block means of about 1.280/29.640/6.006/10.645 seconds. A single overall mean hides these distinct rhythm regions, giving sequences and positions descriptive value.
 
-主统计量平均绝对相邻log时长差为0.7788；保持每块时长分布和总时长的乱序中位为0.8568，2.5%–97.5%条件范围0.7060–1.0017。真实值位于条件参考约14.5%位置，并不突出。相邻log时长相关0.4931，块内乱序本身中位已有0.4010；不能只报正相关就推断精细序列原则。
+The primary statistic, mean absolute adjacent log-duration difference, is 0.7788. Permutations retaining each block's duration distribution and total duration have median 0.8568 and a conditional 2.5%–97.5% range of 0.7060–1.0017. The observed value lies around the 14.5% position in the conditional reference and is not exceptional. Adjacent log-duration correlation is 0.4931, but within-block permutations already have median 0.4010. Positive correlation alone therefore cannot establish a fine-sequence principle.
 
-后续较弱的全局乱序保留总体直方图，却混合不同块的时长，主统计量中位升至1.2147，使原顺序显得非常突出。**两种对照回答不同问题：段落之间节奏有差别，不等于段落内部有额外有序规律。** 这也是本轮重要的负/边界发现。没有拟合1/f，没有测量观众注意，没有识别蒙太奇类别。
+The later, weaker global permutation preserves the overall histogram but mixes durations from different blocks. Its primary-statistic median rises to 1.2147, making the original ordering appear highly exceptional. **The controls answer different questions: rhythm differences between passages do not establish additional ordering within passages.** This is an important negative/boundary finding from this round. No 1/f fitting, audience-attention measurement or montage classification was performed.
 
-## Q02/Q05：最值得追踪的叙事线索
+## Q02/Q05: the most promising narrative lead
 
-数字灰度按原PTS实际曝光加权。主比较为事件起点前 `[−5,−1)` 秒与后 `[+1,+5)` 秒均值之差的绝对值，不把事件起点吸附到切点。
+Digital grayscale is weighted by actual exposure from original PTS. The primary comparison is the absolute difference between means in `[−5,−1)` seconds before and `[+1,+5)` seconds after an event onset. Onsets are not snapped to cuts.
 
-全部10个起点的平均变化为0.1693，共同平移事件组所得469个有效配置的中位为0.0449。但这个较弱对照混合了转场与非转场，因此不能单独支撑叙事对应。
+Mean change across all 10 onsets is 0.1693, versus median 0.0449 for 469 valid configurations generated by jointly shifting the event group. This weaker control mixes transition and non-transition conditions, so it cannot establish narrative correspondence on its own.
 
-更具体的对照只取附近1秒有硬切、又不邻近人工渐变的6个事件E006–E011。与同一时间三分区的非事件硬切匹配，保留各起点到切点的偏移，每次不复用切点；允许窗口重叠并明确不作独立样本推断。结果：
+The more specific control includes 6 events, E006–E011, with a hard cut within 1 second and no neighbouring human-annotated gradual transition. They are matched to non-event hard cuts in the same temporal third, retaining onset-to-cut offsets without reusing cuts within a draw. Windows may overlap, and independent-sample inference is explicitly excluded. Results:
 
-- 事件平均绝对变化 **0.101233**；1999组对照中位 **0.018460**，条件2.5%–97.5%范围 **0.010977–0.037355**。
-- 逐帧原PTS积分重新计算所有亚秒级对照后，中位 **0.018576**；按既定池与不复用规则计算的最大可能对照均值 **0.042148**。因此差距不是1秒分箱或随机抽样遗漏极端配置造成的。
-- 逐个去掉一个事件，剩余均值 **0.086620–0.120670**，相应条件对照上界均低于它。不能归因于某一个事件。
-- 3秒/5秒窗、起点整体±1秒、全画面/ROI、1Hz近似、gamma0.8/1.2、JPEG40和较窄裁切均保留方向。10秒窗的硬切匹配池不足，明确标BLOCKED，不填“无效果”。
-- 灰度标准差也有条件差异，但它与均值及场景/构图变化相关，不能把它当成第二份独立叙事证据。
+- Mean absolute event change **0.101233**; median of 1999 control groups **0.018460**, with conditional 2.5%–97.5% range **0.010977–0.037355**.
+- After recalculating every sub-second control using original-PTS frame integration, the median is **0.018576**. The maximum possible control mean under the stated pools and no-reuse rule is **0.042148**. The gap therefore does not arise from 1-second binning or random sampling missing extreme configurations.
+- Leaving out one event at a time gives remaining means of **0.086620–0.120670**, each above its corresponding conditional control upper bound. No single event explains the result.
+- The direction remains under 3-second/5-second windows, joint onset shifts of ±1 second, full-frame/ROI comparisons, a 1Hz approximation, gamma0.8/1.2, JPEG40 and narrower crops. The 10-second hard-cut matched pools are insufficient and explicitly BLOCKED, rather than labelled as no effect.
+- Grayscale standard deviation also differs conditionally, but it relates to the mean and scene/composition changes and cannot count as a second independent piece of narrative evidence.
 
-同时保留反例：E010在726秒附近的变化只有约 **0.0040**，并非每个事件都出现明显明暗变化；其余六事件变化分别记录在图和CSV。
+Counterexamples remain: E010 near 726 seconds changes by only about **0.0040**, so clear brightness change does not accompany every event. Changes for the other six-event observations are recorded individually in figures and CSV.
 
-**能说的：** 在这份独立事件表及固定对照下，本片局部存在可复算的明暗重组对应，值得研究其与构图、人物配置、场所转换及剪辑的关系。
+**Supported claim:** Under this independent event table and the fixed controls, reproducible local correspondence with brightness reorganisation exists in this film. Its relations with composition, character configuration, location changes and editing warrant further research.
 
-**不能说的：** 变化唯一由叙事产生，能自动识别事件，或是中国政治电影的普遍规律。对照未匹配景别、人物配置、地点或所有非平稳性；事件定义本身可能借助可见转场。数字灰度不是历史摄影照明真值，条件抽样范围不是置信区间，经验秩不是可直接发表的p值。
+**Unsupported claims:** Narrative uniquely causes the changes, events can be recognised automatically, or the result is a general rule for Chinese political cinema. Controls do not match shot scale, character configuration, location or all non-stationarity. Event definitions may themselves draw on visible transitions. Digital grayscale is not historical cinematographic lighting ground truth, conditional sampling ranges are not confidence intervals, and empirical ranks are not directly publishable p-values.
 
-## Q02活动代理：廉价方法已经提供大部分粗粒度信息
+## Q02 activity proxies: inexpensive methods already capture most coarse information
 
-1499个约0.4秒帧对中1427有效，72被标为跨切点/渐变或低纹理（类别可重叠）。像素差分与光流p90秩相关0.8956，`1−像素相关`与光流为0.9323；当前粗分辨率下，光流未展示足够独立收益，尚不能归因摄像机/人物运动。
+Of 1499 frame pairs about 0.4 seconds apart, 1427 are valid. 72 are flagged for crossing a cut/gradual transition or low texture, with categories permitted to overlap. Pixel differences and optical-flow p90 have rank correlation 0.8956, while `1−pixel correlation` and flow have correlation 0.9323. At the current coarse resolution, flow has not shown sufficient independent benefit and cannot yet distinguish camera from character motion.
 
-真实图像的机制扰动表明：同帧加10个灰度级会使差分中位约0.0392，而相关差接近0；一像素平移会显著抬高两者及光流。光流即使同帧也有数值底噪。**这些是受控扰动，不是电影里实际曝光变化或胶片抖动的真值。** 无法仅据全局平移判断摇镜还是拷贝不稳。
+Measurement-mechanism perturbations of real images show that adding 10 grayscale levels to the same frame gives median difference about 0.0392 while correlation difference stays near 0. A one-pixel translation substantially raises both measures and flow. Flow has a numerical floor even for identical frames. **These are controlled perturbations, not ground truth for actual film exposure changes or film jitter.** Global translation alone cannot distinguish panning from an unstable copy.
 
-严守95%有效曝光条件后，主窗口仅4/10个事件能完整测量活动，无法对全组计算比较；保留为空，不事后放宽阈值救结果。活动对照当前BLOCKED于缺测，方法本身PROVISIONAL。
+Under the strict 95% valid-exposure condition, only 4/10 events have complete activity measurements in the primary windows. A whole-group comparison is therefore impossible and remains missing. The threshold is not relaxed after the fact to rescue a result. Activity controls are currently BLOCKED by missingness, while the method remains PROVISIONAL.
 
-## Q03：相似性有检索价值，语义能力尚未成立
+## Q03: retrieval value without established semantic capability
 
-48个完整连续内容区间，各取1/4、1/2、3/4位置，共144代表图。去DC低频DCT、dHash与仅明暗距离并列比较。非相邻top10中，DCT在替换到1/4、3/4时保留5/7对；dHash各5对；仅明暗距离0/2对。说明空间配置描述符包含明暗均值以外的信息，也说明一个代表帧不稳定。
+Each of 48 complete continuous-content intervals contributes frames at 1/4, 1/2 and 3/4, giving 144 representative images. Low-frequency DCT without DC, dHash and brightness-only distance are compared in parallel. Among non-adjacent top10 pairs, DCT retains 5/7 pairs when replacing the representative with the 1/4 or 3/4 frame; dHash retains 5 in each case, and brightness-only distance retains 0/2. Spatial-configuration descriptors therefore contain information beyond mean brightness, while single-frame representation remains unstable.
 
-助手检查DCT前8对，看到多组相近的单人/双人构图返回，也看到明确误配：烟雾画面与多人地形画面仅低频图样相似。检查来源标为助手，无人类检索真值，不报告精确率。
+Assistant inspection of the first 8 DCT pairs found several returns of similar single-/two-person compositions and clear mismatches, including smoke and terrain containing several people that share only low-frequency patterns. Observations are labelled as assistant inspections. There is no human retrieval ground truth, so precision is not reported.
 
-以独立事件归属作代理，并按时间间隔20秒分层：在20–40秒层，DCT/dHash/仅明暗AUC约0.707/0.696/0.363；40–60秒为0.671/0.786/0.330。但0–20秒层明暗基线更高，60秒之后结果不稳定，较远层只有1–2个同事件配对。**全部层均保留，不用有利两层证明通用叙事检索，更不等同人物、地点或母题识别。** 配对共享镜头，不能当独立样本。
+Using independent event membership as a proxy and stratifying temporal gaps into 20-second bins, DCT/dHash/brightness-only AUC is about 0.707/0.696/0.363 at 20–40 seconds and 0.671/0.786/0.330 at 40–60 seconds. However, the brightness baseline is higher at 0–20 seconds, results are unstable beyond 60 seconds, and farther strata contain only 1–2 same-event pairs. **Every stratum is retained. Two favourable strata cannot establish general narrative retrieval, still less character, location or motif recognition.** Pairs share shots and cannot count as independent samples.
 
-## Q04：拒绝当前人数/景别代理
+## Q04: rejection of the current person-count/shot-scale proxy
 
-在144张代表图上，用已安装Haar正脸模型测试两个参数。主设置79张零检测、共87个框；31/144张（21.5%）随minNeighbors变化而改变脸数。
+The installed Haar frontal-face model was tested with two parameter settings on 144 representative images. The primary setting produces zero detections in 79 images and 87 boxes in total. Changing minNeighbors changes face counts for 31/144 images (21.5%).
 
-先看固定12张无框图、记录助手观察，再看框：发现侧脸双人图零框、双人图只一框、一个人被脸/躯干各框一次、巨框覆盖躯干/背景。故当前模型输出不适合作人数、集体构图或景别数据。**没有独立人类框/景别标注，不能给出这些任务的准确率。** 原预测和反例仍保留，不因拒绝用途而删除。
+Assistant observations were recorded for a fixed set of 12 unboxed images before inspecting boxes. They show zero boxes for a two-person profile image, only one box in a two-person image, separate face/torso boxes for one person, and oversized boxes covering torso/background. Current model outputs are therefore unsuitable as person-count, group-composition or shot-scale data. **Without independent human box/shot-scale annotations, accuracy cannot be reported for those tasks.** Original predictions and counterexamples remain preserved despite rejection of the use.
 
-未来独立复核用12图和8对随机配对的空白CSV已生成，人类字段保持空白，与助手备注分开；不要求研究者现在补看或重标。
+Blank CSV sheets for future independent review contain 12 images and 8 randomly sampled pairs. Human fields remain blank and separate from assistant notes. The researcher is not being asked to rewatch or reannotate now.
 
-## 最小可辩护组合与四个解释层级
+## Minimum defensible combination and four levels of interpretation
 
-1. **属性描述：** 来源版本/原PTS/质量旗标；经独立参考检查的硬切时间；保守时长序列；固定ROI数字灰度均值与标准差。它们可审计、轻量。
-2. **视觉组织：** 保留逐项顺序、局部变动及跨区间对比，使用保留恰当结构的对照；低频相似性仅作辅助检索，不把数值直接叫形式原则。
-3. **视觉—叙事对应：** 独立事件层加窄窗、普通切点条件对照、时间误差及缺测处理。明暗是本轮最强候选，但关联仍PROVISIONAL。
-4. **语料与历史解释：** 当前无跨片/跨版本验证、无制作关系分析，不能推断年代/机构/政治规律。后续需来源分层、独立材料、抽取验证与历史研究；本轮未实施SNA。
+1. **Property description:** Source version/original PTS/quality flags; hard-cut times checked against independent references; conservative duration sequences; fixed-ROI digital grayscale means and standard deviations. These are auditable and lightweight.
+2. **Visual organisation:** Preserve individual ordering, local changes and cross-interval contrasts, with controls retaining appropriate structure. Low-frequency similarity supports retrieval only; numerical measures are not directly labelled as principles of form.
+3. **Visual–narrative correspondence:** An independent event layer with narrow windows, ordinary-cut conditional controls, temporal uncertainty and missingness handling. Brightness is this round's strongest candidate, but the association remains PROVISIONAL.
+4. **Corpus and historical interpretation:** No cross-film/cross-version validation or production-relations analysis is available at this stage. Period/institutional/political rules cannot be inferred. Later work requires source stratification, independent material, extraction validation and historical research. SNA was not implemented in this round.
 
-活动相关代理可以作为第二阶段附加，但须解决转场附近有效曝光；光流、人物数量、景别分类、自动母题和完整渐变均不列入当前核心。
+Correlation-based activity proxies may be added in a second stage after resolving valid exposure near transitions. Optical flow, person counts, shot-scale classes, automatic motifs and complete gradual segmentation are excluded from the current core.
 
-## 最强下一实验
+## Strongest next experiment
 
-冻结这次明暗操作定义，在独立材料上检验“叙事事件附近的明暗重组是否超出普通剪辑”，并把参考细分为地点改变、人物配置改变、行动目标改变等，不由图像曲线产生标签。比较更细的景别/前置明暗匹配，保留没有视觉标志的事件与有视觉变化的非事件。此任务需要新的独立参考才可成为确认性检验；本轮不要求用户补标，也不把该未执行步骤写作已完成。
+Freeze this brightness operational definition and test in independent material whether brightness reorganisation near narrative events exceeds ordinary editing. Subdivide references into location changes, character-configuration changes, action-goal changes and related categories, without deriving labels from image curves. Compare finer matching for shot scale/preceding brightness, retaining events without visual cues and non-events with visual changes. New independent references are required for a confirmatory test. This round neither asks the user for additional annotations nor presents that unexecuted step as complete.
 
-## 复现、成本与停止
+## Reproduction, cost and stopping
 
-代码位于本目录 `scripts/` 与 `analysis-python/cinematicdx/exploration.py`；冻结协议、缓存绑定、源代码快照、全负例、分箱、逐帧对、对照和接触表位于 [{run.name}]({links}/run.json)。原片及标注校验一致，144张代表图的PTS和实际间隔已逐一核查，时间偏差最大约0.040秒。
+Code is in this directory's `scripts/` and `analysis-python/cinematicdx/exploration.py`. The frozen protocol, cache bindings, source snapshots, all negative cases, bins, per-frame pairs, controls and contact sheets are in [{run.name}]({links}/run.json). Original video and annotation checksums match. PTS and actual intervals for all 144 representative images were individually checked, with maximum temporal deviation about 0.040 seconds.
 
-225项Python测试通过，其中17项新测试验证实际曝光、缺测、渐变间隙、对照、描述符及机制；它们不代替电影实证。第二份数值实现核查1999次分块乱序和原始帧积分，主事件变化最大差约5.9×10⁻¹⁴。
+All 225 Python tests passed, including 17 new tests of actual exposure, missingness, gradual gaps, controls, descriptors and mechanisms. They do not replace film evidence. A second numerical implementation checked 1999 blockwise permutations and original-frame integration, with maximum primary event-change difference about 5.9×10⁻¹⁴.
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python .venv-m3/bin/python -m unittest discover -s analysis-python/tests -v
@@ -176,93 +176,93 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python .venv-m3/bin/python -m unit
 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/cinematicdx-mpl .venv-m3/bin/python research/quantitative_exploration/scripts/replay.py --from-run {run.relative_to(ROOT)} --output research-local/quantitative-exploration/replay-001
 ```
 
-复算使用已有隔离环境及相同缓存/原片；`replay-001`必须是新目录，旧输出拒绝覆盖。路径可以替换，输入哈希不能随意替换；没有隐藏的数据库或模型下载步骤。主要依赖版本、代码校验和及源文件完整SHA写入收据。
+Recomputation uses the existing isolated environment and the same caches/original video. `replay-001` must be a new directory, and existing outputs are not overwritten. Paths can be substituted, but input hashes cannot be changed arbitrarily. There are no hidden database or model-download steps. Receipts record principal dependency versions, code checksums and the source file's complete SHA.
 
-已经评估六候选、完成四项真实材料实验和一轮挑战/逐帧审计、保留失败、形成排序及后续方案。继续在同一片段调参已不增加独立效度，因此在这里停止本轮，不扩至全库。
+Six candidates have been assessed, four real-material experiments and one challenge/frame-integration audit completed, failures retained, and rankings and follow-up procedures documented. Further tuning on the same clip would not add independent validity, so this round stops here without expanding to the full corpus.
 
-参见[候选](CANDIDATES.md)、[实验日志](EXPERIMENTS.md)、[排序](METHOD_RANKING.md)、[后续](NEXT_STEPS.md)、[核实文献](BIBLIOGRAPHY.md)。
+See [candidates](CANDIDATES.md), [experiment log](EXPERIMENTS.md), [ranking](METHOD_RANKING.md), [next steps](NEXT_STEPS.md) and [verified sources](BIBLIOGRAPHY.md).
 '''
     (DOC/'REPORT.md').write_text(report)
-    ranking=f'''# 证据支持的方法排序（2026-10-26）
+    ranking=f'''# Method ranking supported by evidence (2026-10-26)
 
-| 排名 | 候选 | 当前状态与证据 | 决定 |
+| Rank | Candidate | Current status and evidence | Decision |
 |---|---|---|---|
-| 1 | C01 硬切时间、保守时长及顺序 | 时间/分布算术VERIFIED；额外细序列组织PROVISIONAL。41间隔、37相邻关系，块内乱序不突出 | 核心数据；保留时间轴与对照，不给蒙太奇标签 |
-| 2 | C02 版本内数字明暗/对比度 | 提取VERIFIED；叙事对应PROVISIONAL。硬切关联六事件0.1012，对照约0.0185，逐帧/留一/源扰动仍在 | 最强新叙事候选，条件关联不等于普遍规律 |
-| 3 | C04 低频配置相似检索 | PROVISIONAL。代表帧更换保留top10中5–7对，有明确误配；明暗基线优势依间隔改变 | 辅助查找视觉关系；尚非语义母题/地点工具 |
-| 4 | C03 视觉活动代理 | PROVISIONAL。相关与光流秩相关0.932；事件完整曝光仅4/10 | 首选廉价相关与缺测旗标；暂不做摄像机运动/完整事件对照 |
-| 5 | C05 当前Haar脸框充当人数/景别 | REJECTED用于该用途。侧脸漏检、躯干误框；21.5%代表图计数受参数影响 | 不入核心；脸框仅保留预测状态 |
-| 6 | C06 当前完整渐变自动分割 | REJECTED用于该用途。既有严格区间主评分失败 | 不再围绕4例优化，不自动改镜头表 |
+| 1 | C01 hard-cut timing, conservative durations and ordering | Timing/distribution arithmetic VERIFIED; additional fine-sequence organisation PROVISIONAL. 41 intervals, 37 adjacent relations; within-block permutations show no exceptional ordering | Core data; retain timelines and controls without montage labels |
+| 2 | C02 within-version digital brightness/contrast | Extraction VERIFIED; narrative correspondence PROVISIONAL. Six cut-associated events: 0.1012 versus controls around 0.0185, retained under frame integration, leave-one-out and source perturbations | Strongest new narrative candidate; conditional association does not establish a general rule |
+| 3 | C04 low-frequency configuration-similarity retrieval | PROVISIONAL. Changing representative frames retains 5–7 of the top10 pairs, with clear mismatches; advantage over brightness baseline varies by temporal gap | Assist visual-relation retrieval; not yet a semantic motif/location tool |
+| 4 | C03 visual-activity proxy | PROVISIONAL. Correlation and optical-flow rank correlation 0.932; complete event exposure for only 4/10 | Prefer inexpensive correlation and missingness flags; defer camera-movement classification/full-event comparisons |
+| 5 | C05 current Haar boxes as person-count/shot-scale proxies | REJECTED for this use. Missed profiles and torso false boxes; parameters affect counts for 21.5% of representative images | Exclude from core; retain face boxes as predictions only |
+| 6 | C06 current automatic complete gradual segmentation | REJECTED for this use. Existing strict-interval primary scoring failed | Stop optimising around 4 examples; do not automatically change the shot table |
 
-排序不是跨片准确率榜单。VERIFIED仅限所述计量/数值主张；人物身份、叙事功能、注意机制、政治意义均未被自动验证。
+This is not a cross-film accuracy leaderboard. VERIFIED covers only the stated measurement/numerical claims. Character identity, narrative function, attention mechanisms and political meaning have not been automatically validated.
 
-最小组合：来源版本/PTS/质量与缺测 + 有参考的硬切/保守时长序列 + 同拷贝灰度均值/对比度 + 独立叙事事件层及条件对照。活动是可选附加，相似性是探索辅助。
+Minimum combination: source version/PTS/quality and missingness + reference-checked hard cuts/conservative duration sequences + same-copy grayscale mean/contrast + an independent narrative-event layer and conditional controls. Activity is optional, and similarity supports exploration.
 
-完整依据：[报告](REPORT.md)。本轮输出 `{run.relative_to(ROOT)}`。
+Full evidence: [report](REPORT.md). This round's outputs: `{run.relative_to(ROOT)}`.
 '''
     (DOC/'METHOD_RANKING.md').write_text(ranking)
-    next_steps='''# 本轮停止与下一步
+    next_steps='''# Stopping point and next steps for this round
 
-## 已达到停止条件
+## Stopping conditions met
 
-评估六候选；Q01–Q04均在真实《上甘岭》600秒材料上可执行；Q05挑战强候选，另用原帧积分作数值审计；负例、排序、可复算代码及参考样本已保留。原始视频/标注未改，未新增模型下载，不扩大语料或无限调参。
+Six candidates were assessed. Q01–Q04 were executable on 600 seconds of real 《上甘岭》 material. Q05 challenged the strong candidate, and an additional numerical audit used original-frame integration. Negative examples, rankings, reproducible code and reference samples are preserved. Original videos/annotations were unchanged, no new models were downloaded, and neither the corpus nor tuning was expanded indefinitely.
 
-## 最强下一实验（HYPOTHESIS，尚未执行）
+## Strongest next experiment (HYPOTHESIS, not yet run)
 
-冻结“事件附近数字明暗重组”操作定义，在独立参考材料上与普通硬切比较；增加前置明暗、景别、人物配置或场所控制。目标不是训练自动事件识别，而是区分哪些视觉重组伴随哪些独立叙事变化。
+Freeze the operational definition of digital brightness reorganisation near events and compare it with ordinary hard cuts in independently referenced material. Add controls for preceding brightness, shot scale, character configuration or location. The aim is to distinguish which visual reorganisations accompany which independent narrative changes, rather than train automatic event recognition.
 
-- 核心假设：部分叙事边界有超出普通切点的明暗/空间配置重组，但存在无明暗变化的事件。
-- 现有E010是具体反例；不得删掉它来提高分数。
-- 新参考应区分地点、人物配置、行动目标、叙事时间变化，允许重叠与无低层视觉标志；标签不能从曲线生成。
-- 需要独立材料/参考才可作确认性检验；若以后新增解码，重新遵守研究者资源上限。不要求用户现在补看或重标这10分钟。
-- 当前对照只匹配时间三分区和切点邻近，未控制景别、构图与全部非平稳性，这是首要替代解释。
+- Core hypothesis: some narrative boundaries involve brightness/spatial-configuration reorganisation beyond ordinary cuts, but events without brightness changes also exist.
+- Existing E010 is a concrete counterexample and must not be removed to improve scores.
+- New references should distinguish changes in location, character configuration, action goals and narrative time, permitting overlaps and absent low-level visual cues. Labels must not be generated from curves.
+- Confirmatory tests require independent material/references. Any future additional decoding must again respect the researcher's resource limit. The user is not being asked to rewatch or reannotate these 10 minutes now.
+- Current controls match only temporal thirds and proximity to cuts, without controlling shot scale, composition or all non-stationarity. This is the principal alternative explanation.
 
-## 次要问题
+## Secondary questions
 
-1. 配置检索：用已准备的小型空白独立复核表验证相似构图，而非人物/象征语义；比较多个代表帧是否优于单帧。当前状态PROVISIONAL。
-2. 视觉活动：先改善连续有效曝光的操作定义与人工抽检；不因主比较缺测而事后降低95%门槛。无真实运动标注时不输出摄像机类别。
-3. 人物/景别：当前Haar代理拒绝；更好的模型也必须验证历史材料里的侧脸、集体与遮挡。没有批准前不下载大型模型。
-4. 渐变：保留原候选和负结果，完整区间定位未解决，不把它混入已验证硬切统计。
-5. 跨片/历史比较：目前无证据。先做来源分层及小样本独立验证，再考虑人员/机构关系与SNA，不能从灰度等统计直接推出政治因果。
+1. Configuration retrieval: use the prepared small blank independent-review sheets to validate similar compositions rather than character/symbolic semantics. Compare multiple representative frames with a single frame. Current status: PROVISIONAL.
+2. Visual activity: first improve the operational definition of continuous valid exposure and human spot checks. Do not lower the 95% threshold after the main comparison is blocked by missingness. Do not output camera-movement classes without true motion annotations.
+3. People/shot scale: reject the current Haar proxy. Better models also need validation for profiles, groups and occlusion in historical material. Do not download large models without approval.
+4. Gradual transitions: retain original candidates and negative results. Complete-interval localisation is unresolved and must remain separate from validated hard-cut statistics.
+5. Cross-film/historical comparison: no evidence is available at this stage. Start with source stratification and small independent validation samples, then consider personnel/institutional relations and SNA. Grayscale or other statistics alone cannot establish political causation.
 
-## 当前限制
+## Current limitations
 
-QuickTime显示帧序与解码序的0/1对应、原转录历史、逐帧人物/景别真值、语义母题真值均未解决。10秒窗对照池不足、运动事件窗口缺测已明确记录。独立复核空白模板已备好，空字段不是已完成标注。
+The 0/1 relationship between QuickTime displayed frame numbers and decoding order, original transfer history, per-frame person/shot-scale ground truth and semantic-motif ground truth remain unresolved. Insufficient pools for 10-second controls and missing motion-event windows are explicitly recorded. Blank independent-review templates are ready; blank fields do not represent completed annotation.
 '''
     (DOC/'NEXT_STEPS.md').write_text(next_steps)
     additions=f'''
-## 本轮实际执行与结果（当前状态）
+## Actual execution and results for this round (current status)
 
-运行：`{run.relative_to(ROOT)}`。输入与输出SHA见 `protocol.json`、`run.json`、`numerical_audit.json`；双帧号方案保留。
+Run: `{run.relative_to(ROOT)}`. Input/output SHA records are in `protocol.json`, `run.json` and `numerical_audit.json`. Both frame-number conventions are retained.
 
-| 实验 | 当前状态 | 真实输出与限定结论 |
+| Experiment | Current status | Actual outputs and bounded conclusion |
 |---|---|---|
-| Q01 | PROVISIONAL（数值核查VERIFIED） | 41完整硬切间隔，四块6/1/7/27，均值8.945秒；相邻log差0.7788对块内乱序中位0.8568，未形成突出额外序列规律。全局乱序较弱对照会夸大差异 |
-| Q02 灰度/叙事 | PROVISIONAL（提取VERIFIED） | 六硬切关联事件0.1012对条件中位0.0185；十事件共同平移较弱对照0.1693对0.0449。E010仅0.0040，不能当通用事件检测 |
-| Q02 视觉活动 | PROVISIONAL；全组事件对照因缺测BLOCKED | 1499帧对、1427有效；光流与相关差秩相关0.932。只有4/10事件达到完整曝光，不填零或降低门槛 |
-| Q03 | PROVISIONAL | 48连续内容区间、144代表图；DCT top10换帧保留5/7对，低频误配反例保留；同事件代理优势随间隔变，不是语义真值 |
-| Q04 | REJECTED用于人数/景别代理 | 79/144零检测，31/144参数变更脸数；助手先看12无框图后见侧脸漏检/躯干误框。无独立人类准确率 |
-| Q05 | PROVISIONAL，初轮后明确声明的挑战 | 任去一事件均值0.0866–0.1207；gamma/JPEG/裁切保留方向；不替换主结果 |
-| 数值审计 | VERIFIED仅限数值/来源主张 | 1999次分块乱序另实现核对；原帧积分事件差<6e-14；精确控制池最大均值0.04215；144代表图PTS均核对 |
+| Q01 | PROVISIONAL (numerical checks VERIFIED) | 41 complete hard-cut intervals in four blocks of 6/1/7/27, mean 8.945 seconds; adjacent log difference 0.7788 versus within-block permutation median 0.8568, without exceptional additional sequence organisation. Weaker global permutations exaggerate differences |
+| Q02 grayscale/narrative | PROVISIONAL (extraction VERIFIED) | Six cut-associated events: 0.1012 versus conditional median 0.0185; weaker joint-shift controls for ten events: 0.1693 versus 0.0449. E010 is only 0.0040, precluding general event detection |
+| Q02 visual activity | PROVISIONAL; full-group event controls BLOCKED by missingness | 1499 frame pairs, 1427 valid; flow/correlation-difference rank correlation 0.932. Only 4/10 events meet complete-exposure requirements; do not fill with zero or lower the threshold |
+| Q03 | PROVISIONAL | 48 continuous-content intervals, 144 representative images; DCT top10 retains 5/7 pairs after frame replacement, with low-frequency mismatch counterexamples retained. Same-event proxy advantage varies by gap and does not supply semantic ground truth |
+| Q04 | REJECTED for person-count/shot-scale use | Zero detections in 79/144 images; parameters change face counts in 31/144. Assistant review of 12 unboxed images followed by boxes finds missed profiles/torso false boxes. No independent human accuracy estimates |
+| Q05 | PROVISIONAL, explicitly declared challenge after the initial round | Leaving out any one event gives mean 0.0866–0.1207; gamma/JPEG/crop challenges preserve direction without replacing primary results |
+| Numerical audit | VERIFIED only for numerical/provenance claims | Separate implementation checks 1999 blockwise permutations; original-frame integration event difference <6e-14; maximum exact control-pool mean 0.04215; PTS checked for all 144 representative images |
 
-初始Q01–Q04运行约{receipt['elapsed_seconds']:.2f}秒（含源校验/已有缓存/144代表图解码），光流约0.83秒，代表图解码12.93秒，脸框两个设置3.14秒。225项测试通过不代替实证。数字源敏感性、个别事件、全部窗口和不利配对均保留，详见[完整报告](REPORT.md)。
+Initial Q01–Q04 execution took about {receipt['elapsed_seconds']:.2f} seconds, including source verification, existing caches and decoding 144 representatives. Optical flow took about 0.83 seconds, representative decoding 12.93 seconds, and both face-box settings 3.14 seconds. Passing 225 tests does not replace empirical validation. Digital-source sensitivities, individual events, every window and unfavourable pairs are retained. See the [full report](REPORT.md).
 '''
     with (DOC/'EXPERIMENTS.md').open('a') as f:f.write(additions)
     with (DOC/'CANDIDATES.md').open('a') as f:f.write('''
-## 本轮实测后的更新
+## Update after measurements in this round
 
-已对C01–C05实际运行，C06引用并保留既有失败，不重复推理。当前证据排序调整为C01/C02/C04/C03/C05/C06。C01数值可审计但细序列主张尚弱；C02是最强的新叙事对照线索；C04具有视觉配置检索价值但不稳定且无语义真值；C03与廉价相关高度重复且主事件对照缺测；当前C05用于人数/景别被明确反例否定。完整八维评估见[报告](REPORT.md)，状态和用途见[排序](METHOD_RANKING.md)。
+C01–C05 were run. C06 cites and preserves the existing failure without repeating inference. The current evidence ordering is C01/C02/C04/C03/C05/C06. C01 is numerically auditable, but its fine-sequence claims remain weak. C02 provides the strongest new narrative-control lead. C04 can retrieve visual configurations, but is unstable and lacks semantic ground truth. C03 largely duplicates inexpensive correlation and lacks the main event comparison because of missing observations. Explicit counterexamples reject the current C05 for person-count/shot-scale use. The complete eight-dimensional assessment is in the [report](REPORT.md), and statuses and uses are in the [ranking](METHOD_RANKING.md).
 ''')
     with (DOC/'RESEARCH_LOG.md').open('a') as f:f.write(f'''
-## {datetime.now(timezone.utc).isoformat()}：本轮完成并停止
+## {datetime.now(timezone.utc).isoformat()}: round completed and stopped
 
-- 实验目录 `{run.relative_to(ROOT)}`。Q01–Q04完成，Q05挑战及第二数值实现核查完成。实际唯一影像600秒，未扩片。
-- 最强新证据是本片条件明暗重组；E010反例、低层相似性误配和人物代理失败保留。
-- 顺序对照显示“全局打乱”和“保留段落差异”会得出不同强度判断；不从正相关直接推出形式原则。
-- 活动窗口缺测保留为空，10秒硬切对照池不足标BLOCKED；没有事后救指标。
-- 工程测试中先发现常量图DCT数值残差被归一化的问题，已在产生电影实算输出前修正为缺测。初次补充审计的说明字段重名导致未发布收据，修复字段名后通过；未变更原统计输出或阈值。
-- 225项Python测试通过；原片/原Excel/参考SHA一致；144图PTS核查通过。助手观察与研究者标注明确分开，未来人工表保持空白。
-- 不提交或推送，不接数据库，不新增依赖/模型下载。达到任务完成条件后停止同片开发，下一确认性实验仍为HYPOTHESIS。
+- Experiment directory: `{run.relative_to(ROOT)}`. Q01–Q04, the Q05 challenge and a second numerical-implementation check are complete. Unique film material remains 600 seconds without expanding to other films.
+- The strongest new evidence is conditional brightness reorganisation in this film. Retain E010, low-level-similarity mismatches and failures of the character proxy.
+- Ordering controls show that global permutations and preservation of passage differences produce conclusions of different strength. Positive correlation alone cannot establish a principle of form.
+- Missing activity windows remain blank. Insufficient 10-second hard-cut control pools are BLOCKED, without post-hoc metric rescue.
+- Engineering tests first identified normalisation of numerical DCT residuals for constant images. This was corrected to missingness before producing actual film outputs. Duplicate descriptive-field names in the first supplementary audit prevented receipt publication; correcting those names allowed it to pass without changing original statistics or thresholds.
+- All 225 Python tests passed. Original video/Excel/reference SHA values match, and PTS checks passed for all 144 images. Assistant observations remain distinct from researcher annotations, and future human-review sheets stay blank.
+- No commits/pushes, database connections or additional dependency/model downloads. Stop development on this film after completing the task's conditions. The next confirmatory experiment remains HYPOTHESIS.
 ''')
     # Complete final package inventory, including later reviews and scripts.
     source_snapshot=output/'final_source_snapshot';source_snapshot.mkdir(exist_ok=True)

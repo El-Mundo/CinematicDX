@@ -1,87 +1,87 @@
-# M2：视频清点、来源登记与时间轴探测
+# M2: Video inventory, source registration and timeline probing
 
-2026-11-10当前语料结果见[版本更新与结果](../research/quantitative_exploration/corpus_refresh/20261110/README.md)。454个视频中三部变化源重新提取，451部附原收据继承，全部片厂明暗、硬切与渐变候选汇总重新计算。明暗提取全部成功，保留2,390,266个时间戳观察；732条元数据中278条缺本地视频。复现入口见[明暗](../research/quantitative_exploration/corpus_studio/REPRODUCE.md)与[编辑测量](../research/quantitative_exploration/corpus_editing/REPRODUCE.md)。下方M2/M3和人工标注实验按各自日期记录。
+For the current corpus results as of 10 November 2026, see the [source refresh and results](../research/quantitative_exploration/corpus_refresh/20261110/README.md). Three changed sources among 454 videos were re-extracted. The other 451 retain their original extraction receipts. All studio-level grey-level, hard-cut and gradual-candidate summaries were recomputed. Grey-level extraction succeeded for every video, retaining 2,390,266 timestamped observations. Of the 732 metadata records, 278 lack a corresponding local video. Reproduction entry points are documented for [grey-level analysis](../research/quantitative_exploration/corpus_studio/REPRODUCE.md) and [editing measurements](../research/quantitative_exploration/corpus_editing/REPRODUCE.md). The M2/M3 procedures and manual-annotation experiments below document their respective dated stages.
 
-这组命令独立于 JavaFX 和数据库运行。需要 Python 3.9 或更新版本，以及 PATH 中可用的 `ffprobe`；不需要安装 Python 第三方包。`worker.py` 仍保留原有用途，这些命令不通过它启动。
+These commands run independently of JavaFX and the database. They require Python 3.9 or later and `ffprobe` on PATH, with no third-party Python packages. `worker.py` retains its original purpose and does not launch these commands.
 
-## 1. 核实视频目录
+## 1. Verify the video directory
 
-从仓库根目录执行，并把路径替换为实际目录：
+Run from the repository root and replace the example path with the actual directory:
 
 ```sh
 python3 analysis-python/cinematicdx_cli.py inventory \
-  --root "/实际视频目录" \
+  --root "/path/to/videos" \
   --metadata ChineseSocialistFilms49-66.json \
   --expected-count 454 \
   --probe-headers \
   --output research-local/m2/inventory-001
 ```
 
-`--probe-headers` 对候选文件进行有限的容器／流信息探测，不计算全库内容校验值，也不要求全片解码；省略它只做目录与权限清点。文件扩展名对应的是“视频候选文件”，不是已核实的独立影片数量。分卷、多个版本、重复内容和缺失影片需要进一步判断。
+`--probe-headers` performs bounded container and stream probing on candidate files. It does not compute corpus-wide content checksums or require complete video decoding. Without it, the command inventories directories and permissions only. File extensions identify video candidates, not a verified count of distinct films. Multi-part files, alternative versions, duplicate content and missing films require further assessment.
 
-清点不跟随符号链接，排除隐藏和系统条目；目录错误、空文件、不可读文件和探测失败都保留在报告中。文件名匹配仅提供候选，不自动赋予影片身份。`readable` 是权限检查，只有成功的技术探测才提供实际打开文件的证据，两者都不证明整部影片可完整解码。
+The inventory does not follow symbolic links and excludes hidden and system entries. It retains directory errors, empty or unreadable files and probe failures in its reports. Filename matching supplies candidates without assigning film identity automatically. `readable` records a permissions check. A successful technical probe provides evidence that a file could actually be opened. Neither establishes that the complete film can be decoded.
 
-输出：
+Outputs:
 
-- `inventory.json`：完整清点、候选匹配、错误以及可选的原始技术探测信息。
-- `inventory.csv`：便于检查的逐文件概览。
-- `run.json`：参数、软件与代码标识、元数据校验值、输出校验值和限制。
+- `inventory.json`: complete inventory, candidate matches, errors and optional raw technical probe information.
+- `inventory.csv`: a per-file overview for inspection.
+- `run.json`: parameters, software and code identifiers, metadata checksum, output checksums and limitations.
 
-`expected_count_matches` 只比较扫描到的候选文件数。必须同时检查 `scan_complete`、错误和排除项，才能判断“454”的实际含义。
+`expected_count_matches` compares only the number of scanned candidate files. Inspect `scan_complete`, errors and exclusions as well to establish what the count of 454 represents.
 
-## 2. 登记一部明确识别的影片
+## 2. Register an explicitly identified film
 
-先人工核实文件与影片的对应关系，再显式指定元数据中的 `key` 或本地目录 catalog 的 `film_key`：
+First verify the file-to-film association manually, then explicitly supply its metadata `key` or the local catalog's `film_key`:
 
 ```sh
 python3 analysis-python/cinematicdx_cli.py ingest \
-  --video "/实际视频目录/桥.mp4" \
+  --video "/path/to/videos/桥.mp4" \
   --metadata ChineseSocialistFilms49-66.json \
   --film-id qiao \
-  --source-description "填写已知下载、拷贝或转录来源；未知部分保留未知" \
+  --source-description "Record the known download, copy or transcription source; leave unknown details unknown" \
   --output research-local/m2/qiao-run-001
 ```
 
-同一文件内容无论复制或改名，都会得到同一个 `video_version_id=sha256:…`。它标识完整文件字节，不等于历史拷贝、修复版本或影像内容指纹；重新封装或修改文件标签也可能产生新标识。影片身份与文件版本分开记录：研究清单默认使用 `research-inventory` 命名空间，可用 `--metadata-namespace` 明确指定；本地 catalog 使用自身的 UUID。
+Copies or renamed files with identical contents receive the same `video_version_id=sha256:…`. This identifies the complete file bytes, not a historical print, restoration edition or image-content fingerprint. Remuxing or changing file tags can also produce a new identifier. Film identity and file version are recorded separately. The research inventory uses the `research-inventory` namespace by default, which `--metadata-namespace` can override explicitly. Local catalogs use their own UUIDs.
 
-元数据输入支持现有研究 JSON 和本地目录模式的 `catalog.json`，均为只读。此功能不把研究 JSON 导入 Java 应用，不连接数据库，也不修改全局应用设置。
+Metadata input supports the existing research JSON and local-directory `catalog.json`, both read-only. This command does not import the research JSON into the Java application, connect to the database or change global application settings.
 
-输出：
+Outputs:
 
-- `source_manifest.json`：影片引用、完整文件 SHA-256、原路径与实际路径、元数据来源与原始记录、视频流选择、技术时间轴和质量标记。
-- `probe.json`：原始 ffprobe 结果、准确参数、软件版本和诊断信息。
-- `timestamp_sample.json`：有限的开头帧样本，保留原始 PTS、time_base、有理数秒数、best-effort 时间戳及分别标示的播放偏移。
-- `run.json`：此次运行的 UUID、时间、参数、代码版本／源码校验值和产物校验值。
+- `source_manifest.json`: film reference, complete-file SHA-256, original and resolved paths, metadata source and original record, video-stream selection, technical timeline and quality flags.
+- `probe.json`: raw ffprobe output, exact arguments, software version and diagnostics.
+- `timestamp_sample.json`: a bounded sample of opening-frame timestamps, retaining original PTS, time_base, rational seconds, best-effort timestamps and separately identified playback offsets.
+- `run.json`: run UUID, time, parameters, code version or source checksum, and output checksums.
 
-默认保留最多 12 个帧时间戳，可用 `--timestamp-sample-frames` 调整，上限 256。多视频流没有唯一默认流时，必须用 `--stream-index` 明确选择；该数字是绝对流索引。封面图片不作为电影视频流。
+The default sample retains up to 12 frame timestamps. `--timestamp-sample-frames` changes this limit, up to 256. If multiple video streams have no unique default, select one explicitly with `--stream-index`. This is an absolute stream index. Cover images are not treated as film video streams.
 
-ffprobe 的 `-read_intervals %+#N` 限制的是包数，不是准确帧数，因此样本可能少于请求数量；探测也可能为编码识别读取额外数据，并有超时限制。[ffprobe 官方说明](https://ffmpeg.org/ffprobe.html#Main-options)
+ffprobe's `-read_intervals %+#N` limits packets rather than an exact number of frames, so the sample can contain fewer frames than requested. Probing may read additional data to identify the codec and is subject to a timeout. See the [official ffprobe documentation](https://ffmpeg.org/ffprobe.html#Main-options).
 
-原始时间坐标不会被平均帧率换算或静默归零。播放偏移作为派生坐标另行保存。相同的头部帧率或少量均匀时间戳不能证明整片是固定帧率，`frame_rate_mode` 因此保持 `unknown`。本步骤不做全片时间戳验证、全片解码验证、镜头检测、转码或历史来源真实性判断。
+Original time coordinates are neither reconstructed from average frame rates nor silently reset to zero. Playback offsets are saved separately as derived coordinates. Matching header frame rates or a small sample of evenly spaced timestamps cannot establish a constant frame rate throughout the film, so `frame_rate_mode` remains `unknown`. This stage does not validate timestamps or decoding across the full file, detect shots, transcode video or establish the authenticity of historical provenance.
 
-每次运行使用新的输出目录；已存在的目录拒绝覆盖。成功收据最后写入，失败不会发布成功结果。检测到输入文件或元数据在运行期间变化时，登记失败并要求重新运行。把输出放在原始视频目录之外；`research-local/` 已被 Git 忽略。
+Each run requires a new output directory and refuses to overwrite an existing one. It writes the success receipt last and publishes no successful result after a failure. If the input file or metadata changes during execution, registration fails and must be repeated. Keep outputs outside the source-video directory. Git already ignores `research-local/`.
 
-## 验证
+## Validation
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python \
   python3 -m unittest discover -s analysis-python/tests -v
 ```
 
-测试使用临时文件、模拟探测器以及极小的人工生成视频，不需要研究影片。人工生成视频只验证工具流程，不构成真实语料试点的完成证据。
+Tests use temporary files, mocked probes and very small synthetic videos. They require no research films. Synthetic videos validate the tool workflow and do not establish completion of a real-corpus pilot.
 
-# M3：镜头候选、时长与时间轴
+# M3: Shot candidates, durations and timelines
 
-M3 使用可选的隔离环境。M2 本身仍不需要这些 Python 第三方依赖：
+M3 uses an optional isolated environment. M2 itself still requires none of these third-party Python dependencies:
 
 ```sh
 python3 -m venv .venv-m3
 .venv-m3/bin/python -m pip install -r analysis-python/requirements-m3.lock.txt
 ```
 
-锁文件记录本次在 macOS ARM64 / Python 3.11.3 测试的完整环境；直接依赖见 `requirements-m3.txt`。全局 Homebrew OpenCV 在本机缺少动态库，因此不借用它。PyAV 提供原始时间戳，PySceneDetect 0.7.1 提供切点建议，Matplotlib 仅用于静态图表，没有新建界面或数据库依赖。
+The lockfile records the complete environment tested on macOS ARM64 with Python 3.11.3. Direct dependencies appear in `requirements-m3.txt`. The global Homebrew OpenCV installation lacked a required dynamic library on this machine, so it was not reused. PyAV supplies original timestamps, PySceneDetect 0.7.1 supplies cut suggestions, and Matplotlib produces static plots. No new interface or database dependency is introduced.
 
-本次《上甘岭》的默认 HSV 色差在开头校准中出现近整秒的可疑变化；对应相邻帧画面仍连续。近灰色色偏的合成测试也复现了 HSV 误报，因此此拷贝的基线显式使用 `--luma-only`。该名称来自库，实际信号是 HSV 的 V 通道差分，并不等于经过历史校准的电影亮度。它也不保证适合其他影片。
+For this copy of *Shang Gan Ling* (《上甘岭》), default HSV differences produced suspicious changes close to whole-second positions during opening calibration, despite visual continuity between adjacent frames. A synthetic near-grey colour-shift test reproduced HSV false positives. The baseline for this copy therefore explicitly uses `--luma-only`. This library option actually measures differences in the HSV V channel, rather than historically calibrated film luminance. Suitability for other films is not established.
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py shots \
@@ -90,11 +90,11 @@ python3 -m venv .venv-m3
   --output research-local/m3/new-shot-run
 ```
 
-可用 `--start-seconds 300 --end-seconds 420` 处理局部区间。这些参数是播放偏移，不是源 PTS；实际首尾帧、原始 ticks、time_base、派生播放偏移及所请求范围分别记录。每帧均解码并参与检测，分析图像默认缩至宽320像素，不跳帧、不改写原视频。默认 Adaptive 阈值3、最低内容变化15、最短候选间隔0.12秒均写入运行记录；过滤掉的候选也保留。Content 模式的默认阈值为27。
+Use `--start-seconds 300 --end-seconds 420` to process a local interval. These parameters are playback offsets, not source PTS. The actual first and last frames, original ticks, time_base, derived playback offsets and requested range are recorded separately. Every frame is decoded and participates in detection. Analysis images default to a width of 320 pixels, without frame skipping or changes to the source video. The default Adaptive threshold of 3, minimum content change of 15 and minimum candidate interval of 0.12 seconds are recorded, along with filtered-out candidates. Content mode defaults to a threshold of 27.
 
-输出 `shots.json`、`shots.csv`、`boundaries.csv`、`summary.json` 和 `run.json`。所有切点初始标为 `unreviewed_prediction`，转场类型为待分类候选。区间采用 `[start,end)`；片段两端可能只是镜头的一部分。渐变、闪光、抖动和数字拷贝噪声仍需检查，不能把这些输出直接称为镜头真值。
+Outputs are `shots.json`, `shots.csv`, `boundaries.csv`, `summary.json` and `run.json`. Every cut initially has status `unreviewed_prediction`, with transition type awaiting classification. Intervals use `[start,end)` coordinates. The ends of a processed excerpt may contain only part of a shot. Gradual transitions, flashes, camera shake and digital-copy noise still require review. These outputs cannot directly serve as shot ground truth.
 
-时间计算始终使用 PyAV 原始 PTS 及有理数 time_base。库兼容参数中的 `fps=1` 不是影片帧率，不参与源时间重建；CFR/VFR 与 H264 B帧测试均验证了非整数秒切点不会因此取整。原拷贝0.043秒的起始偏移保持原样。
+Time calculations always use original PyAV PTS and rational time_base values. The library compatibility parameter `fps=1` is not the film's frame rate and does not reconstruct source time. CFR/VFR and H264 B-frame tests verify that it does not round fractional-second boundaries. The source copy's 0.043-second starting offset remains unchanged.
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py shot-report \
@@ -102,9 +102,9 @@ python3 -m venv .venv-m3
   --output research-local/m3/new-report
 ```
 
-报告包含均值、中位数、时长分布、顺序时间轴、局部候选切换率及静态PNG/PDF。默认60秒居中窗口、15秒步长；边缘窗口以实际覆盖时长为分母。镜头时长和切换率来自同一分割，不能当作相互独立的形式发现，也不识别“度量蒙太奇”。
+The report includes mean and median duration, duration distributions, ordered timelines, local candidate-cut rates and static PNG/PDF figures. The default uses centred 60-second windows at 15-second steps. Edge windows use their actual covered duration as the denominator. Shot durations and cut rates derive from the same segmentation, so they are not independent discoveries about film form. They do not identify metric montage.
 
-## 镜头边界的独立验证
+## Independent validation of shot boundaries
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py boundary-reference-template \
@@ -112,19 +112,19 @@ python3 -m venv .venv-m3
   --output research-local/m3/new-boundary-reference
 ```
 
-模板不复制预测切点。研究者应在明确的覆盖区间内独立标出所有硬切，再填写标注者、方法、独立性及区间内穷尽性声明。只复核部分影片时缩小 `coverage`；不确定的渐变可列在排除区间。不要把看着预测位置逐项修正的结果称为独立参考集。
+The template does not copy predicted cuts. Researchers should independently mark all hard cuts within an explicit coverage interval and record the annotator, method, independence and exhaustiveness within that interval. Narrow `coverage` when reviewing only part of a film. Uncertain gradual transitions may appear as excluded intervals. A reference obtained by inspecting and correcting predictions individually is not an independent reference set.
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py validate-shots \
   --shots research-local/m3/new-shot-run/shots.json \
-  --reference /独立标注/boundary_reference.json \
+  --reference /path/to/independent-annotations/boundary_reference.json \
   --tolerance-seconds 0.04 \
   --output research-local/m3/new-validation
 ```
 
-0.04秒只是命令示例，须按标注协议和实际帧间隔预先确定。验证采用一对一匹配，报告TP/FP/FN、precision/recall/F1、时间误差和逐项匹配。真实零切点区间的比率可为未定义，不会自动变成100%。助手或合成参考会明确标示其来源，不能冒充研究者标注。片头检查、预测引导抽查和合成测试均不能替代真实留出区间的独立验证。
+The 0.04-second tolerance is an example. Prespecify it using the annotation protocol and actual frame intervals. Validation uses one-to-one matching and reports TP/FP/FN, precision/recall/F1, timing errors and individual matches. Rates in genuinely zero-cut intervals can be undefined rather than automatically becoming 100%. Assistant and synthetic references retain explicit provenance and cannot pass as researcher annotations. Opening-segment inspection, prediction-guided spot checks and synthetic tests do not replace independent validation on a real held-out interval.
 
-# M4：独立叙事标注与对齐
+# M4: Independent narrative annotation and alignment
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py annotation-template \
@@ -132,70 +132,70 @@ python3 -m venv .venv-m3
   --output research-local/m4/new-narrative-template
 ```
 
-模板的 `events` 为空，状态是待标注；它不根据切换率生成事件。影片／视频版本绑定保持固定，叙事标注不依赖特定镜头分割版本。填写者须明确 `annotator`、`annotation_method`（human/assistant/synthetic）、`independent_of_visual_measurements` 和完成状态，并为事件填写唯一ID、起止时间、描述与确定性。地点、人物配置、叙事时间和解释备注可另行记录；事件可以重叠，也可以在镜头内部开始或结束。
+The template starts with an empty `events` list and an awaiting-annotation status. It does not infer events from cut rates. Film and video-version bindings remain fixed, and narrative annotations do not depend on a particular shot-segmentation version. Annotators must specify `annotator`, `annotation_method` (human/assistant/synthetic), `independent_of_visual_measurements` and completion status. Each event requires a unique ID, start and end times, description and certainty. Location, character configuration, narrative time and interpretive notes may be recorded separately. Events may overlap or begin and end within shots.
 
-事件定义需要先写入独立的研究标注协议，例如行动目标或情境发生何种变化才构成新事件，以及怎样处理地点、人物或叙事时间变化。它们不是自动的新事件判据。应在查看测量曲线之前标注，并保留争议和不确定性。视觉对象／母题也不能自动当成事件或形式属性。
+Define events first in a separate research annotation protocol. For example, specify which changes in an action's goal or situation constitute a new event, and how to handle changes in location, character configuration or narrative time. Such changes are not automatic event criteria. Annotate before inspecting measurement curves and retain disagreements and uncertainty. Visual objects or motifs are not automatically events or formal properties.
 
 ```sh
 .venv-m3/bin/python analysis-python/cinematicdx_cli.py align-narrative \
   --shots research-local/m3/new-shot-run/shots.json \
-  --annotations /独立标注/narrative_annotations.json \
+  --annotations /path/to/independent-annotations/narrative_annotations.json \
   --window-seconds 30 --control-count 3 --seed 0 \
   --output research-local/m4/new-alignment
 ```
 
-输出事件与镜头的区间重叠表、事件起点的前后切换率及对照比较。开始时间不会吸附到最近切点。落在切点上的事件与同一宽泛时间区域的非事件切点匹配，去掉中心切点，排除事件窗口／对照窗口重叠；镜头内部起点和其他转场另列。时间轴三等分仅用于控制影片位置，不是三幕叙事假设。匹配数量不足、边缘截断、事件不确定及窗口重叠都会明确报告。
+Outputs include event/shot interval overlaps, cut rates before and after event onsets, and control comparisons. Onsets are not snapped to the nearest cut. Events occurring at cuts are matched to non-event cuts in the same broad temporal region. The central cut is removed, and overlapping event/control windows are excluded. Onsets within shots and at other transitions are reported separately. Dividing the timeline into thirds controls film position and does not assume a three-act narrative. Insufficient matches, edge truncation, uncertain events and window overlaps are reported explicitly.
 
-默认比较是每个事件起点前后各30秒的切换率变化，与匹配对照变化之差；整窗口密度作为另一项描述。控制分配是按事件时间顺序、固定随机种子的贪心匹配，只有完整匹配组才占用控制窗口。分析单位是事件起点，不是帧或重叠窗口；不生成p值或历史因果结论。尚未人工复核的镜头、助手／合成事件或未声明独立性的标注都会阻止将输出标成可直接解释的研究证据。
+The default compares the change in cut rate over 30 seconds before and after each event onset against the change at matched controls. Whole-window density is another description. Controls are assigned greedily in event-time order with a fixed random seed. Only complete matched sets reserve control windows. The unit of analysis is the event onset, not a frame or overlapping window. The tool produces no p-values or historical causal conclusions. Unreviewed shots, assistant/synthetic events or annotations without a declaration of independence prevent outputs from being labelled directly interpretable research evidence.
 
-工具初建时只生成空模板；随后收到的真实试标及本次局部实验见下节。
+The initial implementation created empty templates only. The real trial annotations and local experiment subsequently supplied are documented below.
 
-### 人工标注的帧号、精度与区间边缘
+### Frame numbering, precision and coverage edges in manual annotations
 
-2026-10-25 收到《上甘岭》02:30–12:30 的首批人工试标：11条叙事事件及50条转场记录。原Excel及原始单元格另存快照。用户随后明确确认两表在该区间内完整、独立，空白确定性表示按其规则有把握；E011持续到区间外。确认版另存，原草稿和用户原表保持不变。B050在区间外，区间内保留45个硬切及4个渐变。
+On 25 October 2026, the first manual trial annotations covered *Shang Gan Ling* (《上甘岭》), 02:30–12:30: 11 narrative events and 50 transition records. Snapshots preserve the original Excel files and cells. The researcher subsequently confirmed that both tables were complete and independent within this interval, that blank certainty meant confident under their rules, and that E011 continued beyond coverage. A separate confirmed version preserves the original draft and source tables. B050 falls outside coverage, leaving 45 hard cuts and 4 gradual transitions within the interval.
 
-“真实边界”指研究者判断事件实际开始／结束的位置。“窗口截断”指事件早于观察区间开始，或晚于观察区间结束，仅可观察部分被区间端点截住。叙事时间连续／不连续是另一种判断，不能替代这两个标签。若原填写使用了不同含义，应保留原值及填写者解释，将边界性质标为待确认，不依据时间连续性自动改标。渐变转场的边缘情况同样指其是否跨越观察区间端点。
+A true boundary denotes the researcher's judgement of where an event actually begins or ends. Coverage truncation means that an event begins before or ends after the observation interval, so an interval edge limits the observable portion. Narrative-time continuity is a different judgement and cannot replace these labels. Where original entries used different meanings, retain their values and the annotator's explanation, and mark boundary nature as awaiting confirmation. Do not relabel it automatically from time continuity. Edge cases for gradual transitions likewise concern whether they cross the coverage endpoints.
 
-`cinematicdx.frame_times.resolve_frame_times(manifest_path, frame_numbers, frame_base=...)` 要求显式选0或1起算；`resolve_frame_base_candidates(...)` 可在一次局部顺序解码中保留两种候选。两者均重新核对源视频完整SHA-256，按选定视频流从头枚举显示顺序的帧，保留原PTS／time_base及M2播放偏移，只处理至所需最大序号，不用帧号除以名义或平均帧率。播放器的显示帧号与解码序号的对应仍须校准，不能根据哪种换算更贴近待测模型来选择起算方式。
+`cinematicdx.frame_times.resolve_frame_times(manifest_path, frame_numbers, frame_base=...)` requires an explicit zero-based or one-based choice. `resolve_frame_base_candidates(...)` can retain both alternatives during one bounded sequential decode. Both recheck the complete source-video SHA-256, enumerate presentation-order frames from the selected stream's beginning, and retain original PTS/time_base and M2 playback offsets. They decode only through the largest requested frame number and do not divide frame numbers by a nominal or average frame rate. The relation between a player's displayed frame numbers and decoded ordinals still requires calibration. Do not choose the frame base according to which conversion better matches the model being evaluated.
 
-秒级叙事时间保留为近似秒级，不能补造毫秒或用一帧容差断言事件恰落在切点。较宽窗口的探索也须限定完整标注区间，并检查时间扰动的敏感性。原 `align-narrative` 尚未处理独立的标注覆盖范围、窗口截断字段或秒级时刻不确定性；这些记录不能直接交给全片对照流程。
+Second-level narrative times retain their approximate second-level precision. Do not invent milliseconds or use a one-frame tolerance to assert that an event falls exactly at a cut. Explorations with wider windows must remain within complete annotation coverage and examine timing-perturbation sensitivity. The original `align-narrative` command did not yet handle separate annotation coverage, truncation fields or second-level timing uncertainty. These records cannot be fed directly into the full-film control workflow.
 
-### 02:30–12:30 局部试验
+### Local experiment at 02:30–12:30
 
-`cinematicdx.pilot_compare.compute_pilot_comparison(annotations, shots, manual_reference)` 是这次600秒试验的纯计算接口。它显式验证影片／视频版本、局部完整性和独立性，只在150–750秒内计算；E001的区间起点不被当作真实叙事起点，E011实际终点保持为空，仅使用观察终点750秒进行区间重叠。原先被误用的边界性质字段不进入计算。
+`cinematicdx.pilot_compare.compute_pilot_comparison(annotations, shots, manual_reference)` is the pure-computation interface for this 600-second experiment. It explicitly validates film/video identity, local completeness and independence, and computes only within 150–750 seconds. E001's coverage start is not treated as a genuine narrative onset. E011's actual end remains unset, with the observed endpoint of 750 seconds used only for interval overlaps. Previously misused boundary-nature fields do not enter the calculation.
 
-主对照固定为事件起点前后各30秒，中心±1秒从切点计数及有效曝光同时移除。对照取同一时间三分区内的非事件硬切，要求完整、互不重叠且不复用，固定种子0、每事件1个对照。另列前后各15秒／10秒及整体起点偏移−1／0／+1秒的探索敏感性，不把它们当成独立样本或置信区间。帧号两种起算方案分别计算，不按模型分数选方案。
+The primary comparison fixes 30 seconds before and after an event onset, removing the central ±1 second from both cut counts and effective exposure. Controls are non-event hard cuts in the same temporal third, with complete, mutually non-overlapping windows and no reuse. The random seed is 0, with one control per event. Exploratory sensitivities separately use 15- and 10-second windows on each side and common onset shifts of −1/0/+1 seconds. These are not independent samples or confidence intervals. Both frame-base scenarios are computed without selection by model score.
 
-实算中，主±30秒设计没有可识别的匹配比较，均值保留为空，不能解读为“无关系”。零扰动的±15秒仅2组、±10秒仅3组匹配，变化量相对对照的均值方向翻转，因此不支持稳定关系推断。M3在主0.08秒容差下，两种帧号情景均为43匹配／2误报／2漏检，F1约95.56%；这是同片且已参与参数探索区间的内部验证。渐变端点表示、帧号起算和容差敏感性均另存，三处人工叠化没有被现有候选切点覆盖，不应据硬切分数宣称完整镜头分割已经可靠。
+The primary ±30-second design yielded no identifiable matched comparison. Its mean remains unset and cannot be interpreted as evidence of no relationship. With zero timing perturbation, ±15 seconds produced only 2 matched sets and ±10 seconds only 3. The mean change relative to controls reversed direction, providing no support for a stable relationship. At the primary 0.08-second tolerance, M3 yielded 43 matches, 2 false positives and 2 misses in both frame-base scenarios, with F1 approximately 95.56%. This is internal validation on the same film and an interval already used for parameter exploration. Gradual-endpoint representation, frame base and tolerance sensitivities are preserved separately. Three manually annotated dissolves were not covered by the existing point candidates. Hard-cut scores therefore cannot establish the reliability of complete shot segmentation.
 
-本次结果根目录为 `research-local/pilot-results/shang-gan-ling-150-750-20261025T225931Z`，其中 `analysis_design.json`、输入校验和、全部敏感性、源代码快照及 `run_m4.py` 支持复算。设计是在看过标注时间分布后确定的探索方案，非预注册验证。研究数据和产物位于未纳入Git的本地目录，重新解码仍需要同一哈希的视频版本；分析无需数据库服务。
+The results root is `research-local/pilot-results/shang-gan-ling-150-750-20261025T225931Z`. Its `analysis_design.json`, input checksums, complete sensitivities, source snapshots and `run_m4.py` support recalculation. The design was exploratory and selected after inspecting the annotation-time distribution, rather than preregistered validation. Research inputs and outputs remain in an untracked local directory. Re-decoding requires the same hashed video version. Analysis does not require a database service.
 
-## M3/M4 测试与平台记录
+## M3/M4 tests and platform record
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=analysis-python \
   .venv-m3/bin/python -m unittest discover -s analysis-python/tests -v
 ```
 
-本机 OpenCV 与 PyAV 各自携带的 FFmpeg 库在导入时会输出 macOS AVFoundation 同名类提示。日志应保留；本任务使用文件解码而非摄像头采集，后者未验证。运行记录保存 PyAV 内嵌库版本，不能用命令行 `ffmpeg -version` 代替。
+The local OpenCV and PyAV installations bundle separate FFmpeg libraries that emit macOS AVFoundation duplicate-class notices during import. Retain these logs. This work uses file decoding, while camera capture remains unverified. Run records preserve PyAV's embedded library versions. Command-line `ffmpeg -version` output cannot substitute for them.
 
-## 渐变转场：区间候选与独立评价
+## Gradual transitions: Interval candidates and independent evaluation
 
-渐变输出为起止区间，与原 M3 的时间点切换候选并行保存，暂不自动写回最终镜头分割。新增的 Python 接口均不依赖数据库：
+Gradual outputs are start/end intervals, saved alongside the original M3 point candidates without automatically changing the final shot segmentation. The added Python interfaces do not depend on the database:
 
-- `cinematicdx.transition_features.extract_transition_features(...)`：逐帧提取固定 ROI 灰度、直方图、变化与小尺寸缓存，保存原 PTS、实际帧曝光及评价覆盖范围；不读取人工标注。
-- `cinematicdx.gradual.detect_gradual_candidates(features, config=...)`：近黑单调变化和多尺度端点混合规则，保留原始候选、重叠抑制、黑场及运动诊断。分数是启发式排序，不是概率。
-- `cinematicdx.transition_scores.scores_to_transition_intervals(...)`：按实际 PTS 将逐帧模型分数转换为连续区间；显式设置阈值与最低时长，不填补间隙。短事件另存，不自动判为硬切。
-- `cinematicdx.transition_validation.validate_gradual_transitions(...)`：在已声明完整的覆盖区间内作精确一对一匹配，分别报告区间定位、边界误差、类型及全部未匹配候选。`point_near_span_diagnostic(...)` 只描述时间点邻近覆盖，不生成渐变 F1。
+- `cinematicdx.transition_features.extract_transition_features(...)`: extracts fixed-ROI grey levels, histograms, changes and small image caches for every frame, retaining original PTS, actual frame exposure and evaluation coverage without reading manual annotations.
+- `cinematicdx.gradual.detect_gradual_candidates(features, config=...)`: applies near-black monotonic-change and multiscale endpoint-mixing rules, retaining raw candidates, overlap suppression, black-frame and motion diagnostics. Scores are heuristic rankings, not probabilities.
+- `cinematicdx.transition_scores.scores_to_transition_intervals(...)`: converts per-frame model scores into contiguous intervals using actual PTS, explicit thresholds and minimum durations, without filling gaps. Short events are saved separately rather than automatically classified as hard cuts.
+- `cinematicdx.transition_validation.validate_gradual_transitions(...)`: performs exact one-to-one matching within declared complete coverage, reporting interval localisation, boundary errors, types and all unmatched candidates separately. `point_near_span_diagnostic(...)` describes only point-to-span proximity and does not produce gradual-transition F1.
 
-当前精确匹配器针对小规模试验，每个情景最多16段渐变参考，超出会明确拒绝；本轮只有4段。扩大评价规模时应更换可扩展的匹配实现并验证等价性，不能通过只取正例附近小窗来绕开全区间误报计分。
+The current exact matcher is for small experiments, accepting at most 16 gradual reference intervals per scenario and explicitly rejecting larger inputs. This round used only 4. A larger evaluation requires a scalable matching implementation with verified equivalence. Restricting evaluation to small windows around positives would improperly bypass full-interval false-positive scoring.
 
-2026-10-26 已使用原《上甘岭》150–750秒的4段人工渐变复测。实验设计和全部预设参数在对应方法推理前冻结，但区间与标注已知，因此这是内部探索，不能称为盲测或留出验证。0/1起算两种帧号情景都保留；原 Excel、人工参考及旧切点未改。
+On 26 October 2026, the original 4 manually annotated gradual transitions in *Shang Gan Ling* (《上甘岭》), 150–750 seconds, were retested. The design and all prespecified parameters were frozen before the corresponding inference runs. However, the interval and annotations were already known, so this remains internal exploration rather than a blind or held-out test. Both zero-based and one-based frame scenarios are retained. The original Excel file, human references and previous point candidates were unchanged.
 
-主区间交并比 `tIoU >= 0.50` 下，规则主配置为0匹配／91未匹配候选／4漏检；外部冻结的 TransNet V2 比较为0／3／4。预训练模型三个候选位于三处标注内部，但交并比只有约0.326–0.418；第四处响应分裂成短段。不能把失败解释为完全没有变化信号。预先列明的宽松 `tIoU >= 0.30` 下，预训练为3／0／1、F1≈0.857；该敏感性结果不能替代主标准的失败。
+At the primary temporal intersection-over-union threshold `tIoU >= 0.50`, the primary rule configuration yielded 0 matches, 91 unmatched candidates and 4 misses. The frozen external TransNet V2 comparison yielded 0/3/4. Its three candidates fell within three annotated intervals but achieved IoU of only approximately 0.326–0.418. The fourth response split into short intervals. Failure does not imply an absence of change signals. At the prespecified relaxed threshold `tIoU >= 0.30`, the pretrained comparison yielded 3/0/1, with F1 approximately 0.857. This sensitivity result does not replace failure at the primary criterion.
 
-TransNet V2 比较仅使用本机既有 TensorFlow，下载并校验作者固定提交的约36.5 MB权重，没有训练、微调或更改项目依赖。其 `many_hot` 分数经本试验的 `>0.5`、连续时长 `>=0.4秒` 转换，不实施淡出／叠化类型分类；通用评价中的未知类型不能解读为类型分类性能。模型源码、许可证、权重及环境收据放在本地研究目录，不加入普通 M3 安装要求。[作者实现](https://github.com/soCzech/TransNetV2)、[论文](https://arxiv.org/abs/2008.04838)。
+The TransNet V2 comparison used only the existing local TensorFlow installation and downloaded and verified approximately 36.5 MB of weights from a fixed author commit. It involved no training, fine-tuning or changes to project dependencies. This experiment converts `many_hot` scores using `>0.5` and a contiguous duration of `>=0.4` seconds, without classifying fade-out or dissolve types. Unknown types in the general evaluation cannot establish type-classification performance. Model source, license, weights and environment receipts remain in the local research directory, outside ordinary M3 installation requirements. See the [author implementation](https://github.com/soCzech/TransNetV2) and [paper](https://arxiv.org/abs/2008.04838).
 
-完整实验位于 `research-local/gradual-pilot/experiment-20261025T233231Z`：`analysis_protocol.json`、`frozen_detector_configs.json` 与 `pretrained_comparator_protocol.json` 是设计；`run_experiment.py` 和 `run_pretrained_comparator.py` 是复算入口；`build_report.py` 从已保存结果生成静态图、逐项诊断和报告。规则法的失败参数、全部敏感性及未分类短段均保留。缓存中的 `frame_delta_seconds` 原为向后差分，规则运行器显式用 `(next_pts-pts)*time_base` 适配为向前曝光，并保存适配收据，未改原缓存。
+The full experiment resides in `research-local/gradual-pilot/experiment-20261025T233231Z`. `analysis_protocol.json`, `frozen_detector_configs.json` and `pretrained_comparator_protocol.json` record the design. `run_experiment.py` and `run_pretrained_comparator.py` reproduce the calculations. `build_report.py` generates static plots, individual diagnostics and a report from saved results. Failed rule parameters, complete sensitivities and unclassified short intervals are retained. Cached `frame_delta_seconds` originally used backward differences. The rule runner explicitly adapts these to forward exposure as `(next_pts-pts)*time_base`, preserving an adaptation receipt without modifying the original cache.
 
-下一步应将候选发现与完整区间估计拆开，先用已知范围的合成转场和运动／曝光负例验证机制，再冻结规则作真实区间对照。不能依据这4段参考直接补齐预测范围。本轮208项 Python 测试通过只证明实现按协议工作，尚不支持自动接受渐变为最终镜头边界，亦不支持跨影片准确率或叙事关系结论。
+Further work should separate candidate discovery from complete interval estimation. First test the mechanisms against synthetic transitions with known extents and motion/exposure negative controls, then freeze rules for comparison on real intervals. Do not extend predicted spans directly from these 4 references. Passing all 208 Python tests in this round establishes implementation conformity with the protocol. It does not support automatically accepting gradual candidates as final shot boundaries, cross-film accuracy claims or conclusions about narrative relationships.

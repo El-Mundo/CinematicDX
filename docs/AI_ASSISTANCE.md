@@ -14,7 +14,7 @@ Assistance covered code inspection and implementation, metadata storage/configur
 
 Some source-identity and image-failure observations were made by the assistant. They are recorded as assistant observations, not as additional independent human annotation or archival verification. Numerical reproducibility is a separate claim from measurement validity or film-historical interpretation.
 
-The 28 October results presentation reuses saved measurements, plots and actual GUI screenshots. It adds an explanation of their generation and synthesises existing findings. It does not represent a new film extraction, a new independent validation sample or coauthor approval of the interpretations.
+The 28 October results presentation reused saved measurements, plots and actual GUI screenshots. It explained their generation and synthesised existing findings, without new film extraction, a new independent validation sample or coauthor approval of the interpretations. That deck has since been retired from the current repository files.
 
 ## Research and software boundaries
 
@@ -22,7 +22,7 @@ The 28 October results presentation reuses saved measurements, plots and actual 
 - Automatic cut/transition outputs remain predictions or candidates with the documented validation scope. Independent narrative reference data remain a separate layer.
 - Tests of storage, timestamps and arithmetic do not by themselves establish film-theoretical validity. The limited hard-cut reference does not establish corpus-wide accuracy, and the tested gradual detector does not reliably delimit complete transitions.
 - Observed gray-level and candidate-rate differences do not establish narrative causation, a stable institutional style or a socio-political explanation. Historical interpretation and authorship decisions remain research judgements.
-- Source videos, original annotation/inventory files, credentials, local catalogs and model/runtime caches are not included in this publication. Selected screenshots and aggregate results appear in the repository documentation and presentation.
+- Source videos, original annotation/inventory files, credentials, local catalogs and model/runtime caches are not included in this publication. Selected screenshots and aggregate results appear in the repository documentation. The previously published October presentation has been retired.
 
 ## Collaboration and publication
 

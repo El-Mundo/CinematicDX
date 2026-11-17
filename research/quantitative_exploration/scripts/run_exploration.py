@@ -89,12 +89,12 @@ def q01(out,reference,protocol):
     first=results[0]
     for run in first['runs']:
         axes[0].plot([(r['start_seconds']+r['end_seconds'])/2 for r in run],[r['duration_seconds'] for r in run],'o-',ms=3,color='#245a81')
-    axes[0].axhline(first['mean_usable_interval_seconds'],color='#a26874',ls='--',label='可用间隔均值')
-    axes[0].set_yscale('log');axes[0].xaxis.set_major_formatter(FuncFormatter(clock));axes[0].set_xlabel('原片播放时间');axes[0].set_ylabel('完整硬切间隔／秒（对数轴）');axes[0].legend()
+    axes[0].axhline(first['mean_usable_interval_seconds'],color='#a26874',ls='--',label='Mean usable interval')
+    axes[0].set_yscale('log');axes[0].xaxis.set_major_formatter(FuncFormatter(clock));axes[0].set_xlabel('Source playback time');axes[0].set_ylabel('Complete hard-cut interval / seconds (log scale)');axes[0].legend()
     ns=null_arrays[reference['scenarios'][0]['scenario_id']+'__mean_absolute_log_ratio']
-    axes[1].hist(ns,bins=30,color='#d4dee7');axes[1].axvline(first['observed']['mean_absolute_log_ratio'],color='#c56835',label='真实顺序')
-    axes[1].set_xlabel('平均绝对相邻log时长差');axes[1].set_ylabel('分块乱序次数');axes[1].legend()
-    fig.suptitle('Q01：时长分布保持不变，检验顺序是否增加信息');fig.tight_layout();savefig(fig,dest/'sequence_and_controls')
+    axes[1].hist(ns,bins=30,color='#d4dee7');axes[1].axvline(first['observed']['mean_absolute_log_ratio'],color='#c56835',label='Observed order')
+    axes[1].set_xlabel('Mean absolute adjacent log-duration difference');axes[1].set_ylabel('Within-block shuffles');axes[1].legend()
+    fig.suptitle('Q01: Does ordering add information beyond the duration distribution?');fig.tight_layout();savefig(fig,dest/'sequence_and_controls')
     progress('Q01_complete',counts=[r['usable_interval_count'] for r in results],summary=rows)
     return results
 
@@ -224,8 +224,8 @@ def q02(out,arrays,reference,narrative,protocol):
         axis.plot(signals[key]['starts'],signals[key]['values'],lw=1,color=color);axis.set_ylabel(key)
         for c in centers:axis.axvline(c,color='#a26874',alpha=.4,lw=.8)
         axis.spines[['top','right']].set_visible(False);axis.grid(alpha=.12)
-    axes[-1].xaxis.set_major_formatter(FuncFormatter(clock));axes[-1].set_xlabel('原片播放时间；竖线为人工事件起点，缺测不补零')
-    fig.suptitle('Q02：独立叙事时间轴上的数字明暗与视觉活动');fig.tight_layout();savefig(fig,dest/'narrative_timeline')
+    axes[-1].xaxis.set_major_formatter(FuncFormatter(clock));axes[-1].set_xlabel('Source playback time; vertical lines mark human-annotated event onsets; missing values remain missing')
+    fig.suptitle('Q02: Digital grey-level and visual activity on an independent narrative timeline');fig.tight_layout();savefig(fig,dest/'narrative_timeline')
     progress('Q02_complete',primary=[r for r in rows if r['primary'] and r['scenario_id'].endswith('_0')],digital_sensitivity=sensitivity,motion_relations=relations)
     return result
 

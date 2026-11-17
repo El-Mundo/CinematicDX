@@ -1,77 +1,77 @@
-# 实验登记
+# Experiment register
 
-状态词：VERIFIED=有实际输出且具适合该主张的验证；PROVISIONAL=已运行但验证不完整；HYPOTHESIS=未实测；REJECTED=在明确条件下不适用；BLOCKED=当前材料/资源不足。状态针对具体主张，不对整项电影理论盖章。
+Status terms: VERIFIED = actual outputs and validation appropriate to the claim; PROVISIONAL = executed with incomplete validation; HYPOTHESIS = not empirically tested; REJECTED = unsuitable under specified conditions; BLOCKED = insufficient current material/resources. Statuses apply to particular claims rather than endorsing an entire film theory.
 
-## Q01：顺序能否提供时长分布之外的信息
+## Q01: information in ordering beyond duration distributions
 
-初始状态 HYPOTHESIS。材料为《上甘岭》150–750秒、人工硬切与渐变参考的两种帧号情景。只保留由两处硬切限定且不跨渐变的完整间隔；不把窗口边缘或跨渐变间隔叫完整镜头。比较实际相邻log时长变化与分块内乱序基线，保留各块时长分布、总时长与间隙。主要统计量为平均绝对相邻log时长差；次要为相邻log时长相关。1999次固定种子，不尝试1/f拟合、不推断注意或蒙太奇类别。
+Initial status: HYPOTHESIS. Material: 《上甘岭》 at 150–750 seconds, with both frame-number scenarios for human hard-cut and gradual references. Include only complete intervals bounded by two hard cuts and crossing no gradual transition. Window edges and intervals spanning gradual transitions are not called complete shots. Compare observed adjacent log-duration change with within-block permutation baselines preserving each block's duration distribution, total duration and gaps. The primary statistic is mean absolute adjacent log-duration difference; adjacent log-duration correlation is secondary. Use 1999 permutations with a fixed seed, without 1/f fitting or inferences about attention or montage classes.
 
-## Q02：明暗、视觉活动与独立叙事事件
+## Q02: brightness, visual activity and independent narrative events
 
-初始状态 HYPOTHESIS。材料同上，复用逐帧灰度缓存。数字灰度作原PTS曝光加权的1秒分箱，比较事件起点前后各5秒、排除中心±1秒的绝对均值变化；±1秒共同时间偏移及3/10秒窗为预定敏感性。随机共同平移整组事件时间作描述性对照，不制造独立帧样本。另对硬切附近事件匹配同时间三分区的非事件硬切，保留起点到切点的时间偏差；对照可重叠，记录复用/重叠，不作独立样本显著性推断。
+Initial status: HYPOTHESIS. Use the same material and existing per-frame grayscale caches. Compute original-PTS exposure-weighted 1-second grayscale bins. Compare absolute mean change across 5 seconds before and after an event onset, excluding the central ±1 second. Joint ±1-second time shifts and 3/10-second windows are predefined sensitivities. Joint random shifts of the complete event group provide descriptive controls without inventing independent frame samples. Separately match events near hard cuts to non-event cuts in the same temporal third, retaining onset-to-cut offsets. Controls may overlap; record reuse/overlap and do not make independent-sample significance inferences.
 
-视觉活动比较缓存上约0.4秒相邻采样帧对的灰度差分、1−相关及Farneback光流；跨人工硬切/渐变及低纹理帧对有质量标记。扰动真实图像只检验测量机制，不冒充真实运动真值。gamma、JPEG、裁切敏感性不模拟历史修复真值。
+Visual activity compares grayscale differences, 1−correlation and Farneback optical flow for adjacent cached sampled frames about 0.4 seconds apart. Flag pairs crossing human hard cuts/gradual transitions and low-texture pairs. Perturbing real images tests measurement mechanisms rather than supplying true-motion ground truth. Gamma, JPEG and crop sensitivities do not simulate historical-restoration ground truth.
 
-## Q03：低成本视觉相似性能否描述配置重复
+## Q03: low-cost visual similarity and configuration repetition
 
-初始状态 HYPOTHESIS。同一影片区间内，人工转场之间的连续内容取1/4、1/2、3/4位置代表帧。dHash与去DC低频DCT和仅亮度距离比较，检查不同代表帧的非相邻top10重合。独立事件标签仅作同事件/异事件代理，时间间隔分层，明确不把它当视觉对象真值。保存检索接触表和助手定性检查。
+Initial status: HYPOTHESIS. In the same film interval, take representative frames at 1/4, 1/2 and 3/4 of continuous content between human transitions. Compare dHash, low-frequency DCT without DC, and brightness-only distance, checking overlap among non-adjacent top10 pairs across different representatives. Independent event labels are proxies for same-/different-event membership, stratified by temporal gap, rather than visual-object ground truth. Preserve retrieval contact sheets and qualitative assistant checks.
 
-## Q04：人脸框能否充当人物显著性或景别代理
+## Q04: face boxes as proxies for character salience or shot scale
 
-初始状态 HYPOTHESIS。复用Q03少量代表图，调用现有正脸级联模型；比较minNeighbors=5/3。不识别人物身份。不用模型预测自身验证准确性；先检查固定均匀抽取的无框接触表，标记助手观察来源，随后比较模型框。没有研究者逐帧框真值，因此不能报告已验证人数或景别准确率。
+Initial status: HYPOTHESIS. Reuse the small Q03 representative-image set with the existing frontal-face cascade, comparing minNeighbors=5/3. Do not identify characters or validate accuracy with the model's own predictions. First inspect a fixed uniformly sampled unboxed contact sheet, labelling observations as assistant-supplied, and then compare model boxes. Without researcher-provided per-frame box ground truth, validated person-count or shot-scale accuracy cannot be reported.
 
-## G00：既有渐变实验的负证据（本轮不重跑）
+## G00: negative evidence from the existing gradual experiment (not rerun here)
 
-状态 REJECTED：仅针对“本片本区间当前配置可直接给出合格完整渐变区间”。原参考4段；规则主配置在tIoU≥0.5下0TP/91FP/4FN；冻结TransNet V2比较0/3/4。tIoU≥0.3时预训练3/0/1，说明局部候选有用，不能替代完整区间标准。出处：`research-local/gradual-pilot/experiment-20261025T233231Z/`。本轮不改原始标注、原参数或负结果。
+Status: REJECTED only for the claim that the current configuration directly yields acceptable complete gradual intervals in this film and interval. There are 4 original references. At tIoU≥0.5 the main rule-based configuration gives 0TP/91FP/4FN, and the frozen TransNet V2 comparison gives 0/3/4. At tIoU≥0.3, pretrained results of 3/0/1 show useful local candidates without satisfying the complete-interval standard. Source: `research-local/gradual-pilot/experiment-20261025T233231Z/`. Original annotations, parameters and negative results remain unchanged in this round.
 
-新实算后将追加真实路径、全部结果及适用条件。
+Actual paths, complete results and applicable conditions will be appended after new computation.
 
-## 本轮实际执行与结果（当前状态）
+## Actual execution and results for this round (current status)
 
-运行：`research-local/quantitative-exploration/round-20261026T001205Z`。输入与输出SHA见 `protocol.json`、`run.json`、`numerical_audit.json`；双帧号方案保留。
+Run: `research-local/quantitative-exploration/round-20261026T001205Z`. Input/output SHA records are in `protocol.json`, `run.json` and `numerical_audit.json`. Both frame-number conventions are retained.
 
-| 实验 | 当前状态 | 真实输出与限定结论 |
+| Experiment | Current status | Actual outputs and bounded conclusion |
 |---|---|---|
-| Q01 | PROVISIONAL（数值核查VERIFIED） | 41完整硬切间隔，四块6/1/7/27，均值8.945秒；相邻log差0.7788对块内乱序中位0.8568，未形成突出额外序列规律。全局乱序较弱对照会夸大差异 |
-| Q02 灰度/叙事 | PROVISIONAL（提取VERIFIED） | 六硬切关联事件0.1012对条件中位0.0185；十事件共同平移较弱对照0.1693对0.0449。E010仅0.0040，不能当通用事件检测 |
-| Q02 视觉活动 | PROVISIONAL；全组事件对照因缺测BLOCKED | 1499帧对、1427有效；光流与相关差秩相关0.932。只有4/10事件达到完整曝光，不填零或降低门槛 |
-| Q03 | PROVISIONAL | 48连续内容区间、144代表图；DCT top10换帧保留5/7对，低频误配反例保留；同事件代理优势随间隔变，不是语义真值 |
-| Q04 | REJECTED用于人数/景别代理 | 79/144零检测，31/144参数变更脸数；助手先看12无框图后见侧脸漏检/躯干误框。无独立人类准确率 |
-| Q05 | PROVISIONAL，初轮后明确声明的挑战 | 任去一事件均值0.0866–0.1207；gamma/JPEG/裁切保留方向；不替换主结果 |
-| 数值审计 | VERIFIED仅限数值/来源主张 | 1999次分块乱序另实现核对；原帧积分事件差<6e-14；精确控制池最大均值0.04215；144代表图PTS均核对 |
+| Q01 | PROVISIONAL (numerical checks VERIFIED) | 41 complete hard-cut intervals in four blocks of 6/1/7/27, mean 8.945 seconds; adjacent log difference 0.7788 versus within-block permutation median 0.8568, without exceptional additional sequence organisation. Weaker global permutations exaggerate differences |
+| Q02 grayscale/narrative | PROVISIONAL (extraction VERIFIED) | Six cut-associated events: 0.1012 versus conditional median 0.0185; weaker joint-shift controls for ten events: 0.1693 versus 0.0449. E010 is only 0.0040, precluding general event detection |
+| Q02 visual activity | PROVISIONAL; full-group event controls BLOCKED by missingness | 1499 frame pairs, 1427 valid; flow/correlation-difference rank correlation 0.932. Only 4/10 events meet complete-exposure requirements; do not fill with zero or lower the threshold |
+| Q03 | PROVISIONAL | 48 continuous-content intervals, 144 representative images; DCT top10 retains 5/7 pairs after frame replacement, with low-frequency mismatch counterexamples retained. Same-event proxy advantage varies by gap and does not supply semantic ground truth |
+| Q04 | REJECTED for person-count/shot-scale use | Zero detections in 79/144 images; parameters change face counts in 31/144. Assistant review of 12 unboxed images followed by boxes finds missed profiles/torso false boxes. No independent human accuracy estimates |
+| Q05 | PROVISIONAL, explicitly declared challenge after the initial round | Leaving out any one event gives mean 0.0866–0.1207; gamma/JPEG/crop challenges preserve direction without replacing primary results |
+| Numerical audit | VERIFIED only for numerical/provenance claims | Separate implementation checks 1999 blockwise permutations; original-frame integration event difference <6e-14; maximum exact control-pool mean 0.04215; PTS checked for all 144 representative images |
 
-初始Q01–Q04运行约20.86秒（含源校验/已有缓存/144代表图解码），光流约0.83秒，代表图解码12.93秒，脸框两个设置3.14秒。225项测试通过不代替实证。数字源敏感性、个别事件、全部窗口和不利配对均保留，详见[完整报告](REPORT.md)。
+Initial Q01–Q04 execution took about 20.86 seconds, including source verification, existing caches and decoding 144 representatives. Optical flow took about 0.83 seconds, representative decoding 12.93 seconds, and both face-box settings 3.14 seconds. Passing 225 tests does not replace empirical validation. Digital-source sensitivities, individual events, every window and unfavourable pairs are retained. See the [full report](REPORT.md).
 
-复现性VERIFIED仅限相同材料/参数的数值：16项核心文件逐字节一致；脸框集合一致但10行返回次序不同，原始文件不完全相同。不计作跨片验证。
+Reproducibility is VERIFIED only for numbers from the same material/parameters: 16 core files are byte-identical, and face-box sets match, although 10 rows differ in return order and raw files are not identical. This is not cross-film validation.
 
-## S01：用户授权全语料，按制片机构比较数字明暗变化
+## S01: user-authorised full-corpus digital-brightness comparison by production institution
 
-**PROVISIONAL**（跨厂解释）；**VERIFIED仅限当前输入的来源/数值算术和所列固定片段的采样一致性**。
+**PROVISIONAL** for cross-studio interpretation; **VERIFIED only for source/numerical arithmetic on current inputs and sampling agreement in the listed fixed clips**.
 
-- 实际输入：`research-local/studio-luminance/corpus-20261026T083348Z/plan.json`对应732条研究JSON及外置盘454个可读文件。全文件SHA逐个读取；文件状态提取前后及最终审计一致。按最初文件名454条链接，后来发现两不同片名文件完全同字节；片头确认都是《延安游击队》，衍生映射归同一key。最终453片、279条无有效视频，17家实际有样本。元数据、Excel及视频不改。
-- 实际计算：454/454成功，文件时长合计662.8413小时；453独特字节版本661.2911小时，主影片原PTS样本2,380,794个。现有PyAV18软件CPU四进程，每解码器单线程，约8161.6秒。全部统一参考帧约1Hz；没有密集备用触发。
-- 取样负例：原关键帧only在24段固定1分钟片段中21段通过，失败3段均为稀疏GOP《烈火中永生》。保留`rejected_keyframe_only/`，**REJECTED用于全库统一慢曲线抽样**；没有降阈值。
-- 修订预检：8片×25/50/75%×60秒，统一参考帧约1Hz与全解码1Hz比较，原门槛24/24通过。30秒箱MAE中位0.00031292、最大0.00225208；10/60秒均报告。不是逐帧瞬态真值、历史摄影亮度或所有拷贝的外部验证。
-- 测量：固定ROI左右各5%/上下各10%，原PTS，有限5秒最近观察时间权重；主量为相邻30秒均值差绝对值平均/本片灰度时间标准差。保留10/60秒、中央10–90%、全画面、年份×色彩标签×类型、源宽度、单厂敏感性，100位置箱曲线不命名叙事阶段。按`production.name`，影片等权，合拍1/k，不合并东北/长春。
-- 实算结果：10家至少10片机构的主均值0.388396–0.426049，各自四分位共同重叠0.381840–0.430064。东北在30秒最高、海燕最低；10秒八一最高、天马第二；60秒上海升至第三。尺度排名不稳定，不据此确认固定厂风格。元数据年份/类型等条件残差也改变相对比较，未消除来源与题材混杂。
-- 视觉QA：固定种子8片+裁切敏感4片+高变化2片，共14中点画面，助手实际观察；不是独立人类真值。台标、裁切损失和残留边界均存在。全画面vsROI曲线相关中位0.993354，不能据此声称没有裁切偏差。
-- 后验源质量检查：发现《刘三姐》B&W标签与多色画面不符，片头片名、长春厂、苏里与记录匹配，年份未观察。固定453片20/50/80%共1359帧，14个B&W标签触发色度旗标；其中包含近单色的紫/绿色偏，所以不把14个都改称彩色片。全类型至少10片组排除旗标的主均值最大变化0.003918，另报黑白及故事片黑白敏感性。旗标方法PROVISIONAL，没有独立人工准确率。
-- 数值审计：全部454文件产物SHA/源状态、732稳定key、453片均值/SD的独立标量实现、PTS换算及制片厂加权均值均通过；原研究JSON/Excel SHA不变。247项Python工程测试通过。
+- Actual inputs: 732 research-JSON records and 454 readable external-drive files associated with `research-local/studio-luminance/corpus-20261026T083348Z/plan.json`. Every complete-file SHA was read; file states match before/after extraction and at final audit. The initial 454 links used filenames. Two differently titled files were later found to contain identical bytes, and opening credits confirmed both as 《延安游击队》. Derived mappings assign them to one key. Final coverage is 453 films, 279 records without valid video, and 17 institutions with measured samples. Metadata, Excel and videos remain unchanged.
+- Actual computation: 454/454 succeeded, with total file duration 662.8413 hours; 453 distinct byte versions total 661.2911 hours and 2,380,794 primary-film original-PTS samples. Existing PyAV18 software CPU decoding used four processes and one thread per decoder, taking about 8161.6 seconds. All files use uniform reference frames at about 1Hz; no dense fallback was triggered.
+- Negative sampling evidence: the original keyframe-only method passed 21 of 24 fixed 1-minute clips. All 3 failures were sparse-GOP sources of 《烈火中永生》. Preserve `rejected_keyframe_only/`; the method is **REJECTED for uniform slow-curve sampling across the corpus**, without lowering thresholds.
+- Revised preflight: 8 films × 25/50/75% × 60 seconds, comparing uniform reference frames at about 1Hz with fully decoded 1Hz. All 24/24 passed the original thresholds. For 30-second bins, median MAE is 0.00031292 and maximum 0.00225208; 10/60-second results are also reported. This is not ground truth for per-frame transients or historical cinematographic brightness, nor external validation of every copy.
+- Measures: fixed ROI excluding 5% on each horizontal side and 10% on each vertical side, original PTS, and nearest-observation time weights limited to 5 seconds. The primary measure is mean absolute adjacent 30-second mean difference / the film's temporal grayscale standard deviation. Retain 10/60-second, central 10–90%, full-frame, year × colour-label × type, source-width and single-studio sensitivities. Curves with 100 position bins are not labelled as narrative stages. Group by `production.name`, weight films equally and co-productions by 1/k, and do not merge 东北/长春.
+- Actual results: primary means for 10 institutions with at least 10 films range from 0.388396–0.426049. Their quartiles share overlap from 0.381840–0.430064. 东北 is highest at 30 seconds and 海燕 lowest; at 10 seconds 八一 is highest and 天马 second; 上海 rises to third at 60 seconds. Timescale rankings are unstable and cannot confirm fixed studio styles. Conditional residuals for metadata year/type also change comparisons, without removing source and subject confounding.
+- Visual QA: the assistant actually inspected 14 midpoint images, comprising 8 fixed-seed films, 4 crop-sensitive films and 2 high-change films. These are not independent human ground truth. Channel logos, crop losses and remaining borders occur. Median full-frame versus ROI curve correlation is 0.993354, which does not establish absence of crop bias.
+- Post-hoc source-quality checks: the B&W label for 《刘三姐》 conflicts with multicoloured imagery. Opening title, 长春 studio and 苏里 match the record; year was not observed. Sampling 453 films at 20/50/80% gives 1359 frames. Fourteen B&W labels trigger chroma flags, including near-monochrome purple/green casts, so these 14 are not all relabelled as colour films. Excluding flagged sources changes the primary mean by at most 0.003918 in all-type groups with at least 10 films. B&W and B&W-feature sensitivities are separately reported. The flag method is PROVISIONAL without independent human accuracy estimates.
+- Numerical audit: SHA/source-state checks for products from all 454 files, 732 stable keys, independent scalar implementation of means/SDs for 453 films, PTS conversion and studio-weighted means all passed. Original research JSON/Excel SHA values remain unchanged. All 247 Python engineering tests passed.
 
-当前产物：`analysis_final/`；早先`analysis/`保留452片保守排除结果，`analysis_revision2/`保留453片去重后的中间版。完整结果与局限：[全库报告](corpus_studio/REPORT.md)；操作：[复算说明](corpus_studio/REPRODUCE.md)。此次没有全库独立叙事参考，不能视为Q02叙事效应的跨片验证，也不扩充其他候选的准确率范围。
+Current products: `analysis_final/`. Earlier `analysis/` preserves the conservative 452-film exclusion results, and `analysis_revision2/` preserves the intermediate 453-film deduplicated version. Full results and limitations: [corpus report](corpus_studio/REPORT.md); operations: [reproduction instructions](corpus_studio/REPRODUCE.md). This round has no corpus-wide independent narrative references, so it neither cross-validates the Q02 narrative effect nor expands other candidates' accuracy scope.
 
-## S02：用户授权全语料，按制片机构检验硬切与渐变
+## S02: user-authorised full-corpus hard-cut and gradual-transition tests by production institution
 
-**PROVISIONAL**：硬切跨片比较与助手视觉说明。**REJECTED**：当前完整渐变分割用于真实转场统计。**VERIFIED仅限实际数值/来源主张**：原PTS、工程回归、独立标量算法、权重/覆盖及哈希。
+**PROVISIONAL**: cross-film hard-cut comparisons and assistant visual descriptions. **REJECTED**: current complete gradual segmentation for true-transition statistics. **VERIFIED only for actual numerical/provenance claims**: original PTS, engineering regressions, independent scalar algorithms, weights/coverage and hashes.
 
-- 输入：`research-local/studio-editing/corpus-20261026T114911Z/plan.json`，732元数据、454路径，继承同字节误名修正后453独特源、279缺有效视频。全片至EOF，661.2911小时/59,478,844帧；源SHA、版本与原标注保留。
-- 算法：全帧宽≤320、V像素MAD≥15、自适应比值≥3（前后各2帧）、原PTS最小间隔0.12秒。比值2.5/3.5、固定ROI敏感性。渐变使用直接16×12灰度缓存的端点混合/近黑规则default/strict/fade-only；不是1Hz明暗抽样，也不覆盖所有转场类型。
-- 小样本回归：《上甘岭》全片934点与旧原生结果逐时间戳一致；150–750秒人工参考两起算情景均43/2/2，±0.08秒P/R=0.9556；无mask挑战相同。渐变tIoU0.5默认0/91/4、严格0/6/4、fade-only0/2/4；0.3局部结果另存，不替换主评分。
-- 全库输出：194,243主硬切候选、252,711默认渐变候选；17机构有数据、60机构全覆盖表保留。率以影片等权/合拍1/k计算；不把候选间隔称全体真实镜头，不把候选和相加。
-- 主组均值4.011–5.440/分，十组IQR共交4.474–5.115；阈值/黑白故事片/单机构改变最高组。347片25构成单元的条件置换观察0.0764对中位0.0220；另加源宽299片30单元为0.1135对0.0265，999次尾部修正比例均0.001。不同集合不比较效应增强，不主张交换性、总体或因果。
-- 真实视觉抽查：17片34候选、170原PTS帧，六张图全部实际查看。13渐变行无明显跨场景混合；另见动作、叠化已开始、类型混淆、片尾字卡、画面转黑。原seek失败保留，提前解码成功。助手观察无随机无候选负样本，不给全库P/R。
-- S02b事后边缘挑战：因观察结束字卡/相对曲线，冻结相同候选在实际覆盖[10%,90%)重计；453片全部检查全文件率与主表一致。十主组中央值3.876–5.334，变化−0.180至+0.024；珠江5.230超过海燕5.185。结果`edge_challenge/`，不改主分析，不称真实片尾分割。
-- 成本/失败：四CPU进程提取21,098.8秒；两个纯白ROI均值1.0000000000000002导致发布失败，按≤8×double-eps副本恢复，原缓存/失败保留，额外93.8秒。前四完整片及11 pilot数组优化前后逐字节一致。硬件解码预检失败保留；不发动多日弱神经模型推理。
-- 独立审计453片数值、PTS、来源状态、逐片产物SHA/组权重/732覆盖均通过；研究JSON/原Excel SHA不变。255项Python工程测试通过，不能代替跨片测量效度。
+- Inputs: `research-local/studio-editing/corpus-20261026T114911Z/plan.json`, 732 metadata records and 454 paths. Inheriting the byte-identical misnaming correction leaves 453 distinct sources and 279 records without valid video. Frame-complete decoding to EOF covers 661.2911 hours / 59,478,844 frames. Source SHA, versions and original annotations are preserved.
+- Algorithms: all frames at width ≤320, V-pixel MAD≥15, adaptive ratio≥3 with 2 frames on either side, and minimum original-PTS interval 0.12 seconds. Include ratios 2.5/3.5 and fixed-ROI sensitivities. Gradual candidates use endpoint-mixing/near-black rules on direct 16×12 grayscale caches, under default/strict/fade-only settings. These are not 1Hz brightness samples and do not cover every transition type.
+- Small-sample regression: all 934 full-film 《上甘岭》 points match the previous native results timestamp by timestamp. Both frame-number conventions in the 150–750-second human-reference interval give 43/2/2 at ±0.08 seconds, P/R=0.9556; the no-mask challenge agrees. Gradual results at tIoU0.5 are default 0/91/4, strict 0/6/4 and fade-only 0/2/4. Localisation at 0.3 is stored separately without replacing the primary score.
+- Corpus-wide outputs: 194,243 primary hard-cut candidates and 252,711 default gradual candidates. 17 institutions have data, and complete coverage tables retain all 60 institutions. Rates use equal film weights and co-production weights 1/k. Candidate intervals are not called the complete set of true shots, and candidate counts are not summed across methods.
+- Primary group means range from 4.011–5.440/minute, with common intersection of ten group IQRs at 4.474–5.115. Thresholds, B&W-feature restrictions and single-institution metadata change the highest group. Conditional permutations across 347 films and 25 composition cells give observed 0.0764 versus median 0.0220. Adding source width gives 299 films/30 cells and 0.1135 versus 0.0265. Corrected tail proportions across 999 permutations are both 0.001. Different film sets cannot establish a stronger effect; exchangeability, population-level or causal claims are not made.
+- Actual visual checks: 17 films, 34 candidates and 170 original-PTS frames in six contact sheets, all actually inspected. 13 gradual rows lack clear cross-scene mixing. Other examples show action, dissolves already in progress, type confusion, end-title cards and images turning black. Failed original seeks remain preserved; earlier decoding succeeded. Assistant observations lack random no-candidate negative samples and cannot provide corpus-wide P/R.
+- S02b post-hoc edge challenge: observations of ending cards/relative curves motivated recounting the same frozen candidates in actual coverage [10%,90%). Whole-file rates were checked against the main table for all 453 films. Central values for ten primary groups are 3.876–5.334, changes −0.180 to +0.024; 珠江 at 5.230 exceeds 海燕 at 5.185. Results are in `edge_challenge/`, without changing the main analysis or claiming true ending segmentation.
+- Costs/failures: extraction with four CPU processes took 21,098.8 seconds. Two pure-white ROI means of 1.0000000000000002 caused publication to fail. Recovery on copies within ≤8×double-eps retained original caches/failures and took another 93.8 seconds. The first four complete films and 11 pilot arrays were byte-identical before/after optimisation. Failed hardware-decoding preflight remains preserved, and no multi-day weak-neural-model inference was started.
+- Independent audits of numerical results, PTS, source states, per-film product SHA/group weights/732-record coverage all passed for 453 films. Original research JSON/Excel SHA values remain unchanged. All 255 Python engineering tests passed, without replacing cross-film measurement validity.
 
-完整结果/局限：[最终评估](corpus_editing/ASSESSMENT.md)；实际命令和阶段收据：[复算](corpus_editing/REPRODUCE.md)。这是全语料数字剪辑候选组织比较，没有全库独立叙事参考。
+Full results/limitations: [final assessment](corpus_editing/ASSESSMENT.md); actual commands and stage receipts: [reproduction](corpus_editing/REPRODUCE.md). This is a full-corpus comparison of digital editing-candidate organisation, without corpus-wide independent narrative references.

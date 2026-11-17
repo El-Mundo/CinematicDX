@@ -1,51 +1,51 @@
-# 全可用语料硬切与转场：运行协议
+# Hard cuts and transitions across the available corpus: run protocol
 
-2026-10-26，用户明确要求按studio覆盖全corpus检验。当前运行目录见`../ACTIVE_EDITING_RUN.txt`。本次全片逐帧，不能复用上轮约1Hz明暗抽样来冒充切点检测。
+On 2026-10-26, the user explicitly requested a studio-grouped examination of the entire corpus. See `../ACTIVE_EDITING_RUN.txt` for the current run directory. This study processes complete films frame by frame; the previous approximately 1Hz gray-level samples cannot serve as cut detection.
 
-## 范围与保护
+## Scope and source protection
 
-研究JSON732条，现有454路径中一条是字节相同误名副本，沿用已存片头及SHA证据只处理453独特影片源；279条没有有效视频。采用既有稳定key及数字字节SHA。唯一文件名关联大多仍暂定，并非全库人工身份真值。全文件SHA在每个实际作业开始前重验。原视频、JSON、Excel、原人工参考均只读，不连接数据库，不下载模型，不上传，不推送。
+The research JSON contains 732 records. Of 454 existing paths, one is a misnamed byte-identical duplicate. Existing opening-title and SHA evidence is retained, and only 453 unique film sources are processed; 279 records lack valid video. Existing stable keys and digital-byte SHA values identify sources. Most unique-filename associations remain provisional rather than manually verified identities across the corpus. Complete-file SHA is rechecked before each actual job. Original videos, JSON, Excel and the original manual reference remain read-only. No database is connected, no models are downloaded, and nothing is uploaded or pushed.
 
-按production具体名称分组，东北/长春、上海/天马/海燕分别保留。合拍1/k权重、影片等权。全部机构、缺片、失败都保留；至少10实测影片的机构才进入主比较图，细分小样本另报。
+Group by each specific production name, retaining 东北/长春 and 上海/天马/海燕 separately. Films receive equal weight, with 1/k per institution for co-productions. Retain every institution, missing film and failure. Only institutions with at least 10 measured films enter the main comparison figures; smaller stratified samples are reported separately.
 
-## 冻结测量
+## Frozen measurements
 
-1. 全片软件解码、原PTS、宽≤320的BGR AREA缩放；不依据平均帧率造时间或跳帧。
-2. 硬切复用PySceneDetect0.7.1 V-only自适应算法数学定义：逐帧HSV-V像素MAD，与前后各2帧平均的比≥3且MAD≥15；原PTS最短间隔0.12秒，保留被抑制候选。比2.5/3.5及固定ROI为敏感性。V不是历史校准的光度学亮度。
+1. Decode complete films in software, preserve original PTS, and resize BGR images to width≤320 with AREA interpolation. Do not fabricate times from average frame rates or skip frames.
+2. Reuse the mathematical definition of the PySceneDetect0.7.1 V-only adaptive algorithm: frame-by-frame HSV-V pixel MAD, with a ratio≥3 to the mean of the 2 frames on each side and MAD≥15. Apply a minimum interval of 0.12 seconds in original PTS and retain suppressed candidates. Ratios 2.5/3.5 and a fixed ROI provide sensitivity checks. V is not historically calibrated photometric luminance.
 
-   V-only可能漏掉主要为色相差异的彩色切换；统一该信号避免由色彩标签决定不同算法，但不能用本片黑白参考宣称验证彩色召回率。极短插镜可能受0.12秒过滤影响。均为已知局限，不作无证据全库准确率保证。
-3. 保存完整逐帧PTS/显示区间、全画面/ROI V差、ROI灰度均值/标准差、直接16×12灰度缓存与相邻差。渐变使用既有default/strict/fade-only端点混合规则；缓存与旧64×48不同，明确复测，不宣称信号不变。
-4. 已知渐变严格区间任务失败。全库渐变输出只作**模型候选诊断**，不能成为真实转场频率、叠化/淡出偏好、真实镜头分割或厂风格结论。不会反过来用这些候选自动删硬切。
+   V-only processing may miss colour cuts distinguished mainly by hue. A uniform signal avoids choosing different algorithms from colour labels, but this film's B&W reference cannot validate colour recall. The 0.12-second filter may affect very short inserts. These are known limitations; no unsupported corpus-wide accuracy guarantee is made.
+3. Preserve complete frame-level PTS/display intervals, full-frame/ROI V differences, ROI gray-level means/standard deviations, a directly resized 16×12 gray cache and adjacent differences. Gradual detection uses the existing default/strict/fade-only endpoint-mixing rules. The cache differs from the previous 64×48 cache and is explicitly revalidated, without claiming an unchanged signal.
+4. Strict complete-interval gradual detection is known to have failed. Corpus-wide gradual output is used only for **model-candidate diagnostics**, not actual transition frequencies, dissolve/fade preferences, true shot segmentation or studio-style conclusions. These candidates do not automatically remove hard cuts.
 
-   这里的渐变候选只涵盖端点混合及近黑渐隐/渐现操作定义，不声称覆盖划变/虹膜/遮挡等所有编辑转场。未匹配完整区间不等于未出现真实转场。
-5. 两端硬切限定间隔排除文件首尾，但仍可能漏掉渐变，故不直接称平均镜头长度。保存100相对位置箱候选率，不预设叙事幕。阈值分歧、ROI、单厂、年份×类型×色彩标签及源宽度分层全部报告，不挑有利配置。
+   Gradual candidates here cover only operational definitions of endpoint mixing and near-black fades in/out. They do not claim to cover every editing transition, including wipes, irises or occlusions. Failure to match a complete interval does not establish that no real transition occurred.
+5. Intervals bounded by hard cuts at both ends exclude file edges but can still contain missed gradual transitions, so they are not directly called average shot lengths. Preserve candidate rates in 100 relative-position bins without assuming narrative acts. Report threshold disagreements, ROI, single-studio, year×type×colour-label and source-width stratifications without selecting favourable settings.
 
-6. 在完整组结果产生前指定额外A–B–A警示：候选前后约0.12秒小灰度图的端点MAD≤0.03、区间峰值MAD≥0.10时标记。可能是闪光，也可能是实际短插镜或运动，只作排除敏感性，不删主切点、不称误报真值。
+6. Before complete group results are produced, specify an additional A–B–A warning: flag candidates when the small gray images approximately 0.12 seconds before/after have endpoint MAD≤0.03 and the intervening peak MAD≥0.10. The pattern may be a flash, a real short insert or movement. Use it only as exclusion sensitivity; do not remove primary cuts or call it false-positive ground truth.
 
-7. 时间图附“局部候选率／本片平均候选率”，区分总体切换量和位置分布。零候选影片在该项保持缺测、有单独有效n。给定候选集合，对统一播放速度缩放不变，但不证明原始放映速度或消除检测误差；不把位置当叙事幕。属于全结果发布前的附加呈现，不冒称预注册假设。
+7. Add “local candidate rate / film mean candidate rate” to temporal figures to distinguish total switching volume from positional distribution. Films with zero candidates remain missing for this normalisation, with separately reported effective n. Given the same candidate set, it is invariant to uniform playback-speed scaling, but neither establishes original projection speed nor eliminates detection errors. Positions are not narrative acts. This is an additional presentation specified before complete results were published, not a claim of preregistered hypotheses.
 
-算法依据：[PySceneDetect官方文档](https://www.scenedetect.com/docs/latest/api/detectors.html)。工程测试将独立向量实现与实际安装版本逐点对比；本地《上甘岭》150–750秒的候选逐点复现原基线。
+Algorithm reference: [official PySceneDetect documentation](https://www.scenedetect.com/docs/latest/api/detectors.html). Engineering tests compare an independent vector implementation point by point with the installed version. Local candidates for 《上甘岭》 at 150–750 seconds reproduce the original baseline point by point.
 
-## 已有参考复测
+## Revalidation against the existing reference
 
-独立人工标注保留两种帧起算解释，没有选择更有利的一种。±0.08秒硬切评分（排除人工渐变区间），两者均43匹配/2误报/2漏检；±0.04/0.12秒同时保存。这是参与过方法开发的单片区间，不是453片外部准确率。
+Retain both frame-number-origin interpretations of the independent manual annotations, without choosing the more favourable interpretation. At ±0.08 seconds, excluding manually annotated gradual intervals, both hard-cut scores are 43 matches/2 false positives/2 misses. Results at ±0.04/0.12 seconds are also preserved. This single-film interval contributed to method development; it is not external accuracy validation for 453 films.
 
-渐变tIoU≥0.5仍为0匹配/91误报/4漏检，较宽松tIoU和其他配置都保存。没有以宽松定位分数替换严格主结果。已有本地TransNetV2在严格区间评价也失败，且既有CPU实算15248帧约160秒；全库逐帧线性外推约一周。本轮不启动多日弱模型计算，不重新训练或下载。
+At tIoU≥0.5, gradual detection still yields 0 matches/91 false positives/4 misses. More lenient tIoU scores and other configurations are preserved without replacing the strict primary result. The available local TransNetV2 model also failed strict interval evaluation. Its existing CPU measurement processed 15248 frames in about 160 seconds; linear extrapolation to the frame-complete corpus is about one week. This run does not launch multi-day computation with a weak model, retrain it or download models.
 
-## 执行修订（测量参数不变）
+## Execution revisions (measurement parameters unchanged)
 
-第一版重复创建缩放上下文，原部分运行保留在`corpus-20261026T114005Z`。共享VideoReformatter及解码AUTO2线程，在同一15248帧预检里11项数组（含PTS、全部分数和缓存像素）逐项完全相同，耗时约减半。停止本任务的四个旧CPU进程，另开`corpus-20261026T114911Z`从头处理，不篡改或借用旧作业收据。原失败的验证适配器缺少transition_id导致首次预检未发布；修复ID后重跑，未改变阈值、标签或评分标准。
+The first version repeatedly created scaling contexts; its partial run is preserved in `corpus-20261026T114005Z`. Sharing VideoReformatter and using AUTO decoding with 2 threads produced exactly identical values in all 11 arrays, including PTS, every score and cached pixels, in the same 15248-frame preflight, while approximately halving runtime. The task's four old CPU processes were stopped, and `corpus-20261026T114911Z` started from scratch without altering or borrowing old job receipts. The initial failed validation adapter lacked transition_id, so its first preflight was not published. After fixing the ID, it was rerun without changing thresholds, labels or scoring criteria.
 
-运行中《无穷的潜力》已完整保存126024帧缓存，但纯白帧的ROImean为1.0000000000000002，触发旧规则严格0–1范围检查。只允许≤8×float64机器精度的超界修复，超出或NaN不修复；原缓存和原失败记录保留，另存修复说明。再次校验完整源SHA、源尾到真实EOF及最后显示端点后，用缓存补齐，避免重复全片解码。实际修复程序与helper源码按收据SHA封存在`recovery_sources/`，不修改冻结的批提取核心。首次失败与最终有效完成分别记在原`extraction_complete.json`和新的`effective_extraction_complete.json`，不抹掉负记录。这是数值守卫修复，不是模型参数/标签调整。
+During the run, 《无穷的潜力》 had a complete 126024-frame cache, but a pure-white frame's ROI mean of 1.0000000000000002 triggered the former strict 0–1 range check. Recovery permits only excursions≤8×float64 machine precision; larger excursions and NaN are not repaired. Preserve the original cache and failure record, with a separate recovery explanation. After rechecking complete source SHA, the source tail through actual EOF and the final display endpoint, complete the result from the cache to avoid decoding the entire film again. The actual recovery program and helper source are archived by receipt SHA in `recovery_sources/`; the frozen batch extraction core is unchanged. Record the initial failure and final effective completion separately in the original `extraction_complete.json` and new `effective_extraction_complete.json`, preserving negative evidence. This is a numerical-guard recovery, not a model-parameter or label adjustment.
 
-## 条件置换参照：探索性，不冒称预注册
+## Conditional permutation reference: exploratory, without a preregistration claim
 
-在看到完整厂组结果之前指定：只用单厂影片、原实测成员至少10片的机构。按精确年份×影片类型×元数据色彩组成单元，单元≥5片且≥2机构才可比较。扣除各单元均值，统计残差的组间平方和/总残差平方和；固定种子20261026，在单元内置换影片值999次，保留厂与构成分布。源宽度加入同样单元的检查为次要敏感性，样本不足就BLOCKED，不放宽门槛。
+Specify before seeing complete studio-group results: use only single-studio films from institutions with at least 10 originally measured members. Form exact-year×film-type×metadata-colour cells; comparisons require ≥5 films and ≥2 institutions per cell. Subtract cell means, then compute between-group residual sum of squares / total residual sum of squares. With fixed seed 20261026, permute film values within cells 999 times while preserving studio and composition distributions. Adding source width to the same cells is a secondary sensitivity check. Insufficient samples yield BLOCKED rather than relaxed thresholds.
 
-报告实际覆盖、零分布和条件参照尾部比例。交换性并未由历史资料保证，来源、人物、题材、摄影师及机构选择仍可能混杂；不是随机抽样总体显著性，也不是制片厂因果效应。合拍片仍在描述主表，只不进入这个特定参照。
+Report actual coverage, the null distribution and the conditional reference tail fraction. Historical evidence does not guarantee exchangeability; provenance, people, subjects, cinematographers and institutional selection may remain confounded. This is neither population significance from random sampling nor a studio causal effect. Co-productions remain in the main descriptive table but do not enter this particular reference.
 
-## QA与停止
+## QA and stopping rule
 
-全片逐帧与数值一致性审计独立于电影语义准确率。完成后按机构种子抽影片，每片随机一硬切及一渐变候选，保存原PTS五帧接触表；助手观察与独立人工参考分开，不能从候选抽样估计全库召回率。不给研究者追加观看任务。
+Frame-complete processing and numerical-consistency auditing are separate from film-semantic accuracy. After completion, sample films by institution with a fixed seed, randomly select one hard-cut and one gradual candidate per film, and save five-frame contact sheets at original PTS. Keep assistant observations separate from the independent manual reference. Candidate sampling cannot estimate corpus-wide recall. No additional viewing task is assigned to the researcher.
 
-所有453源完成尝试、缺片/失败明示、分厂表/时间轴/敏感性、独立算术审计、实际接触表检查及报告形成后停止。不会因为能输出很多候选，就将已失败的渐变方法宣布成功。
+Stop after all 453 sources have been attempted, missing films/failures are explicit, and studio tables, timelines, sensitivity results, an independent arithmetic audit, actual contact-sheet inspection and reports are complete. Producing many candidates does not make a failed gradual method successful.

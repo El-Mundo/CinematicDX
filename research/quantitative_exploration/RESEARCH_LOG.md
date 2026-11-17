@@ -1,91 +1,91 @@
-# CinematicDX：自主定量方法探索
+# CinematicDX: autonomous quantitative-method exploration
 
-## 2026-10-26：本轮范围与初始决定
+## 2026-10-26: scope and initial decisions for this round
 
-- 工作分支：`codex/quantitative-evidence-20261026`。已有未提交的 Java、Python 和研究产物保留，不提交、不推送、不改数据库。
-- 真实材料：《上甘岭》(1956)，研究清单命名空间 `research-inventory`，key=`shang gan ling`。视频版本 `sha256:a044ce2cd1b561bf2599f21b5415163e01f7abdd6313919ac1f8ed5e9657d9f0`。
-- 本轮唯一影像区间为播放偏移 `[150,750)` 秒，共600秒。优先复用已校验的逐帧缓存；额外解码只为这个区间的少量代表图。没有处理其他影片，不扩大至30分钟上限。
-- 原视频、原Excel、已确认的人工参考和此前失败实验只读。不请求研究者补看或重标，不下载模型或数据，不上传影像。
-- 已有独立人工参考：45处区间内硬切、4段渐变、11条事件；E001在观察窗口左边缘，E011右截断。事件精度约秒级，帧号0/1起算两方案均保留。
-- 先前渐变实验主交并比标准下规则法0/91/4，预训练比较0/3/4（匹配/未匹配/漏检），保留为负证据，不继续按这4例优化。
-- 旧M4的±30秒对照无可识别匹配，不能解释为无叙事关系。本轮改问较窄窗口的数字画面变化是否超出普通切换，并显式记录这是一项新探索设计。
-- 先冻结本轮方案，再产生新实算结果。这是开发区间上的探索性研究，不是预注册、盲测或外部验证。
+- Working branch: `codex/quantitative-evidence-20261026`. Existing uncommitted Java, Python and research outputs are preserved without committing, pushing or changing the database.
+- Real material: 《上甘岭》(1956), research-inventory namespace `research-inventory`, key=`shang gan ling`. Video version: `sha256:a044ce2cd1b561bf2599f21b5415163e01f7abdd6313919ac1f8ed5e9657d9f0`.
+- This round's only film interval is playback offset `[150,750)` seconds, totalling 600 seconds. Reuse verified per-frame caches first; additional decoding is limited to a small representative-image set within this interval. No other films are processed, and the scope does not expand to the 30-minute limit.
+- Original video, Excel, confirmed human references and earlier failed experiments are read-only. Do not ask the researcher to rewatch or reannotate, download models/data or upload imagery.
+- Existing independent human references: 45 hard cuts inside the interval, 4 gradual intervals and 11 events. E001 is at the observation window's left edge, and E011 is right-censored. Event precision is approximately seconds; retain both 0/1-based frame-number scenarios.
+- Previous gradual experiments give rule-based scores 0/91/4 and pretrained comparison scores 0/3/4 under the primary intersection-over-union standard, representing matched/unmatched/missed intervals. Preserve these as negative evidence rather than continuing to optimise on 4 cases.
+- Earlier M4 ±30-second controls have no identifiable matching and cannot imply absence of narrative relationships. This round instead asks whether narrow-window digital image changes exceed ordinary cutting, explicitly recording this as a new exploratory design.
+- Freeze this round's procedure before generating new computed outputs. This is exploratory research on development material rather than preregistration, blind testing or external validation.
 
-本轮预定停止条件：评估至少四项候选；完成至少两项真实材料可执行实验；记录验证及失败；形成排序、可复算代码和最有希望的叙事对照后续方案。不因已经写代码而反复优化弱方法。
+Planned stopping conditions: assess at least four candidates, complete at least two executable real-material experiments, record validation and failures, and produce rankings, reproducible code and the most promising narrative-control follow-up. Do not repeatedly optimise weak methods merely because code already exists.
 
-## 方法阅读
+## Methodological reading
 
-已核实原作者/期刊资料：Cutting等(2010)、Cutting等(2011)、Cutting(2016)、CineScale(2021)、HISTORIAN(2022)及OpenCV官方方法文档。详见 `BIBLIOGRAPHY.md`。部分PMC/ScienceDirect全文入口遇到验证码或403；只记录实际可核实内容，不宣称读到未取得的全文。
+Verified original-author/journal sources: Cutting et al. (2010), Cutting et al. (2011), Cutting (2016), CineScale (2021), HISTORIAN (2022) and official OpenCV method documentation. See `BIBLIOGRAPHY.md`. Some PMC/ScienceDirect full-text entry points required CAPTCHAs or returned 403. Record only material actually verified, without claiming to have read inaccessible full texts.
 
-## 实验执行记录
+## Experiment execution record
 
-真实输出路径、数值、状态和停止决定见下方完成记录及 REPORT.md。
+Actual output paths, numbers, statuses and stopping decisions are in the completion records below and REPORT.md.
 
-## 2026-10-26T00:28:25.914995+00:00：本轮完成并停止
+## 2026-10-26T00:28:25.914995+00:00: round completed and stopped
 
-- 实验目录 `research-local/quantitative-exploration/round-20261026T001205Z`。Q01–Q04完成，Q05挑战及第二数值实现核查完成。实际唯一影像600秒，未扩片。
-- 最强新证据是本片条件明暗重组；E010反例、低层相似性误配和人物代理失败保留。
-- 顺序对照显示“全局打乱”和“保留段落差异”会得出不同强度判断；不从正相关直接推出形式原则。
-- 活动窗口缺测保留为空，10秒硬切对照池不足标BLOCKED；没有事后救指标。
-- 工程测试中先发现常量图DCT数值残差被归一化的问题，已在产生电影实算输出前修正为缺测。初次补充审计的说明字段重名导致未发布收据，修复字段名后通过；未变更原统计输出或阈值。
-- 225项Python测试通过；原片/原Excel/参考SHA一致；144图PTS核查通过。助手观察与研究者标注明确分开，未来人工表保持空白。
-- 不提交或推送，不接数据库，不新增依赖/模型下载。达到任务完成条件后停止同片开发，下一确认性实验仍为HYPOTHESIS。
+- Experiment directory: `research-local/quantitative-exploration/round-20261026T001205Z`. Q01–Q04, the Q05 challenge and a second numerical-implementation check are complete. Unique film material remains 600 seconds without expanding to other films.
+- The strongest new evidence is conditional brightness reorganisation in this film. Retain E010, low-level-similarity mismatches and failures of the character proxy.
+- Ordering controls show that global permutations and preservation of passage differences produce conclusions of different strength. Positive correlation alone cannot establish a principle of form.
+- Missing activity windows remain blank. Insufficient 10-second hard-cut control pools are BLOCKED, without post-hoc metric rescue.
+- Engineering tests first identified normalisation of numerical DCT residuals for constant images. This was corrected to missingness before producing actual film outputs. Duplicate descriptive-field names in the first supplementary audit prevented receipt publication; correcting those names allowed it to pass without changing original statistics or thresholds.
+- All 225 Python tests passed. Original video/Excel/reference SHA values match, and PTS checks passed for all 144 images. Assistant observations remain distinct from researcher annotations, and future human-review sheets stay blank.
+- No commits/pushes, database connections or additional dependency/model downloads. Stop development on this film after completing the task's conditions. The next confirmatory experiment remains HYPOTHESIS.
 
-### 同方案完整复跑验收
+### Complete replay acceptance under the same procedure
 
-在 `research-local/quantitative-exploration/replay-20261026-verification` 完整复跑，16项核心产物SHA一致；挑战数值一致。脸框计数、面积与框集合一致，10/288行的返回次序不同，保留两份原始CSV，不用数组序号表示人物身份。原始标注未变。两次请求解码区间合计20分钟，唯一素材10分钟。复跑不是新的独立实证样本。
+A full replay in `research-local/quantitative-exploration/replay-20261026-verification` gives matching SHA values for 16 core products and matching challenge numbers. Face-box counts, areas and coordinate sets match, but return order differs in 10/288 rows. Keep both raw CSV files and do not use array indices as character identities. Original annotations are unchanged. The two requested decoding intervals total 20 minutes, with 10 minutes of unique material. The replay is not a new independent empirical sample.
 
-## 2026-10-26T08:40:40.500177+00:00：用户授权全语料按制片厂扩展
+## 2026-10-26T08:40:40.500177+00:00: user-authorised full-corpus extension by studio
 
-已清点732元数据、454视频、278无视频；采用production具体机构、合拍分数权重，保留未知与身份暂定标记。24段预检发现仅关键帧取样在长GOP片源失败，保留原案；统一约1Hz参考帧方法24/24通过。全库四路批处理已启动。方案见 corpus_studio/PROTOCOL.md，进度/输出见 research-local/studio-luminance/corpus-20261026T083348Z。
+The inventory contains 732 metadata records, 454 videos and 278 records without video. Use specific production institutions and fractional co-production weights, retaining unknown/provisional identity flags. A 24-clip preflight found failures of keyframe-only sampling on long-GOP sources, and that original method is preserved. Uniform reference frames at about 1Hz passed 24/24 checks. Four-process corpus batching has started. Protocol: corpus_studio/PROTOCOL.md; progress/outputs: research-local/studio-luminance/corpus-20261026T083348Z.
 
-## 2026-10-26T10:56:05.037428+00:00：全语料制片机构分析完成
+## 2026-10-26T10:56:05.037428+00:00: full-corpus production-institution analysis completed
 
-454/454视频成功；452影片纳入，278元数据无视频。全库约662.84小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。
+All 454/454 videos succeeded; 452 films were included and 278 metadata records lack video. The corpus covers about 662.84 hours; studio reports and coverage tables are in corpus_studio/REPORT.md. Retain films as analysis units, fractional co-production weights and year/colour/type sensitivities. Group differences are not interpreted as institutional causes or narrative recognition.
 
-## 2026-10-26T11:02:50.021821+00:00：全语料制片机构分析完成
+## 2026-10-26T11:02:50.021821+00:00: full-corpus production-institution analysis completed
 
-454/454视频成功；453影片纳入，279元数据无视频。全库约662.84小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。
+All 454/454 videos succeeded; 453 films were included and 279 metadata records lack video. The corpus covers about 662.84 hours; studio reports and coverage tables are in corpus_studio/REPORT.md. Retain films as analysis units, fractional co-production weights and year/colour/type sensitivities. Group differences are not interpreted as institutional causes or narrative recognition.
 
-## 全库结果修订与收尾（2026-10-26）
+## Corpus-result revision and completion (2026-10-26)
 
-前一条452片结果是对跨key重复字节的保守排除初版，不代表解码失败；已存`analysis/`。片头图随后确认《永恒的友谊.mp4》实为《延安游击队》的完全字节副本，按文件SHA绑定的`identity_overrides.json`在衍生分析中解决，原文件名/JSON不改。当前`analysis_final/`为453片、279条缺有效视频、17机构；`analysis_revision2/`保留中间版。
+The preceding 452-film result was an initial conservative exclusion of duplicate bytes across keys rather than decoding failure, preserved in `analysis/`. Opening-credit images subsequently confirmed that 《永恒的友谊.mp4》 was actually a byte-identical copy of 《延安游击队》. File-SHA-bound `identity_overrides.json` resolves this in derived analysis, without changing original filenames/JSON. Current `analysis_final/` contains 453 films, 279 records lacking valid video and 17 institutions. `analysis_revision2/` preserves the intermediate version.
 
-实际查看了分厂四分位图、相对时间热图、14帧源质量接触表及《刘三姐》片头。发现B&W标签的多色画面后增加事后来源诊断，453×3帧均成功，14色度警示包含明显色偏，不能当原始彩色工艺标签。排除敏感性最大主均值改变0.003918，主分析不删片或改标。
+Studio quartile plots, relative-time heatmaps, a 14-frame source-quality contact sheet and the opening credits of 《刘三姐》 were actually inspected. Multicoloured imagery under a B&W label prompted post-hoc source diagnostics. All 453×3 frames were extracted, and the 14 chroma warnings include obvious colour casts, so they cannot become original-colour-process labels. Exclusion sensitivities change primary means by at most 0.003918; the main analysis neither removes films nor changes labels.
 
-最终独立数值审计通过：454文件产物/源状态、732key、453片PTS/均值/SD及合拍权重与分厂均值；247项Python测试通过。所有源状态与研究JSON/原Excel SHA不变。主组均值差小于大量组内变化，尺度排序会改变，因此停止继续优化厂排名。下一叙事验证仍需独立参考，当前不要求研究者补看。代码、参数、失败方案、早期结果、图表、QA与实际局限均保留；最终入口见corpus_studio/REPRODUCE.md及运行目录CURRENT_ANALYSIS.txt。
+Final independent numerical audits passed for 454-file products/source states, 732 keys, PTS/means/SDs of 453 films, co-production weights and studio means. All 247 Python tests passed. Source states and research JSON/original Excel SHA values remain unchanged. Primary group-mean differences are smaller than substantial within-group variation, and timescale rankings change, so further studio-ranking optimisation stops. The next narrative validation still requires independent references, without asking the researcher to rewatch now. Code, parameters, failed procedures, early results, figures, QA and actual limitations are preserved. Final entry points: corpus_studio/REPRODUCE.md and CURRENT_ANALYSIS.txt in the run directory.
 
-## 2026-10-26T11:08:15.870873+00:00：全语料制片机构分析完成
+## 2026-10-26T11:08:15.870873+00:00: full-corpus production-institution analysis completed
 
-454/454视频成功；453影片纳入，279元数据无视频。全库约662.84小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。
+All 454/454 videos succeeded; 453 films were included and 279 metadata records lack video. The corpus covers about 662.84 hours; studio reports and coverage tables are in corpus_studio/REPORT.md. Retain films as analysis units, fractional co-production weights and year/colour/type sensitivities. Group differences are not interpreted as institutional causes or narrative recognition.
 
-## 2026-10-26T11:58:52.726159+00:00：全可用语料按制片机构的硬切／转场检验启动
+## 2026-10-26T11:58:52.726159+00:00: hard-cut/transition testing by institution started for all available material
 
-用户授权覆盖全corpus。当前运行`research-local/studio-editing/corpus-20261026T114911Z`，独特453影片全片逐帧，保留732条覆盖；不能用既有1Hz明暗数据代替。硬切V-only基线原PTS候选逐点复现；两帧号情景均43TP/2FP/2FN（±0.08秒，排除人工渐变）。渐变完整区间复测仍0TP/91FP/4FN，后续全库输出仅为候选诊断。先前独立标注不改、不追加观看。
+The user authorised the complete corpus. Current run: `research-local/studio-editing/corpus-20261026T114911Z`, covering all frames of 453 distinct films and retaining 732-record coverage. Existing 1Hz brightness data cannot substitute for this. The hard-cut V-only baseline reproduces native original-PTS candidates point by point. Both frame-number scenarios give 43TP/2FP/2FN at ±0.08 seconds, excluding human gradual intervals. Complete gradual intervals still yield 0TP/91FP/4FN; later corpus outputs are candidate diagnostics only. Existing independent annotations remain unchanged, without additional viewing requests.
 
-初版部分运行保留；共享缩放器与AUTO2线程经15248帧11数组完全相同检查后另启当前运行。已完成的前四影片进一步验证frame_features.npz及cut_candidates.json SHA逐字节一致；不冒充新独立实证样本。253项Python工程测试通过。全库批处理尚未完成，不提前发布分厂结果。
+The first partial run is preserved. A new current run started after checks showed that a shared scaler and AUTO2 threading produce exactly the same 11 arrays across 15248 frames. Complete frame_features.npz and cut_candidates.json SHA values also match byte for byte for the first four films before/after optimisation. These are not new independent empirical samples. All 253 Python engineering tests passed. Corpus batching is incomplete, so studio results are not published prematurely.
 
-### 2026-10-26T12:37:45.467964+00:00：S02数值边界恢复
+### 2026-10-26T12:37:45.467964+00:00: S02 numerical-boundary recovery
 
-《无穷的潜力》完整126024帧缓存中一纯白帧ROImean=1.0000000000000002，被旧严格范围检查拒绝。只在8×float64机器精度内裁回边界，原NPZ与失败记录保留；重验完整源SHA、真实EOF尾帧及显示端点后补齐415个硬切候选及渐变诊断。没有改阈值、原像素或标注，不重解码全片。修复源码按SHA封存，255项测试通过；其余全库批处理继续。
+A pure-white frame in the complete 126024-frame cache for 《无穷的潜力》 had ROImean=1.0000000000000002 and was rejected by the old strict range check. Values are clipped back to the boundary only within 8×float64 machine precision, preserving original NPZ files and failures. Rechecking complete source SHA, actual EOF tail frames and display endpoints completed 415 hard-cut candidates and gradual diagnostics. Thresholds, original pixels and annotations remain unchanged, without decoding the full film again. The repaired source is archived by SHA; all 255 tests passed while remaining corpus batches continued.
 
-## 2026-10-26：S02全语料硬切／转场检验完成并停止
+## 2026-10-26: S02 full-corpus hard-cut/transition testing completed and stopped
 
-453/453独特源完成；732行覆盖、279缺有效视频、17/60机构有数据。实际59,478,844帧、661.2911小时，194,243主硬切候选和252,711默认渐变候选。初批451成功/2失败；《胜利在望》另两帧出现同一机器精度超界，按冻结恢复协议补齐614候选。两项恢复不覆盖原NPZ/失败，独立EOF/SHA检查通过。
+All 453/453 distinct sources completed, with 732 coverage rows, 279 missing valid videos and data for 17/60 institutions. Actual coverage is 59,478,844 frames and 661.2911 hours, producing 194,243 primary hard-cut candidates and 252,711 default gradual candidates. The first batch had 451 successes and 2 failures. Two more frames in 《胜利在望》 had the same machine-precision boundary excess. The frozen recovery protocol completed 614 candidates. Neither recovery overwrites original NPZ/failure records, and independent EOF/SHA checks passed.
 
-主组候选率4.011–5.440/分，十组IQR共同重叠4.474–5.115。阈值2.5下东北超过天马；黑白故事片海燕超过天马；元数据单机构珠江略超过天马。年份×类型×色彩单元内999次置换参考：347片观察残差份额0.0764、参考中位0.0220；加源宽条件为不同299片，0.1135对0.0265。两者尾部修正比例0.001；不称因果、不比较不同样本的“效应增强”。
+Primary group candidate rates range from 4.011–5.440/minute, with common overlap of ten group IQRs at 4.474–5.115. At threshold 2.5, 东北 exceeds 天马; among B&W features, 海燕 exceeds 天马; under single-institution metadata, 珠江 slightly exceeds 天马. A 999-permutation reference within year × type × colour cells gives observed residual share 0.0764 and reference median 0.0220 for 347 films. Adding source width uses a different 299-film set, giving 0.1135 versus 0.0265. Both corrected tail proportions are 0.001. Do not label these causal or compare different samples as effect strengthening.
 
-原硬切参考复测两帧号情景均43/2/2（±0.08秒），严格渐变仍0/91/4（tIoU≥0.5）。现有十分钟是开发材料，没有全库准确率真值。默认渐变计数不用于真实片厂偏好。保持所有原始标注，不要求研究者补看。
+Retesting original hard-cut references gives 43/2/2 under both frame-number scenarios at ±0.08 seconds. Strict gradual scores remain 0/91/4 at tIoU≥0.5. These ten minutes are development material, without corpus-wide accuracy ground truth. Default gradual counts cannot represent true studio preferences. Preserve all original annotations without asking the researcher to rewatch.
 
-原seek抽查无法定位部分编码原帧，部分产物及失败日志另存；改用提前解码，原PTS精确命中170帧。助手实际查看全部6张表、17片34候选：13渐变行无明显混合，另见已在叠化中、渐暗类型混淆、片尾“完”字及渐亮；硬切也见重影附近/画面转黑的类型单位问题。助手解释另存，不代替研究者参考，不估计全库P/R。
+Original seek-based spot checks could not locate some encoded source frames; partial products and failure logs are stored separately. Earlier decoding precisely reached 170 original-PTS frames. The assistant actually inspected all 6 contact sheets covering 17 films/34 candidates: 13 gradual rows show no obvious mixing, with other examples already in dissolves, fade-type confusion, ending cards reading “完” and fade-ins. Hard cuts also show counting/type-unit issues near ghosting or images turning black. Assistant interpretations are stored separately, without replacing researcher references or estimating corpus-wide P/R.
 
-基于真实片尾反例追加事后[10%,90%)敏感性，沿用全部候选不重解码，453片均核对全片率。十组变化−0.180至+0.024/分，珠江超过海燕；主分析保持不变。不是叙事或片尾自动分割。
+Real end-title counterexamples motivated an additional post-hoc [10%,90%) sensitivity using all existing candidates without decoding again. Whole-film rates were checked for all 453 films. Ten-group changes range from −0.180 to +0.024/minute, with 珠江 exceeding 海燕. The main analysis remains unchanged. This is not automatic narrative or ending segmentation.
 
-全部453片独立标量切点/PTS/来源状态/产物、732行覆盖与机构权重/均值核验通过；原研究JSON/Excel SHA不变，255项Python测试通过。实际提取约5.86小时软件CPU，恢复另93.8秒。没有提交/推送、DB操作、下载或上传。最终入口[corpus_editing/ASSESSMENT.md](corpus_editing/ASSESSMENT.md)，复算和封存见同目录REPRODUCE。停止重复优化弱模型与机构排序；独立叙事对应仍是下一研究方向。
+Independent scalar cut/PTS/source-state/product checks for all 453 films, 732-row coverage and institutional weights/means passed. Original research JSON/Excel SHA values remain unchanged, and all 255 Python tests passed. Actual extraction took about 5.86 hours of software CPU time, plus 93.8 seconds for recovery. No commits/pushes, DB operations, downloads or uploads occurred. Final entry point: [corpus_editing/ASSESSMENT.md](corpus_editing/ASSESSMENT.md); reproduction and archived records are in REPRODUCE in the same directory. Stop repeatedly optimising weak models and institutional rankings. Independent narrative correspondence remains the next research direction.
 
-## 2026-11-10T22:22:56.272947+00:00：全语料制片机构分析完成
+## 2026-11-10T22:22:56.272947+00:00: full-corpus production-institution analysis completed
 
-454/454视频成功；454影片纳入，278元数据无视频。全库约663.92小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。
+All 454/454 videos succeeded; 454 films were included and 278 metadata records lack video. The corpus covers about 663.92 hours; studio reports and coverage tables are in corpus_studio/REPORT.md. Retain films as analysis units, fractional co-production weights and year/colour/type sensitivities. Group differences are not interpreted as institutional causes or narrative recognition.
 
 ## 2026-11-10: Three-source version refresh
 

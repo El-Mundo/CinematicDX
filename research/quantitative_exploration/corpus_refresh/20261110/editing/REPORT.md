@@ -1,32 +1,32 @@
-# 按制片机构的全可用语料硬切与转场检验
+# Hard cuts and transitions across the available corpus, grouped by production institution
 
-硬切比较状态PROVISIONAL；当前渐变模型用于完整起止定位的主张REJECTED。检测器能输出数值不等于这些数值就是真实转场统计。
+Hard-cut comparisons remain PROVISIONAL. The current gradual-transition model's claim to locate complete start/end intervals is REJECTED. Numerical detector output does not by itself constitute verified transition statistics.
 
-## 覆盖与实际计算
+## Coverage and actual computation
 
-732元数据、454视频路径，当前454个影片源具有全片逐帧测量。成功454，失败0，无有效视频278。实际解码59,715,616帧、663.92小时；17/60机构有测量。来源对应关系由当前运行的影片key与视频SHA绑定。
+There are 732 metadata records and 454 video paths. Frame-complete measurements are available for the current 454 film sources: 454 succeeded, 0 failed, and 278 records lack a valid video. Actual decoding covered 59,715,616 frames and 663.92 hours. Measurements cover 17/60 institutions. The current run binds each source association to its film key and video SHA.
 
-本次版本更新重新提取3个源文件，继承451个源文件的逐帧测量。继承清单绑定原运行目录、原收据SHA和视频版本；全部机构统计、时间曲线和条件参照由当前影片表重新计算。来源与更新清单见本次`plan.json`及上级目录`refresh.json`。
+This version update re-extracted 3 source files and inherited frame-complete measurements for 451 source files. The reuse manifest binds the original run directory, receipt SHA and video version. All institutional statistics, temporal profiles and conditional references were recomputed from the current film table. See this run's `plan.json` and the parent directory's `refresh.json` for source and update manifests.
 
-首次作业失败0个，其中0个通过保留原缓存的机器精度边界修复补齐。只允许ROI数值在0–1边界外不超过8×float64机器精度时裁回边界，较大偏差/NaN拒绝；原视频SHA、原缓存SHA及真实EOF尾帧重新核验。原失败记录、原`extraction_complete.json`保留，最终覆盖由单独`effective_extraction_complete.json`记录，不将失败悄悄抹掉。
+Initially, 0 jobs failed; 0 were completed through machine-precision boundary recovery while preserving their original caches. ROI values may be clipped back to the 0–1 boundary only when the excursion is no greater than 8×float64 machine precision. Larger deviations and NaN are rejected. The original video SHA, cache SHA and final frames at actual EOF are rechecked. Original failures and `extraction_complete.json` remain intact. A separate `effective_extraction_complete.json` records final coverage rather than silently erasing failures.
 
-## 测量和验证
+## Measurement and validation
 
-硬切为全画面宽≤320的HSV-V逐帧MAD，相对前后各2帧均值的比值≥3且MAD≥15，按原PTS最小间隔0.12秒过滤。比值2.5/3.5与固定ROI分别作敏感性。没有用明暗研究的1Hz采样，没有跳过解码帧，没有按名义帧率造时间。
+Hard cuts use frame-by-frame HSV-V MAD at full-frame width ≤320. The MAD ratio to the mean of the preceding and following 2 frames must be ≥3, with MAD≥15. Original PTS impose a minimum interval of 0.12 seconds. Ratios 2.5/3.5 and a fixed ROI are separate sensitivity checks. This uses neither the luminance study's 1Hz sampling nor skipped decoded frames or times fabricated from nominal frame rates.
 
-统一V-only避免了本片此前近灰色色相不稳定造成的大量HSV误检，但可能漏掉V接近、主要色相改变的彩色切点。没有自动依据不可靠的色彩标签切换算法；彩色材料的召回率没有由黑白《上甘岭》验证，黑白故事片分表必须单独读取。0.12秒最短间隔也会抑制极短插镜候选，抑制记录保留。
+Uniform V-only processing avoids the many HSV false positives previously caused by unstable hue in near-gray images in this film. It may miss colour cuts with similar V but predominantly different hue. The algorithm does not switch automatically according to unreliable colour labels. The B&W 《上甘岭》 reference does not validate recall on colour material, so the B&W-feature tables must be read separately. The 0.12-second minimum interval also suppresses very short insert candidates, whose suppression records are preserved.
 
-与原PySceneDetect0.7.1基线在《上甘岭》150–750秒的候选逐点相同。保留两种QuickTime帧号解释，±0.08秒并排除独立人工渐变区间后，两种解释均为43匹配/2误报/2漏检，精确率/召回率0.9556。±0.04/0.12秒和其他设置全部保存。验证材料为该片十分钟人工参考，区间先前参与方法开发，QuickTime帧号保留两种起算情景。
+Candidates in 《上甘岭》 at 150–750 seconds match the original PySceneDetect0.7.1 baseline point by point. Both QuickTime frame-number interpretations are retained. At ±0.08 seconds, excluding independently annotated gradual intervals, each interpretation gives 43 matches/2 false positives/2 misses, with precision/recall 0.9556. Results at ±0.04/0.12 seconds and all other settings are preserved. Validation uses this film's ten-minute manual reference, which previously contributed to method development. Both frame-number origins remain explicit.
 
-渐变为现有端点混合/近黑渐隐渐现规则的全片候选扫描，保留default、strict、fade-only。缓存为BGR2GRAY固定ROI直接16×12，区别于旧64×48缓存；不声称仅优化速度而信号完全不变。复测tIoU≥0.5，两种解释仍为0匹配/91误报/4漏检。原先完整起止定位失败得到保留；全库扫描用于检验候选密度、失败和参数敏感性，**不能推断真实叠化/淡出偏好**。
+The gradual scan applies the existing endpoint-mixing/near-black fade rules to complete files, retaining default, strict and fade-only configurations. Its BGR2GRAY fixed-ROI cache is resized directly to 16×12, unlike the former 64×48 cache. This is not presented as a speed-only optimisation with an unchanged signal. At tIoU≥0.5, both frame-number interpretations still give 0 matches/91 false positives/4 misses. The earlier failure to locate complete start/end intervals remains documented. The corpus scan examines candidate density, failure and parameter sensitivity. **It cannot establish actual dissolve/fade preferences.**
 
-这里的转场模型只操作化叠化及渐隐/渐现候选，不覆盖划变、虹膜、遮挡等全部转场类型。严格区间未匹配也不等于实际转场不存在；位置候选用途与完整区间分割用途分开。
+This transition model operationalises only dissolve and fade candidates. It does not cover all transition types, including wipes, irises and occlusion transitions. Failure to match a complete interval does not establish that no transition occurred. Candidate localisation and complete-interval segmentation are distinct uses.
 
-本地已有TransNetV2严格区间验证也失败；其实际CPU运行15248帧约160秒，线性外推全库逐帧约一周，不因已有模型而发动多日任务。没有下载模型、训练、上传或付费计算。
+The already available local TransNetV2 model also failed strict interval validation. Its measured CPU run processed 15248 frames in about 160 seconds. Linear extrapolation to frame-complete processing of the corpus is about one week, so the existence of a model does not justify launching a multi-day job. No models were downloaded or trained, no material was uploaded, and no paid computation was used.
 
-### 同一人工区间的参数对照
+### Parameter comparisons on the same manual interval
 
-| 配置 | 帧号情景 | 匹配/未匹配预测/漏检（±0.08秒） |
+| Configuration | Frame-number scenario | Matches/unmatched predictions/misses (±0.08 s) |
 |---|---|---:|
 | primary | decoded_ordinal_base_0 | 43/2/2 |
 | lenient | decoded_ordinal_base_0 | 44/3/1 |
@@ -38,7 +38,7 @@
 | roi | decoded_ordinal_base_1 | 43/2/2 |
 
 
-| 配置 | 帧号情景 | tIoU | 匹配/未匹配预测/漏检 |
+| Configuration | Frame-number scenario | tIoU | Matches/unmatched predictions/misses |
 |---|---|---:|---:|
 | default | decoded_ordinal_base_0 | 0.5 | 0/91/4 |
 | default | decoded_ordinal_base_1 | 0.5 | 0/91/4 |
@@ -54,56 +54,56 @@
 | fade_only_baseline | decoded_ordinal_base_1 | 0.3 | 1/1/3 |
 
 
-硬切主设置在评分排除区间后预测数与人工数均为45，但仍有2处未匹配预测和2处漏检：总数相同不意味着时间组织正确。已保存的原帧错误图涉及烟雾/爆炸、灰度相近变化和渐变端点附近；助手观察只解释可能的失败机制，不改原标签或依此挑选帧号起算方式。较宽松渐变tIoU可支持局部候选用途，不能替代严格完整起止评价。
+After scoring exclusions, the primary hard-cut setting and manual reference both contain 45 points, yet 2 predictions remain unmatched and 2 reference cuts are missed. Equal totals do not establish correct temporal organisation. Preserved original-frame error images show smoke/explosions, changes between similar gray levels, and areas near gradual-transition endpoints. Assistant observations explain possible failure mechanisms without changing labels or choosing the more favourable frame-number origin. Looser gradual tIoU can support local candidate use but cannot replace strict complete-interval evaluation.
 
-还需明确复合转场的计数单位：参考淡出后的近黑→新画面跳变也可能被点检测器记一次。把“淡出—黑场—新镜头”视为一个复合事件，还是分别计淡出、停留及硬切，需要研究协议判断；本次沿用原标注评分，不通过改真值来改善数字。
+The counting unit for composite transitions also needs specification. A near-black-to-new-image jump following a reference fade may be counted by a point detector. Whether “fade-out—black hold—new shot” is one composite event or separate fade, hold and hard-cut events is a research-protocol decision. This run retains the original annotation scoring rather than changing the reference to improve the figures.
 
-## 制片厂比较
+## Studio comparisons
 
-按production.name保留具体机构，影片等权，合拍1/k，东北/长春等不自动合并。以下仅至少10部实测的机构；全部60机构含缺片留在CSV。机构间样本还受到年份、类型、色彩标签及来源条件影响。
+Specific institutions remain separate according to production.name. Films receive equal weight and co-productions receive 1/k per institution. Northeast/Changchun and other institutions are not automatically merged. The table below includes institutions with at least 10 measured films. CSV files retain all 60 institutions, including missing films. Year, type, colour labels and source conditions also shape institutional samples.
 
-| 制片厂 | 元数据/实测 | 硬切候选/分 | 宽松/严格 | ROI | 黑白故事片（n） | 渐变候选/分* |
+| Studio | Metadata/measured | Hard-cut candidates/min | Lenient/strict | ROI | B&W features (n) | Gradual candidates/min* |
 |---|---:|---:|---:|---:|---:|---:|
-| 天马电影制片厂 | 69/36 | 5.440 | 5.545/5.329 | 5.461 | 5.855（21） | 5.659 |
-| 海燕电影制片厂 | 76/38 | 5.365 | 5.454/5.260 | 5.391 | 5.937（22） | 6.400 |
-| 珠江电影制片厂 | 25/15 | 5.206 | 5.339/5.064 | 5.282 | 6.693（8） | 6.159 |
-| 东北电影制片厂 | 34/26 | 5.096 | 5.623/4.708 | 5.237 | 5.567（23） | 6.635 |
-| 长春电影制片厂 | 155/109 | 4.964 | 5.086/4.828 | 5.004 | 5.277（72） | 5.676 |
-| 八一电影制片厂 | 74/63 | 4.899 | 5.101/4.668 | 4.932 | 4.962（49） | 6.133 |
-| 江南电影制片厂 | 23/14 | 4.866 | 4.968/4.753 | 4.934 | 4.928（7） | 6.797 |
-| 上海电影制片厂 | 55/52 | 4.736 | 4.920/4.558 | 4.805 | 5.352（40） | 7.267 |
-| 北京电影制片厂 | 91/76 | 4.491 | 4.681/4.291 | 4.558 | 5.137（40） | 6.909 |
-| 西安电影制片厂 | 22/17 | 4.041 | 4.198/3.889 | 4.143 | 4.462（10） | 7.912 |
+| 天马电影制片厂 | 69/36 | 5.440 | 5.545/5.329 | 5.461 | 5.855 (21) | 5.659 |
+| 海燕电影制片厂 | 76/38 | 5.365 | 5.454/5.260 | 5.391 | 5.937 (22) | 6.400 |
+| 珠江电影制片厂 | 25/15 | 5.206 | 5.339/5.064 | 5.282 | 6.693 (8) | 6.159 |
+| 东北电影制片厂 | 34/26 | 5.096 | 5.623/4.708 | 5.237 | 5.567 (23) | 6.635 |
+| 长春电影制片厂 | 155/109 | 4.964 | 5.086/4.828 | 5.004 | 5.277 (72) | 5.676 |
+| 八一电影制片厂 | 74/63 | 4.899 | 5.101/4.668 | 4.932 | 4.962 (49) | 6.133 |
+| 江南电影制片厂 | 23/14 | 4.866 | 4.968/4.753 | 4.934 | 4.928 (7) | 6.797 |
+| 上海电影制片厂 | 55/52 | 4.736 | 4.920/4.558 | 4.805 | 5.352 (40) | 7.267 |
+| 北京电影制片厂 | 91/76 | 4.491 | 4.681/4.291 | 4.558 | 5.137 (40) | 6.909 |
+| 西安电影制片厂 | 22/17 | 4.041 | 4.198/3.889 | 4.143 | 4.462 (10) | 7.912 |
 
 
-*渐变列只描述错误尚多的检测器输出，是方法诊断，不是真实转场率排名。完整表另含影片间四分位范围、单厂、年份×色彩×类型及源宽度分层。小样本机构不排名，不用帧数充当独立样本。源宽度也不等同扫描/修复来源。
+*The gradual column describes a detector that still makes many errors. It is a method diagnostic, not a ranking of actual transition rates. Full tables also contain interquartile ranges across films, single-studio subsets, year×colour×type strata and source-width strata. Small institutional samples are not ranked, and frames are not treated as independent samples. Source width does not identify scanning/restoration provenance.
 
-全库共产生硬切候选194,781、渐变候选253,704。这两个数量是模型输出，不能相加称为已验证总转场数。硬切落入渐变候选区间的冲突另存，不根据弱渐变模型自动删除硬切。
+The corpus produced 194,781 hard-cut candidates and 253,704 gradual candidates. These are model outputs and cannot be added together as a verified total transition count. Conflicts where hard cuts fall inside gradual-candidate intervals are recorded separately. The weak gradual model does not automatically remove hard cuts.
 
-## 构成条件下的置换参照
+## Composition-conditioned permutation references
 
-只对单厂影片、原实测至少10片机构，取同年×类型×元数据色彩单元（≥5片、≥2机构）。扣除单元均值后比较组间残差份额，在单元内置换影片值999次，种子20261026。第二项再要求源宽度相同，门槛不放宽。合拍片保留在描述表，不在此特定参照中充当独立组成员。
+Only single-studio films from institutions with at least 10 originally measured members enter same-year×type×metadata-colour cells (≥5 films and ≥2 institutions). The between-group residual share is computed after subtracting each cell mean. Film values are permuted within cells 999 times with seed 20261026. A second reference additionally requires equal source width without relaxing eligibility thresholds. Co-productions remain in descriptive tables but are not independent group members in this particular reference.
 
-conditional_studio_reference：348影片、25匹配单元、10机构；组间残差份额0.0780，999次置换中位0.0218，2.5–97.5%参照范围0.0067–0.0491，不小于观察量的参照比例0.0020。
+conditional_studio_reference: 348 films, 25 matched cells, 10 institutions; between-studio residual share 0.0780, median across 999 permutations 0.0218, 2.5–97.5% reference range 0.0067–0.0491, reference fraction at least as large as the observed statistic 0.0020.
 
-conditional_source_width_reference：300影片、30匹配单元、10机构；组间残差份额0.1158，999次置换中位0.0265，2.5–97.5%参照范围0.0089–0.0615，不小于观察量的参照比例0.0010。
+conditional_source_width_reference: 300 films, 30 matched cells, 10 institutions; between-studio residual share 0.1158, median across 999 permutations 0.0265, 2.5–97.5% reference range 0.0089–0.0615, reference fraction at least as large as the observed statistic 0.0010.
 
-这是探索性条件参照，不保证历史材料中的交换性；实际片源、题材、摄影师和机构选择仍可能混杂。尾部比例不证明随机抽样总体规律、制片厂因果效应或某个机构的独特风格。匹配子集与完整描述表的覆盖不同，必须连同n读取。
+This is an exploratory conditional reference, not a guarantee of exchangeability in historical material. Actual sources, subjects, cinematographers and institutional selection may still confound the comparison. Tail fractions establish neither population patterns under random sampling nor causal studio effects or a particular institution's distinctive style. Matched subsets and full descriptive tables have different coverage and must be read with n.
 
-## 时间组织和可解释范围
+## Temporal organisation and interpretive limits
 
-每片保存候选原PTS、playback坐标、所有逐帧分数、小尺寸ROI及100位置箱的局部候选率。完整两端硬切限定间隔不包括文件两端；但其间可能有漏检渐变，因此称候选切点限定间隔，不直接称真实平均镜头长度。渐变候选不相交的区间另存为敏感性，仍不是镜头真值。相邻log间隔变化是描述量，未由它识别蒙太奇原则、叙事事件或因果。
+Each film retains original candidate PTS, playback coordinates, all frame-level scores, small ROIs and local candidate rates in 100 position bins. Intervals bounded by two complete hard-cut candidates exclude file edges, but undetected gradual transitions may occur inside them. They are therefore candidate-cut-bounded intervals rather than verified average shot lengths. Intervals not intersecting gradual candidates are retained as a sensitivity check, not shot ground truth. Adjacent log-interval change is descriptive and identifies no montage principle, narrative event or cause by itself.
 
-同时给出“局部率／本片平均率”的相对曲线（1表示本片均值），分离总体切换量与相对位置分布；零候选影片在该归一化中保持缺测并单报有效n。给定同一候选集合，该曲线不受统一播放速度缩放影响，但不能消除漏检、源剪辑、非均匀变速或最低间隔过滤影响。它不把相对位置命名为叙事阶段。
+Relative profiles also show “local rate / film mean rate” (1 denotes the film mean), separating total switching volume from relative positional distribution. Films with zero candidates remain missing in this normalisation and have separately reported effective n. Given the same candidate set, the profile is invariant to uniform playback-speed scaling. It does not remove missed detections, source editing, nonuniform speed changes or minimum-interval filtering, and relative positions are not named as narrative stages.
 
-数字文件片头、片尾、广告/台标、抖动、运动、闪光、色偏、逐帧重复和未知转录流程仍可能触发或掩盖转场。全片指完整本地文件，不证明历史版本完整。独立人类转场参考仍只有《上甘岭》十分钟，没有自动扩展成全库真值；未请求补看或重标。
+Digital-file opening and ending material, advertising/logos, jitter, movement, flashes, colour casts, repeated frames and unknown transfer workflows can trigger or conceal transitions. Complete-film processing means the complete local file, not a verified complete historical version. The independent human transition reference remains ten minutes of 《上甘岭》, not automatically corpus-wide ground truth. No additional viewing or relabelling was requested.
 
-自适应窗口由帧数定义，因此不同数字帧间隔也可能影响分数；逐片保存实际显示间隔中位/p95，另给`studio_frame_cadence.csv`。这些是当前数字文件的解码节律，不证明原始摄影/放映帧率。相邻V通道差为零的比例也保留，不把它等同全彩帧完全重复。
+The adaptive window is defined in frames, so digital frame intervals may also affect scores. Per-film median/p95 presentation intervals are retained, with `studio_frame_cadence.csv` as an additional table. They describe the current digital files' decoded cadence, not original camera/projection frame rates. The proportion of adjacent pairs with zero V-channel difference is also preserved and is not equated with exact duplication of full-colour frames.
 
-补充A–B–A返回警示：候选前后约0.12秒的小灰度图差≤0.03、其间峰值差≥0.10时标记，主表切点不删。它既可能是闪光，也可能是真实短插镜或运动；只报告警示率及排除敏感性，不能称已确认误报率。
+An additional A–B–A return flag marks candidates whose small gray images at approximately 0.12 seconds before/after differ by ≤0.03 while the intervening peak difference is ≥0.10. Primary-table cuts remain unchanged. The pattern could be a flash, a real short insert or movement. Only flag rates and exclusion sensitivity are reported, not a verified false-positive rate.
 
-另保留规则已计算的数字近黑停留：ROI均值≤12/255、标准差≤0.04、连续≥0.08秒。它是明确阈值的像素/时间属性，可查原帧，不等同真实淡出、摄影黑场或叙事停顿。模型预测的转场类别计数也留在逐片表，但未验证为实际类型分布。
+The rules also retain digital near-black holds: ROI mean≤12/255, standard deviation≤0.04, lasting ≥0.08 seconds. These are explicitly thresholded pixel/time properties whose original frames can be inspected. They are not equivalent to actual fades, photographic black frames or narrative pauses. Predicted transition-type counts remain in per-film tables without validation as actual type distributions.
 
-## 产物与复算
+## Outputs and reproduction
 
-运行目录`/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/editing`；当前分组目录`/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/editing/analysis`。逐片`frame_features.npz`、`cut_candidates.json`、`gradual_*.json`、`summary.json`和`run.json`绑定完整视频SHA、原PTS、软件和参数；完整覆盖与分厂CSV、时间轴PNG/PDF及预检结果均保留。最终数值审计和助手图像检查单独记录，二者都不冒充全库独立人类准确率。
+Run directory: `/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/editing`. Current grouping directory: `/Users/caoshuangyuan/Desktop/Workspace/CinematicDX/research-local/corpus-refresh/20261110/editing/analysis`. Per-film `frame_features.npz`, `cut_candidates.json`, `gradual_*.json`, `summary.json` and `run.json` bind complete-video SHA, original PTS, software and parameters. Complete coverage and studio CSV files, timeline PNG/PDF files and preflight results are preserved. Final numerical audits and assistant image inspections are recorded separately. Neither is presented as independent human accuracy validation across the corpus.

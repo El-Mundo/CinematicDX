@@ -1,34 +1,34 @@
-# 候选测量与操作定义
+# Candidate measurements and operational definitions
 
-## 2026-11-10 数据版本更新
+## Data-version update, 2026-11-10
 
-当前454视频中，三部变化源按原参数重新提取，451部的测量附原收据继承。当前明暗、硬切和渐变候选的全量汇总及版本依据见[更新结果](corpus_refresh/20261110/README.md)。明暗输出含2,390,266个时间戳观察，732条元数据中278条缺本地视频。
+Of the current 454 videos, three changed sources were re-extracted with the original parameters, while measurements for 451 sources were inherited with their original receipts. Complete current aggregates for brightness, hard cuts and gradual-transition candidates, with version evidence, are in the [updated results](corpus_refresh/20261110/README.md). Brightness outputs contain 2,390,266 timestamped observations, and 278 of the 732 metadata records lack local video.
 
-以下候选操作定义与10月实验记录继续作为方法依据。新版本数据单独记录，《上甘岭》的人工验证和叙事对照仍绑定原视频SHA。
+The candidate operational definitions and October experiment record below remain the methodological basis. New-version data are recorded separately. Human validation and narrative controls for 《上甘岭》 remain bound to the original video SHA.
 
-这些是测量候选，不是“形式”的自动识别器。初始排序在新实验计分前确定，最终排序见 `METHOD_RANKING.md`。
+These are candidate measurements, rather than automatic recognisers of film form. The initial ordering was set before scoring the new experiments. The final ordering is in `METHOD_RANKING.md`.
 
-| ID | 属性／操作定义 | 理论动机与层级 | 成本与替代 | 验证与主要敏感性 | 不允许的推断 |
+| ID | Property / operational definition | Theoretical motivation and level | Cost and alternative | Validation and main sensitivities | Unsupported inference |
 |---|---|---|---|---|---|
-| C01 | 人工参考限定的完整硬切间隔、时长序列、相邻log时长变化 | 剪辑关系、重复与反差；问序列是否提供均值和直方图之外的信息 | 现有时间表，几乎无额外解码；不用频谱拟合也可检验顺序 | 保留渐变间隙和截断，双帧号方案，分块乱序保留时长分布 | 不把硬切统计叫度量蒙太奇，不据序列推出注意或政治意义 |
-| C02 | 固定ROI数字灰度均值、标准差及事件前后变化 | 视觉明暗对比及其时间分布；形式属性而非情绪或叙事功能 | 轻量逐帧算术；全画面均值为廉价敏感性比较 | 实际PTS加权；裁切、JPEG、gamma扰动；事件与普通切点对照 | 不把灰度当历史照明真值，不跨未经校准的拷贝比较绝对值 |
-| C03 | 图像差分、像素相关、稠密光流及全局平移分量 | 视觉活动与稳定性的组织；运动代理而非摄像机运动分类 | 64×48缓存、约2.5Hz；差分／相关为廉价替代 | 排除跨人工转场帧对，检查低纹理、重复帧、抖动、曝光、压缩；无真实运动标签 | 不把全局平移等同摇镜，不把活动等同动作或叙事紧张 |
-| C04 | 小尺寸灰度dHash、低频DCT相似度，非相邻镜头检索 | 视觉配置重复、对比与返回；低层相似，不是对象或母题识别 | 无模型下载；亮度距离为更廉价基线 | 多代表帧稳定性；固定时间间隔分层的同事件/异事件配对；助手定性复核 | 不把相似度当同地点、同人物或象征意义，不把同事件代理当语义真值 |
-| C05 | 已有Haar正脸框数量、最大框面积与位置 | 可检验人物显著性的廉价代理；人脸是视觉指称，框大小是空间测量 | 已安装OpenCV附带约0.93MB模型；不下载新权重 | 代表图无框定性检查、参数变化；侧脸、遮挡、小脸、群众；缺乏人类框真值 | 不把零检测当无人，不把脸数当人数或角色数，不把面积直接叫景别 |
-| C06 | 渐变转场的完整起止区间 | 编辑过渡的时间组织 | 复用已有完整负结果，本轮不再推理/调参 | 原4段独立参考与全600秒未匹配候选；严格/宽松区间交并比 | 不用附近一个切点代替完整转场，也不据宽松分数声称自动分割可靠 |
+| C01 | Complete hard-cut intervals bounded by human reference, duration sequences and adjacent log-duration change | Editing relations, repetition and contrast; whether sequences add information beyond means and histograms | Existing timing table, almost no additional decoding; ordering can be tested without spectral fitting | Preserve gradual-transition gaps and truncation, both frame-number conventions, and blockwise permutations that retain duration distributions | Do not call hard-cut statistics metric montage or infer attention or political meaning from sequences |
+| C02 | Fixed-ROI digital grayscale mean, standard deviation and pre-/post-event change | Visual brightness contrast and its temporal distribution; formal properties rather than emotion or narrative function | Lightweight per-frame arithmetic; full-frame means offer a cheap sensitivity comparison | Actual PTS weighting; crop, JPEG and gamma perturbations; event versus ordinary-cut controls | Do not treat grayscale as historical lighting ground truth or compare absolute values across uncalibrated copies |
+| C03 | Image differences, pixel correlation, dense optical flow and a global translation component | Organisation of visual activity and stability; motion proxies rather than camera-movement classes | 64×48 cache at about 2.5Hz; differences/correlation offer cheaper alternatives | Exclude frame pairs across human transitions; inspect low texture, repeated frames, jitter, exposure and compression; no true motion labels | Do not equate global translation with panning or activity with action or narrative tension |
+| C04 | Small grayscale dHash, low-frequency DCT similarity and non-adjacent-shot retrieval | Repetition, contrast and return of visual configurations; low-level similarity rather than object or motif recognition | No model download; brightness distance is an even cheaper baseline | Stability across representative frames; same-/different-event pairs stratified by fixed temporal gaps; qualitative assistant review | Do not treat similarity as shared location, character or symbolic meaning, or same-event proxies as semantic ground truth |
+| C05 | Counts, maximum area and positions of existing Haar frontal-face boxes | An inexpensive candidate proxy for character salience; a face is a visual referent and box size is a spatial measurement | About 0.93MB model bundled with installed OpenCV; no new weights downloaded | Qualitative inspection of unboxed representative images and parameter changes; profiles, occlusion, small faces and crowds; no human box ground truth | Do not treat zero detections as no people, face counts as person/character counts, or area directly as shot scale |
+| C06 | Complete start–end intervals of gradual transitions | Temporal organisation of editing transitions | Reuse the existing complete negative result; no further inference/tuning in this round | 4 original independent references and unmatched candidates across all 600 seconds; strict/lenient temporal intersection-over-union | Do not substitute a nearby cut point for a complete transition or use lenient scores to claim reliable automatic segmentation |
 
-叙事事件、人物身份、场所及功能应保留独立标注层。现有事件标签不包含可直接验证的逐帧人数或人物框，不能拿叙事名称验证人脸检测。
+Narrative events, character identities, locations and functions require independent annotation layers. Existing event labels do not provide directly verifiable per-frame person counts or character boxes, so narrative names cannot validate face detection.
 
-## 本轮实测后的更新
+## Update after measurements in this round
 
-已对C01–C05实际运行，C06引用并保留既有失败，不重复推理。当前证据排序调整为C01/C02/C04/C03/C05/C06。C01数值可审计但细序列主张尚弱；C02是最强的新叙事对照线索；C04具有视觉配置检索价值但不稳定且无语义真值；C03与廉价相关高度重复且主事件对照缺测；当前C05用于人数/景别被明确反例否定。完整八维评估见[报告](REPORT.md)，状态和用途见[排序](METHOD_RANKING.md)。
+C01–C05 were run. C06 cites and preserves the existing failure without repeating inference. The current evidence ordering is C01/C02/C04/C03/C05/C06. C01 is numerically auditable, but its fine-sequence claims remain weak. C02 provides the strongest new narrative-control lead. C04 can retrieve visual configurations, but is unstable and lacks semantic ground truth. C03 largely duplicates inexpensive correlation and lacks the main event comparison because of missing observations. Explicit counterexamples reject the current C05 for person-count/shot-scale use. The complete eight-dimensional assessment is in the [report](REPORT.md), and statuses and uses are in the [ranking](METHOD_RANKING.md).
 
-## C02全语料扩展：按制片机构的慢速明暗组织
+## C02 corpus extension: slow brightness organisation by production institution
 
-用户随后明确授权全corpus。454文件全片提取，重复字节及片头核对后453影片条目、约661.29小时独特字节版本；17机构有实测。新增30秒相邻灰度均值差/片内时间标准差及100相对位置箱，保留10/60秒、片中段、全画面、年份/色彩/类型、单厂与来源尺寸敏感性。状态PROVISIONAL（数值/取样主张另有验证），不把跨拷贝归一化当历史亮度校准。30秒机构均值0.388–0.426，组内四分位大幅重叠且排序随尺度改变；仅支持描述性跨片时间组织研究。没有新增全库叙事真值。详细来源反例和数据见[扩展报告](corpus_studio/REPORT.md)。
+The user subsequently explicitly authorised the full corpus. All 454 files were extracted in full. Byte-duplicate and opening-credit checks left 453 film records and about 661.29 hours of distinct byte versions, with measurements for 17 institutions. Added measures include adjacent 30-second grayscale-mean differences / within-film temporal standard deviation and 100 relative-position bins, alongside 10/60-second, central-interval, full-frame, year/colour/type, single-studio and source-size sensitivities. Status remains PROVISIONAL, with separate validation for numerical/sampling claims. Cross-copy normalisation is not historical brightness calibration. The 30-second institutional means range from 0.388–0.426, with substantial overlap in within-group quartiles and rankings that change with timescale. This supports descriptive research on temporal organisation across films only. No corpus-wide narrative ground truth was added. Detailed source counterexamples and data are in the [extension report](corpus_studio/REPORT.md).
 
-## C01/C06全语料后续：实际编辑候选检验
+## C01/C06 corpus follow-up: empirical editing-candidate tests
 
-用户随后授权全corpus硬切/transition。453片逐帧产生194,243硬切候选及252,711默认渐变候选；C01跨片准确率仍PROVISIONAL，C06完整区间用途仍REJECTED，未因大规模数值输出而升级。两起算人工硬切复测43/2/2、渐变严格0/91/4；17片助手抽查看到镜内动作误作叠化、部分已开始叠化、类型混淆及片尾字卡。
+The user subsequently authorised full-corpus hard-cut/transition analysis. Frame-complete processing of 453 films produced 194,243 hard-cut candidates and 252,711 default gradual candidates. Cross-film C01 accuracy remains PROVISIONAL, and complete-interval C06 use remains REJECTED; large numerical outputs do not upgrade these statuses. Both frame-number conventions reproduced human hard-cut scores of 43/2/2 and strict gradual scores of 0/91/4. Assistant checks of 17 films found within-shot action mistaken for dissolves, dissolves that had already started, type confusion and end-title cards.
 
-新增100位置箱的局部/全片候选率、数字近黑停留和A–B–A警示，只按操作定义描述；后两者未被验证为真实淡出或误报。机构差异在条件置换参照下值得进一步检验，但阈值、类型、单厂及文件边缘会改变名次，未建立机构风格。最小研究组合保留C01+C02+独立叙事层，不加入未经验证的全库渐变类型频率。依据：[最终评估](corpus_editing/ASSESSMENT.md)。
+Added 100-position-bin local/whole-film candidate rates, digital near-black occupancy and A–B–A warnings are described only by their operational definitions. The latter two have not been validated as true fades or false positives. Institutional differences warrant further tests against conditional permutation references, but thresholds, type, single-studio restrictions and file edges change rankings. Institutional style has not been established. The minimum research combination remains C01+C02+an independent narrative layer, excluding unvalidated corpus-wide gradual-type frequencies. Evidence: [final assessment](corpus_editing/ASSESSMENT.md).

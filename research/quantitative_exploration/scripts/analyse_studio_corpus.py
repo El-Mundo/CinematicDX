@@ -188,85 +188,85 @@ def plot_results(out,groups,bw,colour,profiles,films):
         fig.savefig(out/(name+'.png'),dpi=170,bbox_inches='tight');fig.savefig(out/(name+'.pdf'),bbox_inches='tight');plt.close(fig)
     shown=sorted([g for g in groups if g['metadata_member_films']>=10],key=lambda g:g['metadata_member_films'],reverse=True)
     x=np.arange(len(shown));fig,ax=plt.subplots(figsize=(12,5))
-    ax.bar(x,[g['metadata_member_films'] for g in shown],color='#d9dee4',label='元数据成员片数（合拍可属多厂）')
-    ax.bar(x,[g['measured_member_films'] for g in shown],color='#245a81',label='有可测视频')
-    ax.set_xticks(x,[g['studio'] for g in shown],rotation=45,ha='right');ax.set_ylabel('影片成员数');ax.legend();ax.set_title('制片机构覆盖率：缺片分布本身影响厂间可比性');fig.tight_layout();save(fig,'studio_coverage')
-    figures=[('all',groups,'全部类型／色彩'),('Feature_BW',bw,'故事片／黑白'),('Feature_Colour',colour,'故事片／彩色')]
+    ax.bar(x,[g['metadata_member_films'] for g in shown],color='#d9dee4',label='Metadata member films (co-productions may belong to several studios)')
+    ax.bar(x,[g['measured_member_films'] for g in shown],color='#245a81',label='Measurable video available')
+    ax.set_xticks(x,[g['studio'] for g in shown],rotation=45,ha='right');ax.set_ylabel('Member films');ax.legend(fontsize=8);ax.set_title('Production-institution coverage\nMissing-film distribution affects comparability');fig.tight_layout();save(fig,'studio_coverage')
+    figures=[('all',groups,'All types / colours'),('Feature_BW',bw,'Features / B&W'),('Feature_Colour',colour,'Features / Colour')]
     for scope,rows,label in figures:
         chosen=sorted([g for g in rows if g['eligible_member_films']>=10],key=lambda g:g['mean_abs_change_30s_z__mean'],reverse=True)
         if not chosen:continue
         fig,ax=plt.subplots(figsize=(12,5));x=np.arange(len(chosen));means=np.asarray([g['mean_abs_change_30s_z__mean'] for g in chosen])
-        ax.plot(x,means,'o',color='#245a81',label='影片等权／合拍分数权重均值')
+        ax.plot(x,means,'o',color='#245a81',label='Equal film weights / fractional co-production weights')
         for i,g in enumerate(chosen):
             ax.vlines(i,g['mean_abs_change_30s_z__q25'],g['mean_abs_change_30s_z__q75'],color='#8fa4b7',lw=4)
         ax.set_xticks(x,[g['studio']+'\nn='+str(g['eligible_member_films']) for g in chosen],rotation=35,ha='right')
-        ax.set_ylabel('相邻30秒均值变化／本片灰度时间标准差');ax.set_title(label+'：竖线为影片间四分位范围，不是总体置信区间');ax.legend();fig.tight_layout();save(fig,'studio_change_'+scope)
+        ax.set_ylabel('Adjacent 30-second mean change /\nwithin-film temporal gray SD');ax.set_title(label+'\nVertical lines: film IQRs, not population confidence intervals');ax.legend(fontsize=8);fig.tight_layout();save(fig,'studio_change_'+scope)
         curve_rows=[]
         for g in chosen:
             rows1=[r for r in profiles if r['studio_id']==g['studio_id'] and r['scope']==scope]
             curve_rows.append([np.nan if r['studio_z_mean'] is None else r['studio_z_mean'] for r in rows1])
         fig,ax=plt.subplots(figsize=(12,max(4,len(chosen)*.42)));image=ax.imshow(curve_rows,aspect='auto',cmap='RdBu_r',vmin=-1.5,vmax=1.5,extent=[0,100,len(chosen)-.5,-.5])
-        ax.set_yticks(range(len(chosen)),[g['studio'] for g in chosen]);ax.set_xlabel('影片相对位置／%（不是预设叙事幕）');ax.set_title(label+'：片内标准化明暗时间曲线');fig.colorbar(image,ax=ax,label='片内z分数的分厂加权均值');fig.tight_layout();save(fig,'studio_timeline_'+scope)
+        ax.set_yticks(range(len(chosen)),[g['studio'] for g in chosen]);ax.set_xlabel('Relative film position / % (not predefined narrative acts)');ax.set_title(label+': within-film standardised gray-level profiles');fig.colorbar(image,ax=ax,label='Studio-weighted mean of within-film z scores');fig.tight_layout();save(fig,'studio_timeline_'+scope)
     fig,axes=plt.subplots(1,2,figsize=(12,4.5))
-    for ax,metric,label in [(axes[0],'gray_roi_time_mean','数字灰度均值'),(axes[1],'mean_abs_change_30s_z','30秒变化／本片标准差')]:
+    for ax,metric,label in [(axes[0],'gray_roi_time_mean','Digital gray-level mean'),(axes[1],'mean_abs_change_30s_z','30-second change / within-film SD')]:
         for colour_value,c in [('B&W','#555e6a'),('Colour','#a26874')]:
             group=[f for f in films if f['eligible'] and f['colour']==colour_value];ax.scatter([f['year'] for f in group],[f[metric] for f in group],s=12,alpha=.4,color=c,label=colour_value)
-        ax.set_xlabel('生产年份（元数据）');ax.set_ylabel(label);ax.legend()
-    fig.suptitle('年份与色彩构成：厂间差异的替代解释仍需检查');fig.tight_layout();save(fig,'year_colour_distributions')
+        ax.set_xlabel('Production year (metadata)');ax.set_ylabel(label);ax.legend()
+    fig.suptitle('Year and colour composition: alternative explanations for studio differences require examination');fig.tight_layout();save(fig,'year_colour_distributions')
 
 
 def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None,diagnostic=None):
     doc=report_directory or ROOT/'research/quantitative_exploration/corpus_studio';doc.mkdir(parents=True,exist_ok=True)
     rows=sorted([g for g in groups if g['eligible_member_films']>=10],key=lambda g:g['mean_abs_change_30s_z__mean'],reverse=True)
-    table='| 制片机构 | 元数据／有视频／纳入 | 30秒相对变化均值 | 中央10–90% | 年份×色彩×类型中心化残差 |\n|---|---:|---:|---:|---:|\n'
-    for g in rows:table+=f"| {g['studio']} | {g['metadata_member_films']}/{g['available_member_films']}/{g['eligible_member_films']} | {fmt(g['mean_abs_change_30s_z__mean'])} | {fmt(g['core_10_90_mean_abs_change_30s_z__mean'])} | {fmt(g['year_colour_type_residual__mean'])}（n={g['year_colour_type_residual__film_n']}） |\n"
-    type_table='| 类型 | 实测影片 |\n|---|---:|\n'+''.join(f'| {k} | {v} |\n' for k,v in s['film_type_measured_counts'].items())
-    colour_table='| 色彩字段 | 实测影片 |\n|---|---:|\n'+''.join(f'| {k} | {v} |\n' for k,v in s['colour_measured_counts'].items())
+    table='| Production institution | Metadata/video available/included | Mean relative 30-second change | Central 10–90% | Year×colour×type centred residual |\n|---|---:|---:|---:|---:|\n'
+    for g in rows:table+=f"| {g['studio']} | {g['metadata_member_films']}/{g['available_member_films']}/{g['eligible_member_films']} | {fmt(g['mean_abs_change_30s_z__mean'])} | {fmt(g['core_10_90_mean_abs_change_30s_z__mean'])} | {fmt(g['year_colour_type_residual__mean'])} (n={g['year_colour_type_residual__film_n']}) |\n"
+    type_table='| Type | Measured films |\n|---|---:|\n'+''.join(f'| {k} | {v} |\n' for k,v in s['film_type_measured_counts'].items())
+    colour_table='| Colour field | Measured films |\n|---|---:|\n'+''.join(f'| {k} | {v} |\n' for k,v in s['colour_measured_counts'].items())
     compare=[]
     for g in rows:
         b=next(x for x in bw if x['studio_id']==g['studio_id']);c=next(x for x in colour if x['studio_id']==g['studio_id']);one=next(x for x in single if x['studio_id']==g['studio_id'])
-        compare.append(f"| {g['studio']} | {fmt(g['mean_abs_change_30s_z__mean'])} | {fmt(b['mean_abs_change_30s_z__mean'])}（n={b['eligible_member_films']}） | {fmt(c['mean_abs_change_30s_z__mean'])}（n={c['eligible_member_films']}） | {fmt(one['mean_abs_change_30s_z__mean'])} |")
-    sensitivity='| 制片机构 | 全部 | 故事片黑白 | 故事片彩色 | 单厂片 |\n|---|---:|---:|---:|---:|\n'+'\n'.join(compare)
+        compare.append(f"| {g['studio']} | {fmt(g['mean_abs_change_30s_z__mean'])} | {fmt(b['mean_abs_change_30s_z__mean'])} (n={b['eligible_member_films']}) | {fmt(c['mean_abs_change_30s_z__mean'])} (n={c['eligible_member_films']}) | {fmt(one['mean_abs_change_30s_z__mean'])} |")
+    sensitivity='| Production institution | All | B&W features | Colour features | Single-studio films |\n|---|---:|---:|---:|---:|\n'+'\n'.join(compare)
     common_low=max(g['mean_abs_change_30s_z__q25'] for g in rows);common_high=min(g['mean_abs_change_30s_z__q75'] for g in rows)
     mean_low=min(g['mean_abs_change_30s_z__mean'] for g in rows);mean_high=max(g['mean_abs_change_30s_z__mean'] for g in rows)
     reuse_path=run/'measurement_reuse.json'
     refresh_text=''
     if reuse_path.exists():
         reuse=read(reuse_path)
-        refresh_text=f"本次版本更新重新提取{len(reuse['new_job_ids'])}个源文件，继承{len(reuse['inherited_jobs'])}个源文件的既有测量。继承清单保留原运行目录、原收据SHA和视频版本；新旧提取使用相同测量参数。来源清单与更新记录见本次运行的`plan.json`及上级目录`refresh.json`。"
+        refresh_text=f"This version update re-extracted {len(reuse['new_job_ids'])} source files and inherited existing measurements for {len(reuse['inherited_jobs'])} source files. The reuse manifest retains the original run directory, receipt SHA and video version. Old and new extractions use identical measurement parameters. See this run's `plan.json` and the parent directory's `refresh.json` for the source manifest and update record."
     duplicate_count=len(s.get('original_filename_duplicate_conflicts',{}))
     unresolved_count=len(s['duplicate_bytes_cross_key_conflicts'])
-    identity_text=f"本次源版本检查记录{duplicate_count}组跨影片key的重复字节版本，分析映射中未解决冲突{unresolved_count}组。逐文件版本和选择结果见`source_versions.csv`。身份修正仅应用于匹配其预期视频SHA的版本。"
+    identity_text=f"This source-version check recorded {duplicate_count} groups of duplicate byte versions across film keys and {unresolved_count} unresolved conflicts in the analysis mapping. Per-file versions and selections are in `source_versions.csv`. Identity corrections apply only to versions matching their expected video SHA."
     scale_text=[]
     for scale in [10,30,60]:
         metric=f'mean_abs_change_{scale}s_z__mean'
         ordered=sorted([g for g in rows if g[metric] is not None],key=lambda g:g[metric],reverse=True)
-        scale_text.append(f"{scale}秒最高三组为"+'、'.join(g['studio'] for g in ordered[:3]))
-    residual_text='；'.join(f"{g['studio']}{fmt(g['year_colour_type_residual__mean'])}（n={g['year_colour_type_residual__film_n']}）" for g in rows if g['studio'] in ['上海电影制片厂','珠江电影制片厂'])
+        scale_text.append(f"the three highest groups at {scale} seconds are "+', '.join(g['studio'] for g in ordered[:3]))
+    residual_text='; '.join(f"{g['studio']} {fmt(g['year_colour_type_residual__mean'])} (n={g['year_colour_type_residual__film_n']})" for g in rows if g['studio'] in ['上海电影制片厂','珠江电影制片厂'])
     history_text=''
     if (run/'analysis_revision2').is_dir():
-        history_text='此前的`analysis/`和`analysis_revision2/`保存本运行的早期分析，当前表的路径以上述目录为准。'
-    diagnostic_text='未运行额外色彩标签诊断。'
+        history_text='The earlier `analysis/` and `analysis_revision2/` directories retain prior analyses of this run. The current tables are in the directory specified above.'
+    diagnostic_text='No additional colour-label diagnostic was run.'
     if diagnostic:
         drows=[x for x in diagnostic['studio_sensitivity'] if x['scope']=='all' and int(x['original_member_n'])>=10 and x['mean_change_after_exclusion']]
         change=max(abs(float(x['mean_change_after_exclusion'])) for x in drows)
-        diagnostic_text=f'''抽样发现《刘三姐》的元数据为B&W，但实际帧有明显多色内容；随后片头读取到《刘三姐》、长春电影制片厂、导演苏里，与现有条目相符，未读到年份。此观察不独立证明原始色彩工艺，也不自动改标签。
+        diagnostic_text=f'''Sampling found clearly multicoloured frames in 《刘三姐》, although its metadata label is B&W. Subsequent opening-credit inspection identified 《刘三姐》, 长春电影制片厂 and director 苏里, consistent with the existing record. No year was read. This observation independently establishes neither the original colour process nor a basis for automatic relabelling.
 
-随后固定全{diagnostic['successful']}片20%/50%/80%位置、共{diagnostic['sampled_frame_count']}帧作**事后来源诊断**：{diagnostic['flagged_bw_count']}个B&W标签视频出现较强色度旗标。此前接触表可见明显多色画面及紫/绿色偏的近单色画面；当前旗标逐片列在诊断结果中，表示需检查的数字色度。色度规则未取得独立人工准确率；无旗标也不证明全片黑白。标为PROVISIONAL，原始元数据、主分析与所有影片均保留。
+A subsequent **post-result source diagnostic** sampled fixed 20%/50%/80% positions in all {diagnostic['successful']} films, totalling {diagnostic['sampled_frame_count']} frames. Stronger-chroma flags occurred in {diagnostic['flagged_bw_count']} B&W-labelled videos. Earlier contact sheets show both clearly multicoloured images and nearly monochrome images with purple/green casts. Current per-film flags indicate digital chroma requiring inspection. The chroma rule has no independent human accuracy estimate, and absence of a flag does not establish that an entire film is B&W. The diagnostic remains PROVISIONAL. Original metadata, the main analysis and all films remain intact.
 
-将这些旗标仅作为排除敏感性，在至少10片的厂组中，30秒主均值最大绝对改变量{change:.6f}；详细B&W、故事片B&W和全类型结果见`colour_label_qa/studio_chroma_flag_sensitivity.csv`。这说明本次主均值对该排除操作的数值敏感性较小，不能证明跨来源色彩/年份分层已无偏。'''
-    report=f'''# CinematicDX：全语料按制片机构分组的数字明暗变化
+Used only as exclusion sensitivity, these flags change the primary 30-second studio means by at most {change:.6f} in absolute value among groups with at least 10 films. See `colour_label_qa/studio_chroma_flag_sensitivity.csv` for B&W, B&W-feature and all-type results. This indicates limited numerical sensitivity of these means to this exclusion operation, not unbiased colour/year strata across sources.'''
+    report=f'''# CinematicDX: corpus-wide digital gray-level change by production institution
 
-状态 **PROVISIONAL**：覆盖和数值提取有实际输出/校验；历史及机构解释仍是探索，不是因果或总体风格判定。
+Status **PROVISIONAL**: coverage and numerical extraction have actual outputs and checks. Historical and institutional interpretation remains exploratory rather than a causal or general studio-style conclusion.
 
-## 实际覆盖
+## Actual coverage
 
-- 元数据{s['metadata_films']}部；可用视频文件{s['available_video_files']}；成功提取{s['videos_successfully_measured']}；失败{s['videos_failed']}。
-- 缺少本地视频的元数据{s['missing_video_films']}部没有被虚构测量；质量/身份排除{s['measured_excluded_films']}部，最终影片级比较{s['eligible_films']}部。
-- 实际文件处理约{s['total_measured_video_hours']:.2f}小时；主影片原PTS观察{s['total_timestamped_samples']:,}个（按{s['available_video_files']}个文件提取共{s['total_timestamped_file_samples']:,}个）。元数据{s['studios_in_metadata']}个具体制片机构，{s['studios_with_eligible_films']}个有纳入影片。
-- 处理时长按{s['available_video_files']}个文件计算；去重后{s.get('unique_video_versions',s['measured_films'])}个数字字节版本约{s.get('unique_video_version_hours',s['total_measured_video_hours']):.2f}小时。身份修正来自保留证据的分析映射，不改原始文件名或元数据。
-- 按现有唯一文件名关联的身份仍暂定，四处同名片使用此前助手片头核对及文件SHA。不是所有影片都取得独立人类片头身份验证。
-- 视频、元数据和原始Excel仅作输入；提取与分析在本地执行。
+- Metadata: {s['metadata_films']} films. Available video files: {s['available_video_files']}. Successful extractions: {s['videos_successfully_measured']}. Failures: {s['videos_failed']}.
+- No measurements were invented for the {s['missing_video_films']} metadata records lacking local video. Quality/identity exclusions: {s['measured_excluded_films']}. Final film-level comparison: {s['eligible_films']} films.
+- Actual file processing covered about {s['total_measured_video_hours']:.2f} hours. Primary-film observations retain {s['total_timestamped_samples']:,} original PTS samples ({s['total_timestamped_file_samples']:,} samples extracted from {s['available_video_files']} files). Metadata contains {s['studios_in_metadata']} specific production institutions, of which {s['studios_with_eligible_films']} have included films.
+- Processing duration counts {s['available_video_files']} files. After deduplication, {s.get('unique_video_versions',s['measured_films'])} digital byte versions cover about {s.get('unique_video_version_hours',s['total_measured_video_hours']):.2f} hours. Identity corrections use an evidence-preserving analysis mapping without changing original filenames or metadata.
+- Identity associations based on existing unique filenames remain provisional. Four ambiguous same-title cases use earlier assistant opening-credit checks and file SHA. Not every film has independent human opening-credit identity validation.
+- Videos, metadata and original Excel files serve only as inputs. Extraction and analysis run locally.
 
 {refresh_text}
 
@@ -276,68 +276,68 @@ def write_report(run,out,s,groups,bw,colour,single,films,*,report_directory=None
 
 {colour_table}
 
-## 制片厂如何定义
+## Definition of studios
 
-使用`production`的具体机构名称，不用`category`地区/集合类别代替。东北电影制片厂与长春电影制片厂、上海与天马与海燕均按原元数据分别保留，不自行合并机构谱系。合拍片对每个机构分配1/k权重，影片不是按帧数/片长加权。成员片数可跨厂重复，分数权重在全机构上合计仍等于纳入影片数。单厂片和色彩/类型敏感性另报。
+Specific institutional names in `production` remain distinct rather than being replaced by the regional/collective categories in `category`. 东北电影制片厂 and 长春电影制片厂, and Shanghai, Tianma and Haiyan, retain their separate metadata entries without an imposed institutional genealogy. Co-productions receive weight 1/k per institution. Films are not weighted by frame count or duration. Member counts can overlap across studios, while fractional weights across all institutions still sum to the included-film count. Single-studio and colour/type sensitivities are reported separately.
 
-## 测量与验证
+## Measurement and validation
 
-统一约1Hz参考帧采样，保留原PTS/time_base；宽<=160灰度，固定左右5%/上下10%裁切，全画面为敏感性。不作每帧直方图均衡，不声称恢复原版摄影亮度。最近观察的时间代表范围有5秒上限；缺测不填0，覆盖不足不静默纳入。
+Uniform approximately 1Hz reference-frame sampling preserves original PTS/time_base. Gray images have width<=160 with a fixed crop of 5% on each side and 10% at top/bottom. Full-frame measurements provide a sensitivity check. There is no per-frame histogram equalisation or claim to recover original photographic brightness. Nearest-observation temporal representation is capped at 5 seconds. Missing observations are not filled with 0, and inadequate coverage is not silently included.
 
-主统计量是**相邻30秒ROI灰度均值之差的绝对值取平均，再除以本片灰度时间标准差**。它描述相对慢速的明暗变化，不是切换率、叙事事件检测或单位秒光流。归一化不能消除非线性色调、扫描、修复、压缩和内容构成差异。
+The primary statistic is **the mean absolute difference between adjacent 30-second ROI gray-level means, divided by the film's temporal gray-level standard deviation**. It describes relatively slow gray-level variation, not a cutting rate, narrative-event detection or optical flow per second. Normalisation cannot eliminate differences in nonlinear tone mapping, scanning, restoration, compression or content composition.
 
-初始仅关键帧方法在24段固定真实验证片段中仅21段通过，稀疏编码片源造成偏差；原失败与代码封存。统一参考帧方案保持原阈值，24/24段通过，相较完整解码1Hz，30秒均值误差中位{s['sampling_validation']['median_30s_bin_mae']:.6f}、最大{s['sampling_validation']['max_30s_bin_mae']:.6f}。该验证不等于全片逐帧或历史亮度真值，也不涵盖每一种未知转录工作流。
+The initial keyframe-only method passed only 21 of 24 fixed real validation clips because sparsely encoded sources introduced bias. The original failure and code are archived. Uniform reference-frame sampling retained the original thresholds and passed 24/24 clips. Compared with complete-decoding 1Hz sampling, the median 30-second mean error was {s['sampling_validation']['median_30s_bin_mae']:.6f} and the maximum {s['sampling_validation']['max_30s_bin_mae']:.6f}. This is neither frame-complete full-film ground truth nor historical-brightness calibration, and it does not cover every unknown transfer workflow.
 
-## 分厂主表（至少10部纳入成员片）
+## Main studio table (at least 10 included member films)
 
 {table}
 
-较大的值表示相对于本片总体明暗跨度，30秒尺度上起伏较多；不能直接翻译为“更明亮”“更紧张”“政治性更强”。表为现有数字版本的描述性排序，小样本机构仍在完整CSV中，但不排强弱。
+Higher values indicate more variation at the 30-second scale relative to the film's overall gray-level range. They cannot directly mean “brighter,” “more tense” or “more political.” The table is a descriptive ordering of current digital versions. Small institutional samples remain in the complete CSV without ranking their strength.
 
-年份×色彩×类型残差是相对同年、同色彩、同类型影片均值的差；仅在该单元至少5片且至少2个机构时计算，n是可用影片数。它是替代解释敏感性，不是识别出的制片厂因果效应。未匹配摄影师、题材、修复批次或全部来源差异。
+Year×colour×type residuals are differences from the mean for films with the same year, colour and type. They are computed only for cells containing at least 5 films and at least 2 institutions. The reported n is the available-film count. This is sensitivity to an alternative explanation, not an identified causal studio effect. Cinematographers, subjects, restoration batches and all source differences have not been matched.
 
-## 构成与敏感性
+## Composition and sensitivity
 
 {sensitivity}
 
-全部机构的数字灰度绝对均值仅作描述，不能凭其跨厂解释历史照明。黑白/彩色、故事片/戏曲/艺术纪录/演出/歌舞均分别保留；年份明细、源像素宽度及10/30/60秒尺度明细见CSV，不按有利尺度择优。片中中央10–90%的分析只是一项端点/片头片尾敏感性，不是自动识别叙事主体。单厂指元数据只列一个production条目，不是对完整合作关系的历史判定。
+Absolute digital gray-level means for all institutions are descriptive and cannot independently explain historical lighting across studios. B&W/Colour and Feature/Opera/Artistic Documentary/Performance/Musical remain separate. CSV files preserve year details, source pixel widths and the 10/30/60-second scales without selecting the most favourable scale. The central 10–90% analysis is only an endpoint/opening/ending sensitivity check, not automatic identification of the narrative body. Single-studio means that metadata lists one production entry, not that all historical collaboration is known.
 
-100位置箱曲线按影片等权及合拍分数权重汇总，每片先标准化；相对位置是坐标，不假定四幕或固定叙事阶段。图上影片间四分位范围表示样本异质性，不是总体置信区间或独立帧显著性。
+The 100-position-bin curves aggregate equally weighted, within-film-standardised profiles with fractional co-production weights. Relative position is a coordinate, not an assumed four-act structure or fixed narrative stage. Interquartile ranges across films show sample heterogeneity, not population confidence intervals or significance from independent frames.
 
-## 本次结果支持什么
+## What these results support
 
-1. 至少10片的{len(rows)}家机构主均值为{mean_low:.3f}–{mean_high:.3f}，跨度{mean_high-mean_low:.3f}。各自影片间四分位区间在{common_low:.3f}–{common_high:.3f}有共同重叠；同厂差异不能被厂均值替代。重叠不是“无差异”的显著性检验。
-2. **时间尺度比较**：{'；'.join(scale_text)}。各尺度的完整均值保留在`studio_temporal_scale_sensitivity.csv`，比较单位为具体时间尺度上的数字灰度变化。
-3. **构成条件比较**：同年×色彩×类型中心化残差中，{residual_text}。这些条件比较使用各自可匹配的影片子集，仍需结合题材、摄影师和拷贝来源解释。
-4. 片内时间曲线保存了平均值丢失的位置差异；多组曲线首尾偏亮只宜作为待查模式。当前未作独立片头/片尾或事件标注，不能据相对位置命名叙事阶段，也不将共现当制片厂功能原则。
+1. For the {len(rows)} institutions with at least 10 films, the primary means range from {mean_low:.3f}–{mean_high:.3f}, a span of {mean_high-mean_low:.3f}. Their interquartile ranges across films share an overlap at {common_low:.3f}–{common_high:.3f}. A studio mean cannot replace within-studio variation. Overlap is not a significance test establishing “no difference.”
+2. **Temporal-scale comparison**: {'; '.join(scale_text)}. `studio_temporal_scale_sensitivity.csv` preserves complete means at every scale. Each comparison concerns digital gray-level change at its specified timescale.
+3. **Composition-conditioned comparison**: the same-year×colour×type centred residuals include {residual_text}. Each conditional comparison uses its own matchable film subset and still requires interpretation alongside subject, cinematographer and copy provenance.
+4. Within-film profiles preserve positional differences lost in means. Brighter openings/endings in several groups are patterns for further investigation only. No independent opening/ending or event annotations were made here. Relative positions cannot be named as narrative stages, and co-occurrence is not treated as an institutional functional principle.
 
-## 来源质量反例与补充检查
+## Source-quality counterexample and supplementary checks
 
 {diagnostic_text}
 
-## 关键局限
+## Key limitations
 
-1. 可见样本受获取与保存影响：{s['missing_video_films']}个无有效视频条目按厂分布并不均匀，不能代表732部完整总体。
-2. 拷贝来源/扫描修复历史大多未知；相同编码/尺寸也不保证同一转录条件，片内z标准化不能修复这些问题。
-3. 制片机构与年代、色彩制式、影片类型、人物/场所和题材分布交织；观察到的组差异不是厂风格的独立证明。
-4. 只有《上甘岭》局部有独立叙事事件参考，本次其余影片没有全片叙事真值；不得把宏观曲线当叙事结构。
-5. 约1Hz与30秒均值会忽略快速闪光、短转场和帧级抖动；本项目的硬切/渐变任务依旧单独验证。
-6. 文件SHA识别数字字节版本，不证明历史拷贝真实性。身份映射暂定处均有标记；原始文件名映射发现{len(s.get('original_filename_duplicate_conflicts',{}))}组字节跨片重复，当前未解决冲突{len(s['duplicate_bytes_cross_key_conflicts'])}组。
-7. “全片”指完整本地文件的时间轴，不证明历史发行版完整。平台片头、台标、字幕、片尾和残缺版都可能影响明暗；没有据曲线自动删除这些内容。
+1. Acquisition and preservation shape the visible sample. The {s['missing_video_films']} records lacking valid video are unevenly distributed across studios, so this sample cannot represent the complete population of 732 films.
+2. Copy provenance and scanning/restoration histories are largely unknown. Identical encoding/dimensions do not guarantee the same transfer conditions, and within-film z standardisation cannot repair these issues.
+3. Institutions intertwine with period, colour format, film type, people/locations and subject distributions. Observed group differences are not independent proof of studio style.
+4. Only part of 《上甘岭》 has an independent narrative-event reference. The other films lack full-film narrative ground truth, so macro-level curves must not be treated as narrative structure.
+5. Approximately 1Hz sampling and 30-second means overlook rapid flashes, short transitions and frame-level jitter. The project's hard-cut/gradual tasks remain separately validated.
+6. File SHA identifies digital byte versions rather than authenticating historical copies. Provisional identity mappings remain marked. Original-filename mapping found {len(s.get('original_filename_duplicate_conflicts',{}))} groups of duplicate bytes across films, with {len(s['duplicate_bytes_cross_key_conflicts'])} currently unresolved conflicts.
+7. “Full film” means the complete local-file timeline, not a verified complete historical release. Platform introductions, logos, subtitles, endings and incomplete versions can affect gray levels. No such content was automatically removed according to the curves.
 
-## 输出与复算
+## Outputs and reproduction
 
-实验目录 `{run}`；所有{s['available_video_files']}视频均有尝试记录，成功文件各自的summary/samples/profiles/run绑定原文件SHA、软件、参数与PTS。主表、{s['metadata_films']}部覆盖表、分年份/色彩/类型、来源尺寸、单厂、全厂相对时间曲线及负验证均保留。
+Experiment directory: `{run}`. All {s['available_video_files']} videos have attempt records. Each successful file's summary/samples/profiles/run binds original-file SHA, software, parameters and PTS. The main table, {s['metadata_films']}-film coverage table, year/colour/type and source-size tables, single-studio analyses, all-studio relative timelines and negative validation results are preserved.
 
-当前分析目录 `{out}`。完整分厂表、逐片覆盖表和时间曲线分别为`studio_summary_all.csv`、`film_measurements_and_coverage.csv`、`studio_relative_timeline.csv`；PNG/PDF图在同目录。{history_text}
+Current analysis directory: `{out}`. Complete studio tables, per-film coverage and temporal profiles are respectively `studio_summary_all.csv`, `film_measurements_and_coverage.csv` and `studio_relative_timeline.csv`. PNG/PDF figures are in the same directory. {history_text}
 
-`run_corpus_luminance.py`可从已完成的逐片收据恢复；不同输入或参数拒绝复用。`analyse_studio_corpus.py`只接受完整尝试结束后的输入，不发布部分结果冒充全库。核心代码和报告生成源码随输出快照保存。
+`run_corpus_luminance.py` can resume from completed per-film receipts and rejects reuse after input or parameter changes. `analyse_studio_corpus.py` accepts only inputs whose complete attempt sequence has finished. It does not publish partial results as corpus-wide findings. Output snapshots retain core code and report-generation source.
 
-本次仍是可复算的数字形式属性与时间组织证据；需要来源校准、独立材料与电影史解释，才可能支持机构/历史论证。
+These remain reproducible measurements of digital formal properties and temporal organisation. Source calibration, independent material and film-historical interpretation are required before institutional or historical arguments can be supported.
 '''
     (doc/'REPORT.md').write_text(report);(out/'REPORT.md').write_text(report)
     if report_directory is None:
-        with (ROOT/'research/quantitative_exploration/RESEARCH_LOG.md').open('a') as f:f.write(f"\n## {datetime.now(timezone.utc).isoformat()}：全语料制片机构分析完成\n\n{s['videos_successfully_measured']}/{s['available_video_files']}视频成功；{s['eligible_films']}影片纳入，{s['missing_video_films']}元数据无视频。全库约{s['total_measured_video_hours']:.2f}小时，分厂报告和覆盖表见corpus_studio/REPORT.md。保持影片为分析单位、合拍分数权重及年份/色彩/类型敏感性，未将组差异解释为机构因果或叙事识别。\n")
+        with (ROOT/'research/quantitative_exploration/RESEARCH_LOG.md').open('a') as f:f.write(f"\n## {datetime.now(timezone.utc).isoformat()}: corpus-wide production-institution analysis completed\n\n{s['videos_successfully_measured']}/{s['available_video_files']} videos succeeded; {s['eligible_films']} films included and {s['missing_video_films']} metadata records lack video. The corpus covers about {s['total_measured_video_hours']:.2f} hours. Studio reports and coverage tables are in corpus_studio/REPORT.md. Films remain the analysis unit, with fractional co-production weights and year/colour/type sensitivities. Group differences are not interpreted as institutional causes or narrative identification.\n")
 
 
 if __name__=='__main__':main()

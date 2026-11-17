@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: When publishing research results produced or analysed using CinematicDX,
+  cite this repository or its archived software release and identify the version or
+  commit used, as required by LICENSE. Use a release DOI when available.
+type: software
+title: CinematicDX
+authors:
+- name: El-Mundo
+  website: https://github.com/El-Mundo
+repository-code: https://github.com/El-Mundo/CinematicDX
+url: https://github.com/El-Mundo/CinematicDX
+license-url: https://github.com/El-Mundo/CinematicDX/blob/master/LICENSE
+abstract: Research software for film metadata management and computational measurement
+  and analysis of cinematic formal properties.

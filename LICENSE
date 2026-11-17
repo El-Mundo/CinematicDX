@@ -1,0 +1,97 @@
+CinematicDX Research-Only Software License
+Version 1.0, 17 November 2026
+
+Copyright (c) 2026 El-Mundo and the respective copyright holders.
+
+This is a project-specific, source-available software license. It is not an
+OSI-approved open-source license.
+
+1. Scope
+
+"Software" means the project-authored source code, tests, scripts, and build
+configuration in this repository, except material identified as third-party or
+covered by another license. Each copyright holder licenses only rights that
+they own or are authorised to license. Existing copyright notices remain valid.
+
+This license does not cover films, film frames, audio, subtitles, source books,
+third-party metadata, dependencies, or models. It does not license research
+datasets, reports, figures, slides, or other documentation unless a separate
+notice expressly places the relevant material under this license. Publication
+in this repository does not itself grant rights in those excluded materials.
+
+2. Permission
+
+Subject to these terms, the copyright holders grant you a worldwide,
+non-exclusive, royalty-free copyright license to copy, run, study, and modify
+the Software, and to share source or binary copies and modifications, solely
+for the permitted research purposes below. No other permission is implied.
+
+3. Permitted research purposes
+
+Use is permitted solely for non-commercial academic research: scholarly inquiry
+whose primary purpose is advancing knowledge, including replication and
+validation, conducted by researchers at universities or nonprofit research
+organisations, or by independent scholars.
+
+Product development, business operations, paid consulting, paid services, and
+research performed for a for-profit organisation's commercial advantage are
+excluded. Academic affiliation does not make a commercial project permissible.
+External funding alone does not disqualify an academic project, but work
+directed toward a sponsor's product, proprietary commercial deliverable, or
+commercial service is excluded. Other uses, including teaching outside a
+research project, require separate written permission from the relevant
+copyright holders.
+
+4. Publication citation
+
+When you publicly communicate research results obtained using the Software,
+including in an article, thesis, report, presentation, or research-data release,
+you must identify your use of CinematicDX and include a scholarly citation to
+the repository or its archived software release. Identify the version or commit
+used and a DOI where one exists. CITATION.cff supplies the recommended citation
+details; another format is acceptable if it identifies the same software.
+
+This obligation applies to research results produced or analysed using the
+Software. It does not require you to publish private work, cite the Software in
+unrelated publications, or grant its authors coauthorship or endorsement.
+It is a condition of permission under this license and does not transfer
+ownership of your research results to the Software authors.
+
+5. Sharing and modifications
+
+Copies you share must include this license and the applicable copyright and
+third-party notices. Clearly identify your modifications and do not imply that
+they are the original authors' work. Share the Software and modifications of
+its covered portions under these terms, without charging for access to the
+Software. Recipients receive permission from the copyright holders subject to
+this license. These requirements do not relicense independently written code
+or third-party components, and you must comply with their applicable licenses.
+
+6. Other rights and permissions
+
+No trademark rights, endorsement, patent license, or rights in excluded
+materials are granted. You remain responsible for obtaining lawful access and
+any permissions required for material you process. This license does not
+restrict statutory exceptions, limitations, or rights that do not require
+permission from the copyright holders.
+
+For commercial or other uses outside this license, request separate written
+permission through the repository's maintainer contact:
+https://github.com/El-Mundo/CinematicDX
+
+7. Compliance and termination
+
+Your permission depends on compliance with these terms. If you discover or
+receive written notice of a breach, stop the non-compliant activity promptly.
+Permission is restored if you correct the breach within 30 days of discovery or
+notice, including correcting a missing citation where reasonably possible.
+Otherwise, your permission terminates. Restoration does not erase liability
+for earlier breaches or authorise activities outside this license.
+
+8. Warranty and liability
+
+The Software is supplied without promises about its quality, fitness,
+accuracy, security, or freedom from third-party claims. To the extent the law
+allows, the copyright holders and contributors disclaim warranties and are not
+liable for loss or damage arising from the Software or its use. Nothing here
+excludes liability or legal protections that cannot lawfully be excluded.

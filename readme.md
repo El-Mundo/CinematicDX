@@ -215,3 +215,28 @@ LoD does not claim that all scales are equivalent, nor does it dissolve historic
 - Can a large-scale pattern be returned to inspectable evidence?
 
 In this sense, LoD is not only a computational strategy. It is a way of making the politics and epistemology of scale visible.
+
+## License and citation
+
+The project-authored source code, tests, scripts and build configuration are
+available under the [CinematicDX Research-Only Software License](LICENSE).
+It permits use, modification and sharing solely for **non-commercial academic
+research**, subject to its terms. Commercial and other uses require separate
+written permission. This is a project-specific, source-available license, not
+an OSI-approved open-source license.
+
+When publishing research results produced or analysed using CinematicDX,
+**cite this repository or its archived software release**, identifying the
+version or commit used and a release DOI when available. [CITATION.cff](CITATION.cff)
+provides machine-readable citation details. Citation does not imply coauthorship
+or endorsement, and unpublished private work does not have to be published.
+
+Suggested reference: El-Mundo. *CinematicDX* [computer software].
+<https://github.com/El-Mundo/CinematicDX>. Add the version or commit actually used.
+
+Films, frames, audio, subtitles, source books, third-party metadata, dependencies
+and models are not licensed by this project license. Research datasets, reports,
+figures, slides and other documentation are also excluded unless expressly
+licensed separately. Their presence in the repository does not itself grant
+reuse rights. Users must obtain lawful access and any permissions required for
+materials they process; this software license grants no rights in those materials.

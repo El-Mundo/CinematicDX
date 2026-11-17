@@ -102,7 +102,7 @@ I used named entity detection to find all individuals appearing in the crew and 
 
 **GUI and interaction experience improvements using Codex.** The desktop refresh and its supporting metadata/research code are published on the main development line, `master`. The completed development work remains in the mainline history. Its temporary development branch has been retired.
 
-For collaborators, the [update summary](CHANGELOG.md) describes the publication scope and the [AI-assistance disclosure](docs/AI_ASSISTANCE.md) distinguishes Codex-assisted code and reporting from researcher-supplied questions and independent manual annotations. Measurement procedures, validation and limitations are documented in the [analysis guide](analysis-python/README.md) and [research report](research/quantitative_exploration/REPORT.md). The [retired presentation record](docs/presentations/20261028/README.md) identifies the superseded October deck. Independent coauthor review or approval is not implied by publication.
+For collaborators, the [update summary](CHANGELOG.md) describes the publication scope and the [AI-assistance disclosure](docs/AI_ASSISTANCE.md) distinguishes Codex-assisted code and reporting from researcher-supplied questions and independent manual annotations. Measurement procedures, validation and limitations are documented in the [analysis guide](analysis-python/README.md) and [research report](research/quantitative_exploration/REPORT.md). The [current upgrade deck](docs/presentations/20261113/README.md) and [historical technical demo](docs/presentations/20261028/README.md) are available through the [presentation index](docs/presentations/README.md). Independent coauthor review or approval is not implied by publication.
 
 ## Desktop workspace
 

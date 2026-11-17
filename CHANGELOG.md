@@ -2,7 +2,7 @@
 
 ## 17 November 2026, English documentation using Codex
 
-Translated explanatory documentation, report templates and figure labels into English. Original film titles, production institutions, metadata, annotation vocabularies and database-related values remain unchanged. The retired October presentation has been removed from the current repository files to distinguish it from the separate Upgrade submission presentation. The underlying measurements and source-version records remain unchanged.
+Translated explanatory documentation, report templates and figure labels into English. Original film titles, production institutions, metadata, annotation vocabularies and database-related values remain unchanged. Two user-supplied presentation versions are copied unchanged into dated folders: the [current upgrade deck](docs/presentations/20261113/README.md) and the [historical technical demo](docs/presentations/20261028/README.md). The [presentation index](docs/presentations/README.md) distinguishes them. The underlying measurements and source-version records remain unchanged.
 
 ## 10 November 2026, corpus source refresh using Codex
 
@@ -10,7 +10,7 @@ Replaced-source checks identified 《买牛、扒瓜园》《永恒的友谊》�
 
 All institutional tables, relative timelines, temporal/threshold/crop/source sensitivities and conditional references were rebuilt. The [published data release](research/quantitative_exploration/corpus_refresh/20261110/README.md) contains the current tables, figures and source-version manifest. It records 2,390,266 grey-level observations and 194,781 primary hard-cut candidates across 59,715,616 decoded frames. Gradual outputs retain their candidate status and the existing unsuccessful interval validation.
 
-451 measurements retain their original receipts through explicit source/configuration checks. New extraction, source-identity inspection, nine additional sampling checks and independent numerical audits completed successfully. The Python suite passed 262 tests. The dated October audit and the retired presentation record distinguish that earlier research snapshot from this release.
+451 measurements retain their original receipts through explicit source/configuration checks. New extraction, source-identity inspection, nine additional sampling checks and independent numerical audits completed successfully. The Python suite passed 262 tests. The dated October audit records that earlier research snapshot; the presentation index identifies the current upgrade deck and historical technical demo separately.
 
 ## 28 October 2026 — GUI and interaction experience improvements using Codex
 
@@ -26,9 +26,9 @@ Research-record actions open existing folders. They do not run CV analysis. The 
 
 ### Additional material in this publication
 
-The earlier development commit also contains the metadata-store abstraction, standalone timestamped Python analysis code, tests, methodological records and Upgrade pilot audit. These are part of the mainline publication and should not be mistaken for a GUI-only diff. This dated publication originally included a preliminary-results presentation summarising existing evidence and measurement procedures, without rerunning film extraction. That deck has since been retired; its [retirement record](docs/presentations/20261028/README.md) links the current methods and results.
+The earlier development commit also contains the metadata-store abstraction, standalone timestamped Python analysis code, tests, methodological records and Upgrade pilot audit. These are part of the mainline publication and should not be mistaken for a GUI-only diff. This dated publication originally included a preliminary-results presentation summarising existing evidence and measurement procedures, without rerunning film extraction. For the presentation versions now available, see the [presentation index](docs/presentations/README.md).
 
-Original videos, the research inventory, original human annotations, local catalogs/settings, model/runtime caches and intermediate experimental data remain outside Git. The application screenshots were captured from the actual running interface. The now-retired presentation embedded selected existing figures. Aggregate results and their limitations remain documented in the research reports.
+Original videos, the research inventory, original human annotations, local catalogs/settings, model/runtime caches and intermediate experimental data remain outside Git. The application screenshots were captured from the actual running interface. The preliminary-results presentation embedded selected existing figures. Aggregate results and their limitations remain documented in the research reports.
 
 ### AI assistance, validation and review
 

@@ -1,13 +1,7 @@
-# Retired preliminary presentation
+# Historical technical demo
 
-The 28 October 2026 preliminary-results deck has been retired from this repository to avoid confusion with later upgrade material. This directory records that retirement.
+[Download the historical technical demo](Technical_Demo_CinematicDX_20261028.pptx).
 
-Current methods and research results are available through:
+This user-supplied 12-slide English deck uses the earlier black-and-green design and is copied unchanged as a historical archive. For current upgrade material, use the [current upgrade deck](../20261113/README.md).
 
-- [Project overview](../../../readme.md).
-- [Analysis commands and measurement procedures](../../../analysis-python/README.md).
-- [Current corpus results, 10 November 2026](../../../research/quantitative_exploration/corpus_refresh/20261110/README.md).
-- [Exploratory research report](../../../research/quantitative_exploration/REPORT.md).
-- [AI-assistance and contribution record](../../AI_ASSISTANCE.md).
-
-The current upgrade presentation is maintained separately.
+See the [presentation index](../README.md) and [current corpus results](../../../research/quantitative_exploration/corpus_refresh/20261110/README.md).

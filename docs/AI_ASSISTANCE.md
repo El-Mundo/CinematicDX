@@ -8,13 +8,15 @@ The October 2026 CinematicDX update was developed with assistance from OpenAI Co
 
 The researcher supplied the PhD objectives, conceptual distinctions, corpus inventory and permitted materials, task priorities, resource limits, interpretation constraints and publication instructions. The existing *Shang Gan Ling* shot-boundary and narrative-event annotations were made independently by the researcher. Their original values and stated temporal uncertainty were retained. Codex did not replace those annotations with inferred labels.
 
+The [current upgrade deck](presentations/20261113/README.md) is a user-supplied deck copied unchanged. The [presentation index](presentations/README.md) also preserves the user-supplied historical technical demo unchanged in its dated folder.
+
 ## Codex-assisted work
 
 Assistance covered code inspection and implementation, metadata storage/configuration, GUI and interaction design, tests, build tooling, bounded computational experiments, numerical checks, technical audits, methodological notes, screenshots and presentation assembly. The reports identify the actual input versions, parameters, available checks and limitations where evidence is present.
 
 Some source-identity and image-failure observations were made by the assistant. They are recorded as assistant observations, not as additional independent human annotation or archival verification. Numerical reproducibility is a separate claim from measurement validity or film-historical interpretation.
 
-The 28 October results presentation reused saved measurements, plots and actual GUI screenshots. It explained their generation and synthesised existing findings, without new film extraction, a new independent validation sample or coauthor approval of the interpretations. That deck has since been retired from the current repository files.
+The earlier results presentation reused saved measurements, plots and actual GUI screenshots. It explained their generation and synthesised existing findings, without new film extraction, a new independent validation sample or coauthor approval of the interpretations.
 
 ## Research and software boundaries
 
@@ -22,7 +24,7 @@ The 28 October results presentation reused saved measurements, plots and actual 
 - Automatic cut/transition outputs remain predictions or candidates with the documented validation scope. Independent narrative reference data remain a separate layer.
 - Tests of storage, timestamps and arithmetic do not by themselves establish film-theoretical validity. The limited hard-cut reference does not establish corpus-wide accuracy, and the tested gradual detector does not reliably delimit complete transitions.
 - Observed gray-level and candidate-rate differences do not establish narrative causation, a stable institutional style or a socio-political explanation. Historical interpretation and authorship decisions remain research judgements.
-- Source videos, original annotation/inventory files, credentials, local catalogs and model/runtime caches are not included in this publication. Selected screenshots and aggregate results appear in the repository documentation. The previously published October presentation has been retired.
+- Source videos, original annotation/inventory files, credentials, local catalogs and model/runtime caches are not included in this publication. Selected screenshots and aggregate results appear in the repository documentation. The presentation index distinguishes the current upgrade deck from the historical technical demo.
 
 ## Collaboration and publication
 
